@@ -34,7 +34,6 @@ export default function ProductPage({
             ratio="aspect-[4/5]"
             label={product.name}
             objectPosition="50% 25%"
-            fit={product.imageFit}
             priority
           />
         </Reveal>

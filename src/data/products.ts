@@ -22,8 +22,6 @@ export interface Product {
   hook: string;
   placeholder: "sun" | "moon" | "dawn";
   image?: string;
-  /** "contain" for photos that are already tightly cropped and shouldn't be cropped further. */
-  imageFit?: "cover" | "contain";
   heroVideo?: string;
   heroPoster?: string;
   description: string;
@@ -201,7 +199,6 @@ export const products: Product[] = [
     name: "Acne Shield",
     category: "Solar Clarity",
     image: "/images/acne-shield.jpg",
-    imageFit: "contain",
     tagline: "Clear, Calm, Balanced — Naturally",
     hook: "Clear, calm, balanced — naturally.",
     placeholder: "sun",
@@ -291,7 +288,6 @@ export const products: Product[] = [
     name: "Vital Grow Scalp",
     category: "Root Ritual",
     image: "/images/vital-grow-scalp.jpg",
-    imageFit: "contain",
     tagline: "Strength and Shine, Rooted in Nature",
     hook: "Strength and shine, rooted in nature.",
     placeholder: "moon",

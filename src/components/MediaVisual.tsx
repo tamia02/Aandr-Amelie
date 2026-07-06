@@ -12,7 +12,6 @@ export default function MediaVisual({
   objectPosition = "center",
   priority = false,
   className = "",
-  fit = "cover",
 }: {
   image?: string;
   video?: string;
@@ -23,13 +22,12 @@ export default function MediaVisual({
   objectPosition?: string;
   priority?: boolean;
   className?: string;
-  fit?: "cover" | "contain";
 }) {
   if (video) {
     return (
-      <div className={`relative overflow-hidden ${ratio} ${MEDIA_FRAME} ${fit === "contain" ? "bg-cream-deep" : ""} ${className}`}>
+      <div className={`relative overflow-hidden ${ratio} ${MEDIA_FRAME} ${className}`}>
         <video
-          className={`h-full w-full ${fit === "contain" ? "object-contain" : "object-cover"}`}
+          className="h-full w-full object-cover"
           style={{ objectPosition }}
           src={video}
           poster={poster}
@@ -45,14 +43,14 @@ export default function MediaVisual({
 
   if (image) {
     return (
-      <div className={`relative overflow-hidden ${ratio} ${MEDIA_FRAME} ${fit === "contain" ? "bg-cream-deep" : ""} ${className}`}>
+      <div className={`relative overflow-hidden ${ratio} ${MEDIA_FRAME} ${className}`}>
         <Image
           src={image}
           alt={label ?? ""}
           fill
           priority={priority}
           sizes="(min-width: 1024px) 40vw, 90vw"
-          className={fit === "contain" ? "object-contain" : "object-cover"}
+          className="object-cover"
           style={{ objectPosition }}
         />
       </div>
