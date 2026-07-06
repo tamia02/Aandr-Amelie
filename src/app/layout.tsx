@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Libre_Caslon_Text, Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { CartProvider } from "@/lib/cart-context";
 
 const caslon = Libre_Caslon_Text({
   variable: "--font-caslon",
@@ -39,11 +36,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-cream text-charcoal">
         <div className="grain-overlay" />
-        <CartProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </CartProvider>
+        {children}
       </body>
     </html>
   );

@@ -1,8 +1,10 @@
 "use server";
 
+import { cookies, headers } from "next/headers";
 import { z } from "zod";
 import { prisma } from "@/lib/db";
 import { products as catalog } from "@/data/products";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 const FREE_SHIPPING_THRESHOLD_CENTS = 49900; // ₹499
 const FLAT_SHIPPING_CENTS = 5000; // ₹50
@@ -35,6 +37,12 @@ export type PlaceOrderResult =
 export async function placeOrder(
   input: CheckoutInput,
 ): Promise<PlaceOrderResult> {
+  const ip = (await headers()).get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  const allowed = checkRateLimit(`placeOrder:${ip}`, { max: 5, windowMs: 10 * 60 * 1000 });
+  if (!allowed) {
+    return { ok: false, error: "Too many orders placed. Please try again in a few minutes." };
+  }
+
   const parsed = checkoutSchema.safeParse(input);
   if (!parsed.success) {
     return { ok: false, error: parsed.error.issues[0]?.message ?? "Invalid order details" };
@@ -100,6 +108,18 @@ export async function placeOrder(
       }
 
       return created;
+    });
+
+    // Short-lived proof of "you just placed this order" — lets the
+    // confirmation page show full contact/address details right after
+    // checkout, without leaving a link that exposes PII to anyone who
+    // later gets hold of the URL (browser history, screenshot, etc.).
+    (await cookies()).set(`order_access_${order.id}`, "1", {
+      httpOnly: true,
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 15 * 60,
+      path: `/order-confirmation/${order.id}`,
     });
 
     return { ok: true, orderId: order.id };

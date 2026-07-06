@@ -1,3 +1,4 @@
+import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { formatINR } from "@/lib/money";
@@ -17,6 +18,11 @@ export default async function OrderConfirmationPage({
 
   if (!order) notFound();
 
+  // Full contact/address details are only shown to the browser that just
+  // placed the order (proven by a short-lived cookie set in placeOrder()).
+  // Anyone arriving via a stale/shared link sees order + item details only.
+  const hasFreshAccess = (await cookies()).get(`order_access_${order.id}`) !== undefined;
+
   return (
     <div className="px-6 py-20 sm:px-10 md:py-28">
       <div className="mx-auto max-w-2xl">
@@ -28,7 +34,7 @@ export default async function OrderConfirmationPage({
         <p className="mt-6 text-center text-base leading-relaxed text-charcoal/75">
           Order <span className="font-medium text-charcoal">#{order.id.slice(-8).toUpperCase()}</span>{" "}
           confirmed — we&rsquo;ll deliver to your door with Cash on Delivery.
-          A confirmation has been noted against {order.email}.
+          {hasFreshAccess && <> A confirmation has been noted against {order.email}.</>}
         </p>
 
         <div className="mt-12 rounded-sm bg-cream-deep p-8">
@@ -62,14 +68,18 @@ export default async function OrderConfirmationPage({
 
           <div className="mt-6 border-t border-charcoal/10 pt-6 text-sm text-charcoal/70">
             <p className="font-medium text-charcoal">Delivering to</p>
-            <p className="mt-1">
-              {order.customerName}
-              <br />
-              {order.addressLine1}
-              {order.addressLine2 ? `, ${order.addressLine2}` : ""}
-              <br />
-              {order.city}, {order.state} {order.pincode}
-            </p>
+            {hasFreshAccess ? (
+              <p className="mt-1">
+                {order.customerName}
+                <br />
+                {order.addressLine1}
+                {order.addressLine2 ? `, ${order.addressLine2}` : ""}
+                <br />
+                {order.city}, {order.state} {order.pincode}
+              </p>
+            ) : (
+              <p className="mt-1">{order.city}, {order.state}</p>
+            )}
           </div>
         </div>
 
