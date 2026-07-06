@@ -2,6 +2,7 @@ import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { formatINR } from "@/lib/money";
 import { ORDER_STATUSES } from "@/lib/order-status";
+import DbUnavailableNotice from "@/components/DbUnavailableNotice";
 
 export const dynamic = "force-dynamic";
 
@@ -13,10 +14,16 @@ export default async function AdminOrdersPage({
   const { status } = await searchParams;
   const validStatus = ORDER_STATUSES.includes(status as never) ? status : undefined;
 
-  const orders = await prisma.order.findMany({
-    where: validStatus ? { status: validStatus } : undefined,
-    orderBy: { createdAt: "desc" },
-  });
+  let orders;
+  try {
+    orders = await prisma.order.findMany({
+      where: validStatus ? { status: validStatus } : undefined,
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (error) {
+    console.error("AdminOrdersPage: database unavailable", error);
+    return <DbUnavailableNotice />;
+  }
 
   return (
     <div className="mx-auto max-w-5xl">

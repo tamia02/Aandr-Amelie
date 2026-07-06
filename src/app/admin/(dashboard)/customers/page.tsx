@@ -1,13 +1,20 @@
 import { prisma } from "@/lib/db";
 import { formatINR } from "@/lib/money";
+import DbUnavailableNotice from "@/components/DbUnavailableNotice";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminCustomersPage() {
-  const orders = await prisma.order.findMany({
-    where: { status: { not: "cancelled" } },
-    orderBy: { createdAt: "desc" },
-  });
+  let orders;
+  try {
+    orders = await prisma.order.findMany({
+      where: { status: { not: "cancelled" } },
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (error) {
+    console.error("AdminCustomersPage: database unavailable", error);
+    return <DbUnavailableNotice />;
+  }
 
   const byEmail = new Map<
     string,

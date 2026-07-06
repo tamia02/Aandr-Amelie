@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db";
 import { formatINR } from "@/lib/money";
 import { ORDER_STATUSES } from "@/lib/order-status";
 import { updateOrderStatus } from "@/lib/actions/admin-orders";
+import DbUnavailableNotice from "@/components/DbUnavailableNotice";
 
 export const dynamic = "force-dynamic";
 
@@ -12,10 +13,17 @@ export default async function AdminOrderDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const order = await prisma.order.findUnique({
-    where: { id },
-    include: { items: true },
-  });
+
+  let order;
+  try {
+    order = await prisma.order.findUnique({
+      where: { id },
+      include: { items: true },
+    });
+  } catch (error) {
+    console.error("AdminOrderDetailPage: database unavailable", error);
+    return <DbUnavailableNotice />;
+  }
 
   if (!order) notFound();
 

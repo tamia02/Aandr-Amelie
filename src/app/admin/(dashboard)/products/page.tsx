@@ -1,11 +1,18 @@
 import { prisma } from "@/lib/db";
 import { products as catalog } from "@/data/products";
 import { updateProduct } from "@/lib/actions/admin-products";
+import DbUnavailableNotice from "@/components/DbUnavailableNotice";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminProductsPage() {
-  const dbProducts = await prisma.product.findMany({ orderBy: { slug: "asc" } });
+  let dbProducts;
+  try {
+    dbProducts = await prisma.product.findMany({ orderBy: { slug: "asc" } });
+  } catch (error) {
+    console.error("AdminProductsPage: database unavailable", error);
+    return <DbUnavailableNotice />;
+  }
 
   return (
     <div className="mx-auto max-w-4xl">

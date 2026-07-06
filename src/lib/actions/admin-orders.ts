@@ -20,10 +20,15 @@ export async function updateOrderStatus(formData: FormData) {
   });
   if (!parsed.success) return;
 
-  await prisma.order.update({
-    where: { id: parsed.data.orderId },
-    data: { status: parsed.data.status },
-  });
+  try {
+    await prisma.order.update({
+      where: { id: parsed.data.orderId },
+      data: { status: parsed.data.status },
+    });
+  } catch (error) {
+    console.error("updateOrderStatus: database unavailable", error);
+    return;
+  }
 
   revalidatePath("/admin/orders");
   revalidatePath(`/admin/orders/${parsed.data.orderId}`);

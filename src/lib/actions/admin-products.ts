@@ -21,10 +21,15 @@ export async function updateProduct(formData: FormData) {
   });
   if (!parsed.success) return;
 
-  await prisma.product.update({
-    where: { slug: parsed.data.slug },
-    data: { priceCents: parsed.data.priceCents, stock: parsed.data.stock },
-  });
+  try {
+    await prisma.product.update({
+      where: { slug: parsed.data.slug },
+      data: { priceCents: parsed.data.priceCents, stock: parsed.data.stock },
+    });
+  } catch (error) {
+    console.error("updateProduct: database unavailable", error);
+    return;
+  }
 
   revalidatePath("/admin/products");
 }

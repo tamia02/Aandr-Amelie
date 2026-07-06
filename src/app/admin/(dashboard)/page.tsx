@@ -1,29 +1,36 @@
 import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { formatINR } from "@/lib/money";
+import DbUnavailableNotice from "@/components/DbUnavailableNotice";
 
 export const dynamic = "force-dynamic";
 
 const LOW_STOCK_THRESHOLD = 10;
 
 export default async function AdminDashboardPage() {
-  const [orderCount, pendingCount, revenueAgg, lowStockProducts, recentOrders] =
-    await Promise.all([
-      prisma.order.count(),
-      prisma.order.count({ where: { status: "pending" } }),
-      prisma.order.aggregate({
-        _sum: { totalCents: true },
-        where: { status: { not: "cancelled" } },
-      }),
-      prisma.product.findMany({
-        where: { stock: { lt: LOW_STOCK_THRESHOLD } },
-        orderBy: { stock: "asc" },
-      }),
-      prisma.order.findMany({
-        orderBy: { createdAt: "desc" },
-        take: 5,
-      }),
-    ]);
+  let orderCount, pendingCount, revenueAgg, lowStockProducts, recentOrders;
+  try {
+    [orderCount, pendingCount, revenueAgg, lowStockProducts, recentOrders] =
+      await Promise.all([
+        prisma.order.count(),
+        prisma.order.count({ where: { status: "pending" } }),
+        prisma.order.aggregate({
+          _sum: { totalCents: true },
+          where: { status: { not: "cancelled" } },
+        }),
+        prisma.product.findMany({
+          where: { stock: { lt: LOW_STOCK_THRESHOLD } },
+          orderBy: { stock: "asc" },
+        }),
+        prisma.order.findMany({
+          orderBy: { createdAt: "desc" },
+          take: 5,
+        }),
+      ]);
+  } catch (error) {
+    console.error("AdminDashboardPage: database unavailable", error);
+    return <DbUnavailableNotice />;
+  }
 
   const stats = [
     { label: "Total orders", value: orderCount },
