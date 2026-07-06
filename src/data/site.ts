@@ -1,6 +1,6 @@
 export const nav = [
   { label: "Collections", href: "/shop" },
-  { label: "Philosophy", href: "/our-story" },
+  { label: "Founder", href: "/our-story" },
   { label: "Purity", href: "/purity" },
 ];
 
