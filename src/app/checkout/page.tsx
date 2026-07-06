@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCart } from "@/lib/cart-context";
 import { getCommerceForSlugs, type Commerce } from "@/lib/actions/products";
@@ -245,6 +246,18 @@ export default function CheckoutPage() {
             >
               {submitting ? "Placing Order…" : "Place Order (Cash on Delivery)"}
             </button>
+
+            <p className="text-center text-xs text-charcoal/50">
+              By placing your order, you agree to our{" "}
+              <Link href="/terms" className="underline hover:text-moon-indigo">
+                Terms &amp; Conditions
+              </Link>{" "}
+              and{" "}
+              <Link href="/privacy-policy" className="underline hover:text-moon-indigo">
+                Privacy Policy
+              </Link>
+              .
+            </p>
           </form>
         </div>
 

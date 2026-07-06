@@ -60,10 +60,19 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <span className="cursor-default">Shipping &amp; Returns</span>
+              <Link href="/terms#shipping-returns" className="hover:text-moon-indigo">
+                Shipping &amp; Returns
+              </Link>
             </li>
             <li>
-              <span className="cursor-default">Privacy</span>
+              <Link href="/terms" className="hover:text-moon-indigo">
+                Terms &amp; Conditions
+              </Link>
+            </li>
+            <li>
+              <Link href="/privacy-policy" className="hover:text-moon-indigo">
+                Privacy Policy
+              </Link>
             </li>
           </ul>
         </div>
