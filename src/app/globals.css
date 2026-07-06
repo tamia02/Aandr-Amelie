@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+:root {
+  /* Lumina & Umbra — remapped onto the existing sun/moon token names so
+     every component built against them re-themes without a rename pass. */
+
+  /* Sun tones (warm / secondary) */
+  --sun-terracotta: #954917;
+  --sun-terracotta-dark: #753100;
+  --sun-gold: #fd9b62;
+  --sun-blush: #ffdbca;
+
+  /* Moon tones (cool / primary) */
+  --moon-indigo: #242941;
+  --moon-indigo-dark: #1a1e30;
+  --moon-sage: #3a3f58;
+  --moon-lavender: #a6abc8;
+
+  /* Neutrals */
+  --cream: #fdf9f3;
+  --cream-deep: #f7f3ed;
+  --charcoal: #1c1c18;
+  --outline: #77767e;
+  --outline-variant: #c7c5ce;
+
+  --background: var(--cream);
+  --foreground: var(--charcoal);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-sun-terracotta: var(--sun-terracotta);
+  --color-sun-terracotta-dark: var(--sun-terracotta-dark);
+  --color-sun-gold: var(--sun-gold);
+  --color-sun-blush: var(--sun-blush);
+
+  --color-moon-indigo: var(--moon-indigo);
+  --color-moon-indigo-dark: var(--moon-indigo-dark);
+  --color-moon-sage: var(--moon-sage);
+  --color-moon-lavender: var(--moon-lavender);
+
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-charcoal: var(--charcoal);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+
+  --font-serif: var(--font-caslon);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle film-grain texture, layered over warm washes for a hand-made, non-flat feel */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-visible {
+  animation: reveal-up 650ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
