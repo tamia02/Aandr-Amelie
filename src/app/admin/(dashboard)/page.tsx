@@ -10,23 +10,23 @@ const LOW_STOCK_THRESHOLD = 10;
 export default async function AdminDashboardPage() {
   let orderCount, pendingCount, revenueAgg, lowStockProducts, recentOrders;
   try {
-    [orderCount, pendingCount, revenueAgg, lowStockProducts, recentOrders] =
-      await Promise.all([
-        prisma.order.count(),
-        prisma.order.count({ where: { status: "pending" } }),
-        prisma.order.aggregate({
-          _sum: { totalCents: true },
-          where: { status: { not: "cancelled" } },
-        }),
-        prisma.product.findMany({
-          where: { stock: { lt: LOW_STOCK_THRESHOLD } },
-          orderBy: { stock: "asc" },
-        }),
-        prisma.order.findMany({
-          orderBy: { createdAt: "desc" },
-          take: 5,
-        }),
-      ]);
+    // Run sequentially rather than Promise.all — Supabase's free-tier pooler
+    // caps concurrent connections low enough that 5 parallel queries can get
+    // reset. This is an internal dashboard; the extra latency is negligible.
+    orderCount = await prisma.order.count();
+    pendingCount = await prisma.order.count({ where: { status: "pending" } });
+    revenueAgg = await prisma.order.aggregate({
+      _sum: { totalCents: true },
+      where: { status: { not: "cancelled" } },
+    });
+    lowStockProducts = await prisma.product.findMany({
+      where: { stock: { lt: LOW_STOCK_THRESHOLD } },
+      orderBy: { stock: "asc" },
+    });
+    recentOrders = await prisma.order.findMany({
+      orderBy: { createdAt: "desc" },
+      take: 5,
+    });
   } catch (error) {
     console.error("AdminDashboardPage: database unavailable", error);
     return <DbUnavailableNotice />;
