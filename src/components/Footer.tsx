@@ -60,6 +60,11 @@ export default function Footer() {
               </a>
             </li>
             <li>
+              <Link href="/faq" className="hover:text-moon-indigo">
+                FAQ
+              </Link>
+            </li>
+            <li>
               <Link href="/terms#shipping-returns" className="hover:text-moon-indigo">
                 Shipping &amp; Returns
               </Link>

@@ -41,10 +41,19 @@ export default function TermsPage() {
         <ul className="list-disc space-y-2 pl-6">
           <li>Shipping is ₹50 flat, and free on orders of ₹499 or more.</li>
           <li>
+            Orders are processed on business days (Monday–Saturday,
+            excluding public holidays). Orders placed on a Sunday or
+            holiday are processed the next business day.
+          </li>
+          <li>
             Estimated delivery is 3–5 days from order confirmation,
             depending on your location. This is an estimate, not a
             guarantee — delays can occur due to courier or logistics
             issues outside our control.
+          </li>
+          <li>
+            We currently deliver within India only. Enter your pincode at
+            checkout to confirm delivery to your area.
           </li>
         </ul>
       </LegalSection>

@@ -4,6 +4,7 @@ import MediaVisual from "./MediaVisual";
 import Reveal from "./Reveal";
 import Button from "./Button";
 import AddToCart from "./AddToCart";
+import ProductReviews from "./ProductReviews";
 
 const SKIN_ICONS = [
   <path key="sun" d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" />,
@@ -223,6 +224,8 @@ export default function ProductPage({
           </div>
         </div>
       </section>
+
+      <ProductReviews productName={product.name} />
 
       {/* CTA */}
       <section className="mx-auto max-w-[1440px] px-5 py-24 sm:px-10 lg:px-16">
