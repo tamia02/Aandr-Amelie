@@ -153,7 +153,7 @@ async function ProductGrid() {
             href="/shop"
             className="border-b border-charcoal/40 pb-2 text-xs font-semibold tracking-widest text-charcoal uppercase hover:border-moon-indigo hover:text-moon-indigo"
           >
-            View All Collections
+            View All Products
           </Link>
         </div>
 
