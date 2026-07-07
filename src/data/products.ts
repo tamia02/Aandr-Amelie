@@ -254,62 +254,85 @@ export const products: Product[] = [
     hook: "Clear, calm, balanced — naturally.",
     placeholder: "sun",
     description:
-      "The Ultimate Skin Revitalizing Blend — a fusion of Mandarin, Rose, Rosemary, Basil, and Turmeric hydrosols with nourishing jojoba oil. Tones and tightens, controls excess oil, mattifies the complexion, and helps prevent breakouts, while soothing and hydrating to reduce redness.",
+      "Discover the transformative power of our Ultimate Skin Revitalizing Blend, a luxurious fusion of Mandarin, Rose, Rosemary, Basil, Turmeric Arks, and nourishing jojoba oil. Achieve a clear, balanced complexion with this Anti-Acne Revitalizing Formula, designed specifically for oily skin. It tones and tightens while controlling excess oil, mattifying the complexion, and helping to prevent acne. It soothes and hydrates, reducing redness and improving moisture balance. Enriched with jojoba oil, it regulates sebum production and enhances skin repair without clogging pores. Additionally, it serves as a soothing after-shave treatment, calming irritation and reducing redness post-shave for a shine-free, radiant complexion.",
     afterShaveBenefit:
-      "Soothes and calms post-shave, reducing irritation and redness while providing deep hydration.",
+      "Soothes and calms the skin post-shave, reducing irritation and redness while providing deep hydration.",
     bestFor: [
       {
         title: "Oily Skin",
-        description: "Controls excess oil and sebum, balances and mattifies",
+        description: "Controls excess oil and sebum production, balancing and mattifying the complexion.",
       },
       {
         title: "Acne-Prone Skin",
-        description:
-          "Reduces acne marks, soothes irritation, helps prevent breakouts",
+        description: "Reduces acne marks, soothes irritation, and helps prevent breakouts.",
       },
       {
         title: "Sensitive Skin",
-        description:
-          "Calms redness and inflammation while maintaining hydration",
+        description: "Calms redness and inflammation while maintaining hydration.",
       },
       {
         title: "Normal Skin",
-        description: "Enhances moisture balance and overall skin health",
+        description: "Enhances moisture balance and supports overall skin health.",
       },
     ],
     benefitSections: [
+      {
+        heading: "Product Benefits",
+        items: [
+          {
+            title: "Hydrates and Soothes",
+            description: "Rose Ark and jojoba oil deliver deep hydration while soothing inflammation and irritation. Rose Ark calms redness and balances moisture, whereas jojoba oil mimics the skin’s natural oils to prevent dryness and enhance suppleness.",
+          },
+          {
+            title: "Balances and Clarifies",
+            description: "Mandarin and Basil Arks work together to regulate oil production and reduce excess sebum, helping to prevent acne and maintain a fresh, balanced complexion. Mandarin's Vitamin C brightens the skin, while Basil purifies and revitalizes.",
+          },
+          {
+            title: "Enhances Skin Texture",
+            description: "Rosemary and Turmeric Arks improve skin texture by promoting a clearer, more even complexion. Rosemary boosts circulation and refines pores, while Turmeric’s anti-inflammatory properties reduce redness and support overall skin health.",
+          },
+          {
+            title: "Nourishes and Protects",
+            description: "Jojoba oil provides essential fatty acids and Vitamin E, which help to repair the skin barrier, protect against environmental damage, and support natural healing processes. It also assists in calming irritated skin and reducing blemishes.",
+          },
+          {
+            title: "After-Shave Benefits",
+            description: "Soothes and reduces irritation caused by shaving, balances skin tone, and prevents razor burn. It also helps to tighten pores and calm any redness or inflammation.",
+          },
+        ],
+      },
       {
         heading: "Key Ingredients",
         items: [
           {
             title: "Mandarin Hydrosol",
             description:
-              "Balances oily skin, reduces acne marks, revitalizes with Vitamin C; regulates sebum with Citric Acid",
+              "Balances oily skin, reduces acne marks, and revitalizes the complexion with its Vitamin C content. It also regulates sebum production with Citric Acid.",
           },
           {
             title: "Rose Hydrosol",
             description:
-              "Soothes inflammation, hydrates, maintains moisture balance; rich in Vitamin A & C",
+              "Soothes inflammation, hydrates, and maintains moisture balance. Rich in Vitamin A and C, it supports skin repair and reduces redness.",
           },
           {
             title: "Rosemary Hydrosol",
             description:
-              "Enhances circulation, tones, natural astringent; Rosmarinic Acid refines pores",
+              "Enhances circulation, tones the skin, and acts as a natural astringent. Contains Rosmarinic Acid to refine pores and boost overall skin health.",
           },
           {
             title: "Basil Hydrosol",
             description:
-              "Purifies and balances, reduces blemishes; Vitamin K and Magnesium",
+              "Purifies and balances the skin, reduces blemishes, and maintains a clear complexion. It provides essential nutrients like Vitamin K and Magnesium.",
           },
           {
             title: "Turmeric Hydrosol",
             description:
-              "Calms inflammation, reduces redness, evens tone; antioxidant-rich Curcumin",
+              "Calms inflammation, reduces redness, and helps even out skin tone with its antioxidant-rich profile, including Curcumin.",
           },
           {
             title: "Jojoba Oil",
             description:
-              "Deep moisture, regulates oil production, supports repair; Vitamin E and B",
+              "Moisturizes deeply, regulates oil production, and supports skin repair with its high Vitamin E and B content. It also provides antioxidant protection.",
           },
         ],
       },
@@ -317,22 +340,22 @@ export const products: Product[] = [
     howToUse: [
       {
         label: "As a Toner",
-        text: "After cleansing, apply with a cotton pad or mist directly onto skin to balance and prep.",
+        text: "After cleansing, apply the blend to your face using a cotton pad or mist it directly onto your skin. This helps to balance and prep your skin for further treatment. The blend of Mandarin, Rose, and Rosemary Arks helps regulate oil production and refresh your complexion.",
       },
       {
-        label: "For Hydration & Soothing",
-        text: "Mist throughout the day, especially in dry environments or after sun exposure.",
+        label: "For Hydration and Soothing",
+        text: "Use as a facial mist throughout the day to refresh and hydrate your skin, especially in dry environments or after sun exposure. Few drops into your skin in the morning and evening enhance moisture and support the skin’s natural repair processes.",
       },
       {
-        label: "Soothing Treatment",
-        text: "Apply directly to irritated or inflamed areas; leave a few minutes before rinsing if needed.",
+        label: "For a Soothing Treatment",
+        text: "Apply directly to irritated or inflamed areas to calm and reduce redness. Leave it on for a few minutes before rinsing if needed. The healing benefits of Jojoba Oil and Turmeric Ark work together to reduce redness, even out skin tone, and improve texture.",
       },
       {
         label: "As an After-Shave",
-        text: "Apply to freshly shaved skin to soothe, balance tone, and tighten pores.",
+        text: "Apply to freshly shaved skin to soothe irritation, balance skin tone, and tighten pores. The Rose and Turmeric hydrosols help reduce redness and irritation, while Jojoba Oil hydrates and supports skin repair. Healing properties of Turmeric works antiseptic on cuts.",
       },
     ],
-    care: CARE_INSTRUCTIONS,
+    care: "To experience the full benefits apply it regularly. Store the 100ml mist dispensing bottle at a cool place, with a maximum temperature of 25°C. Always close the lid tightly immediately after use. Ensure it remains free from contamination. As it contains no preservatives, regular use and proper storage are essential to ensure maximum benefits.",
     seoTitle: "Acne Shield — Clarifying Mandarin & Basil Hydrosol Toner | Aandré Amelie",
     seoDescription: "Clear breakouts naturally. A clarifying facial toner blending Mandarin, Rose, Basil, Turmeric hydrosols, and jojoba oil. Non-comedogenic.",
     concernSlugs: ["oily-acne"],
