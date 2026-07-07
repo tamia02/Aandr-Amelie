@@ -7,9 +7,13 @@ export default function Footer() {
     <footer className="w-full border-t border-outline-variant/30 bg-cream-deep py-24">
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 px-5 sm:px-10 md:grid-cols-12 lg:px-16">
         <div className="md:col-span-4">
-          <span className="mb-6 block font-serif text-xl tracking-tighter text-moon-indigo uppercase">
-            Aandré Amelie
-          </span>
+          <div className="mb-6 block">
+            <img
+              src="/images/logo.png"
+              alt="Aandré Amelie"
+              className="h-9 w-auto object-contain"
+            />
+          </div>
           <p className="mb-8 max-w-xs text-sm text-charcoal/70">
             Elevating daily skincare into a sacred ritual of self-discovery
             and balance.

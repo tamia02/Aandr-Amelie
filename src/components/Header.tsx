@@ -22,9 +22,13 @@ export default function Header() {
       <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-5 sm:px-10 lg:px-16">
         <Link
           href="/"
-          className="font-serif text-xl tracking-tighter text-moon-indigo uppercase hover:opacity-85 transition-opacity"
+          className="hover:opacity-85 transition-opacity block py-1"
         >
-          Aandré Amelie
+          <img
+            src="/images/logo.png"
+            alt="Aandré Amelie"
+            className="h-9 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Navigation */}
