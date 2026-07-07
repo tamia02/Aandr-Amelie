@@ -5,10 +5,10 @@
      every component built against them re-themes without a rename pass. */
 
   /* Sun tones (warm / secondary) */
-  --sun-terracotta: #954917;
-  --sun-terracotta-dark: #753100;
-  --sun-gold: #fd9b62;
-  --sun-blush: #ffdbca;
+  --sun-terracotta: #B06917;
+  --sun-terracotta-dark: #850001;
+  --sun-gold: #EBCE37;
+  --sun-blush: #FFF142;
 
   /* Moon tones (cool / primary) */
   --moon-indigo: #242941;
