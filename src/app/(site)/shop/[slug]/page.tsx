@@ -19,8 +19,11 @@ export async function generateMetadata({
   const product = getProduct(slug);
   if (!product) return {};
   return {
-    title: product.name,
-    description: `${product.tagline}. ${product.description}`,
+    title: product.seoTitle,
+    description: product.seoDescription,
+    alternates: {
+      canonical: `https://aandreamelie.com/shop/${product.slug}`,
+    },
   };
 }
 

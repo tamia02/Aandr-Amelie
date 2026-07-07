@@ -55,9 +55,9 @@ export default function Footer() {
           </h5>
           <ul className="space-y-4 text-sm text-charcoal/70">
             <li>
-              <a href="mailto:hello@aandreamelie.com" className="hover:text-moon-indigo">
+              <Link href="/contact" className="hover:text-moon-indigo">
                 Contact
-              </a>
+              </Link>
             </li>
             <li>
               <Link href="/faq" className="hover:text-moon-indigo">

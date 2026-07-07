@@ -1,3 +1,5 @@
+"use client";
+
 import type { Product } from "@/data/products";
 import type { Commerce } from "@/lib/actions/products";
 import MediaVisual from "./MediaVisual";
@@ -5,6 +7,10 @@ import Reveal from "./Reveal";
 import Button from "./Button";
 import AddToCart from "./AddToCart";
 import ProductReviews from "./ProductReviews";
+import Breadcrumbs from "./Breadcrumbs";
+import Link from "next/link";
+import { journalArticles } from "@/data/journal";
+import { formatINR } from "@/lib/money";
 
 const SKIN_ICONS = [
   <path key="sun" d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" />,
@@ -22,10 +28,58 @@ export default function ProductPage({
   const composition = product.benefitSections[0];
   const restSections = product.benefitSections.slice(1);
 
+  // Filter journal articles linked to this product
+  const relatedArticles = journalArticles.filter(
+    (art) => art.relatedProductSlug === product.slug
+  );
+
+  // Setup JSON-LD Product Schema
+  const priceDecimal = commerce ? (commerce.priceCents / 100).toFixed(2) : "1850.00";
+  const inStock = commerce ? commerce.stock > 0 : true;
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.name,
+    "image": product.image ? [`https://aandreamelie.com${product.image}`] : [],
+    "description": product.description,
+    "sku": product.slug,
+    "mpn": product.slug,
+    "brand": {
+      "@type": "Brand",
+      "name": "Aandré Amelie"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://aandreamelie.com/shop/${product.slug}`,
+      "priceCurrency": "INR",
+      "price": priceDecimal,
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "priceValidUntil": "2027-12-31"
+    }
+  };
+
   return (
     <div>
+      {/* Product JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+
+      {/* Breadcrumbs */}
+      <div className="mx-auto max-w-[1440px] px-5 pt-32 pb-2 sm:px-10 lg:px-16">
+        <Breadcrumbs
+          items={[
+            { label: "Shop", href: "/shop" },
+            { label: product.name },
+          ]}
+        />
+      </div>
+
       {/* Hero */}
-      <section className="mx-auto grid max-w-[1440px] grid-cols-1 gap-x-6 gap-y-14 px-5 pt-32 pb-24 sm:px-10 md:grid-cols-12 lg:px-16">
+      <section className="mx-auto grid max-w-[1440px] grid-cols-1 gap-x-6 gap-y-14 px-5 pt-4 pb-24 sm:px-10 md:grid-cols-12 lg:px-16">
         <Reveal className="md:col-span-7">
           <MediaVisual
             image={product.image}
@@ -42,7 +96,7 @@ export default function ProductPage({
           <span className="mb-4 text-xs font-semibold tracking-[0.25em] text-sun-terracotta uppercase">
             {product.tagline}
           </span>
-          <h1 className="mb-6 font-serif text-5xl leading-[1.05] sm:text-6xl">
+          <h1 className="mb-6 font-serif text-5xl leading-[1.05] sm:text-6xl text-charcoal">
             {product.name}
           </h1>
           <p className="max-w-md text-base leading-relaxed text-charcoal/70 sm:text-lg">
@@ -84,7 +138,7 @@ export default function ProductPage({
                   >
                     {SKIN_ICONS[i % SKIN_ICONS.length]}
                   </svg>
-                  <h3 className="mb-4 font-serif text-2xl">{item.title}</h3>
+                  <h3 className="mb-4 font-serif text-2xl text-charcoal">{item.title}</h3>
                   <p className="text-sm leading-relaxed text-charcoal/70">
                     {item.description}
                   </p>
@@ -126,14 +180,14 @@ export default function ProductPage({
             <div className="absolute -top-4 -left-4 bg-sun-blush px-4 py-1 text-[10px] font-semibold tracking-widest text-sun-terracotta-dark uppercase">
               Master Apothecary Note
             </div>
-            <h3 className="mb-8 font-serif text-3xl">{composition.heading}</h3>
+            <h3 className="mb-8 font-serif text-3xl text-charcoal">{composition.heading}</h3>
             {composition.intro && (
               <p className="max-w-2xl text-base leading-relaxed text-charcoal/75">
                 {composition.intro}
               </p>
             )}
             {composition.items && (
-              <ul className="space-y-4 font-serif text-lg text-charcoal/80 italic">
+              <ul className="space-y-4 font-serif text-lg text-charcoal/80 italic mt-6">
                 {composition.items.map((item) => (
                   <li
                     key={item.title}
@@ -154,14 +208,14 @@ export default function ProductPage({
       {restSections.map((section) => (
         <section key={section.heading} className="mx-auto max-w-[1440px] px-5 pb-24 sm:px-10 lg:px-16">
           <Reveal>
-            <h2 className="mb-14 font-serif text-4xl">{section.heading}</h2>
+            <h2 className="mb-14 font-serif text-4xl text-charcoal">{section.heading}</h2>
           </Reveal>
           {section.items && (
             <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
               {section.items.map((item, i) => (
                 <Reveal key={item.title} delay={i * 80}>
                   <div className="border-l-2 border-moon-sage pl-5">
-                    <h3 className="mb-2 font-serif text-lg">{item.title}</h3>
+                    <h3 className="mb-2 font-serif text-lg text-charcoal">{item.title}</h3>
                     <p className="text-sm leading-relaxed text-charcoal/70">
                       {item.description}
                     </p>
@@ -173,44 +227,53 @@ export default function ProductPage({
         </section>
       ))}
 
-      {/* How to Use */}
+      {/* How to Use (Accordion-based for reduced scroll fatigue and structured SEO parsing) */}
       <section className="bg-cream-deep py-24">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-10 lg:px-16">
-          <div className="mb-16 flex flex-col items-end justify-between gap-6 md:flex-row">
-            <Reveal>
-              <span className="mb-4 block text-xs font-semibold tracking-[0.3em] text-sun-terracotta uppercase">
-                The Ritual
-              </span>
-              <h2 className="font-serif text-4xl">Invocation of Radiance</h2>
-            </Reveal>
-            <Reveal delay={100} className="max-w-xs md:text-right">
-              <p className="font-serif text-base text-charcoal/60 italic">
-                Consistency is the secret to cellular transformation. Perform
-                this ritual morning and night.
-              </p>
-            </Reveal>
-          </div>
-          <div className="grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-            {product.howToUse.map((step, i) => (
-              <Reveal key={step.label} delay={i * 70}>
-                <span className="block font-serif text-6xl text-outline/25">
-                  {String(i + 1).padStart(2, "0")}
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <Reveal>
+                <span className="mb-4 block text-xs font-semibold tracking-[0.3em] text-sun-terracotta uppercase">
+                  The Ritual
                 </span>
-                <h4 className="mt-2 mb-4 text-sm font-semibold tracking-wide uppercase">
-                  {step.label}
-                </h4>
-                <p className="text-sm leading-relaxed text-charcoal/70">{step.text}</p>
+                <h2 className="font-serif text-4xl text-charcoal mb-6">Invocation of Radiance</h2>
+                <p className="font-serif text-base text-charcoal/60 italic leading-relaxed">
+                  Consistency is the secret to cellular transformation. Perform this ritual with mindful presence.
+                </p>
               </Reveal>
-            ))}
+            </div>
+            
+            <div className="lg:col-span-8 space-y-4">
+              {product.howToUse.map((step, i) => (
+                <Reveal key={step.label} delay={i * 60}>
+                  <details className="group border-b border-outline-variant/30 pb-4 outline-none">
+                    <summary className="flex cursor-pointer list-none items-center justify-between font-serif text-lg sm:text-xl text-charcoal outline-none py-2 select-none hover:text-sun-terracotta transition-colors">
+                      <span className="flex items-center gap-4">
+                        <span className="font-sans text-xs font-semibold tracking-wider text-outline/40">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <span>{step.label}</span>
+                      </span>
+                      <span className="text-xl text-outline/50 transition-transform duration-300 group-open:rotate-45">
+                        +
+                      </span>
+                    </summary>
+                    <div className="pl-9 pr-6 mt-3 text-sm leading-relaxed text-charcoal/70">
+                      <p>{step.text}</p>
+                    </div>
+                  </details>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Care */}
-      <section className="mx-auto max-w-[1440px] border-b border-outline-variant/30 px-5 py-16 sm:px-10 lg:px-16">
-        <div className="flex flex-col gap-10 md:flex-row">
+      {/* Care & Preservation */}
+      <section className="mx-auto max-w-[1440px] px-5 py-16 sm:px-10 lg:px-16">
+        <div className="flex flex-col gap-10 md:flex-row border-b border-outline-variant/30 pb-16">
           <div className="md:w-1/3">
-            <h3 className="mb-6 text-xs font-semibold tracking-widest uppercase">
+            <h3 className="mb-6 text-xs font-semibold tracking-widest uppercase text-moon-indigo">
               Care &amp; Preservation
             </h3>
             <p className="text-sm leading-relaxed text-charcoal/70">{product.care}</p>
@@ -225,15 +288,91 @@ export default function ProductPage({
         </div>
       </section>
 
+      {/* Apothecary FAQs (Long-tail Search Intent Optimization) */}
+      <section className="bg-cream py-20 border-b border-outline-variant/30">
+        <div className="mx-auto max-w-4xl px-5">
+          <div className="text-center mb-12">
+            <span className="text-xs font-semibold tracking-[0.25em] text-sun-terracotta uppercase block mb-3">
+              Apothecary FAQ
+            </span>
+            <h2 className="font-serif text-3xl text-charcoal">Common Inquiries</h2>
+          </div>
+          <div className="space-y-2">
+            {product.faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group border-b border-outline-variant/20 py-5 outline-none"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-serif text-lg text-charcoal select-none hover:text-sun-terracotta transition-colors">
+                  <span>{faq.question}</span>
+                  <span className="text-xl text-outline/50 transition-transform duration-300 group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <div className="mt-3 text-sm leading-relaxed text-charcoal/70">
+                  <p>{faq.answer}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Journal Articles (Internal Linking) */}
+      {relatedArticles.length > 0 && (
+        <section className="mx-auto max-w-[1440px] px-5 py-24 sm:px-10 lg:px-16">
+          <div className="mb-12">
+            <span className="text-xs font-semibold tracking-[0.25em] text-outline uppercase block mb-3">
+              The Journal
+            </span>
+            <h2 className="font-serif text-3xl text-charcoal">Botanical Insights &amp; Guides</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {relatedArticles.map((article) => (
+              <div
+                key={article.slug}
+                className="border border-outline-variant/25 bg-cream-deep/40 p-8 hover:border-sun-terracotta transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-[10px] font-bold tracking-widest text-sun-terracotta uppercase block mb-3">
+                    {article.category}
+                  </span>
+                  <h3 className="font-serif text-xl text-charcoal mb-4 hover:text-moon-indigo">
+                    <Link href={`/journal/${article.slug}`}>{article.title}</Link>
+                  </h3>
+                  <p className="text-sm text-charcoal/70 leading-relaxed mb-6">
+                    {article.excerpt}
+                  </p>
+                </div>
+                <Link
+                  href={`/journal/${article.slug}`}
+                  className="text-xs font-semibold tracking-wider text-charcoal hover:text-moon-indigo uppercase inline-flex items-center gap-2 mt-auto"
+                >
+                  Read Article <span>→</span>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Reviews */}
       <ProductReviews productName={product.name} />
 
       {/* CTA */}
       <section className="mx-auto max-w-[1440px] px-5 py-24 sm:px-10 lg:px-16">
         <Reveal className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="max-w-md font-serif text-3xl leading-tight">
+          <h2 className="max-w-md font-serif text-3xl leading-tight text-charcoal">
             Continue exploring the full ritual.
           </h2>
-          <Button href="/shop">Back to Shop</Button>
+          <div className="flex gap-4">
+            <Button href="/shop" variant="ghost">
+              Back to Shop
+            </Button>
+            <Button href="/concern">
+              Shop by Concern
+            </Button>
+          </div>
         </Reveal>
       </section>
     </div>

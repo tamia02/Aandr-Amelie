@@ -14,6 +14,11 @@ export interface UseStep {
   text: string;
 }
 
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 export interface Product {
   slug: string;
   name: string;
@@ -31,6 +36,12 @@ export interface Product {
   benefitSections: BenefitSection[];
   howToUse: UseStep[];
   care: string;
+  // SEO & UX Extensions
+  seoTitle: string;
+  seoDescription: string;
+  faqs: FAQItem[];
+  concernSlugs: string[];
+  ingredientsList: string[];
 }
 
 export const CARE_INSTRUCTIONS =
@@ -118,6 +129,28 @@ export const products: Product[] = [
       },
     ],
     care: CARE_INSTRUCTIONS,
+    seoTitle: "Royal Rose Elixir — Edible Rosewater Toner & Mist | Aandré Amelie",
+    seoDescription: "Sip and spray pure organic rosewater. Rejuvenates skin, aids digestion, eases reflux, and calms eyes. Zero preservatives. Shop now.",
+    concernSlugs: ["sensitive-dry", "oily-acne"],
+    ingredientsList: ["Rose"],
+    faqs: [
+      {
+        question: "Can I drink Royal Rose Elixir?",
+        answer: "Yes, Royal Rose Elixir is edible-grade. You can drink 1–2 tablespoons in the morning on an empty stomach, or add it to warm water, teas, desserts (like kheer and gulab jamun), or smoothies.",
+      },
+      {
+        question: "How is this rosewater different from standard cosmetic ones?",
+        answer: "Standard cosmetic rosewaters often contain synthetic preservatives, alcohols, or artificial chemical fragrances. Ours is pure steam-distilled organic rose hydrosol with zero additives, making it perfectly safe for both topical use and consumption.",
+      },
+      {
+        question: "Can I use it on dry and sensitive skin?",
+        answer: "Absolutely. Rose hydrosol is natural, gentle, and highly anti-inflammatory, making it excellent for hydrating dry skin and soothing sensitive or irritated skin.",
+      },
+      {
+        question: "Can it be used as eye drops?",
+        answer: "Yes, it is traditionally used to soothe tired, dry, or puffy eyes by applying 1–2 drops directly, offering cooling relief.",
+      },
+    ],
   },
   {
     slug: "glow-quinch-elixir",
@@ -193,6 +226,24 @@ export const products: Product[] = [
       },
     ],
     care: CARE_INSTRUCTIONS,
+    seoTitle: "Glow Quinch Elixir — Soothing Lavender Mist & Sleep Drink | Aandré Amelie",
+    seoDescription: "Premium edible lavender water for skin and sleep. Calms anxiety, eases razor burn, and improves sleep. Organic, preservative-free.",
+    concernSlugs: ["sensitive-dry", "sleep-stress"],
+    ingredientsList: ["Lavender"],
+    faqs: [
+      {
+        question: "How does lavender water help with sleep?",
+        answer: "Lavender contains natural compounds that ease anxiety and promote deep relaxation. Misting your face and pillow before sleep, or drinking a teaspoon in warm water, helps calm the nervous system for restful sleep.",
+      },
+      {
+        question: "Can Glow Quinch Elixir be used as an aftershave?",
+        answer: "Yes, it serves as a wonderful natural, alcohol-free alternative to aftershaves. It cools razor burn, reduces redness, and has mild antiseptic qualities that prevent post-shave bumps.",
+      },
+      {
+        question: "Is it safe to consume?",
+        answer: "Yes, it is edible-grade. You can add 1–2 teaspoons (8–10 drops) to warm water to make a calming lavender tea or use it to flavor specialty beverages.",
+      },
+    ],
   },
   {
     slug: "acne-shield",
@@ -282,6 +333,28 @@ export const products: Product[] = [
       },
     ],
     care: CARE_INSTRUCTIONS,
+    seoTitle: "Acne Shield — Clarifying Mandarin & Basil Hydrosol Toner | Aandré Amelie",
+    seoDescription: "Clear breakouts naturally. A clarifying facial toner blending Mandarin, Rose, Basil, Turmeric hydrosols, and jojoba oil. Non-comedogenic.",
+    concernSlugs: ["oily-acne"],
+    ingredientsList: ["Mandarin", "Rose", "Rosemary", "Basil", "Turmeric", "Jojoba Oil"],
+    faqs: [
+      {
+        question: "Why does Acne Shield contain jojoba oil if it is for oily skin?",
+        answer: "Jojoba oil is molecularly very close to your skin's natural sebum. When applied, it provides lightweight moisture that signals your skin to stop overproducing oil, helping to balance your complexion without clogging pores.",
+      },
+      {
+        question: "How often should I use Acne Shield?",
+        answer: "We recommend using it twice daily—morning and evening—after cleansing. It can also be misted throughout the day to mattify and soothe irritated skin.",
+      },
+      {
+        question: "Is this product edible?",
+        answer: "No. Unlike our single-source elixirs, Acne Shield contains a botanical blend and nourishing jojoba oil formulated strictly for topical skin and aftershave application. It is not for consumption.",
+      },
+      {
+        question: "Will it help with razor burn?",
+        answer: "Yes, the cooling properties of Mandarin and Basil, combined with the anti-inflammatory power of Turmeric and moisturizing Jojoba, make it a highly effective natural aftershave that combats redness and irritation.",
+      },
+    ],
   },
   {
     slug: "vital-grow-scalp",
@@ -364,6 +437,28 @@ export const products: Product[] = [
       },
     ],
     care: CARE_INSTRUCTIONS,
+    seoTitle: "Vital Grow Scalp — Hair Growth Rosemary & Curry Leaf Tonic | Aandré Amelie",
+    seoDescription: "Strengthen hair from root to tip. Rosemary water, curry leaf hydrosol, and tea tree scalp tonic. Reduces dandruff and stimulates growth.",
+    concernSlugs: ["hair-scalp"],
+    ingredientsList: ["Rosemary", "Lemongrass", "Curry Leaf", "Basil", "Tea Tree", "Jojoba Oil"],
+    faqs: [
+      {
+        question: "How does rosemary water help hair growth?",
+        answer: "Rosemary hydrosol contains rosmarinic acid, which increases blood circulation to the hair follicles, improving cellular nutrition and strengthening hair from root to tip.",
+      },
+      {
+        question: "Does it make the hair greasy?",
+        answer: "No. The base is steam-distilled water-based hydrosols. The inclusion of jojoba oil is light and balanced, absorbing quickly to nourish the scalp without leaving a heavy or greasy residue.",
+      },
+      {
+        question: "How should I apply it?",
+        answer: "Mist directly onto a clean, damp scalp after washing. Massage gently with your fingertips. Let it air-dry; do not rinse it out.",
+      },
+      {
+        question: "Can I use it for dandruff and itchy scalp?",
+        answer: "Yes, the addition of Tea Tree, Lemongrass, and Basil hydrosols provides natural antimicrobial and purifying benefits, helping to reduce dandruff flakes and relieve itchy skin.",
+      },
+    ],
   },
 ];
 
