@@ -15,7 +15,7 @@ export const concernsSubnav = [
 ];
 
 export const socials = [
-  { label: "Instagram", href: "https://instagram.com" },
-  { label: "Facebook", href: "https://facebook.com" },
-  { label: "Pinterest", href: "https://pinterest.com" },
+  { label: "Instagram", href: "https://www.instagram.com/aandre_amelie?igsh=NjBtMm9xYzc2aTcw" },
+  { label: "Facebook", href: "https://www.facebook.com/share/1CvhTePFWn/" },
+  { label: "Linktree", href: "https://linktr.ee/aandreamelie?utm_source=qr_code" },
 ];

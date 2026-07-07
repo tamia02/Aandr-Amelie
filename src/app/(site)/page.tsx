@@ -38,7 +38,7 @@ export default function Home() {
       <section className="relative flex h-screen w-full items-center overflow-hidden">
         <video
           className="absolute inset-0 h-full w-full object-cover"
-          src={featured.heroVideo}
+          src="/videos/aandre.mp4"
           poster={featured.heroPoster}
           autoPlay
           muted
