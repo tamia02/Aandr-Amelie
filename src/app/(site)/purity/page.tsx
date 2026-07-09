@@ -50,7 +50,7 @@ export default async function PurityPage() {
             </h1>
             <p className="mb-10 max-w-md text-base leading-relaxed text-charcoal/70 sm:text-lg">
               We traverse the globe not for the many, but for the rare. Our
-              ingredients are harvested by moonlight and distilled with
+              ingredients are harvested by moonlight, infused with pure Ganga Jal, and distilled with
               reverence for the ancient rhythms of nature.
             </p>
             <Button href="/shop">Explore Our Botanicals</Button>
@@ -105,12 +105,12 @@ export default async function PurityPage() {
                 />
               </div>
               <span className="text-xs font-semibold tracking-widest text-sun-terracotta uppercase">
-                Region: Kazanlak Valley
+                Region: The Himalayas
               </span>
-              <h3 className="mt-2 mb-4 font-serif text-2xl">The Bulgarian Damask</h3>
+              <h3 className="mt-2 mb-4 font-serif text-2xl">Herbs from the Himalayas</h3>
               <p className="max-w-lg text-sm text-charcoal/70">
-                Distilled from 30 petals for a single drop of elixir, our
-                rose oil is the heart of the Royal Rose collection.
+                Distilled from the finest petals and roots for a single drop of elixir, our
+                botanicals are the heart of the Royal Rose collection.
               </p>
             </Reveal>
 
@@ -240,7 +240,7 @@ export default async function PurityPage() {
                 </div>
                 <div className="border border-outline-variant/20 bg-cream-deep p-4 text-center">
                   <span className="mb-1 block text-[10px] uppercase">Origin</span>
-                  <span className="font-serif text-lg">Kazanlak</span>
+                  <span className="font-serif text-lg">Himalayas</span>
                 </div>
               </div>
               <Button href={`/shop/${featured.slug}`} className="w-full justify-center">

@@ -48,6 +48,7 @@ export default function MediaVisual({
           src={image}
           alt={label ?? ""}
           fill
+          quality={90}
           priority={priority}
           sizes="(min-width: 1024px) 40vw, 90vw"
           className="object-cover"

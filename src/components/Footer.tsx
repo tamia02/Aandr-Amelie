@@ -97,6 +97,15 @@ export default function Footer() {
           <NewsletterForm />
         </div>
 
+        <div className="md:col-span-12 mt-4 flex flex-wrap justify-center gap-6 sm:gap-12">
+          {["100% Organic", "Cruelty-Free", "Vegan", "Zero Synthetics"].map((cert) => (
+            <div key={cert} className="flex items-center gap-2 text-xs font-bold tracking-widest text-moon-indigo uppercase">
+              <span className="h-1.5 w-1.5 rounded-full bg-sun-terracotta" />
+              {cert}
+            </div>
+          ))}
+        </div>
+
         <div className="mt-8 flex flex-col gap-4 border-t border-outline-variant/30 pt-8 text-xs tracking-[0.1em] text-charcoal/50 uppercase sm:flex-row sm:items-center sm:justify-between md:col-span-12">
           <p>© {new Date().getFullYear()} Aandré Amelie Apothecary. All rights reserved.</p>
           <p>All Shades, All Souls.</p>

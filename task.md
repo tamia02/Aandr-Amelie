@@ -1,0 +1,14 @@
+- `[x] Define extended fields in products.ts`
+- `[x] Create concerns data in concerns.ts`
+- `[x] Create journal data in journal.ts`
+- `[x] Update site links in site.ts`
+- `[x] Update header navigation in Header.tsx to support Concern pages`
+- `[x] Create Breadcrumbs.tsx component`
+- `[x] Modify ProductPage.tsx with accordions for How to Use and FAQs, and inject JSON-LD Product schema`
+- `[x] Create concern dynamic route concern/[slug]/page.tsx`
+- `[x] Create journal index journal/page.tsx`
+- `[x] Create journal details journal/[slug]/page.tsx`
+- `[x] Create contact page contact/page.tsx`
+- `[x] Create sitemap.ts`
+- `[x] Create robots.ts`
+- `[x] Run build to verify types and functionality`
