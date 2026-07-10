@@ -40,7 +40,6 @@ export default function ProductReviews({ productName }: { productName: string })
                   loop
                   playsInline
                   controls
-                  poster="/images/stitch/lab-distillation.jpg"
                 />
               </div>
               <div className="flex items-center justify-between">
