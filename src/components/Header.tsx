@@ -91,23 +91,26 @@ export default function Header() {
 
         <div className="flex items-center gap-6">
           <div className="hidden md:flex items-center gap-4">
-            <div className="relative flex items-center">
+            <form action="/search" className="relative flex items-center">
               <input
                 type="text"
+                name="q"
                 placeholder="Search..."
                 className="w-40 border-b border-outline-variant/30 bg-transparent py-1 pr-6 text-xs text-charcoal outline-none transition-all focus:w-48 focus:border-moon-indigo placeholder:text-charcoal/40"
               />
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                className="absolute right-0 h-3.5 w-3.5 text-charcoal/60"
-              >
-                <circle cx="11" cy="11" r="8" />
-                <path d="m21 21-4.3-4.3" />
-              </svg>
-            </div>
+              <button type="submit" className="absolute right-0 text-charcoal/60 hover:text-moon-indigo transition-colors cursor-pointer outline-none">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="h-3.5 w-3.5"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+              </button>
+            </form>
             <CartIndicator />
           </div>
 
@@ -161,23 +164,26 @@ export default function Header() {
                 );
               })}
               <div className="border-t border-outline-variant/20 mt-2 pt-2 pb-2 px-5">
-                <div className="relative flex items-center">
+                <form action="/search" className="relative flex items-center">
                   <input
                     type="text"
+                    name="q"
                     placeholder="Search..."
                     className="w-full border-b border-outline-variant/30 bg-transparent py-1.5 pr-6 text-xs text-charcoal outline-none focus:border-moon-indigo placeholder:text-charcoal/40"
                   />
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    className="absolute right-0 h-3.5 w-3.5 text-charcoal/60"
-                  >
-                    <circle cx="11" cy="11" r="8" />
-                    <path d="m21 21-4.3-4.3" />
-                  </svg>
-                </div>
+                  <button type="submit" className="absolute right-0 text-charcoal/60 hover:text-moon-indigo transition-colors cursor-pointer outline-none">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className="h-3.5 w-3.5"
+                    >
+                      <circle cx="11" cy="11" r="8" />
+                      <path d="m21 21-4.3-4.3" />
+                    </svg>
+                  </button>
+                </form>
               </div>
               <div className="border-t border-outline-variant/20 pt-2">
                 <Link

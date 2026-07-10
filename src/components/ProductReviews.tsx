@@ -26,12 +26,16 @@ export default function ProductReviews({ productName }: { productName: string })
       <Reveal className="mx-auto mt-20 max-w-6xl">
         <h3 className="mb-10 text-center text-xs font-semibold tracking-widest uppercase text-sun-terracotta">Video Testimonials</h3>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {[1, 2, 3].map((item) => (
-            <div key={item} className="flex flex-col gap-4">
+          {[
+            "/videos/aandre testi1.mp4",
+            "/videos/aadre testi 2.MP4",
+            "/videos/aandre testi 3.MP4"
+          ].map((src, index) => (
+            <div key={index} className="flex flex-col gap-4">
               <div className="relative aspect-[9/16] w-full overflow-hidden bg-outline-variant/20 rounded-md">
                 <video
                   className="h-full w-full object-cover"
-                  src="/aandre.mp4"
+                  src={src}
                   muted
                   loop
                   playsInline
