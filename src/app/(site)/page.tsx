@@ -8,6 +8,7 @@ import PullQuote from "@/components/PullQuote";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 import NewsletterForm from "@/components/NewsletterForm";
+import VideoTestimonials from "@/components/VideoTestimonials";
 
 const VALUES = [
   {
@@ -109,6 +110,23 @@ export default function Home() {
               <p className="text-sm leading-relaxed text-charcoal/70">{v.text}</p>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      {/* Customer Reviews Accordion */}
+      <section className="bg-cream-deep px-5 py-24 sm:px-10 lg:px-16">
+        <div className="mx-auto max-w-[1440px]">
+          <details className="group outline-none">
+            <summary className="flex cursor-pointer list-none items-center justify-between border-b border-outline-variant/30 pb-4 font-serif text-2xl text-charcoal outline-none transition-colors hover:text-sun-terracotta select-none sm:text-4xl">
+              <span>What Our Customers Say</span>
+              <span className="text-3xl text-outline/50 transition-transform duration-300 group-open:rotate-45">
+                +
+              </span>
+            </summary>
+            <div className="mt-4 pb-10">
+              <VideoTestimonials />
+            </div>
+          </details>
         </div>
       </section>
 
