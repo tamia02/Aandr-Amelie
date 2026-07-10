@@ -4,11 +4,28 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { nav, concernsSubnav } from "@/data/site";
 import CartIndicator from "./CartIndicator";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Header() {
   const pathname = usePathname();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setIsMobileOpen(false);
+      }
+    };
+
+    if (isMobileOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMobileOpen]);
 
   const isActive = (href: string) => {
     if (href === "/") {
@@ -114,90 +131,91 @@ export default function Header() {
             <CartIndicator />
           </div>
 
-          {/* Mobile Navigation details tag trigger */}
-          <details 
-            className="relative md:hidden"
-            open={isMobileOpen}
-            onToggle={(e) => setIsMobileOpen((e.target as HTMLDetailsElement).open)}
-          >
-            <summary className="cursor-pointer list-none text-xs font-semibold tracking-[0.15em] text-charcoal/70 uppercase outline-none select-none">
+          {/* Mobile Navigation */}
+          <div className="relative md:hidden" ref={mobileMenuRef}>
+            <button 
+              className="cursor-pointer text-xs font-semibold tracking-[0.15em] text-charcoal/70 uppercase outline-none select-none"
+              onClick={() => setIsMobileOpen(!isMobileOpen)}
+            >
               {isMobileOpen ? "Close" : "Menu"}
-            </summary>
-            <div className="absolute right-0 z-50 mt-4 w-60 border border-outline-variant/30 bg-cream py-3 shadow-lg rounded-sm animate-fade-in">
-              {nav.map((item) => {
-                const isConcern = item.href === "/concern";
-                const active = isActive(item.href);
+            </button>
+            {isMobileOpen && (
+              <div className="absolute right-0 z-50 mt-4 w-60 border border-outline-variant/30 bg-cream py-3 shadow-lg rounded-sm animate-fade-in">
+                <div className="border-b border-outline-variant/20 mb-2 pb-3 px-5">
+                  <form action="/search" className="relative flex items-center">
+                    <input
+                      type="text"
+                      name="q"
+                      placeholder="Search..."
+                      className="w-full border-b border-outline-variant/30 bg-transparent py-1.5 pr-6 text-xs text-charcoal outline-none focus:border-moon-indigo placeholder:text-charcoal/40"
+                    />
+                    <button type="submit" className="absolute right-0 text-charcoal/60 hover:text-moon-indigo transition-colors cursor-pointer outline-none">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        className="h-3.5 w-3.5"
+                      >
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                      </svg>
+                    </button>
+                  </form>
+                </div>
+                {nav.map((item) => {
+                  const isConcern = item.href === "/concern";
+                  const active = isActive(item.href);
 
-                if (isConcern) {
+                  if (isConcern) {
+                    return (
+                      <div key={item.href} className="border-b border-outline-variant/20 pb-2 mb-2">
+                        <span className="block px-5 py-2 text-[10px] font-bold tracking-[0.15em] text-charcoal/40 uppercase">
+                          {item.label}
+                        </span>
+                        {concernsSubnav.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            onClick={() => setIsMobileOpen(false)}
+                            className={`block px-7 py-2.5 text-xs font-semibold tracking-[0.1em] text-charcoal/70 uppercase hover:text-moon-indigo ${
+                              pathname === sub.href ? "text-moon-indigo bg-cream-deep/50" : ""
+                            }`}
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    );
+                  }
+
                   return (
-                    <div key={item.href} className="border-b border-outline-variant/20 pb-2 mb-2">
-                      <span className="block px-5 py-2 text-[10px] font-bold tracking-[0.15em] text-charcoal/40 uppercase">
-                        {item.label}
-                      </span>
-                      {concernsSubnav.map((sub) => (
-                        <Link
-                          key={sub.href}
-                          href={sub.href}
-                          onClick={() => setIsMobileOpen(false)}
-                          className={`block px-7 py-2.5 text-xs font-semibold tracking-[0.1em] text-charcoal/70 uppercase hover:text-moon-indigo ${
-                            pathname === sub.href ? "text-moon-indigo bg-cream-deep/50" : ""
-                          }`}
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
-                    </div>
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsMobileOpen(false)}
+                      className={`block px-5 py-2.5 text-xs font-semibold tracking-[0.1em] text-charcoal/70 uppercase hover:text-moon-indigo ${
+                        active ? "text-moon-indigo bg-cream-deep/50" : ""
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
                   );
-                }
-
-                return (
+                })}
+                <div className="border-t border-outline-variant/20 mt-2 pt-2">
                   <Link
-                    key={item.href}
-                    href={item.href}
+                    href="/cart"
                     onClick={() => setIsMobileOpen(false)}
                     className={`block px-5 py-2.5 text-xs font-semibold tracking-[0.1em] text-charcoal/70 uppercase hover:text-moon-indigo ${
-                      active ? "text-moon-indigo bg-cream-deep/50" : ""
+                      pathname === "/cart" ? "text-moon-indigo bg-cream-deep/50" : ""
                     }`}
                   >
-                    {item.label}
+                    Cart
                   </Link>
-                );
-              })}
-              <div className="border-t border-outline-variant/20 mt-2 pt-2 pb-2 px-5">
-                <form action="/search" className="relative flex items-center">
-                  <input
-                    type="text"
-                    name="q"
-                    placeholder="Search..."
-                    className="w-full border-b border-outline-variant/30 bg-transparent py-1.5 pr-6 text-xs text-charcoal outline-none focus:border-moon-indigo placeholder:text-charcoal/40"
-                  />
-                  <button type="submit" className="absolute right-0 text-charcoal/60 hover:text-moon-indigo transition-colors cursor-pointer outline-none">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      className="h-3.5 w-3.5"
-                    >
-                      <circle cx="11" cy="11" r="8" />
-                      <path d="m21 21-4.3-4.3" />
-                    </svg>
-                  </button>
-                </form>
+                </div>
               </div>
-              <div className="border-t border-outline-variant/20 pt-2">
-                <Link
-                  href="/cart"
-                  onClick={() => setIsMobileOpen(false)}
-                  className={`block px-5 py-2.5 text-xs font-semibold tracking-[0.1em] text-charcoal/70 uppercase hover:text-moon-indigo ${
-                    pathname === "/cart" ? "text-moon-indigo bg-cream-deep/50" : ""
-                  }`}
-                >
-                  Cart
-                </Link>
-              </div>
-            </div>
-          </details>
+            )}
+          </div>
         </div>
       </div>
     </header>

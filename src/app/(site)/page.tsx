@@ -175,18 +175,18 @@ async function ProductGrid() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 items-start gap-x-6 gap-y-16 md:grid-cols-12">
-          <Reveal className="md:col-span-5">
-            <ProductCard product={p1} price={priceOf(p1.slug)} />
+        <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal>
+            <ProductCard product={p1} price={priceOf(p1.slug)} ratio="aspect-[4/5]" />
           </Reveal>
-          <Reveal delay={90} className="md:col-span-6 md:col-start-7 md:-translate-y-10">
-            <ProductCard product={p2} price={priceOf(p2.slug)} ratio="aspect-square" />
+          <Reveal delay={90}>
+            <ProductCard product={p2} price={priceOf(p2.slug)} ratio="aspect-[4/5]" />
           </Reveal>
-          <Reveal delay={180} className="md:col-span-4 md:col-start-2">
-            <ProductCard product={p3} price={priceOf(p3.slug)} ratio="aspect-[3/4]" />
+          <Reveal delay={180}>
+            <ProductCard product={p3} price={priceOf(p3.slug)} ratio="aspect-[4/5]" />
           </Reveal>
-          <Reveal delay={270} className="md:col-span-5 md:col-start-8 md:translate-y-10">
-            <ProductCard product={p4} price={priceOf(p4.slug)} />
+          <Reveal delay={270}>
+            <ProductCard product={p4} price={priceOf(p4.slug)} ratio="aspect-[4/5]" />
           </Reveal>
         </div>
       </div>
