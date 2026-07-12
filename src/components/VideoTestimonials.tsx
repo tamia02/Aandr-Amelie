@@ -8,9 +8,9 @@ export default function VideoTestimonials() {
       </h3>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {[
-          "/videos/aandre-testi1.mp4",
-          "/videos/aandre-testi2.mp4",
-          "/videos/aandre-testi3.mp4",
+          "/videos/aandre-testi1.mp4?v=2",
+          "/videos/aandre-testi2.mp4?v=2",
+          "/videos/aandre-testi3.mp4?v=2",
         ].map((src, index) => (
           <div key={index} className="flex flex-col gap-4">
             <div className="relative aspect-[9/16] w-full overflow-hidden rounded-md bg-outline-variant/20">

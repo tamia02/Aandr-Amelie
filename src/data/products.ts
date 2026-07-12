@@ -56,7 +56,7 @@ export const products: Product[] = [
     hook: "A beauty ritual, sipped, sniffed, and worn.",
     placeholder: "dawn",
     image: "/images/royal-rose-elixir.jpg",
-    heroVideo: "/videos/royal-rose-elixir.mp4",
+    heroVideo: "/videos/royal-rose-elixir.mp4?v=2",
     heroPoster: "/images/royal-rose-elixir.jpg",
     description:
       "Delivers deep hydration and soothing relief, reducing discoloration and refining pores. Ideal for all skin types, this toner enhances skin texture, evens tone, and promotes a radiant, balanced complexion.",
