@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { MEDIA_FRAME } from "@/lib/frame";
 import GradientPlaceholder, { type PlaceholderVariant } from "./GradientPlaceholder";
@@ -23,10 +24,21 @@ export default function MediaVisual({
   priority?: boolean;
   className?: string;
 }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current && video) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch((e) => console.warn("MediaVisual autoplay failed:", e));
+    }
+  }, [video]);
+
   if (video) {
     return (
       <div className={`relative overflow-hidden ${ratio} ${MEDIA_FRAME} ${className}`}>
         <video
+          ref={videoRef}
           className="h-full w-full object-cover"
           style={{ objectPosition }}
           src={video}

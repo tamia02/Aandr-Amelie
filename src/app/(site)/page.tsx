@@ -9,6 +9,7 @@ import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 import NewsletterForm from "@/components/NewsletterForm";
 import VideoTestimonials from "@/components/VideoTestimonials";
+import HeroVideo from "@/components/HeroVideo";
 
 const VALUES = [
   {
@@ -37,14 +38,10 @@ export default function Home() {
     <div>
       {/* Video Hero */}
       <section className="relative flex h-screen w-full items-center overflow-hidden">
-        <video
-          className="absolute inset-0 h-full w-full object-cover"
-          src="/videos/aandre.mp4"
+        <HeroVideo
+          src={featured.heroVideo!}
           poster={featured.heroPoster}
-          autoPlay
-          muted
-          loop
-          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-charcoal/35" />
         <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-10 lg:px-16">
