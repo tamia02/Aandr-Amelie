@@ -34,7 +34,7 @@ export default function CheckoutPage() {
   const [pincodeStatus, setPincodeStatus] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState<"cod" | "razorpay">("razorpay");
+  const paymentMethod = "razorpay";
 
   useEffect(() => {
     if (items.length === 0) return;
@@ -76,52 +76,47 @@ export default function CheckoutPage() {
       return;
     }
 
-    if (paymentMethod === "razorpay") {
-      const options = {
-        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_TCvX9WW58UE9Uu",
-        amount: result.amount,
-        currency: "INR",
-        name: "Aandré Amelie",
-        description: "Apothecary Purchase",
-        order_id: result.razorpayOrderId,
-        handler: async function (response: any) {
-          const verify = await verifyRazorpayPayment(
-            result.orderId,
-            response.razorpay_payment_id,
-            response.razorpay_order_id,
-            response.razorpay_signature
-          );
+    const options = {
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_TCvX9WW58UE9Uu",
+      amount: result.amount,
+      currency: "INR",
+      name: "Aandré Amelie",
+      description: "Apothecary Purchase",
+      order_id: result.razorpayOrderId,
+      handler: async function (response: any) {
+        const verify = await verifyRazorpayPayment(
+          result.orderId,
+          response.razorpay_payment_id,
+          response.razorpay_order_id,
+          response.razorpay_signature
+        );
 
-          if (!verify.ok) {
-            setError(verify.error || "Payment verification failed.");
-            setSubmitting(false);
-            return;
-          }
+        if (!verify.ok) {
+          setError(verify.error || "Payment verification failed.");
+          setSubmitting(false);
+          return;
+        }
 
-          clear();
-          router.push(`/order-confirmation/${result.orderId}`);
+        clear();
+        router.push(`/order-confirmation/${result.orderId}`);
+      },
+      prefill: {
+        name: form.customerName,
+        email: form.email,
+        contact: form.phone,
+      },
+      theme: {
+        color: "#2C2D2B",
+      },
+      modal: {
+        ondismiss: function () {
+          setSubmitting(false);
         },
-        prefill: {
-          name: form.customerName,
-          email: form.email,
-          contact: form.phone,
-        },
-        theme: {
-          color: "#2C2D2B",
-        },
-        modal: {
-          ondismiss: function () {
-            setSubmitting(false);
-          },
-        },
-      };
+      },
+    };
 
-      const razorpay = new (window as any).Razorpay(options);
-      razorpay.open();
-    } else {
-      clear();
-      router.push(`/order-confirmation/${result.orderId}`);
-    }
+    const razorpay = new (window as any).Razorpay(options);
+    razorpay.open();
   };
 
   if (items.length === 0) {
@@ -277,34 +272,11 @@ export default function CheckoutPage() {
               </div>
             </div>
 
-            <div className="rounded-sm border border-outline/20 p-5 space-y-4">
-              <p className="text-xs font-medium tracking-[0.2em] text-sun-terracotta-dark uppercase mb-4">
+            <div className="rounded-sm border-l-2 border-sun-gold bg-sun-blush/20 px-5 py-4">
+              <p className="text-xs font-medium tracking-[0.2em] text-sun-terracotta-dark uppercase">
                 Payment Method
               </p>
-              
-              <label className="flex items-center gap-3 cursor-pointer">
-                <input
-                  type="radio"
-                  name="paymentMethod"
-                  value="razorpay"
-                  checked={paymentMethod === "razorpay"}
-                  onChange={() => setPaymentMethod("razorpay")}
-                  className="w-4 h-4 text-sun-terracotta-dark focus:ring-sun-terracotta-dark"
-                />
-                <span className="text-sm text-charcoal/80">Online Payment (Cards, UPI, NetBanking)</span>
-              </label>
-
-              <label className="flex items-center gap-3 cursor-pointer">
-                <input
-                  type="radio"
-                  name="paymentMethod"
-                  value="cod"
-                  checked={paymentMethod === "cod"}
-                  onChange={() => setPaymentMethod("cod")}
-                  className="w-4 h-4 text-sun-terracotta-dark focus:ring-sun-terracotta-dark"
-                />
-                <span className="text-sm text-charcoal/80">Cash on Delivery</span>
-              </label>
+              <p className="mt-1 text-sm text-charcoal/75">Online Payment (Cards, UPI, NetBanking)</p>
             </div>
 
             {error && <p className="text-sm text-red-700">{error}</p>}
@@ -314,7 +286,7 @@ export default function CheckoutPage() {
               disabled={submitting}
               className="w-full bg-moon-indigo px-7 py-4 text-xs font-semibold tracking-[0.2em] text-cream uppercase transition-opacity duration-300 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {submitting ? "Processing…" : `Place Order (${paymentMethod === 'razorpay' ? 'Pay Now' : 'Cash on Delivery'})`}
+              {submitting ? "Processing…" : "Place Order (Pay Now)"}
             </button>
 
             <p className="text-center text-xs text-charcoal/50">

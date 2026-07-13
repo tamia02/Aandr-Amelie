@@ -119,8 +119,8 @@ export async function placeOrder(
 
     if (data.paymentMethod === "razorpay") {
       const razorpay = new Razorpay({
-        key_id: process.env.RAZORPAY_KEY_ID!,
-        key_secret: process.env.RAZORPAY_KEY_SECRET!,
+        key_id: process.env.RAZORPAY_KEY_ID || "rzp_test_TCvX9WW58UE9Uu",
+        key_secret: process.env.RAZORPAY_KEY_SECRET || "V8QRwiBxD7goZUdPyvWgRI8T",
       });
 
       try {
@@ -187,7 +187,7 @@ export async function verifyRazorpayPayment(
   razorpaySignature: string
 ): Promise<{ ok: boolean; error?: string }> {
   const crypto = await import("crypto");
-  const secret = process.env.RAZORPAY_KEY_SECRET;
+  const secret = process.env.RAZORPAY_KEY_SECRET || "V8QRwiBxD7goZUdPyvWgRI8T";
 
   if (!secret) {
     return { ok: false, error: "Server configuration error" };
