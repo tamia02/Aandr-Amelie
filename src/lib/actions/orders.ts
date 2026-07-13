@@ -3,6 +3,7 @@
 import { cookies, headers } from "next/headers";
 import { z } from "zod";
 import { prisma } from "@/lib/db";
+import Razorpay from "razorpay";
 import { products as catalog } from "@/data/products";
 import { checkRateLimit } from "@/lib/rate-limit";
 
@@ -26,12 +27,13 @@ const checkoutSchema = z.object({
       }),
     )
     .min(1, "Your cart is empty"),
+  paymentMethod: z.enum(["cod", "razorpay"]).default("cod"),
 });
 
 export type CheckoutInput = z.infer<typeof checkoutSchema>;
 
 export type PlaceOrderResult =
-  | { ok: true; orderId: string }
+  | { ok: true; orderId: string; razorpayOrderId?: string; amount?: number }
   | { ok: false; error: string };
 
 export async function placeOrder(
@@ -93,6 +95,8 @@ export async function placeOrder(
           city: data.city,
           state: data.state,
           pincode: data.pincode,
+          paymentMethod: data.paymentMethod,
+          status: "pending",
           subtotalCents,
           shippingCents,
           totalCents,
@@ -100,15 +104,51 @@ export async function placeOrder(
         },
       });
 
-      for (const item of data.items) {
-        await tx.product.update({
-          where: { slug: item.slug },
-          data: { stock: { decrement: item.qty } },
-        });
+      // Only decrement stock immediately for COD
+      if (data.paymentMethod === "cod") {
+        for (const item of data.items) {
+          await tx.product.update({
+            where: { slug: item.slug },
+            data: { stock: { decrement: item.qty } },
+          });
+        }
       }
 
       return created;
     });
+
+    if (data.paymentMethod === "razorpay") {
+      const razorpay = new Razorpay({
+        key_id: process.env.RAZORPAY_KEY_ID!,
+        key_secret: process.env.RAZORPAY_KEY_SECRET!,
+      });
+
+      try {
+        const rzpOrder = await razorpay.orders.create({
+          amount: totalCents,
+          currency: "INR",
+          receipt: order.id,
+        });
+
+        // Update the order with the razorpay order id
+        await prisma.order.update({
+          where: { id: order.id },
+          data: { razorpayOrderId: rzpOrder.id },
+        });
+
+        return {
+          ok: true,
+          orderId: order.id,
+          razorpayOrderId: rzpOrder.id,
+          amount: totalCents,
+        };
+      } catch (err) {
+        console.error("Razorpay order creation failed:", err);
+        return { ok: false, error: "Failed to initialize payment gateway." };
+      }
+    }
+
+    // COD Flow: Set cookie for order confirmation page
 
     // Short-lived proof of "you just placed this order" — lets the
     // confirmation page show full contact/address details right after
@@ -138,4 +178,75 @@ export async function checkPincode(
   // Mock serviceability check — always available for now.
   // Swap for a real courier API (Shiprocket/Delhivery) when ready.
   return { available: true, message: "Delivery available. Estimated 3-5 days." };
+}
+
+export async function verifyRazorpayPayment(
+  orderId: string,
+  razorpayPaymentId: string,
+  razorpayOrderId: string,
+  razorpaySignature: string
+): Promise<{ ok: boolean; error?: string }> {
+  const crypto = await import("crypto");
+  const secret = process.env.RAZORPAY_KEY_SECRET;
+
+  if (!secret) {
+    return { ok: false, error: "Server configuration error" };
+  }
+
+  const generatedSignature = crypto
+    .createHmac("sha256", secret)
+    .update(`${razorpayOrderId}|${razorpayPaymentId}`)
+    .digest("hex");
+
+  if (generatedSignature !== razorpaySignature) {
+    return { ok: false, error: "Invalid payment signature" };
+  }
+
+  try {
+    const order = await prisma.order.findUnique({
+      where: { id: orderId },
+      include: { items: true },
+    });
+
+    if (!order) {
+      return { ok: false, error: "Order not found" };
+    }
+
+    if (order.status === "confirmed") {
+      return { ok: true }; // Already confirmed
+    }
+
+    await prisma.$transaction(async (tx) => {
+      await tx.order.update({
+        where: { id: orderId },
+        data: {
+          status: "confirmed",
+          razorpayPaymentId,
+          razorpaySignature,
+        },
+      });
+
+      // Decrement stock now that payment is confirmed
+      for (const item of order.items) {
+        await tx.product.update({
+          where: { slug: item.productSlug },
+          data: { stock: { decrement: item.qty } },
+        });
+      }
+    });
+
+    // Set short-lived proof for confirmation page
+    (await cookies()).set(`order_access_${order.id}`, "1", {
+      httpOnly: true,
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 15 * 60,
+      path: `/order-confirmation/${order.id}`,
+    });
+
+    return { ok: true };
+  } catch (error) {
+    console.error("verifyRazorpayPayment error", error);
+    return { ok: false, error: "Failed to verify payment." };
+  }
 }

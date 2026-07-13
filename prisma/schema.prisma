@@ -34,8 +34,13 @@ model Order {
   pincode       String
   subtotalCents Int
   shippingCents Int
-  totalCents    Int
-  items         OrderItem[]
+  totalCents        Int
+  items             OrderItem[]
+  
+  // Razorpay fields
+  razorpayOrderId   String?
+  razorpayPaymentId String?
+  razorpaySignature String?
 }
 
 model OrderItem {
