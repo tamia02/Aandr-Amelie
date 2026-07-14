@@ -19,7 +19,6 @@ export default function ProductCard({
         label={product.image ? undefined : product.name}
         objectPosition="50% 20%"
         ratio={ratio}
-        className="transition-transform duration-700 ease-out group-hover:scale-[1.03]"
       />
       <div className="mt-8 flex items-start justify-between gap-4">
         <div>

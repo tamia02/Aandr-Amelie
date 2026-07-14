@@ -97,7 +97,7 @@ export default function ProductGallery({
               quality={95}
               priority
               sizes="(min-width: 1024px) 40vw, 90vw"
-              className="object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-105"
+              className="object-cover"
               style={{ objectPosition: "50% 25%" }}
             />
           )}
