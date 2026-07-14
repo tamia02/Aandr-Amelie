@@ -8,20 +8,20 @@ export default function VideoTestimonials() {
       </h3>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {[
-          "/videos/aandre-testi1.mp4?v=2",
-          "/videos/aandre-testi2.mp4?v=2",
-          "/videos/aandre-testi3.mp4?v=2",
-        ].map((src, index) => (
+          "rKPwUw4IIFk",
+          "BxnUVh6rk_U",
+          "INgBmwNvqaU",
+        ].map((videoId, index) => (
           <div key={index} className="flex flex-col gap-4">
             <div className="relative aspect-[9/16] w-full overflow-hidden rounded-md bg-outline-variant/20">
-              <video
-                className="h-full w-full object-cover"
-                src={src}
-                muted
-                loop
-                playsInline
-                controls
-              />
+              <iframe
+                className="absolute top-0 left-0 h-full w-full object-cover"
+                src={`https://www.youtube.com/embed/${videoId}`}
+                title="YouTube video testimonial"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </div>
             <div className="flex items-center justify-between">
               <span className="font-serif text-sm text-charcoal/80">
