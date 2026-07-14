@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import MediaVisual from "./MediaVisual";
 import { MEDIA_FRAME } from "@/lib/frame";
@@ -22,14 +22,6 @@ export default function ProductGallery({
   label?: string;
 }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  // Trigger a subtle zoom-out animation when changing images
-  useEffect(() => {
-    setIsAnimating(true);
-    const timer = setTimeout(() => setIsAnimating(false), 300);
-    return () => clearTimeout(timer);
-  }, [selectedIndex]);
 
   // Create an array of all media items
   const allMedia: { type: "video" | "image"; src: string; poster?: string }[] = [];
@@ -87,11 +79,7 @@ export default function ProductGallery({
 
       {/* Main Display Area */}
       <div className={`relative flex-1 aspect-[4/5] overflow-hidden ${MEDIA_FRAME} group bg-cream-deep/30`}>
-        <div
-          className={`absolute inset-0 transition-transform duration-500 ease-out ${
-            isAnimating ? "scale-105 opacity-90" : "scale-100 opacity-100"
-          }`}
-        >
+        <div className="absolute inset-0">
           {selectedMedia.type === "video" ? (
             <MediaVisual
               video={selectedMedia.src}
