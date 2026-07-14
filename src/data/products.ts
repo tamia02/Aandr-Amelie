@@ -27,6 +27,7 @@ export interface Product {
   hook: string;
   placeholder: "sun" | "moon" | "dawn";
   image?: string;
+  images?: string[];
   heroVideo?: string;
   heroPoster?: string;
   description: string;
@@ -56,6 +57,7 @@ export const products: Product[] = [
     hook: "A beauty ritual, sipped, sniffed, and worn.",
     placeholder: "dawn",
     image: "/images/royal-rose-elixir.jpg",
+    images: ["/images/royal-rose-elixir.jpg", "/images/rose1.png", "/images/rose2.png"],
     heroVideo: "/videos/royal-rose-elixir.mp4?v=2",
     heroPoster: "/images/royal-rose-elixir.jpg",
     description:
@@ -157,6 +159,7 @@ export const products: Product[] = [
     name: "Glow Quinch Elixir",
     category: "Lunar Calm",
     image: "/images/glow-quinch-elixir.jpg",
+    images: ["/images/glow-quinch-elixir.jpg", "/images/lavender1.png"],
     tagline: "A Gentle Hug for Skin and Senses",
     hook: "A gentle hug for skin and senses.",
     placeholder: "moon",
@@ -250,6 +253,7 @@ export const products: Product[] = [
     name: "Acne Shield",
     category: "Solar Clarity",
     image: "/images/acne-shield.jpg",
+    images: ["/images/acne-shield.jpg", "/images/achne1.png", "/images/acne2.png"],
     tagline: "Clear, Calm, Balanced — Naturally",
     hook: "Clear, calm, balanced — naturally.",
     placeholder: "sun",
@@ -384,6 +388,7 @@ export const products: Product[] = [
     name: "Vital Grow Scalp",
     category: "Root Ritual",
     image: "/images/vital-grow-scalp.jpg",
+    images: ["/images/vital-grow-scalp.jpg", "/images/vital1.png"],
     tagline: "Strength and Shine, Rooted in Nature",
     hook: "Strength and shine, rooted in nature.",
     placeholder: "moon",
@@ -480,6 +485,74 @@ export const products: Product[] = [
       {
         question: "Can I use it for dandruff and itchy scalp?",
         answer: "Yes, the addition of Tea Tree, Lemongrass, and Basil hydrosols provides natural antimicrobial and purifying benefits, helping to reduce dandruff flakes and relieve itchy skin.",
+      },
+    ],
+  },
+  {
+    slug: "complete-collection-combo",
+    name: "Aandré Amelie Complete Collection",
+    category: "The Apothecary Bundle",
+    image: "/images/image.png",
+    images: [
+      "/images/image.png",
+      "/images/four1.png",
+      "/images/four2.png",
+      "/images/four3.png",
+      "/images/four4.png"
+    ],
+    tagline: "The Ultimate Holistic Beauty Ritual",
+    hook: "Experience the full spectrum of botanical wellness.",
+    placeholder: "dawn",
+    description:
+      "A complete set of our signature hydrosols and elixirs. Hydrate, balance, soothe, and revitalize from head to toe. This collection includes Royal Rose Elixir, Glow Quinch Elixir, Acne Shield, and Vital Grow Scalp, designed to work harmoniously for a comprehensive skincare and haircare ritual.",
+    bestFor: [
+      {
+        title: "Complete Wellness",
+        description: "Perfect for balancing skin, hair, and senses holistically.",
+      },
+    ],
+    benefitSections: [
+      {
+        heading: "Collection Highlights",
+        items: [
+          {
+            title: "Royal Rose Elixir",
+            description: "Hydrates, evens skin tone, and promotes radiant balance.",
+          },
+          {
+            title: "Glow Quinch Elixir",
+            description: "Soothes skin and senses, easing stress for better sleep.",
+          },
+          {
+            title: "Acne Shield",
+            description: "Clarifies oily skin, controls sebum, and prevents breakouts.",
+          },
+          {
+            title: "Vital Grow Scalp",
+            description: "Strengthens hair roots, purifies the scalp, and enhances shine.",
+          },
+        ],
+      },
+    ],
+    howToUse: [
+      {
+        label: "The Daily Ritual",
+        text: "Incorporate each product into your daily routine: Royal Rose as your morning toner and health drink, Acne Shield to clarify problem areas, Vital Grow for your post-shower scalp care, and Glow Quinch as your evening wind-down mist.",
+      },
+    ],
+    care: CARE_INSTRUCTIONS,
+    seoTitle: "Aandré Amelie Complete Collection — Organic Hydrosol Combo Set",
+    seoDescription: "The ultimate 4-piece holistic beauty bundle. Hydrate skin, clear acne, strengthen hair, and soothe your senses. Shop the complete collection.",
+    concernSlugs: ["sensitive-dry", "sleep-stress", "oily-acne", "hair-scalp"],
+    ingredientsList: ["Rose", "Lavender", "Mandarin", "Rosemary", "Basil", "Turmeric", "Lemongrass", "Curry Leaf", "Tea Tree", "Jojoba Oil"],
+    faqs: [
+      {
+        question: "Does this collection come in a gift box?",
+        answer: "Yes, the Complete Collection arrives beautifully packaged in our signature gift bag, making it a perfect present for yourself or a loved one.",
+      },
+      {
+        question: "How long will the products last?",
+        answer: "With daily use, the 100ml bottles typically last 4 to 6 weeks. Proper storage in a cool place ensures maximum freshness.",
       },
     ],
   },

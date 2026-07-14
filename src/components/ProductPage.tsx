@@ -2,7 +2,7 @@
 
 import type { Product } from "@/data/products";
 import type { Commerce } from "@/lib/actions/products";
-import MediaVisual from "./MediaVisual";
+import ProductGallery from "./ProductGallery";
 import Reveal from "./Reveal";
 import Button from "./Button";
 import AddToCart from "./AddToCart";
@@ -79,17 +79,15 @@ export default function ProductPage({
       </div>
 
       {/* Hero */}
-      <section className="mx-auto grid max-w-[1440px] grid-cols-1 gap-x-6 gap-y-14 px-5 pt-4 pb-24 sm:px-10 md:grid-cols-12 lg:px-16">
-        <Reveal className="md:col-span-7">
-          <MediaVisual
-            image={product.image}
+      <section className="mx-auto grid max-w-[1440px] grid-cols-1 gap-x-6 gap-y-14 px-5 pt-4 pb-24 sm:px-10 md:grid-cols-12 lg:px-16 items-start">
+        <Reveal className="md:col-span-7 md:sticky md:top-32">
+          <ProductGallery
+            images={product.images}
+            fallbackImage={product.image}
             video={product.heroVideo}
             poster={product.heroPoster}
             variant={product.placeholder}
-            ratio="aspect-[4/5]"
             label={product.name}
-            objectPosition="50% 25%"
-            priority
           />
         </Reveal>
         <Reveal delay={150} className="flex flex-col justify-center md:col-span-5">
