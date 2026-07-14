@@ -155,12 +155,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Customer Reviews Accordion */}
+      {/* Brand Video Accordion */}
       <section className="bg-cream-deep px-5 py-16 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-[1440px]">
           <details className="group outline-none">
             <summary className="flex cursor-pointer list-none items-center justify-between border-b border-outline-variant/30 pb-4 font-serif text-2xl text-charcoal outline-none transition-colors hover:text-sun-terracotta select-none sm:text-4xl">
-              <span>What Our Customers Say</span>
+              <span>Meet Aandré Amelie</span>
               <span className="text-3xl text-outline/50 transition-transform duration-300 group-open:rotate-45">
                 +
               </span>

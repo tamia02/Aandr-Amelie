@@ -60,7 +60,6 @@ export const products: Product[] = [
     images: [
       "/images/royal-rose-new-main.jpg",
       "/images/rose1.png",
-      "/images/rose2.png",
       "/images/rose3.png"
     ],
     heroVideo: "/videos/royal-rose-elixir.mp4?v=2",
