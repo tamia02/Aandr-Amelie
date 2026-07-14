@@ -20,16 +20,16 @@ export default function ProductCard({
         objectPosition="bottom"
         ratio={ratio}
       />
-      <div className="mt-8 flex items-start justify-between gap-4">
+      <div className="mt-4 sm:mt-8 flex flex-col sm:flex-row items-start justify-between gap-2 sm:gap-4">
         <div>
-          <span className="mb-2 block text-xs font-semibold tracking-[0.2em] text-sun-terracotta-dark uppercase">
+          <span className="mb-1 sm:mb-2 block text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-sun-terracotta-dark uppercase">
             {product.category}
           </span>
-          <h3 className="font-serif text-2xl text-charcoal">{product.name}</h3>
-          <p className="mt-1 text-sm text-charcoal/70">{product.hook}</p>
+          <h3 className="font-serif text-lg sm:text-2xl text-charcoal">{product.name}</h3>
+          <p className="hidden sm:block mt-1 text-sm text-charcoal/70">{product.hook}</p>
         </div>
         {price && (
-          <span className="mt-1 shrink-0 text-sm font-semibold text-charcoal">
+          <span className="mt-1 shrink-0 text-xs sm:text-sm font-semibold text-charcoal">
             {price}
           </span>
         )}

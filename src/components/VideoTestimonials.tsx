@@ -2,17 +2,17 @@ import Reveal from "./Reveal";
 
 export default function VideoTestimonials() {
   return (
-    <Reveal className="mx-auto mt-20 max-w-6xl">
-      <h3 className="mb-10 text-center text-xs font-semibold tracking-widest uppercase text-sun-terracotta">
+    <Reveal className="mx-auto mt-10 sm:mt-20 max-w-6xl">
+      <h3 className="mb-6 sm:mb-10 text-center text-xs font-semibold tracking-widest uppercase text-sun-terracotta">
         Video Testimonials
       </h3>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div className="flex w-full snap-x snap-mandatory overflow-x-auto pb-8 gap-6 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 no-scrollbar">
         {[
           "rKPwUw4IIFk",
           "BxnUVh6rk_U",
           "INgBmwNvqaU",
         ].map((videoId, index) => (
-          <div key={index} className="flex flex-col gap-4">
+          <div key={index} className="flex min-w-[75vw] snap-center flex-col gap-4 sm:min-w-[45vw] md:min-w-0">
             <div className="relative aspect-[9/16] w-full overflow-hidden rounded-md bg-outline-variant/20">
               <iframe
                 className="absolute top-0 left-0 h-full w-full object-cover"

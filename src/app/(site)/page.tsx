@@ -65,7 +65,7 @@ export default function Home() {
       </section>
 
       {/* Philosophy pull-quote strip */}
-      <section className="flex items-center justify-center overflow-hidden bg-cream px-5 py-24 sm:px-10 sm:py-32">
+      <section className="flex items-center justify-center overflow-hidden bg-cream px-5 py-16 sm:px-10 sm:py-32">
         <Reveal className="max-w-4xl text-center">
           <span className="mb-6 block text-xs font-semibold tracking-[0.3em] text-sun-terracotta uppercase">
             Our Ethos
@@ -89,7 +89,7 @@ export default function Home() {
       <ProductGrid />
 
       {/* Purity / values strip */}
-      <section className="border-y border-outline-variant/30 bg-cream px-5 py-24 sm:px-10 sm:py-32">
+      <section className="border-y border-outline-variant/30 bg-cream px-5 py-16 sm:px-10 sm:py-32">
         <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 text-center md:grid-cols-3 md:text-left">
           {VALUES.map((v, i) => (
             <Reveal key={v.title} delay={i * 90} className="space-y-4">
@@ -111,7 +111,7 @@ export default function Home() {
       </section>
 
       {/* Customer Reviews Accordion */}
-      <section className="bg-cream-deep px-5 py-24 sm:px-10 lg:px-16">
+      <section className="bg-cream-deep px-5 py-16 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-[1440px]">
           <details className="group outline-none">
             <summary className="flex cursor-pointer list-none items-center justify-between border-b border-outline-variant/30 pb-4 font-serif text-2xl text-charcoal outline-none transition-colors hover:text-sun-terracotta select-none sm:text-4xl">
@@ -128,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* Email signup band */}
-      <section className="relative overflow-hidden bg-moon-indigo py-24 text-cream">
+      <section className="relative overflow-hidden bg-moon-indigo py-16 sm:py-24 text-cream">
         <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-10 px-5 sm:px-10 md:flex-row lg:px-16">
           <Reveal className="md:max-w-xl">
             <h2 className="mb-4 font-serif text-4xl">Enter the inner circle.</h2>
@@ -154,9 +154,9 @@ async function ProductGrid() {
   const [p1, p2, p3, p4] = products;
 
   return (
-    <section className="bg-cream-deep px-5 py-24 sm:px-10 sm:py-32">
+    <section className="bg-cream-deep px-5 py-16 sm:px-10 sm:py-32">
       <div className="mx-auto max-w-[1440px]">
-        <div className="mb-20 flex flex-col items-end justify-between gap-6 sm:flex-row">
+        <div className="mb-12 sm:mb-20 flex flex-col items-end justify-between gap-6 sm:flex-row">
           <Reveal>
             <SectionHeader title="Curation for the Discerning." className="max-w-md" />
             <p className="mt-4 text-sm text-charcoal/70">
@@ -172,7 +172,7 @@ async function ProductGrid() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-16 lg:grid-cols-4">
           <Reveal>
             <ProductCard product={p1} price={priceOf(p1.slug)} ratio="aspect-[4/5]" />
           </Reveal>
