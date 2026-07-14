@@ -57,7 +57,12 @@ export const products: Product[] = [
     hook: "A beauty ritual, sipped, sniffed, and worn.",
     placeholder: "dawn",
     image: "/images/royal-rose-elixir.jpg",
-    images: ["/images/royal-rose-elixir.jpg", "/images/rose1.png", "/images/rose2.png"],
+    images: [
+      "/images/royal-rose-elixir.jpg",
+      "/images/rose1.png",
+      "/images/rose2.png",
+      "/images/rose3.png"
+    ],
     heroVideo: "/videos/royal-rose-elixir.mp4?v=2",
     heroPoster: "/images/royal-rose-elixir.jpg",
     description:
@@ -159,7 +164,11 @@ export const products: Product[] = [
     name: "Glow Quinch Elixir",
     category: "Lunar Calm",
     image: "/images/glow-quinch-elixir.jpg",
-    images: ["/images/glow-quinch-elixir.jpg", "/images/lavender1.png"],
+    images: [
+      "/images/glow-quinch-elixir.jpg",
+      "/images/lavender1.png",
+      "/images/lavender2.png"
+    ],
     tagline: "A Gentle Hug for Skin and Senses",
     hook: "A gentle hug for skin and senses.",
     placeholder: "moon",
@@ -253,7 +262,12 @@ export const products: Product[] = [
     name: "Acne Shield",
     category: "Solar Clarity",
     image: "/images/acne-shield.jpg",
-    images: ["/images/acne-shield.jpg", "/images/achne1.png", "/images/acne2.png"],
+    images: [
+      "/images/acne-shield.jpg",
+      "/images/achne1.png",
+      "/images/acne2.png",
+      "/images/acne3.png"
+    ],
     tagline: "Clear, Calm, Balanced — Naturally",
     hook: "Clear, calm, balanced — naturally.",
     placeholder: "sun",
