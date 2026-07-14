@@ -56,9 +56,9 @@ export const products: Product[] = [
     tagline: "Sip on Wellness, Sniff on Wellness, Shine from Within",
     hook: "A beauty ritual, sipped, sniffed, and worn.",
     placeholder: "dawn",
-    image: "/images/royal-rose-main.png",
+    image: "/images/royal-rose-new-main.jpg",
     images: [
-      "/images/royal-rose-main.png",
+      "/images/royal-rose-new-main.jpg",
       "/images/rose1.png",
       "/images/rose2.png",
       "/images/rose3.png"
