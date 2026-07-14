@@ -10,6 +10,7 @@ import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 import NewsletterForm from "@/components/NewsletterForm";
 import VideoTestimonials from "@/components/VideoTestimonials";
+import HeroVideo from "@/components/HeroVideo";
 
 const VALUES = [
   {
@@ -38,12 +39,9 @@ export default function Home() {
     <div>
       {/* Video Hero */}
       <section className="relative flex h-screen w-full items-center overflow-hidden">
-        <Image
-          src="/images/royal-rose-main.png"
-          alt="Royal Rose Elixir"
-          fill
-          priority
-          className="absolute inset-0 object-cover object-bottom"
+        <HeroVideo
+          src="/videos/aandre.mp4"
+          className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-charcoal/35" />
         <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-10 lg:px-16">
