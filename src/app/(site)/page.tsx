@@ -85,6 +85,51 @@ export default function Home() {
         </Reveal>
       </section>
 
+      {/* Trial Pack Section */}
+      <section className="bg-cream-deep px-5 py-16 sm:px-10 lg:px-16">
+        <div className="mx-auto max-w-[1440px]">
+          <div className="flex flex-col md:flex-row items-stretch overflow-hidden rounded-2xl bg-[#F8F5F2] border border-outline-variant/30">
+            {/* Left Content */}
+            <div className="flex flex-1 flex-col justify-center p-8 sm:p-10 lg:p-16">
+              <h2 className="mb-6 font-serif text-3xl leading-tight text-[#B8865A] sm:text-4xl lg:text-5xl">
+                The Symbolism Behind<br />Aandré Amelie
+              </h2>
+              <p className="mb-6 text-sm leading-relaxed text-charcoal/80">
+                The name Aandré Amelie is a symbol of balance and duality. It draws from
+                the story of two complementary forces—Aandré, embodying the warmth
+                and energy of the sun, and Amelie, reflecting the calm and mystery of the
+                moon. In our brand imagery,
+              </p>
+              <h3 className="mb-2 text-sm font-semibold text-charcoal">The Magic of Ganga Jal</h3>
+              <p className="mb-8 text-sm leading-relaxed text-charcoal/80">
+                Ganga Jal is a vital component of our formulation, infusing our toner with
+                purity and positivity. We believe in the transformative power of this sacred
+                water, which is used at every stage of production—enhancing our
+                connection to nature and promoting vibrant skin health.
+              </p>
+              <div>
+                <Button 
+                  href="/shop/complete-collection-combo" 
+                  className="rounded-md border-none bg-[#B8865A] px-8 py-3 font-semibold tracking-wide text-white transition-colors hover:bg-[#A67549]"
+                >
+                  Buy Trial Pack - ₹1,000
+                </Button>
+              </div>
+            </div>
+            
+            {/* Right Image */}
+            <div className="relative min-h-[300px] flex-1 bg-[#EBE4DC] sm:min-h-[400px] md:min-h-full">
+              <Image 
+                src="/images/image.png" 
+                alt="Aandré Amelie Complete Collection Trial Pack" 
+                fill 
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Asymmetric product grid */}
       <ProductGrid />
 
