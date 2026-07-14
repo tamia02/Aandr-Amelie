@@ -43,7 +43,7 @@ export default function Home() {
           alt="Royal Rose Elixir"
           fill
           priority
-          className="absolute inset-0 object-cover"
+          className="absolute inset-0 object-cover object-bottom"
         />
         <div className="absolute inset-0 bg-charcoal/35" />
         <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-10 lg:px-16">

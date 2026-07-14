@@ -17,7 +17,7 @@ export default function ProductCard({
         image={product.image}
         variant={product.placeholder}
         label={product.image ? undefined : product.name}
-        objectPosition="50% 20%"
+        objectPosition="bottom"
         ratio={ratio}
       />
       <div className="mt-8 flex items-start justify-between gap-4">

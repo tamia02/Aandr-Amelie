@@ -98,7 +98,7 @@ export default function ProductGallery({
               priority
               sizes="(min-width: 1024px) 40vw, 90vw"
               className="object-cover"
-              style={{ objectPosition: "50% 25%" }}
+              style={{ objectPosition: "bottom" }}
             />
           )}
         </div>
