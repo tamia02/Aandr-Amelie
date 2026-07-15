@@ -119,11 +119,11 @@ export default function Home() {
             
             {/* Right Image */}
             <div className="relative min-h-[300px] flex-1 bg-[#EBE4DC] sm:min-h-[400px] md:min-h-full">
-              <Image 
-                src="/images/image.png" 
-                alt="Aandré Amelie Complete Collection Trial Pack" 
-                fill 
-                className="object-cover"
+              <Image
+                src="/images/image.png"
+                alt="Aandré Amelie Complete Collection Trial Pack"
+                fill
+                className="object-contain"
               />
             </div>
           </div>

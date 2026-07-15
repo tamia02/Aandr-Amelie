@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import MediaVisual from "./MediaVisual";
 import { MEDIA_FRAME } from "@/lib/frame";
@@ -22,24 +22,6 @@ export default function ProductGallery({
   label?: string;
 }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [containFit, setContainFit] = useState(false);
-
-  const CONTAINER_ASPECT = 4 / 5;
-
-  function handleImageLoad(e: React.SyntheticEvent<HTMLImageElement>) {
-    const { naturalWidth, naturalHeight } = e.currentTarget;
-    if (!naturalWidth || !naturalHeight) return;
-    const imageAspect = naturalWidth / naturalHeight;
-    // Images far from the container's portrait ratio (e.g. wide landscape
-    // photos) get cropped/zoomed hard by object-cover — switch those to
-    // object-contain instead of cropping out most of the shot.
-    const deviation = Math.abs(imageAspect - CONTAINER_ASPECT) / CONTAINER_ASPECT;
-    setContainFit(deviation > 0.4);
-  }
-
-  useEffect(() => {
-    setContainFit(false);
-  }, [selectedIndex]);
 
   // Create an array of all media items
   const allMedia: { type: "video" | "image"; src: string; poster?: string }[] = [];
@@ -77,7 +59,7 @@ export default function ProductGallery({
                 <video
                   src={media.src}
                   poster={media.poster}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain bg-cream-deep/30"
                   muted
                   playsInline
                 />
@@ -86,7 +68,7 @@ export default function ProductGallery({
                   src={media.src}
                   alt={`${label} thumbnail ${i + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-contain bg-cream-deep/30"
                   sizes="96px"
                 />
               )}
@@ -116,9 +98,7 @@ export default function ProductGallery({
               quality={95}
               priority
               sizes="(min-width: 1024px) 40vw, 90vw"
-              className={containFit ? "object-contain" : "object-cover"}
-              style={containFit ? undefined : { objectPosition: "bottom" }}
-              onLoad={handleImageLoad}
+              className="object-contain"
             />
           )}
         </div>

@@ -15,6 +15,7 @@ export default function MediaVisual({
   objectPosition = "center",
   priority = false,
   className = "",
+  fit = "cover",
 }: {
   image?: string;
   video?: string;
@@ -25,6 +26,7 @@ export default function MediaVisual({
   objectPosition?: string;
   priority?: boolean;
   className?: string;
+  fit?: "cover" | "contain";
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -57,7 +59,7 @@ export default function MediaVisual({
 
   if (image) {
     return (
-      <div className={`relative overflow-hidden ${ratio} ${MEDIA_FRAME} ${className}`}>
+      <div className={`relative overflow-hidden ${ratio} ${MEDIA_FRAME} ${fit === "contain" ? "bg-cream-deep/30" : ""} ${className}`}>
         <Image
           src={image}
           alt={label ?? ""}
@@ -65,8 +67,8 @@ export default function MediaVisual({
           quality={90}
           priority={priority}
           sizes="(min-width: 1024px) 40vw, 90vw"
-          className="object-cover"
-          style={{ objectPosition }}
+          className={fit === "contain" ? "object-contain" : "object-cover"}
+          style={fit === "contain" ? undefined : { objectPosition }}
         />
       </div>
     );

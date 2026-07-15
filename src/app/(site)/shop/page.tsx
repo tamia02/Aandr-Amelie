@@ -51,8 +51,8 @@ export default async function ShopPage() {
               image={signature.image}
               variant={signature.placeholder}
               label={signature.name}
-              objectPosition="center"
               ratio="aspect-[4/5]"
+              fit="contain"
               priority
             />
           </div>
