@@ -87,7 +87,7 @@ export default async function ShopPage() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-12 sm:gap-x-6 sm:gap-y-16 lg:grid-cols-3">
           <Reveal>
             <ProductCard product={signature} price={priceOf(signature.slug)} ratio="aspect-square" />
           </Reveal>

@@ -64,26 +64,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Philosophy pull-quote strip */}
-      <section className="flex items-center justify-center overflow-hidden bg-cream px-5 py-16 sm:px-10 sm:py-32">
-        <Reveal className="max-w-4xl text-center">
-          <span className="mb-6 block text-xs font-semibold tracking-[0.3em] text-sun-terracotta uppercase">
-            Our Ethos
-          </span>
-          <PullQuote>
-            True radiance is not a finish, but a balance. Like the lunar
-            cycle and the solar path, your skin thrives in the equilibrium of
-            gentle restoration and potent vitality.
-          </PullQuote>
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <span className="h-px w-12 bg-outline-variant" />
-            <span className="text-xs tracking-widest text-outline uppercase">
-              The Alchemical Balance
-            </span>
-            <span className="h-px w-12 bg-outline-variant" />
-          </div>
-        </Reveal>
-      </section>
+      {/* Asymmetric product grid */}
+      <ProductGrid />
 
       {/* Trial Pack Section */}
       <section className="bg-cream-deep px-5 py-16 sm:px-10 lg:px-16">
@@ -130,8 +112,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Asymmetric product grid */}
-      <ProductGrid />
+      {/* Philosophy pull-quote strip */}
+      <section className="flex items-center justify-center overflow-hidden bg-cream px-5 py-16 sm:px-10 sm:py-32">
+        <Reveal className="max-w-4xl text-center">
+          <span className="mb-6 block text-xs font-semibold tracking-[0.3em] text-sun-terracotta uppercase">
+            Our Ethos
+          </span>
+          <PullQuote>
+            True radiance is not a finish, but a balance. Like the lunar
+            cycle and the solar path, your skin thrives in the equilibrium of
+            gentle restoration and potent vitality.
+          </PullQuote>
+          <div className="mt-8 flex items-center justify-center gap-4">
+            <span className="h-px w-12 bg-outline-variant" />
+            <span className="text-xs tracking-widest text-outline uppercase">
+              The Alchemical Balance
+            </span>
+            <span className="h-px w-12 bg-outline-variant" />
+          </div>
+        </Reveal>
+      </section>
 
       {/* Purity / values strip */}
       <section className="border-y border-outline-variant/30 bg-cream px-5 py-16 sm:px-10 sm:py-32">
