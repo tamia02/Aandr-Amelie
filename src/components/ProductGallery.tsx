@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import MediaVisual from "./MediaVisual";
 import { MEDIA_FRAME } from "@/lib/frame";
@@ -22,6 +22,24 @@ export default function ProductGallery({
   label?: string;
 }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [containFit, setContainFit] = useState(false);
+
+  const CONTAINER_ASPECT = 4 / 5;
+
+  function handleImageLoad(e: React.SyntheticEvent<HTMLImageElement>) {
+    const { naturalWidth, naturalHeight } = e.currentTarget;
+    if (!naturalWidth || !naturalHeight) return;
+    const imageAspect = naturalWidth / naturalHeight;
+    // Images far from the container's portrait ratio (e.g. wide landscape
+    // photos) get cropped/zoomed hard by object-cover — switch those to
+    // object-contain instead of cropping out most of the shot.
+    const deviation = Math.abs(imageAspect - CONTAINER_ASPECT) / CONTAINER_ASPECT;
+    setContainFit(deviation > 0.4);
+  }
+
+  useEffect(() => {
+    setContainFit(false);
+  }, [selectedIndex]);
 
   // Create an array of all media items
   const allMedia: { type: "video" | "image"; src: string; poster?: string }[] = [];
@@ -91,14 +109,16 @@ export default function ProductGallery({
             />
           ) : (
             <Image
+              key={selectedMedia.src}
               src={selectedMedia.src}
               alt={label ?? "Product Image"}
               fill
               quality={95}
               priority
               sizes="(min-width: 1024px) 40vw, 90vw"
-              className="object-cover"
-              style={{ objectPosition: "bottom" }}
+              className={containFit ? "object-contain" : "object-cover"}
+              style={containFit ? undefined : { objectPosition: "bottom" }}
+              onLoad={handleImageLoad}
             />
           )}
         </div>
