@@ -8,33 +8,9 @@ import SectionHeader from "@/components/SectionHeader";
 import PullQuote from "@/components/PullQuote";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
-import NewsletterForm from "@/components/NewsletterForm";
-import VideoTestimonials from "@/components/VideoTestimonials";
 import HeroVideo from "@/components/HeroVideo";
 
-const VALUES = [
-  {
-    title: "Ethical Sourcing",
-    text: "Every botanical is harvested with respect for the earth's natural cycles and the hands that gather them.",
-    icon: (
-      <path d="M12 3c-4 3-6 6-6 10a6 6 0 0 0 12 0c0-4-2-7-6-10Z M12 22v-9" />
-    ),
-  },
-  {
-    title: "Alchemical Purity",
-    text: "Zero synthetic fillers. Our formulas are stabilized by nature's own preservatives and concentrated for efficacy.",
-    icon: <path d="M9 2h6 M10 2v6l-5 10a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-10V2" />,
-  },
-  {
-    title: "Bespoke Rituals",
-    text: "Skincare is a dialogue. We craft personalized regimes that adapt to your internal and external environment.",
-    icon: <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20 M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" />,
-  },
-];
-
 export default function Home() {
-  const featured = getProduct("royal-rose-elixir")!;
-
   return (
     <div>
       {/* Video Hero */}
@@ -87,106 +63,6 @@ export default function Home() {
 
       {/* Asymmetric product grid */}
       <ProductGrid />
-
-      {/* Trial Pack Section */}
-      <section className="bg-cream-deep px-5 py-16 sm:px-10 lg:px-16">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="flex flex-col md:flex-row items-stretch overflow-hidden rounded-2xl bg-[#F8F5F2] border border-outline-variant/30">
-            {/* Left Content */}
-            <div className="flex flex-1 flex-col justify-center p-8 sm:p-10 lg:p-16">
-              <h2 className="mb-6 font-serif text-3xl leading-tight text-[#B8865A] sm:text-4xl lg:text-5xl">
-                The Symbolism Behind<br />Aandré Amelie
-              </h2>
-              <p className="mb-6 text-sm leading-relaxed text-charcoal/80">
-                The name Aandré Amelie is a symbol of balance and duality. It draws from
-                the story of two complementary forces—Aandré, embodying the warmth
-                and energy of the sun, and Amelie, reflecting the calm and mystery of the
-                moon. In our brand imagery,
-              </p>
-              <h3 className="mb-2 text-sm font-semibold text-charcoal">The Magic of Ganga Jal</h3>
-              <p className="mb-8 text-sm leading-relaxed text-charcoal/80">
-                Ganga Jal is a vital component of our formulation, infusing our toner with
-                purity and positivity. We believe in the transformative power of this sacred
-                water, which is used at every stage of production—enhancing our
-                connection to nature and promoting vibrant skin health.
-              </p>
-              <div>
-                <Button 
-                  href="/shop/complete-collection-combo" 
-                  className="rounded-md border-none bg-[#B8865A] px-8 py-3 font-semibold tracking-wide text-white transition-colors hover:bg-[#A67549]"
-                >
-                  Buy Trial Pack - ₹1,000
-                </Button>
-              </div>
-            </div>
-            
-            {/* Right Image */}
-            <div className="relative min-h-[300px] flex-1 bg-[#EBE4DC] sm:min-h-[400px] md:min-h-full">
-              <Image
-                src="/images/image.png"
-                alt="Aandré Amelie Complete Collection Trial Pack"
-                fill
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Purity / values strip */}
-      <section className="border-y border-outline-variant/30 bg-cream px-5 py-16 sm:px-10 sm:py-32">
-        <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 text-center md:grid-cols-3 md:text-left">
-          {VALUES.map((v, i) => (
-            <Reveal key={v.title} delay={i * 90} className="space-y-4">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.3"
-                className="mx-auto h-9 w-9 text-sun-terracotta md:mx-0"
-                aria-hidden="true"
-              >
-                {v.icon}
-              </svg>
-              <h4 className="font-serif text-2xl text-moon-indigo">{v.title}</h4>
-              <p className="text-sm leading-relaxed text-charcoal/70">{v.text}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* Brand Video Accordion */}
-      <section className="bg-cream-deep px-5 py-16 sm:px-10 lg:px-16">
-        <div className="mx-auto max-w-[1440px]">
-          <details className="group outline-none">
-            <summary className="flex cursor-pointer list-none items-center justify-between border-b border-outline-variant/30 pb-4 font-serif text-2xl text-charcoal outline-none transition-colors hover:text-sun-terracotta select-none sm:text-4xl">
-              <span>Meet Aandré Amelie</span>
-              <span className="text-3xl text-outline/50 transition-transform duration-300 group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <div className="mt-4 pb-10">
-              <VideoTestimonials />
-            </div>
-          </details>
-        </div>
-      </section>
-
-      {/* Email signup band */}
-      <section className="relative overflow-hidden bg-moon-indigo py-16 sm:py-24 text-cream">
-        <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-10 px-5 sm:px-10 md:flex-row lg:px-16">
-          <Reveal className="md:max-w-xl">
-            <h2 className="mb-4 font-serif text-4xl">Enter the inner circle.</h2>
-            <p className="text-cream/70">
-              Join our journal for lunar-cycle rituals, product launches, and
-              exclusive apothecary insights.
-            </p>
-          </Reveal>
-          <Reveal delay={120} className="w-full md:w-auto">
-            <NewsletterForm tone="dark" />
-          </Reveal>
-        </div>
-      </section>
     </div>
   );
 }

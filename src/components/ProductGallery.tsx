@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import MediaVisual from "./MediaVisual";
 import { MEDIA_FRAME } from "@/lib/frame";
@@ -22,6 +22,8 @@ export default function ProductGallery({
   label?: string;
 }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(false);
 
   // Create an array of all media items
   const allMedia: { type: "video" | "image"; src: string; poster?: string }[] = [];
@@ -33,11 +35,38 @@ export default function ProductGallery({
   const imageList = images.length > 0 ? images : (fallbackImage ? [fallbackImage] : []);
   imageList.forEach((img) => allMedia.push({ type: "image", src: img }));
   
+  // Sync scroll when clicking thumbnails
+  useEffect(() => {
+    if (carouselRef.current) {
+      const width = carouselRef.current.clientWidth;
+      const currentScrollIndex = Math.round(carouselRef.current.scrollLeft / width);
+      
+      if (currentScrollIndex !== selectedIndex) {
+        setIsAutoScrolling(true);
+        carouselRef.current.scrollTo({
+          left: width * selectedIndex,
+          behavior: "smooth",
+        });
+        
+        const timer = setTimeout(() => setIsAutoScrolling(false), 300);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [selectedIndex]);
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    if (isAutoScrolling) return;
+    const scrollLeft = e.currentTarget.scrollLeft;
+    const width = e.currentTarget.clientWidth;
+    const index = Math.round(scrollLeft / width);
+    if (index !== selectedIndex) {
+      setSelectedIndex(index);
+    }
+  };
+
   if (allMedia.length === 0) {
     return <MediaVisual variant={variant} label={label} ratio="aspect-[4/5]" />;
   }
-
-  const selectedMedia = allMedia[selectedIndex];
 
   return (
     <div className="flex flex-col-reverse gap-4 md:flex-row h-full">
@@ -77,31 +106,36 @@ export default function ProductGallery({
         </div>
       )}
 
-      {/* Main Display Area */}
-      <div className={`relative flex-1 aspect-[4/5] overflow-hidden ${MEDIA_FRAME} group bg-cream-deep/30`}>
-        <div className="absolute inset-0">
-          {selectedMedia.type === "video" ? (
-            <MediaVisual
-              video={selectedMedia.src}
-              poster={selectedMedia.poster}
-              label={label}
-              ratio="aspect-auto h-full"
-              priority
-              className="h-full w-full"
-            />
-          ) : (
-            <Image
-              key={selectedMedia.src}
-              src={selectedMedia.src}
-              alt={label ?? "Product Image"}
-              fill
-              quality={95}
-              priority
-              sizes="(min-width: 1024px) 40vw, 90vw"
-              className="object-contain"
-            />
-          )}
-        </div>
+      {/* Main Display Area (Swipeable on mobile) */}
+      <div 
+        ref={carouselRef}
+        onScroll={handleScroll}
+        className={`relative flex-1 aspect-[4/5] flex overflow-x-auto md:overflow-hidden snap-x snap-mandatory no-scrollbar ${MEDIA_FRAME} group bg-cream-deep/30`}
+      >
+        {allMedia.map((media, i) => (
+          <div key={`${media.type}-${i}-main`} className="relative min-w-full h-full snap-center snap-always flex-shrink-0">
+            {media.type === "video" ? (
+              <MediaVisual
+                video={media.src}
+                poster={media.poster}
+                label={label}
+                ratio="aspect-auto h-full"
+                priority={i === 0}
+                className="h-full w-full"
+              />
+            ) : (
+              <Image
+                src={media.src}
+                alt={label ?? "Product Image"}
+                fill
+                quality={95}
+                priority={i === 0}
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                className="object-contain"
+              />
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
