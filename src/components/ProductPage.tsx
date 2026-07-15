@@ -6,6 +6,7 @@ import ProductGallery from "./ProductGallery";
 import Reveal from "./Reveal";
 import Button from "./Button";
 import AddToCart from "./AddToCart";
+import StickyBuyBar from "./StickyBuyBar";
 import ProductReviews from "./ProductReviews";
 import Breadcrumbs from "./Breadcrumbs";
 import Link from "next/link";
@@ -111,6 +112,7 @@ export default function ProductPage({
             </div>
           )}
           <AddToCart commerce={commerce} />
+          <div id="buy-sentinel" />
         </Reveal>
       </section>
 
@@ -373,6 +375,8 @@ export default function ProductPage({
           </div>
         </Reveal>
       </section>
+
+      <StickyBuyBar commerce={commerce} productName={product.name} />
     </div>
   );
 }
