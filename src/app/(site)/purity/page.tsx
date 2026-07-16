@@ -96,8 +96,8 @@ export default async function PurityPage() {
             <Reveal className="md:col-span-7">
               <div className="relative mb-6 h-[500px] overflow-hidden">
                 <Image
-                  src="/images/stitch/farmer-portrait.jpg"
-                  alt="Portrait of a rose farmer holding fresh Damask roses"
+                  src="/images/harvest-women-field.jpg"
+                  alt="Women harvesting botanicals by hand in a field"
                   fill
                   sizes="(min-width: 768px) 58vw, 100vw"
                   className="object-cover transition-transform duration-1000 hover:scale-105"
