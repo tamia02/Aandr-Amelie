@@ -10,6 +10,7 @@ import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 import NewsletterForm from "@/components/NewsletterForm";
 import VideoTestimonials from "@/components/VideoTestimonials";
+import WhatCustomersSay from "@/components/WhatCustomersSay";
 import HeroVideo from "@/components/HeroVideo";
 
 const VALUES = [
@@ -155,8 +156,15 @@ export default function Home() {
         </div>
       </section>
 
+      {/* What Customers Say */}
+      <section className="bg-cream-deep px-5 pt-16 sm:px-10 lg:px-16">
+        <div className="mx-auto max-w-[1440px]">
+          <WhatCustomersSay subject="Aandré Amelie" />
+        </div>
+      </section>
+
       {/* Brand Video Accordion */}
-      <section className="bg-cream-deep px-5 py-16 sm:px-10 lg:px-16">
+      <section className="bg-cream-deep px-5 pt-10 pb-16 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-[1440px]">
           <details className="group outline-none">
             <summary className="flex cursor-pointer list-none items-center justify-between border-b border-outline-variant/30 pb-4 font-serif text-2xl text-charcoal outline-none transition-colors hover:text-sun-terracotta select-none sm:text-4xl">

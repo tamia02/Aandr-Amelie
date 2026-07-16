@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { nav, socials } from "@/data/site";
 import NewsletterForm from "./NewsletterForm";
+import SocialIcon from "./SocialIcon";
 
 export default function Footer() {
   return (
@@ -18,16 +19,17 @@ export default function Footer() {
             Elevating daily skincare into a sacred ritual of self-discovery
             and balance.
           </p>
-          <div className="flex gap-5 text-xs font-semibold tracking-[0.1em] text-charcoal/70 uppercase">
+          <div className="flex gap-4">
             {socials.map((s) => (
               <a
                 key={s.href}
                 href={s.href}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-moon-indigo"
+                aria-label={s.label}
+                className="flex h-9 w-9 items-center justify-center border border-outline-variant/30 text-charcoal/70 transition-colors hover:border-moon-indigo hover:text-moon-indigo"
               >
-                {s.label}
+                <SocialIcon name={s.label} className="h-4 w-4" />
               </a>
             ))}
           </div>

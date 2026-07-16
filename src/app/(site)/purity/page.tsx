@@ -17,15 +17,15 @@ export const metadata: Metadata = {
 const SCIENCE = [
   {
     title: "Cold-Pressed Integrity",
-    text: "We never apply heat during extraction, preserving the delicate molecular structure and bio-active nutrients of every seed and petal.",
+    text: "We never use heat during extraction. This keeps every seed and petal's natural nutrients intact.",
   },
   {
     title: "Lunar Distillation",
-    text: "Capturing the hydrosols during the lunar cycle to enhance the energetic frequency and restorative capabilities of the elixirs.",
+    text: "We time our distillation to the lunar cycle — a traditional practice believed to make the hydrosols more potent and restorative.",
   },
   {
     title: "Zero Chemical Synthesis",
-    text: "Purity is not a goal; it is our foundation. No preservatives, no fillers, no synthetic fragrances — only the unadulterated soul of the plant.",
+    text: "Purity isn't just a goal for us — it's the foundation. No preservatives, no fillers, no synthetic fragrances. Just the plant, as it is.",
   },
 ];
 
@@ -49,9 +49,8 @@ export default async function PurityPage() {
               <span className="font-normal italic">Droplet.</span>
             </h1>
             <p className="mb-10 max-w-md text-base leading-relaxed text-charcoal/70 sm:text-lg">
-              We traverse the globe not for the many, but for the rare. Our
-              ingredients are harvested by moonlight, infused with pure Ganga Jal, and distilled with
-              reverence for the ancient rhythms of nature.
+              We go looking for rare, high-quality ingredients, not the easy ones. Ours are
+              harvested by moonlight, infused with pure Ganga Jal, and distilled the traditional way.
             </p>
             <Button href="/shop">Explore Our Botanicals</Button>
           </Reveal>

@@ -35,7 +35,7 @@ export default function OurStoryPage() {
                 Embracing Diversity and Beauty
               </span>
               <p className="font-serif text-lg leading-relaxed text-charcoal/80 italic">
-                At Aandré Amelie, we believe that beauty lies in the harmony of contrasts and the unity of all differences. Our skincare brand is inspired by the vibrant diversity of the world and the unique beauty that each individual possesses. We don’t just create skincare; we celebrate every shade, every texture, and every soul.
+                At Aandré Amelie, we believe beauty comes from balance — and from everyone being different. We're inspired by that diversity, and we make skincare to celebrate every shade, every texture, every soul.
               </p>
             </div>
           </Reveal>
@@ -109,7 +109,7 @@ export default function OurStoryPage() {
                 The Warmth &amp; Energy
               </h3>
               <p className="text-sm leading-relaxed text-charcoal/80">
-                Aandré represents the Solar — the active, the invigorating, the vital life force that awakens with the dawn. This pillar of our identity focuses on protection, daytime defense, and energizing micro-nutrients.
+                Aandré is our sun side — active, energizing, the part of you that wakes up ready for the day. This half of our identity is about protection, daytime defense, and ingredients that give you an extra boost.
               </p>
               <p className="text-xs leading-relaxed text-charcoal/60 italic font-serif">
                 Aandré stands back-to-back with Amelie, symbolizing being there for one another without judgment. This relationship is full of respect and acceptance, no matter who you are or where you come from.
@@ -127,7 +127,7 @@ export default function OurStoryPage() {
                 The Rest &amp; Mystery
               </h3>
               <p className="text-sm leading-relaxed text-charcoal/80">
-                Amelie is the Lunar — the restorative, the quiet, the deep replenishment that occurs under the mantle of night. This pillar focuses on sensory calm, overnight repair, and returning the skin to equilibrium.
+                Amelie is our moon side — calm, restorative, the part of you that unwinds at night. This half focuses on sensory calm, overnight repair, and letting your skin reset.
               </p>
               <p className="text-xs leading-relaxed text-charcoal/60 italic font-serif">
                 True beauty is found when we embrace all aspects of ourselves—both the sunlit, outward-facing paths and the quiet, moonlit spaces of reflection and restoration.
@@ -190,7 +190,7 @@ export default function OurStoryPage() {
                 We do not believe in mass factory production. Every single bottle of Aandré Amelie is hand-filled, hand-blended, and prepared in small batches by real hands.
               </p>
               <p>
-                By distilling our hydrosols in traditional copper alembics, we preserve the organic energetic vibration of the botanicals, ensuring every drop is delivered with absolute freshness, purity, and mindful devotion.
+                We distil our hydrosols in traditional copper stills, the old-fashioned way. It's slower, but it keeps every drop fresh, pure, and true to the plant it came from.
               </p>
             </Reveal>
           </div>
@@ -210,15 +210,15 @@ export default function OurStoryPage() {
             {[
               {
                 title: "The Visual Story",
-                text: "The elements of our visual story—the crescent moon and bright sun—symbolize the journey your skin takes throughout the day and night. We offer products that adapt dynamically to your skin’s needs.",
+                text: "The crescent moon and bright sun in our branding stand for what your skin goes through, day and night. Our products are made to work with both.",
               },
               {
                 title: "Thoughtful Packaging",
-                text: "Blending warm sunrise and cool sunset colors in our design reminds you of the connection between all things—nature's cycles, inner balance, and the beauty of diversity, marked by our heart symbol representing inclusivity.",
+                text: "We mix warm sunrise tones with cool sunset ones in our design — a small reminder of balance and of how different things can belong together. Our heart symbol stands for that same inclusivity.",
               },
               {
                 title: "A Ritual of Self-Love",
-                text: "Aandré Amelie is where skincare becomes a ritual of self-expression and self-love. Every product is a celebration of your unique beauty, supporting the natural glow of all shades and all souls.",
+                text: "For us, skincare is a small daily act of self-care. Every product is made to celebrate your skin, exactly as it is.",
               },
             ].map((v, i) => (
               <Reveal key={v.title} delay={i * 90}>

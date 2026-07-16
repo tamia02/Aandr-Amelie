@@ -65,7 +65,7 @@ export const products: Product[] = [
     heroVideo: "/videos/royal-rose-elixir.mp4?v=2",
     heroPoster: "/images/royal-rose-elixir.jpg",
     description:
-      "Delivers deep hydration and soothing relief, reducing discoloration and refining pores. Ideal for all skin types, this toner enhances skin texture, evens tone, and promotes a radiant, balanced complexion.",
+      "A deeply hydrating toner that soothes your skin and fades discoloration while refining pores. Works for every skin type — smooths texture, evens out tone, and leaves your complexion looking fresh and balanced.",
     bestFor: [
       {
         title: "Sensitive Skin",
@@ -104,7 +104,7 @@ export const products: Product[] = [
       {
         heading: "Clinical Benefits",
         intro:
-          "Packed with Vitamin C to boost collagen and shield skin from daily stressors; Vitamin A renews skin cells; B vitamins soothe inflammation and support hydration.",
+          "Rich in Vitamin C, which boosts collagen and protects skin from daily stress. Vitamin A helps renew skin cells, and B vitamins calm inflammation while keeping skin hydrated.",
       },
     ],
     howToUse: [
@@ -172,7 +172,7 @@ export const products: Product[] = [
     hook: "A gentle hug for skin and senses.",
     placeholder: "moon",
     description:
-      "Soothes and calms, easing stress and anxiety while giving skin a refreshing burst of hydration. Balances complexion, reduces redness, and tightens pores naturally. Calming lavender relaxes the mind and improves sleep, with mild antiseptic qualities for minor skin irritations.",
+      "A calming mist that eases stress and gives your skin a refreshing burst of hydration. Balances your complexion, reduces redness, and naturally tightens pores. Lavender relaxes the mind, helps you sleep better, and gently soothes minor skin irritations.",
     afterShaveBenefit:
       "Cools and soothes irritated skin, easing redness and helping prevent post-shave bumps or infection.",
     bestFor: [
@@ -191,7 +191,7 @@ export const products: Product[] = [
       {
         title: "Sip on Wellness",
         description:
-          "Best taken before bed. Lavender promotes relaxation and reduces anxiety for better sleep, enhances mood, and its anti-inflammatory properties support appetite, calm nausea and bloating, and overall digestive health. Consult a healthcare provider before adding new supplements to your diet.",
+          "Best taken before bed. Lavender helps you relax, eases anxiety, and improves sleep. It also lifts your mood and gently supports digestion — calming nausea and bloating. As always, check with your doctor before adding anything new to your diet.",
       },
     ],
     benefitSections: [
@@ -271,7 +271,7 @@ export const products: Product[] = [
     hook: "Clear, calm, balanced — naturally.",
     placeholder: "sun",
     description:
-      "Discover the transformative power of our Ultimate Skin Revitalizing Blend, a luxurious fusion of Mandarin, Rose, Rosemary, Basil, Turmeric Arks, and nourishing jojoba oil. Achieve a clear, balanced complexion with this Anti-Acne Revitalizing Formula, designed specifically for oily skin. It tones and tightens while controlling excess oil, mattifying the complexion, and helping to prevent acne. It soothes and hydrates, reducing redness and improving moisture balance. Enriched with jojoba oil, it regulates sebum production and enhances skin repair without clogging pores. Additionally, it serves as a soothing after-shave treatment, calming irritation and reducing redness post-shave for a shine-free, radiant complexion.",
+      "A toner blend of Mandarin, Rose, Rosemary, Basil, and Turmeric hydrosols with jojoba oil — made for oily and acne-prone skin. It tightens pores, controls excess oil, and helps prevent breakouts, while soothing redness and keeping skin hydrated. Jojoba oil balances oil production and helps skin repair itself without clogging pores. It also works well as an after-shave, calming irritation and redness for a fresh, shine-free finish.",
     afterShaveBenefit:
       "Soothes and calms the skin post-shave, reducing irritation and redness while providing deep hydration.",
     bestFor: [
@@ -298,23 +298,23 @@ export const products: Product[] = [
         items: [
           {
             title: "Hydrates and Soothes",
-            description: "Rose Ark and jojoba oil deliver deep hydration while soothing inflammation and irritation. Rose Ark calms redness and balances moisture, whereas jojoba oil mimics the skin’s natural oils to prevent dryness and enhance suppleness.",
+            description: "Rose hydrosol and jojoba oil hydrate skin deeply and calm irritation. Rose reduces redness and balances moisture, while jojoba oil works like your skin's own natural oils to keep it soft and prevent dryness.",
           },
           {
             title: "Balances and Clarifies",
-            description: "Mandarin and Basil Arks work together to regulate oil production and reduce excess sebum, helping to prevent acne and maintain a fresh, balanced complexion. Mandarin's Vitamin C brightens the skin, while Basil purifies and revitalizes.",
+            description: "Mandarin and Basil hydrosols work together to control oil and help prevent acne, keeping your complexion fresh and balanced. Mandarin's Vitamin C brightens skin, while Basil purifies and revitalizes.",
           },
           {
             title: "Enhances Skin Texture",
-            description: "Rosemary and Turmeric Arks improve skin texture by promoting a clearer, more even complexion. Rosemary boosts circulation and refines pores, while Turmeric’s anti-inflammatory properties reduce redness and support overall skin health.",
+            description: "Rosemary and Turmeric hydrosols smooth skin texture for a clearer, more even complexion. Rosemary boosts circulation and refines pores, while Turmeric calms redness and supports healthy skin.",
           },
           {
             title: "Nourishes and Protects",
-            description: "Jojoba oil provides essential fatty acids and Vitamin E, which help to repair the skin barrier, protect against environmental damage, and support natural healing processes. It also assists in calming irritated skin and reducing blemishes.",
+            description: "Jojoba oil is rich in fatty acids and Vitamin E, which repair your skin barrier, protect against everyday damage, and support healing. It also calms irritated skin and helps reduce blemishes.",
           },
           {
             title: "After-Shave Benefits",
-            description: "Soothes and reduces irritation caused by shaving, balances skin tone, and prevents razor burn. It also helps to tighten pores and calm any redness or inflammation.",
+            description: "Soothes shaving irritation, balances skin tone, and prevents razor burn — while tightening pores and calming redness.",
           },
         ],
       },
@@ -357,19 +357,19 @@ export const products: Product[] = [
     howToUse: [
       {
         label: "As a Toner",
-        text: "After cleansing, apply the blend to your face using a cotton pad or mist it directly onto your skin. This helps to balance and prep your skin for further treatment. The blend of Mandarin, Rose, and Rosemary Arks helps regulate oil production and refresh your complexion.",
+        text: "After cleansing, apply with a cotton pad or mist directly onto your skin to balance and prep it. Mandarin, Rose, and Rosemary help regulate oil and refresh your complexion.",
       },
       {
         label: "For Hydration and Soothing",
-        text: "Use as a facial mist throughout the day to refresh and hydrate your skin, especially in dry environments or after sun exposure. Few drops into your skin in the morning and evening enhance moisture and support the skin’s natural repair processes.",
+        text: "Mist onto your face through the day to refresh and hydrate, especially in dry weather or after sun exposure.",
       },
       {
         label: "For a Soothing Treatment",
-        text: "Apply directly to irritated or inflamed areas to calm and reduce redness. Leave it on for a few minutes before rinsing if needed. The healing benefits of Jojoba Oil and Turmeric Ark work together to reduce redness, even out skin tone, and improve texture.",
+        text: "Apply directly to irritated areas to calm redness. Leave on for a few minutes before rinsing off if needed.",
       },
       {
         label: "As an After-Shave",
-        text: "Apply to freshly shaved skin to soothe irritation, balance skin tone, and tighten pores. The Rose and Turmeric hydrosols help reduce redness and irritation, while Jojoba Oil hydrates and supports skin repair. Healing properties of Turmeric works antiseptic on cuts.",
+        text: "Apply to freshly shaved skin to soothe irritation, balance skin tone, and tighten pores. Turmeric also has natural antiseptic properties that help with small cuts.",
       },
     ],
     care: "To experience the full benefits apply it regularly. Store the 100ml mist dispensing bottle at a cool place, with a maximum temperature of 25°C. Always close the lid tightly immediately after use. Ensure it remains free from contamination. As it contains no preservatives, regular use and proper storage are essential to ensure maximum benefits.",
@@ -406,7 +406,7 @@ export const products: Product[] = [
     hook: "Strength and shine, rooted in nature.",
     placeholder: "moon",
     description:
-      "A hand-crafted Hair and Scalp Revitalizer blending premium hydrosols with jojoba oil to rejuvenate and protect hair from environmental damage — combining Rosemary, Lemongrass, Curry Leaf, Basil, and Tea Tree with nourishing jojoba oil.",
+      "A hair and scalp tonic blending Rosemary, Lemongrass, Curry Leaf, Basil, and Tea Tree hydrosols with jojoba oil — made to strengthen hair and protect it from everyday damage.",
     bestFor: [],
     benefitSections: [
       {
@@ -517,7 +517,7 @@ export const products: Product[] = [
     hook: "Experience the full spectrum of botanical wellness.",
     placeholder: "dawn",
     description:
-      "A complete set of our signature hydrosols and elixirs. Hydrate, balance, soothe, and revitalize from head to toe. This collection includes Royal Rose Elixir, Glow Quinch Elixir, Acne Shield, and Vital Grow Scalp, designed to work harmoniously for a comprehensive skincare and haircare ritual.",
+      "All four of our signature hydrosols in one set — Royal Rose Elixir, Glow Quinch Elixir, Acne Shield, and Vital Grow Scalp. Everything you need to hydrate, balance, and care for your skin and hair, from head to toe.",
     bestFor: [
       {
         title: "Complete Wellness",
