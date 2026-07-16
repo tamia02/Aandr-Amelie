@@ -92,10 +92,10 @@ export default function Home() {
       {/* Trial Pack Section */}
       <section className="bg-cream-deep px-5 py-16 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-[1440px]">
-          <div className="flex flex-col md:flex-row items-stretch overflow-hidden rounded-2xl bg-[#F8F5F2] border border-outline-variant/30">
+          <div className="flex flex-col md:flex-row items-stretch overflow-hidden bg-cream border border-outline-variant/30">
             {/* Left Content */}
             <div className="flex flex-1 flex-col justify-center p-8 sm:p-10 lg:p-16">
-              <h2 className="mb-6 font-serif text-3xl leading-tight text-[#B8865A] sm:text-4xl lg:text-5xl">
+              <h2 className="mb-6 font-serif text-3xl leading-tight text-sun-terracotta-dark sm:text-4xl lg:text-5xl">
                 The Symbolism Behind<br />Aandré Amelie
               </h2>
               <p className="mb-6 text-sm leading-relaxed text-charcoal/80">
@@ -112,17 +112,14 @@ export default function Home() {
                 connection to nature and promoting vibrant skin health.
               </p>
               <div>
-                <Button 
-                  href="/shop/complete-collection-combo" 
-                  className="rounded-md border-none bg-[#B8865A] px-8 py-3 font-semibold tracking-wide text-white transition-colors hover:bg-[#A67549]"
-                >
-                  Buy Trial Pack - ₹1,000
+                <Button href="/shop/complete-collection-combo">
+                  Buy Trial Pack — ₹1,000
                 </Button>
               </div>
             </div>
-            
+
             {/* Right Image */}
-            <div className="relative min-h-[300px] flex-1 bg-[#EBE4DC] sm:min-h-[400px] md:min-h-full">
+            <div className="relative min-h-[300px] flex-1 bg-cream-deep sm:min-h-[400px] md:min-h-full">
               <Image
                 src="/images/image.png"
                 alt="Aandré Amelie Complete Collection Trial Pack"

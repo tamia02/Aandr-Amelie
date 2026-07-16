@@ -15,13 +15,39 @@ const inter = Inter({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const siteUrl = "https://aandreamelie.com";
+const siteTitle = "Aandré Amelie — All Shades, All Souls";
+const siteDescription =
+  "Natural hydrosol skincare crafted for every shade and soul. Discover Royal Rose Elixir, Glow Quinch, Acne Shield, and Vital Grow Scalp.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Aandré Amelie — All Shades, All Souls",
+    default: siteTitle,
     template: "%s — Aandré Amelie",
   },
-  description:
-    "Natural hydrosol skincare crafted for every shade and soul. Discover Royal Rose Elixir, Glow Quinch, Acne Shield, and Vital Grow Scalp.",
+  description: siteDescription,
+  openGraph: {
+    type: "website",
+    siteName: "Aandré Amelie",
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
+    images: [
+      {
+        url: "/images/royal-rose-new-main.jpg",
+        width: 896,
+        height: 1200,
+        alt: "Aandré Amelie — Royal Rose Elixir",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: ["/images/royal-rose-new-main.jpg"],
+  },
 };
 
 export default function RootLayout({

@@ -106,7 +106,7 @@ export default function CheckoutPage() {
         contact: form.phone,
       },
       theme: {
-        color: "#2C2D2B",
+        color: "#1c1c18",
       },
       modal: {
         ondismiss: function () {

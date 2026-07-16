@@ -18,11 +18,25 @@ export async function generateMetadata({
   const { slug } = await params;
   const product = getProduct(slug);
   if (!product) return {};
+  const url = `https://aandreamelie.com/shop/${product.slug}`;
   return {
     title: product.seoTitle,
     description: product.seoDescription,
     alternates: {
-      canonical: `https://aandreamelie.com/shop/${product.slug}`,
+      canonical: url,
+    },
+    openGraph: {
+      type: "website",
+      title: product.seoTitle,
+      description: product.seoDescription,
+      url,
+      images: product.image ? [{ url: product.image, alt: product.name }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.seoTitle,
+      description: product.seoDescription,
+      images: product.image ? [product.image] : undefined,
     },
   };
 }
