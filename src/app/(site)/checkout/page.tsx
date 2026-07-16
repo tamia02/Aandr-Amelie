@@ -64,6 +64,12 @@ export default function CheckoutPage() {
     setError(null);
     setSubmitting(true);
 
+    if (!process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID) {
+      setError("Payment gateway is not configured. Please try again shortly.");
+      setSubmitting(false);
+      return;
+    }
+
     const result = await placeOrder({
       ...form,
       items: items.map((i) => ({ slug: i.slug, qty: i.qty })),
@@ -77,7 +83,7 @@ export default function CheckoutPage() {
     }
 
     const options = {
-      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_TCvX9WW58UE9Uu",
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
       amount: result.amount,
       currency: "INR",
       name: "Aandré Amelie",

@@ -118,9 +118,14 @@ export async function placeOrder(
     });
 
     if (data.paymentMethod === "razorpay") {
+      if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
+        console.error("placeOrder: RAZORPAY_KEY_ID/RAZORPAY_KEY_SECRET not configured");
+        return { ok: false, error: "Payment gateway is not configured. Please try again shortly." };
+      }
+
       const razorpay = new Razorpay({
-        key_id: process.env.RAZORPAY_KEY_ID || "rzp_test_TCvX9WW58UE9Uu",
-        key_secret: process.env.RAZORPAY_KEY_SECRET || "V8QRwiBxD7goZUdPyvWgRI8T",
+        key_id: process.env.RAZORPAY_KEY_ID,
+        key_secret: process.env.RAZORPAY_KEY_SECRET,
       });
 
       try {
@@ -187,9 +192,10 @@ export async function verifyRazorpayPayment(
   razorpaySignature: string
 ): Promise<{ ok: boolean; error?: string }> {
   const crypto = await import("crypto");
-  const secret = process.env.RAZORPAY_KEY_SECRET || "V8QRwiBxD7goZUdPyvWgRI8T";
+  const secret = process.env.RAZORPAY_KEY_SECRET;
 
   if (!secret) {
+    console.error("verifyRazorpayPayment: RAZORPAY_KEY_SECRET not configured");
     return { ok: false, error: "Server configuration error" };
   }
 
