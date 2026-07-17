@@ -69,7 +69,7 @@ export default function OffersPage() {
         </div>
         <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col">
           <div className="relative w-full aspect-[4/3] border-b border-outline-variant/20">
-            <img src="/images/clay5.png" alt="Welcome Journey" className="w-full h-full object-cover" />
+            <img src="/images/rose1.png" alt="Welcome Journey" className="w-full h-full object-cover" />
           </div>
           <div className="p-8 flex flex-col items-center flex-grow text-center">
             <span className="text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-3">
@@ -85,7 +85,7 @@ export default function OffersPage() {
         </div>
         <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col">
           <div className="relative w-full aspect-[4/3] border-b border-outline-variant/20">
-            <img src="/images/multani-mitti1.png" alt="Rose Quartz Ritual" className="w-full h-full object-cover" />
+            <img src="/images/four1.png" alt="Rose Quartz Ritual" className="w-full h-full object-cover" />
           </div>
           <div className="p-8 flex flex-col items-center flex-grow text-center">
             <span className="text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-3">

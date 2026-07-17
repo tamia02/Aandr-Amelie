@@ -62,16 +62,27 @@ export default async function ConcernPage({
       />
 
       {/* Concern Header */}
-      <section className="mb-8 max-w-4xl">
-        <Reveal>
-          <SectionHeader
-            eyebrow="Targeted Solution"
-            title={concern.name}
-            className="mb-6"
-          />
-          <p className="max-w-2xl text-base leading-relaxed text-charcoal/70 sm:text-lg">
+      <section className="mb-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border-b border-sun-terracotta/20 pb-8">
+        <Reveal className="lg:col-span-7">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="h-px w-6 bg-sun-terracotta/40"></span>
+            <span className="text-[10px] font-semibold tracking-[0.2em] text-sun-terracotta uppercase">
+              Targeted Solution
+            </span>
+          </div>
+          <h1 className="font-serif text-2xl text-charcoal italic mb-3">{concern.name}</h1>
+          <p className="max-w-xl text-[11px] leading-relaxed text-charcoal/70">
             {concern.intro}
           </p>
+        </Reveal>
+        <Reveal delay={100} className="lg:col-span-5 hidden lg:block">
+           <div className="relative aspect-[21/9] w-full overflow-hidden border border-outline-variant/20">
+             <img 
+                src={`/images/${concern.slug === 'oily-acne' ? 'acne2.png' : concern.slug === 'sensitive-dry' ? 'rose1.png' : concern.slug === 'hair-scalp' ? 'vital1.png' : 'lavender1.png'}`} 
+                alt={concern.name} 
+                className="object-cover w-full h-full" 
+             />
+           </div>
         </Reveal>
       </section>
 
@@ -79,38 +90,35 @@ export default async function ConcernPage({
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-28 border-y border-outline-variant/30 py-8 bg-cream-deep/20 px-4 sm:px-8">
         <div className="lg:col-span-6">
           <Reveal>
-            <h2 className="font-serif text-2xl text-moon-indigo mb-6">
+            <h2 className="font-serif text-xl text-moon-indigo mb-4 italic">
               Understanding the Condition
             </h2>
-            <p className="text-sm leading-relaxed text-charcoal/70 mb-8">
+            <p className="text-[11px] leading-relaxed text-charcoal/70 mb-6">
               {concern.intro}
             </p>
-            <h2 className="font-serif text-2xl text-moon-indigo mb-6">
+            <h2 className="font-serif text-xl text-moon-indigo mb-4 italic">
               What Botanicals to Look For
             </h2>
-            <p className="text-sm leading-relaxed text-charcoal/70">
+            <p className="text-[11px] leading-relaxed text-charcoal/70">
               {concern.whatToLookFor}
             </p>
           </Reveal>
         </div>
         <div className="lg:col-span-6">
           <Reveal delay={100}>
-            <h2 className="font-serif text-2xl text-moon-indigo mb-6">
+            <h2 className="font-serif text-xl text-moon-indigo mb-4 italic">
               How Our Formulations Help
             </h2>
-            <p className="text-sm leading-relaxed text-charcoal/70 mb-8">
+            <p className="text-[11px] leading-relaxed text-charcoal/70 mb-6">
               {concern.howOurProductsHelp}
             </p>
-            <div className="border-l-2 border-sun-terracotta bg-sun-blush/20 p-6 mb-8">
-              <h3 className="text-xs font-semibold tracking-[0.2em] text-sun-terracotta-dark uppercase mb-2">
+            <div className="border-l border-sun-terracotta bg-sun-blush/10 p-5 mb-8">
+              <h3 className="text-[10px] font-semibold tracking-[0.2em] text-sun-terracotta-dark uppercase mb-2">
                 Apothecary Recommendation
               </h3>
-              <p className="text-sm leading-relaxed text-charcoal/75 italic font-serif">
+              <p className="text-[11px] leading-relaxed text-charcoal/75 italic font-serif">
                 {concern.howToChoose}
               </p>
-            </div>
-            <div className="relative aspect-video overflow-hidden">
-              <img src="/images/real_assets/DSC00691.JPG" alt="Botanical Ingredients" className="object-cover w-full h-full" />
             </div>
           </Reveal>
         </div>
@@ -118,18 +126,18 @@ export default async function ConcernPage({
 
       {/* Mapped Products Grid */}
       <section className="mb-10">
-        <div className="mb-12 border-b border-outline-variant/30 pb-4">
-          <h2 className="font-serif text-2xl text-charcoal">Recommended Apothecary Objects</h2>
+        <div className="mb-8 border-b border-outline-variant/30 pb-4">
+          <h2 className="font-serif text-xl text-charcoal italic">Recommended Apothecary Objects</h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-12">
           {matchingProducts.map((product, i) => (
             <Reveal key={product.slug} delay={i * 90}>
               <div className="border border-outline-variant/15 p-6 bg-cream-deep/30 hover:border-sun-terracotta transition-all duration-300">
                 <ProductCard
                   product={product}
                   price={priceOf(product.slug)}
-                  ratio="aspect-[4/3]"
+                  ratio="aspect-[4/5]"
                 />
               </div>
             </Reveal>

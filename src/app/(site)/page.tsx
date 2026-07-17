@@ -44,20 +44,20 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-charcoal/35" />
         <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-10 lg:px-16">
-          <Reveal className="max-w-2xl border border-cream/30 bg-charcoal/40 p-8 sm:p-12 backdrop-blur-sm">
-            <span className="mb-4 block text-[10px] font-semibold tracking-[0.3em] text-cream/70 uppercase">
+          <Reveal className="max-w-2xl px-5 sm:px-0">
+            <span className="mb-4 block text-[10px] font-semibold tracking-[0.3em] text-cream/90 uppercase">
               The Collection
             </span>
             <h1 className="mb-6 font-serif text-4xl leading-[1.05] text-cream sm:text-5xl md:text-6xl italic">
               All Shades,<br />All Souls.
             </h1>
-            <div className="mb-6 h-px w-16 bg-cream/30" />
-            <p className="mb-8 max-w-lg font-sans text-sm leading-relaxed text-cream/90 sm:text-base">
+            <div className="mb-6 h-px w-16 bg-cream/50" />
+            <p className="mb-8 max-w-lg font-sans text-sm leading-relaxed text-cream sm:text-base drop-shadow-md">
               Luxury organic skincare crafted in harmony with nature. Because true beauty is about revealing the healthiest, most radiant version of yourself.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Button href="/shop">Browse Products</Button>
-              <Button href="/our-story" variant="ghost" className="border-cream/40 text-cream hover:border-cream hover:text-cream">
+              <Button href="/our-story" variant="ghost" className="border-cream text-cream hover:border-cream/70 hover:text-cream/90">
                 Our Story
               </Button>
             </div>

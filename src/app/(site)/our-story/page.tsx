@@ -66,14 +66,14 @@ export default function OurStoryPage() {
               </Reveal>
             </div>
             
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 flex justify-center lg:justify-end">
               <Reveal delay={150}>
-                <div className="relative aspect-[16/10] overflow-hidden border border-outline-variant/20">
+                <div className="relative aspect-[4/5] w-[280px] sm:w-[320px] overflow-hidden border border-outline-variant/20 shadow-md">
                   <Image
                     src="/images/rose1.png"
                     alt="Rose Elixir representing natural beauty"
                     fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    sizes="(min-width: 1024px) 320px, 280px"
                     className="object-cover"
                   />
                 </div>
@@ -147,9 +147,9 @@ export default function OurStoryPage() {
       {/* Handcrafted Apothecary */}
       <section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-10 sm:py-12 lg:px-16">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-7 order-2 lg:order-1">
+          <div className="lg:col-span-7 order-2 lg:order-1 flex justify-center lg:justify-start">
             <Reveal>
-              <div className="relative aspect-[16/9] overflow-hidden border border-outline-variant/25 bg-moon-indigo/5 flex items-center justify-center">
+              <div className="relative aspect-square w-[280px] sm:w-[360px] overflow-hidden border border-outline-variant/25 bg-moon-indigo/5 flex items-center justify-center shadow-md">
                 <video
                   className="absolute inset-0 h-full w-full object-cover"
                   src="/videos/real_assets/C0003.MP4"
@@ -160,11 +160,11 @@ export default function OurStoryPage() {
                   playsInline
                 />
                 <div className="absolute inset-0 bg-charcoal/15" />
-                <div className="relative z-10 p-6 text-center text-cream">
-                  <span className="text-[10px] font-sans tracking-[0.2em] text-sun-gold uppercase block mb-2">
+                <div className="relative z-10 p-4 text-center text-cream">
+                  <span className="text-[10px] font-sans tracking-[0.2em] text-sun-gold uppercase block mb-1">
                     Visual Short
                   </span>
-                  <p className="font-serif text-sm italic">Inspired by Nature. Crafted by Hands.</p>
+                  <p className="font-serif text-xs italic">Inspired by Nature.</p>
                 </div>
               </div>
             </Reveal>
@@ -201,7 +201,7 @@ export default function OurStoryPage() {
             <span className="mb-4 block text-xs font-sans tracking-[0.2em] text-outline uppercase">
               Our Values
             </span>
-            <h2 className="font-serif text-4xl text-charcoal">Empowering Farmers. Supporting Families.</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl text-charcoal italic">Empowering Farmers. Supporting Families.</h2>
           </Reveal>
           <div className="grid grid-cols-1 gap-12 text-center md:grid-cols-3">
             {[
@@ -219,13 +219,13 @@ export default function OurStoryPage() {
               },
             ].map((v, i) => (
               <Reveal key={v.title} delay={i * 90}>
-                <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-full border border-outline-variant/30 bg-cream">
-                  <span className="font-serif text-xl text-moon-indigo">
+                <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-outline-variant/30 bg-cream">
+                  <span className="font-serif text-lg text-moon-indigo italic">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <h4 className="mb-4 font-serif text-2xl text-charcoal">{v.title}</h4>
-                <p className="font-sans text-base text-charcoal/70 leading-relaxed">{v.text}</p>
+                <h4 className="mb-3 font-serif text-xl text-charcoal italic">{v.title}</h4>
+                <p className="font-sans text-[11px] text-charcoal/70 leading-relaxed">{v.text}</p>
               </Reveal>
             ))}
           </div>
