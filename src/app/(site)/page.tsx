@@ -190,11 +190,19 @@ export default function Home() {
 }
 
 async function ProductGrid() {
-  const commerce = await getCommerceForSlugs(products.map((p) => p.slug));
+  const selectedSlugs = [
+    "royal-rose-elixir",
+    "glow-quinch-elixir",
+    "acne-shield-hydrosol",
+    "super-fine-multani-mitti"
+  ];
+  const featuredProducts = selectedSlugs.map(slug => products.find(p => p.slug === slug)).filter(Boolean) as typeof products;
+
+  const commerce = await getCommerceForSlugs(featuredProducts.map((p) => p.slug));
   const priceOf = (slug: string) =>
     commerce[slug] ? formatINR(commerce[slug].priceCents) : undefined;
 
-  const [p1, p2, p3, p4] = products;
+  const [p1, p2, p3, p4] = featuredProducts;
 
   return (
     <section className="bg-cream-deep px-5 py-16 sm:px-10 sm:py-32">

@@ -57,6 +57,7 @@ export const products: Product[] = [
     hook: 'The ultimate clarifying earth mask for a deeply purified and balanced complexion.',
     placeholder: 'sun',
     image: '/images/products/super_fine_multani_mitti.png',
+    images: ['/images/products/super_fine_multani_mitti.png'],
     description: 'Our Super Fine Multani Mitti (Fuller\'s Earth) is an ultra-milled, pure clay that draws out impurities, excess oil, and toxins from deep within the pores. It leaves your skin exceptionally clean, matte, and refreshed without stripping it of essential moisture.',
     bestFor: [
       { title: 'Oily & Acne-Prone Skin', description: 'Absorbs excess sebum and prevents breakouts' },
@@ -93,6 +94,7 @@ export const products: Product[] = [
     hook: 'A delicate, mineral-rich clay that revives dull, tired skin to reveal a natural, rosy glow.',
     placeholder: 'dawn',
     image: '/images/products/imported_pink_clay.png',
+    images: ['/images/products/imported_pink_clay.png'],
     description: 'Imported Pink Clay is renowned for its gentle purifying properties. Perfect for sensitive or mature skin, this mineral-rich clay lightly exfoliates while drawing out impurities, leaving your skin soft, smooth, and visibly brighter.',
     bestFor: [
       { title: 'Sensitive & Dry Skin', description: 'Cleanses without over-drying or irritating' },
@@ -129,6 +131,7 @@ export const products: Product[] = [
     hook: 'A potent, antibacterial blend that targets stubborn acne and deeply purifies the skin.',
     placeholder: 'moon',
     image: '/images/products/neem_multani_mitti.png',
+    images: ['/images/products/neem_multani_mitti.png'],
     description: 'Combining the deep-cleansing power of Multani Mitti with the legendary antibacterial properties of Neem, this mask is the ultimate treatment for acne-prone skin. It actively fights acne-causing bacteria, reduces inflammation, and absorbs excess oil to keep breakouts at bay.',
     bestFor: [
       { title: 'Acne & Blemishes', description: 'Fights bacteria and reduces active pimples' },
@@ -165,6 +168,7 @@ export const products: Product[] = [
     hook: 'A luxurious, fragrant blend that cools, soothes, and imparts a bridal glow.',
     placeholder: 'dawn',
     image: '/images/products/rose_sandal_multani_mitti.png',
+    images: ['/images/products/rose_sandal_multani_mitti.png'],
     description: 'Infused with cooling Rose and complexion-brightening Sandalwood, this Multani Mitti blend is a treat for the senses and the skin. It reduces redness, evens out skin tone, and leaves you with a beautifully radiant and soft complexion.',
     bestFor: [
       { title: 'Uneven Skin Tone', description: 'Fades marks and brightens the complexion' },
@@ -201,6 +205,7 @@ export const products: Product[] = [
     hook: 'The traditional Indian remedy for a flawless, golden complexion and healed skin.',
     placeholder: 'sun',
     image: '/images/products/turmeric_sandal_multani_mitti.png',
+    images: ['/images/products/turmeric_sandal_multani_mitti.png'],
     description: 'This potent blend features Turmeric and Sandalwood—Ayurveda\'s most revered healing botanicals. It reduces hyperpigmentation, fights free radicals, and delivers an unmistakable, healthy glow while the Multani Mitti keeps the skin deeply cleansed.',
     bestFor: [
       { title: 'Hyperpigmentation', description: 'Fades dark spots and acne scars over time' },
