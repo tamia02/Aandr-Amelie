@@ -1,5 +1,6 @@
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
+import Image from "next/image";
 import MediaVisual from "@/components/MediaVisual";
 
 export const metadata = {
@@ -18,12 +19,25 @@ export default function OffersPage() {
       </Reveal>
 
       <Reveal delay={100} className="border border-outline-variant/30 bg-cream-deep mb-8 overflow-hidden flex flex-col md:flex-row items-stretch">
-        <div className="w-full md:w-1/2 relative min-h-[300px]">
-          <img 
-            src="/images/acne2.png" 
-            alt="Complete Acne Set" 
-            className="absolute inset-0 w-full h-full object-cover" 
-          />
+        <div className="w-full md:w-1/2 flex relative min-h-[300px]">
+          <div className="w-1/2 relative">
+            <Image 
+              src="/images/acne2.png" 
+              alt="Acne Shield" 
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover object-right" 
+            />
+          </div>
+          <div className="w-1/2 relative border-l border-outline-variant/30">
+            <Image 
+              src="/images/lavender1.png" 
+              alt="Glow Quinch Elixir" 
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover object-left" 
+            />
+          </div>
         </div>
         <div className="w-full md:w-1/2 p-10 flex flex-col justify-center items-start text-left border-l border-outline-variant/30">
           <h2 className="font-serif text-xl text-charcoal mb-4 italic">The Complete Acne Set</h2>

@@ -25,7 +25,7 @@ export const journalArticles: BlogPost[] = [
     category: "Ingredient Guide",
     ingredient: "Rose",
     relatedProductSlug: "royal-rose-elixir",
-    coverImage: "/images/journal/rose_water_mood.png",
+    coverImage: "/images/journal/rose_ingredients.png",
     content: `
 ### The Alchemy of Rose Hydrosol
 
@@ -84,7 +84,7 @@ Because our rosewater is distilled without synthetic preservatives or alcohol, i
     category: "Use-Case",
     ingredient: "Rose",
     relatedProductSlug: "royal-rose-elixir",
-    coverImage: "/images/journal/drink-rosewater.jpg",
+    coverImage: "/images/journal/drink_rosewater.png",
     content: `
 ### An Ancient Ritual Rediscovered
 
@@ -134,7 +134,7 @@ To get the most out of your edible rosewater, try these simple preparations:
     category: "Wellness",
     ingredient: "Lavender",
     relatedProductSlug: "glow-quinch-elixir",
-    coverImage: "/images/journal/lavender-sleep.jpg",
+    coverImage: "/images/journal/lavender_sleep.png",
     content: `
 ### Sleep as the Ultimate Skincare Step
 
@@ -184,7 +184,7 @@ Add 1–2 teaspoons of Glow Quinch Elixir to a cup of warm (not boiling) water. 
     category: "Ingredient Guide",
     ingredient: "Jojoba Oil",
     relatedProductSlug: "acne-shield",
-    coverImage: "/images/journal/jojoba-acne.jpg",
+    coverImage: "/images/journal/jojoba_acne.png",
     content: `
 ### The Great Paradox of Oily Skincare
 
@@ -236,7 +236,7 @@ Shake the bottle of Acne Shield thoroughly to blend the hydrosols and the Jojoba
     category: "Ritual",
     ingredient: "Rosemary",
     relatedProductSlug: "vital-grow-scalp",
-    coverImage: "/images/journal/rosemary-hair.jpg",
+    coverImage: "/images/journal/rosemary_ritual.png",
     content: `
 ### The Rosemary Phenomenon
 

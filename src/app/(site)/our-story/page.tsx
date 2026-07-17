@@ -49,8 +49,8 @@ export default function OurStoryPage() {
       {/* Philosophy: All Shades, All Souls */}
       <section className="border-t border-outline-variant/20 bg-cream-deep/20 py-10 sm:py-12">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-10 lg:px-16">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 items-center">
-            <div className="lg:col-span-5 space-y-6">
+          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 items-center">
+            <div className="space-y-6">
               <Reveal>
                 <span className="text-xs font-sans tracking-[0.25em] text-sun-terracotta-dark uppercase block mb-2">
                   Our Promise
@@ -60,20 +60,20 @@ export default function OurStoryPage() {
                 </h2>
               </Reveal>
               <Reveal delay={100}>
-                <p className="font-sans text-base leading-relaxed text-charcoal/70">
+                <p className="font-sans text-base leading-relaxed text-charcoal/70 max-w-xl">
                   It is a celebration of every skin tone, every texture, every journey, and every soul. Because true beauty is never about changing who you are—it is about revealing the healthiest, most radiant version of yourself.
                 </p>
               </Reveal>
             </div>
             
-            <div className="lg:col-span-7 flex justify-center lg:justify-end">
+            <div className="flex justify-center lg:justify-start">
               <Reveal delay={150}>
-                <div className="relative aspect-[4/5] w-[280px] sm:w-[320px] overflow-hidden border border-outline-variant/20 shadow-md">
+                <div className="relative aspect-[4/5] w-full max-w-[400px] overflow-hidden border border-outline-variant/20 shadow-md">
                   <Image
                     src="/images/rose1.png"
                     alt="Rose Elixir representing natural beauty"
                     fill
-                    sizes="(min-width: 1024px) 320px, 280px"
+                    sizes="(min-width: 1024px) 400px, 100vw"
                     className="object-cover"
                   />
                 </div>
