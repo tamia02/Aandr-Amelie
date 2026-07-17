@@ -102,19 +102,6 @@ export default async function ConcernPage({
 
         {/* Right Column: Hero Image, Educational Text */}
         <div className="lg:col-span-6 xl:col-span-5 flex flex-col gap-10">
-          {/* Hero Image */}
-          <Reveal delay={150}>
-            <div className="relative aspect-[4/5] w-full max-w-[480px] overflow-hidden border border-outline-variant/20 shadow-md bg-cream mx-auto lg:mx-0">
-              <Image 
-                src={`/images/${concern.slug === 'oily-acne' ? 'acne2.png' : concern.slug === 'sensitive-dry' ? 'rose1.png' : concern.slug === 'hair-scalp' ? 'vital1.png' : 'lavender1.png'}`} 
-                alt={concern.name} 
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-contain p-4" 
-              />
-            </div>
-          </Reveal>
-
           {/* Educational Content */}
           <Reveal delay={200} className="bg-cream-deep/30 p-6 sm:p-8 border border-outline-variant/20 shadow-sm space-y-8">
             <div>
