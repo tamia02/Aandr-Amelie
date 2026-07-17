@@ -25,7 +25,7 @@ export const journalArticles: BlogPost[] = [
     category: "Ingredient Guide",
     ingredient: "Rose",
     relatedProductSlug: "royal-rose-elixir",
-    coverImage: "/images/journal/rose-hydrosol.jpg",
+    coverImage: "/images/journal/rose_water_mood.png",
     content: `
 ### The Alchemy of Rose Hydrosol
 
