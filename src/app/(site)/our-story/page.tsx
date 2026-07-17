@@ -70,7 +70,7 @@ export default function OurStoryPage() {
               <Reveal delay={150}>
                 <div className="relative aspect-[16/10] overflow-hidden border border-outline-variant/20">
                   <Image
-                    src="/images/stitch/bento-flatlay.jpg"
+                    src="/images/real_assets/DSC00687.JPG"
                     alt="Flatlay of natural botanical ingredients representing diverse skin types"
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
@@ -152,8 +152,8 @@ export default function OurStoryPage() {
               <div className="relative aspect-[16/9] overflow-hidden border border-outline-variant/25 bg-moon-indigo/5 flex items-center justify-center">
                 <video
                   className="absolute inset-0 h-full w-full object-cover"
-                  src="/videos/handcrafted.mp4"
-                  poster="/images/stitch/bento-hand-bottle.jpg"
+                  src="/videos/real_assets/C0003.MP4"
+                  poster="/images/real_assets/DSC00688.JPG"
                   autoPlay
                   muted
                   loop
@@ -251,6 +251,9 @@ export default function OurStoryPage() {
             <p>
               We believe the finest ingredients deserve the gentlest touch. That's why we choose handpicked botanicals over mechanical harvesting whenever possible. It preserves the purity of nature while creating meaningful employment for farming families and rural artisans whose knowledge has been passed down through generations.
             </p>
+            <div className="relative aspect-[16/9] overflow-hidden my-8 rounded-sm">
+              <Image src="/images/real_assets/DSC00689.JPG" alt="Botanical Harvest" fill className="object-cover" />
+            </div>
             <p>
               Once the ingredients arrive at our workshop, the real craftsmanship begins. Every formula is thoughtfully prepared in small batches. We never rush the process because nature cannot be hurried. Each ingredient is measured with care, blended with precision, and inspected to ensure it meets the standards we proudly call Aandre Amelie. Every jar is filled by hand. Every bottle is checked individually. Every label is placed with intention. Every package is prepared as if it were a gift.
             </p>
@@ -272,6 +275,9 @@ export default function OurStoryPage() {
             <p>
               Drawing from the ancient wisdom of Ayurveda, we blend handpicked botanicals—from the soothing essence of Lavender Hydrosol and Rose Water to the healing touch of Kumkumadi Oil and Aloe Vera. Every batch is a careful harmony of tradition and practicality.
             </p>
+            <div className="relative aspect-[16/9] overflow-hidden my-8 rounded-sm">
+              <Image src="/images/real_assets/DSC00690.JPG" alt="Botanical Extracts" fill className="object-cover" />
+            </div>
             <p>
               Yet, this journey extends beyond the jar. We are cultivating a community where knowledge is shared as a form of nourishment. Through our guides, we hope to empower you with an understanding of ingredients and the art of DIY rituals, helping you navigate wellness with clarity.
             </p>

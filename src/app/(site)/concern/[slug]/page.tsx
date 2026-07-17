@@ -101,13 +101,16 @@ export default async function ConcernPage({
             <p className="text-sm leading-relaxed text-charcoal/70 mb-8">
               {concern.howOurProductsHelp}
             </p>
-            <div className="border-l-2 border-sun-terracotta bg-sun-blush/20 p-6">
+            <div className="border-l-2 border-sun-terracotta bg-sun-blush/20 p-6 mb-8">
               <h3 className="text-xs font-semibold tracking-[0.2em] text-sun-terracotta-dark uppercase mb-2">
                 Apothecary Recommendation
               </h3>
               <p className="text-sm leading-relaxed text-charcoal/75 italic font-serif">
                 {concern.howToChoose}
               </p>
+            </div>
+            <div className="relative aspect-video overflow-hidden">
+              <img src="/images/real_assets/DSC00691.JPG" alt="Botanical Ingredients" className="object-cover w-full h-full" />
             </div>
           </Reveal>
         </div>

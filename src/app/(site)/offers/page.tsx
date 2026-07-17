@@ -1,5 +1,6 @@
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
+import MediaVisual from "@/components/MediaVisual";
 
 export const metadata = {
   title: "Apothecary Offers",
@@ -16,12 +17,23 @@ export default function OffersPage() {
         <h1 className="font-serif text-5xl text-charcoal">Botanical Offers</h1>
       </Reveal>
 
-      <Reveal delay={100} className="border border-outline-variant/30 bg-cream-deep p-12 mb-16">
-        <h2 className="font-serif text-3xl text-charcoal mb-4">The Complete Alchemy Set</h2>
-        <p className="text-sm text-charcoal/70 mb-8 max-w-xl mx-auto">
-          Experience the full spectrum of our apothecary rituals. Purchase the Complete Botanical Kit and receive a complimentary travel-sized Glow Quinch Elixir.
-        </p>
-        <Button href="/shop">Shop the Collection</Button>
+      <Reveal delay={100} className="border border-outline-variant/30 bg-cream-deep p-12 mb-16 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <MediaVisual 
+            variant="sun" 
+            image="/images/real_assets/DSC00686.JPG" 
+            label="Complete Alchemy Set" 
+            ratio="aspect-square" 
+            className="w-full h-full object-cover" 
+          />
+        </div>
+        <div className="relative z-10">
+          <h2 className="font-serif text-3xl text-charcoal mb-4">The Complete Alchemy Set</h2>
+          <p className="text-sm text-charcoal/70 mb-8 max-w-xl mx-auto">
+            Experience the full spectrum of our apothecary rituals. Purchase the Complete Botanical Kit and receive a complimentary travel-sized Glow Quinch Elixir.
+          </p>
+          <Button href="/shop">Shop the Collection</Button>
+        </div>
       </Reveal>
 
       <Reveal delay={200} className="grid grid-cols-1 md:grid-cols-2 gap-8">

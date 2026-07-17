@@ -56,9 +56,9 @@ export const products: Product[] = [
     tagline: 'Deep Cleanse & Clarify',
     hook: 'The ultimate clarifying earth mask for a deeply purified and balanced complexion.',
     placeholder: 'sun',
-    image: '/images/products/super_fine_multani_mitti.png',
-    images: ['/images/products/super_fine_multani_mitti.png'],
-    description: 'Our Super Fine Multani Mitti (Fuller\'s Earth) is an ultra-milled, pure clay that draws out impurities, excess oil, and toxins from deep within the pores. It leaves your skin exceptionally clean, matte, and refreshed without stripping it of essential moisture.',
+    image: '/images/real_assets/DSC00672.JPG',
+    images: ['/images/real_assets/DSC00672.JPG'],
+    description: 'Our Super Fine Multani Mitti (Fuller\'s Earth) is an ultra-milled, 100% organic, sun-dried clay that draws out impurities, excess oil, and toxins from deep within the pores. It leaves your skin exceptionally clean, matte, and refreshed without stripping it of essential moisture.',
     bestFor: [
       { title: 'Oily & Acne-Prone Skin', description: 'Absorbs excess sebum and prevents breakouts' },
       { title: 'Congested Pores', description: 'Draws out deep-seated impurities and tightens pores' }
@@ -93,9 +93,9 @@ export const products: Product[] = [
     tagline: 'Gently Detoxify & Radiate',
     hook: 'A delicate, mineral-rich clay that revives dull, tired skin to reveal a natural, rosy glow.',
     placeholder: 'dawn',
-    image: '/images/products/imported_pink_clay.png',
-    images: ['/images/products/imported_pink_clay.png'],
-    description: 'Imported Pink Clay is renowned for its gentle purifying properties. Perfect for sensitive or mature skin, this mineral-rich clay lightly exfoliates while drawing out impurities, leaving your skin soft, smooth, and visibly brighter.',
+    image: '/images/real_assets/DSC00673.JPG',
+    images: ['/images/real_assets/DSC00673.JPG'],
+    description: 'Imported Pink Clay is a premium, double-filtered earth renowned for its gentle purifying properties, containing zero fillers or preservatives. Perfect for sensitive or mature skin, this mineral-rich clay lightly exfoliates while drawing out impurities, leaving your skin soft, smooth, and visibly brighter.',
     bestFor: [
       { title: 'Sensitive & Dry Skin', description: 'Cleanses without over-drying or irritating' },
       { title: 'Dullness', description: 'Restores a natural, healthy radiance' }
@@ -130,9 +130,9 @@ export const products: Product[] = [
     tagline: 'Clarify & Banish Blemishes',
     hook: 'A potent, antibacterial blend that targets stubborn acne and deeply purifies the skin.',
     placeholder: 'moon',
-    image: '/images/products/neem_multani_mitti.png',
-    images: ['/images/products/neem_multani_mitti.png'],
-    description: 'Combining the deep-cleansing power of Multani Mitti with the legendary antibacterial properties of Neem, this mask is the ultimate treatment for acne-prone skin. It actively fights acne-causing bacteria, reduces inflammation, and absorbs excess oil to keep breakouts at bay.',
+    image: '/images/real_assets/DSC00674.JPG',
+    images: ['/images/real_assets/DSC00674.JPG'],
+    description: 'Combining the deep-cleansing power of 100% organic Multani Mitti with the legendary antibacterial properties of raw, double-filtered Neem, this mask is the ultimate treatment for acne-prone skin. It actively fights acne-causing bacteria, reduces inflammation, and absorbs excess oil to keep breakouts at bay.',
     bestFor: [
       { title: 'Acne & Blemishes', description: 'Fights bacteria and reduces active pimples' },
       { title: 'Oily Skin', description: 'Controls excessive sebum production' }
@@ -167,9 +167,9 @@ export const products: Product[] = [
     tagline: 'Soothe & Brighten',
     hook: 'A luxurious, fragrant blend that cools, soothes, and imparts a bridal glow.',
     placeholder: 'dawn',
-    image: '/images/products/rose_sandal_multani_mitti.png',
-    images: ['/images/products/rose_sandal_multani_mitti.png'],
-    description: 'Infused with cooling Rose and complexion-brightening Sandalwood, this Multani Mitti blend is a treat for the senses and the skin. It reduces redness, evens out skin tone, and leaves you with a beautifully radiant and soft complexion.',
+    image: '/images/real_assets/DSC00675.JPG',
+    images: ['/images/real_assets/DSC00675.JPG'],
+    description: 'Infused with raw, cooling Rose petals and pure complexion-brightening Sandalwood, free of artificial colors or fillers, this Multani Mitti blend is a treat for the senses and the skin. It reduces redness, evens out skin tone, and leaves you with a beautifully radiant and soft complexion.',
     bestFor: [
       { title: 'Uneven Skin Tone', description: 'Fades marks and brightens the complexion' },
       { title: 'Sun Damaged Skin', description: 'Cools and soothes sunburns and inflammation' }
@@ -204,9 +204,9 @@ export const products: Product[] = [
     tagline: 'Glow & Heal',
     hook: 'The traditional Indian remedy for a flawless, golden complexion and healed skin.',
     placeholder: 'sun',
-    image: '/images/products/turmeric_sandal_multani_mitti.png',
-    images: ['/images/products/turmeric_sandal_multani_mitti.png'],
-    description: 'This potent blend features Turmeric and Sandalwood—Ayurveda\'s most revered healing botanicals. It reduces hyperpigmentation, fights free radicals, and delivers an unmistakable, healthy glow while the Multani Mitti keeps the skin deeply cleansed.',
+    image: '/images/real_assets/DSC00676.JPG',
+    images: ['/images/real_assets/DSC00676.JPG'],
+    description: 'This potent, 100% organic blend features raw Turmeric and Sandalwood—Ayurveda\'s most revered healing botanicals, meticulously double-filtered for maximum potency. It reduces hyperpigmentation, fights free radicals, and delivers an unmistakable, healthy glow while the Multani Mitti keeps the skin deeply cleansed.',
     bestFor: [
       { title: 'Hyperpigmentation', description: 'Fades dark spots and acne scars over time' },
       { title: 'Dull Skin', description: 'Delivers an instant, healthy golden glow' }
