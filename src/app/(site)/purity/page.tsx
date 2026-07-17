@@ -87,97 +87,102 @@ export default function PurityPage() {
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
-            <Reveal className="md:col-span-7">
-              <div className="relative mb-6 h-[500px] overflow-hidden">
+          <div className="mx-auto max-w-4xl space-y-16 py-8">
+            {/* Full Moon */}
+            <Reveal className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+              <div className="relative aspect-square w-full max-w-[200px] shrink-0 overflow-hidden bg-outline-variant/20 rounded-full border border-sun-terracotta/20 shadow-sm">
                 <Image
-                  src="/images/lavender1.png"
-                  alt="Lavender botanicals used in our formulas"
+                  src="/images/stitch/full-moon.jpg"
+                  alt="Full Moon Harvesting"
                   fill
-                  sizes="(min-width: 768px) 58vw, 100vw"
-                  className="object-cover transition-transform duration-1000 hover:scale-105"
+                  sizes="200px"
+                  className="object-cover"
                 />
               </div>
-              <span className="text-xs font-sans tracking-widest text-sun-terracotta uppercase">
-                Farm to Face Promise
-              </span>
-              <h3 className="mt-2 mb-4 font-serif text-2xl">At Aandre Amelie, skincare begins in the fields.</h3>
-              <p className="max-w-lg text-sm font-sans text-charcoal/70 mb-4">
-                We partner with small Indian farms where red roses, herbs, and botanical ingredients are grown naturally and harvested by hand.
-              </p>
-              <p className="max-w-lg text-sm font-sans text-charcoal/70">
-                This direct relationship allows us to support farming families while ensuring every ingredient reaches your skin at its freshest and most effective.
-              </p>
+              <div className="flex-1 text-center md:text-left">
+                <span className="mb-2 block text-[10px] font-sans tracking-[0.2em] text-sun-terracotta-dark uppercase">
+                  Lunar Energy
+                </span>
+                <h4 className="mb-3 font-serif text-2xl leading-tight italic">
+                  Full Moon Harvesting
+                </h4>
+                <p className="text-xs font-sans leading-relaxed text-charcoal/70">
+                  Our botanicals, like evening primrose and jasmine, are handpicked under the light of the full moon. This ancient tradition captures the plants at their peak energetic potency and cellular hydration, bringing the serene, calming essence of Amelie into every drop.
+                </p>
+              </div>
             </Reveal>
 
-            <div className="flex flex-col gap-12 md:col-span-5">
-              <Reveal delay={90} className="flex items-start gap-6">
-                <div className="relative aspect-square w-1/3 shrink-0 overflow-hidden bg-outline-variant/20">
-                  <Image
-                    src="/images/stitch/sandalwood-macro.jpg"
-                    alt="Macro shot of ingredients"
-                    fill
-                    sizes="200px"
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <span className="mb-2 block text-[10px] font-sans tracking-[0.2em] text-sun-terracotta-dark uppercase">
-                    Our Methods
-                  </span>
-                  <h4 className="mb-2 font-serif text-xl leading-tight">
-                    Small-Batch Production
-                  </h4>
-                  <p className="text-sm font-sans text-charcoal/70">
-                    Unlike mass-produced cosmetics, our small-batch skincare is crafted in limited quantities to maintain exceptional quality, freshness, and attention to detail.
-                  </p>
-                </div>
-              </Reveal>
-              <Reveal delay={180} className="flex items-start gap-6">
-                <div className="relative aspect-square w-1/3 shrink-0 overflow-hidden bg-outline-variant/20">
-                  <Image
-                    src="/images/stitch/lavender-field.jpg"
-                    alt="Lavender fields"
-                    fill
-                    sizes="200px"
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <span className="mb-2 block text-[10px] font-sans tracking-[0.2em] text-sun-terracotta-dark uppercase">
-                    Ethical Beauty
-                  </span>
-                  <h4 className="mb-2 font-serif text-xl leading-tight">
-                    Clean &amp; Conscious Beauty
-                  </h4>
-                  <p className="text-sm font-sans text-charcoal/70">
-                    Our formulations are paraben-free, sulfate-free, cruelty-free, and free from harsh chemicals, designed for healthy, radiant skin.
-                  </p>
-                </div>
-              </Reveal>
-              <Reveal delay={270} className="flex items-start gap-6">
-                <div className="relative aspect-square w-1/3 shrink-0 overflow-hidden bg-outline-variant/20">
-                  <Image
-                    src="/images/stitch/lab-distillation.jpg"
-                    alt="Craftsmanship"
-                    fill
-                    sizes="200px"
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <span className="mb-2 block text-[10px] font-sans tracking-[0.2em] text-sun-terracotta-dark uppercase">
-                    Social Impact
-                  </span>
-                  <h4 className="mb-2 font-serif text-xl leading-tight">
-                    Handmade with Purpose
-                  </h4>
-                  <p className="text-sm font-sans text-charcoal/70">
-                    Every jar, balm, and serum is handcrafted by skilled artisans, creating meaningful employment opportunities for rural communities and women-led households.
-                  </p>
-                </div>
-              </Reveal>
-            </div>
+            {/* Gangajal */}
+            <Reveal delay={100} className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16">
+              <div className="relative aspect-square w-full max-w-[200px] shrink-0 overflow-hidden bg-outline-variant/20 rounded-full border border-sun-terracotta/20 shadow-sm">
+                <Image
+                  src="/images/stitch/gangajal.jpg"
+                  alt="Pure Gangajal"
+                  fill
+                  sizes="200px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex-1 text-center md:text-right">
+                <span className="mb-2 block text-[10px] font-sans tracking-[0.2em] text-sun-terracotta-dark uppercase">
+                  Sacred Waters
+                </span>
+                <h4 className="mb-3 font-serif text-2xl leading-tight italic">
+                  Infused with Gangajal
+                </h4>
+                <p className="text-xs font-sans leading-relaxed text-charcoal/70">
+                  Water is the lifeblood of skincare. We incorporate pure, ethically sourced Gangajal into our elixirs and hydrosols. Known for its unparalleled purity and mineral richness, it acts as a sacred conductor, carrying botanical nutrients deep into the skin's layers.
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Farm to Face */}
+            <Reveal delay={150} className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+              <div className="relative aspect-square w-full max-w-[200px] shrink-0 overflow-hidden bg-outline-variant/20 rounded-full border border-sun-terracotta/20 shadow-sm">
+                <Image
+                  src="/images/stitch/lavender-field.jpg"
+                  alt="Lavender fields"
+                  fill
+                  sizes="200px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <span className="mb-2 block text-[10px] font-sans tracking-[0.2em] text-sun-terracotta-dark uppercase">
+                  Sourcing
+                </span>
+                <h4 className="mb-3 font-serif text-2xl leading-tight italic">
+                  Farm to Face Promise
+                </h4>
+                <p className="text-xs font-sans leading-relaxed text-charcoal/70">
+                  We partner directly with small Indian farms where red roses, herbs, and botanical ingredients are grown naturally. This direct relationship ensures every ingredient reaches your skin at its freshest and most effective, while supporting local farming families.
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Handcrafted */}
+            <Reveal delay={200} className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16">
+              <div className="relative aspect-square w-full max-w-[200px] shrink-0 overflow-hidden bg-outline-variant/20 rounded-full border border-sun-terracotta/20 shadow-sm">
+                <Image
+                  src="/images/stitch/lab-distillation.jpg"
+                  alt="Craftsmanship"
+                  fill
+                  sizes="200px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex-1 text-center md:text-right">
+                <span className="mb-2 block text-[10px] font-sans tracking-[0.2em] text-sun-terracotta-dark uppercase">
+                  Social Impact
+                </span>
+                <h4 className="mb-3 font-serif text-2xl leading-tight italic">
+                  Handmade with Purpose
+                </h4>
+                <p className="text-xs font-sans leading-relaxed text-charcoal/70">
+                  Every jar, balm, and serum is handcrafted in small batches by skilled artisans. Unlike mass-produced cosmetics, this allows us to maintain exceptional quality while creating meaningful employment opportunities for women-led households in rural communities.
+                </p>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>

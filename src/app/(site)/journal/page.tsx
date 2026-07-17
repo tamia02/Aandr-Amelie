@@ -6,6 +6,7 @@ import { journalArticles, BlogPost } from "@/data/journal";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Reveal from "@/components/Reveal";
 import SectionHeader from "@/components/SectionHeader";
+import NewsletterForm from "@/components/NewsletterForm";
 
 const CATEGORIES = ["All", "Ingredient Guide", "Use-Case", "Ritual", "Wellness"];
 
@@ -147,6 +148,24 @@ export default function JournalPage() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="mt-16 border-t border-outline-variant/30 pt-16">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <span className="mb-4 block text-[10px] font-sans tracking-[0.2em] text-sun-terracotta uppercase">
+            Join The Circle
+          </span>
+          <h2 className="font-serif text-3xl italic text-charcoal mb-4">
+            Notes on Nature &amp; Skincare
+          </h2>
+          <p className="mb-8 text-xs leading-relaxed text-charcoal/70">
+            Subscribe to our journal for exclusive insights on botanical living, skincare rituals, and early access to small-batch releases.
+          </p>
+          <div className="mx-auto max-w-md">
+            <NewsletterForm tone="light" />
+          </div>
+        </Reveal>
       </section>
     </div>
   );
