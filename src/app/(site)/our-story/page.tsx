@@ -23,10 +23,10 @@ export default function OurStoryPage() {
             <span className="mb-6 block text-xs font-sans tracking-[0.2em] text-sun-terracotta uppercase">
               Brand Story
             </span>
-            <h1 className="font-serif text-4xl leading-tight sm:text-5xl md:text-7xl text-charcoal">
+            <h1 className="font-serif text-3xl leading-tight sm:text-4xl text-charcoal italic">
               Aandré Amelie
               <br />
-              <span className="font-serif italic">All Shades, All Souls.</span>
+              <span className="font-serif italic font-normal">All Shades, All Souls.</span>
             </h1>
           </Reveal>
           <Reveal delay={120} className="md:col-span-5">
@@ -55,7 +55,7 @@ export default function OurStoryPage() {
                 <span className="text-xs font-sans tracking-[0.25em] text-sun-terracotta-dark uppercase block mb-2">
                   Our Promise
                 </span>
-                <h2 className="font-serif text-3xl sm:text-4xl text-charcoal leading-tight">
+                <h2 className="font-serif text-2xl sm:text-3xl text-charcoal leading-tight italic">
                   All Shades. All Souls.
                 </h2>
               </Reveal>
@@ -90,7 +90,7 @@ export default function OurStoryPage() {
             <span className="text-xs font-sans tracking-[0.25em] text-sun-terracotta uppercase block mb-3">
               Why Us
             </span>
-            <h2 className="font-serif text-4xl text-charcoal">The Meaning Behind Aandré Amelie</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl text-charcoal italic">The Meaning Behind Aandré Amelie</h2>
           </Reveal>
           <Reveal delay={100} className="max-w-3xl mx-auto mt-6">
             <p className="font-sans text-base leading-relaxed text-charcoal/75">
@@ -106,7 +106,7 @@ export default function OurStoryPage() {
               <span className="text-xs font-sans tracking-[0.2em] text-sun-terracotta-dark uppercase block">
                 Aandré
               </span>
-              <h3 className="font-serif text-3xl text-sun-terracotta-dark">
+              <h3 className="font-serif text-xl sm:text-2xl text-sun-terracotta-dark italic">
                 The Solar Energy
               </h3>
               <p className="font-sans text-base leading-relaxed text-charcoal/80">
@@ -121,7 +121,7 @@ export default function OurStoryPage() {
               <span className="text-xs font-sans tracking-[0.2em] text-moon-indigo uppercase block">
                 Amelie
               </span>
-              <h3 className="font-serif text-3xl text-moon-indigo">
+              <h3 className="font-serif text-xl sm:text-2xl text-moon-indigo italic">
                 The Lunar Calm
               </h3>
               <p className="font-sans text-base leading-relaxed text-charcoal/80">

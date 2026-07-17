@@ -24,16 +24,17 @@ export default function JournalPage() {
       {/* Breadcrumbs */}
       <Breadcrumbs items={[{ label: "Journal" }]} />
 
-      <section className="mb-8 max-w-4xl">
+      <section className="mb-8 flex flex-col items-start border-b border-sun-terracotta/20 pb-6">
         <Reveal>
-          <SectionHeader
-            eyebrow="The Apothecary Journal"
-            title="Sip, Spray, &amp; Reflect"
-            className="mb-6"
-          />
-          <p className="max-w-2xl text-base leading-relaxed text-charcoal/70 sm:text-lg">
-            Dive into ingredient guides, alchemical use-cases, and lifestyle rituals. 
-            Discover the science and soul behind living botanical hydrosols.
+          <div className="flex items-center gap-3 mb-2">
+            <span className="h-px w-6 bg-sun-terracotta/40"></span>
+            <span className="text-[10px] font-semibold tracking-[0.2em] text-sun-terracotta uppercase">
+              The Apothecary Journal
+            </span>
+          </div>
+          <h1 className="font-serif text-2xl text-charcoal italic mb-3">Sip, Spray, &amp; Reflect</h1>
+          <p className="max-w-xl text-[11px] leading-relaxed text-charcoal/70">
+            Dive into ingredient guides, alchemical use-cases, and lifestyle rituals. Discover the science and soul behind living botanical hydrosols.
           </p>
         </Reveal>
       </section>
@@ -68,12 +69,12 @@ export default function JournalPage() {
                   <span>•</span>
                   <span>{featuredArticle.date}</span>
                 </div>
-                <h2 className="font-serif text-3xl sm:text-4xl text-charcoal leading-tight hover:text-moon-indigo transition-colors">
+                <h2 className="font-serif text-2xl sm:text-3xl text-charcoal leading-tight hover:text-moon-indigo transition-colors italic">
                   <Link href={`/journal/${featuredArticle.slug}`}>
                     {featuredArticle.title}
                   </Link>
                 </h2>
-                <p className="text-sm sm:text-base leading-relaxed text-charcoal/70 max-w-xl">
+                <p className="text-[11px] sm:text-xs leading-relaxed text-charcoal/70 max-w-xl">
                   {featuredArticle.excerpt}
                 </p>
                 <div className="flex items-center justify-between pt-4">
@@ -124,10 +125,10 @@ export default function JournalPage() {
                     <span>•</span>
                     <span>{article.date}</span>
                   </div>
-                  <h3 className="font-serif text-xl sm:text-2xl text-charcoal mb-4 hover:text-moon-indigo transition-colors leading-snug">
+                  <h3 className="font-serif text-lg sm:text-xl text-charcoal mb-3 hover:text-moon-indigo transition-colors leading-snug italic">
                     <Link href={`/journal/${article.slug}`}>{article.title}</Link>
                   </h3>
-                  <p className="text-sm text-charcoal/70 leading-relaxed mb-6">
+                  <p className="text-[11px] text-charcoal/70 leading-relaxed mb-6">
                     {article.excerpt}
                   </p>
                 </div>
