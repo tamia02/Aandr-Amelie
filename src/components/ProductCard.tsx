@@ -12,24 +12,26 @@ export default function ProductCard({
   ratio?: string;
 }) {
   return (
-    <Link href={`/shop/${product.slug}`} className="group block">
-      <MediaVisual
-        image={product.image}
-        variant={product.placeholder}
-        label={product.image ? undefined : product.name}
-        ratio={ratio}
-        fit={["royal-rose-elixir", "glow-quinch-elixir", "acne-shield", "vital-grow-scalp"].includes(product.slug) ? "cover" : "contain"}
-      />
-      <div className="mt-4 sm:mt-8 flex flex-col sm:flex-row items-start justify-between gap-2 sm:gap-4">
-        <div>
-          <span className="mb-1 sm:mb-2 block text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-sun-terracotta-dark uppercase">
+    <Link href={`/shop/${product.slug}`} className="group flex flex-col h-full border border-sun-terracotta/20 bg-cream transition-colors hover:border-sun-terracotta/50">
+      <div className="flex-shrink-0 border-b border-sun-terracotta/10">
+        <MediaVisual
+          image={product.image}
+          variant={product.placeholder}
+          label={product.image ? undefined : product.name}
+          ratio={ratio}
+          fit={["royal-rose-elixir", "glow-quinch-elixir", "acne-shield", "vital-grow-scalp"].includes(product.slug) ? "cover" : "contain"}
+        />
+      </div>
+      <div className="flex flex-1 flex-col items-center justify-between p-4 sm:p-6 text-center">
+        <div className="flex flex-col items-center">
+          <span className="mb-2 block text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-sun-terracotta-dark uppercase">
             {product.category}
           </span>
-          <h3 className="font-serif text-lg sm:text-2xl text-charcoal">{product.name}</h3>
-          <p className="hidden sm:block mt-1 text-sm text-charcoal/70">{product.hook}</p>
+          <h3 className="font-serif text-xl sm:text-2xl text-charcoal">{product.name}</h3>
+          <p className="mt-2 text-xs sm:text-sm text-charcoal/70 line-clamp-2 leading-relaxed">{product.hook}</p>
         </div>
         {price && (
-          <span className="mt-1 shrink-0 text-xs sm:text-sm font-semibold text-charcoal">
+          <span className="mt-4 block shrink-0 text-sm sm:text-base font-semibold text-charcoal">
             {price}
           </span>
         )}

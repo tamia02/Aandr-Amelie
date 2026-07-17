@@ -44,10 +44,14 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-charcoal/35" />
         <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-10 lg:px-16">
-          <Reveal className="max-w-2xl">
-            <h1 className="mb-4 font-serif text-4xl leading-[1.05] text-cream sm:text-5xl md:text-6xl">
+          <Reveal className="max-w-2xl border border-cream/30 bg-charcoal/40 p-8 sm:p-12 backdrop-blur-sm">
+            <span className="mb-4 block text-[10px] font-semibold tracking-[0.3em] text-cream/70 uppercase">
+              The Collection
+            </span>
+            <h1 className="mb-6 font-serif text-4xl leading-[1.05] text-cream sm:text-5xl md:text-6xl italic">
               All Shades,<br />All Souls.
             </h1>
+            <div className="mb-6 h-px w-16 bg-cream/30" />
             <p className="mb-8 max-w-lg font-sans text-sm leading-relaxed text-cream/90 sm:text-base">
               Luxury organic skincare crafted in harmony with nature. Because true beauty is about revealing the healthiest, most radiant version of yourself.
             </p>
@@ -62,21 +66,21 @@ export default function Home() {
       </section>
 
       {/* Philosophy pull-quote strip */}
-      <section className="flex items-center justify-center overflow-hidden bg-cream px-5 py-12 sm:px-10 sm:py-20">
-        <Reveal className="max-w-3xl text-center">
-          <span className="mb-6 block font-sans text-xs font-semibold tracking-[0.3em] text-sun-terracotta uppercase">
+      <section className="flex items-center justify-center overflow-hidden bg-cream px-5 py-12 sm:px-10 sm:py-20 border-b border-sun-terracotta/20">
+        <Reveal className="max-w-3xl text-center border-y-2 border-double border-sun-terracotta/30 py-12">
+          <span className="mb-6 block font-sans text-[10px] font-semibold tracking-[0.3em] text-sun-terracotta uppercase">
             Our Ethos
           </span>
-          <PullQuote>
-            Just as the sun and moon share the same sky, we believe every individual deserves skincare
-            that respects their unique skin rather than trying to change it.
-          </PullQuote>
+          <p className="font-serif text-2xl sm:text-3xl leading-relaxed text-charcoal/90 italic">
+            "Just as the sun and moon share the same sky, we believe every individual deserves skincare
+            that respects their unique skin rather than trying to change it."
+          </p>
           <div className="mt-8 flex items-center justify-center gap-4">
-            <span className="h-px w-12 bg-outline-variant" />
-            <span className="font-sans text-xs tracking-widest text-outline uppercase">
+            <span className="h-px w-12 bg-sun-terracotta/30" />
+            <span className="font-sans text-[10px] tracking-widest text-sun-terracotta/70 uppercase">
               All Shades. All Souls.
             </span>
-            <span className="h-px w-12 bg-outline-variant" />
+            <span className="h-px w-12 bg-sun-terracotta/30" />
           </div>
         </Reveal>
       </section>
@@ -89,10 +93,14 @@ export default function Home() {
         <div className="mx-auto max-w-[1024px]">
           <div className="flex flex-col md:flex-row items-stretch overflow-hidden bg-cream border border-outline-variant/30">
             {/* Left Content */}
-            <div className="flex flex-1 flex-col justify-center p-6 sm:p-8 lg:p-10">
-              <h2 className="mb-4 font-serif text-2xl leading-tight text-sun-terracotta-dark sm:text-3xl">
+            <div className="flex flex-1 flex-col justify-center p-6 sm:p-8 lg:p-10 border-r border-sun-terracotta/20">
+              <span className="mb-4 block text-[10px] font-semibold tracking-[0.25em] text-sun-terracotta-dark uppercase">
+                The Trial Pack
+              </span>
+              <h2 className="mb-4 font-serif text-2xl leading-tight text-charcoal sm:text-3xl italic">
                 The Symbolism Behind<br />Aandré Amelie
               </h2>
+              <div className="mb-4 h-px w-12 bg-sun-terracotta/30" />
               <p className="mb-4 font-sans text-xs leading-relaxed text-charcoal/80">
                 The name Aandré Amelie represents the perfect balance of two timeless forces.
                 Aandré embodies the warmth, strength, confidence, and life-giving energy of the sun.
@@ -106,7 +114,7 @@ export default function Home() {
               </p>
               <div>
                 <Button href="/shop/the-trial-pack">
-                  Buy Trial Pack — ₹1,000
+                  Shop Trial Pack — ₹1,000
                 </Button>
               </div>
             </div>
@@ -125,22 +133,24 @@ export default function Home() {
       </section>
 
       {/* Purity / values strip */}
-      <section className="border-y border-outline-variant/30 bg-cream px-5 py-12 sm:px-10 sm:py-20">
-        <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-10 text-center md:grid-cols-3 md:text-left">
+      <section className="border-y border-sun-terracotta/20 bg-cream px-5 py-12 sm:px-10 sm:py-20">
+        <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-10 text-center md:grid-cols-3 md:text-left divide-y md:divide-y-0 md:divide-x divide-sun-terracotta/20">
           {VALUES.map((v, i) => (
-            <Reveal key={v.title} delay={i * 90} className="space-y-4">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.3"
-                className="mx-auto h-9 w-9 text-sun-terracotta md:mx-0"
-                aria-hidden="true"
-              >
-                {v.icon}
-              </svg>
-              <h4 className="font-serif text-2xl text-moon-indigo">{v.title}</h4>
-              <p className="font-sans text-sm leading-relaxed text-charcoal/70">{v.text}</p>
+            <Reveal key={v.title} delay={i * 90} className="space-y-4 pt-10 first:pt-0 md:pt-0 md:px-10 md:first:pl-0 md:last:pr-0 flex flex-col items-center md:items-start">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full border border-sun-terracotta/20 bg-cream-deep">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.3"
+                  className="h-8 w-8 text-sun-terracotta"
+                  aria-hidden="true"
+                >
+                  {v.icon}
+                </svg>
+              </div>
+              <h4 className="font-serif text-xl text-charcoal italic">{v.title}</h4>
+              <p className="font-sans text-xs leading-relaxed text-charcoal/70">{v.text}</p>
             </Reveal>
           ))}
         </div>
