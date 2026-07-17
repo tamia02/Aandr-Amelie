@@ -50,6 +50,186 @@ export const CARE_INSTRUCTIONS =
 
 export const products: Product[] = [
   {
+    slug: 'super-fine-multani-mitti',
+    name: 'Super Fine Multani Mitti',
+    category: 'Botanical Clays',
+    tagline: 'Deep Cleanse & Clarify',
+    hook: 'The ultimate clarifying earth mask for a deeply purified and balanced complexion.',
+    placeholder: 'sun',
+    image: '/images/products/super_fine_multani_mitti.png',
+    description: 'Our Super Fine Multani Mitti (Fuller\'s Earth) is an ultra-milled, pure clay that draws out impurities, excess oil, and toxins from deep within the pores. It leaves your skin exceptionally clean, matte, and refreshed without stripping it of essential moisture.',
+    bestFor: [
+      { title: 'Oily & Acne-Prone Skin', description: 'Absorbs excess sebum and prevents breakouts' },
+      { title: 'Congested Pores', description: 'Draws out deep-seated impurities and tightens pores' }
+    ],
+    benefitSections: [
+      {
+        heading: 'The Power of Earth',
+        items: [
+          { title: 'Deep Cleansing', description: 'Acts as a natural magnet for dirt, oil, and pollution.' },
+          { title: 'Cooling Effect', description: 'Naturally cools the skin, soothing active inflammation.' }
+        ]
+      }
+    ],
+    howToUse: [
+      { label: 'Prepare', text: 'Mix 1-2 tablespoons with water or our Rose Elixir to form a smooth paste.' },
+      { label: 'Apply', text: 'Apply an even layer to your face and neck, avoiding the delicate eye area.' },
+      { label: 'Rinse', text: 'Leave on for 10-15 minutes until semi-dry, then rinse thoroughly with lukewarm water.' }
+    ],
+    care: 'Store in a cool, dry place. Keep the jar tightly closed to prevent moisture from entering.',
+    seoTitle: 'Super Fine Multani Mitti - Pure Clay Face Mask | Aandré Amelie',
+    seoDescription: 'Clarify and purify your skin with our Super Fine Multani Mitti. The ultimate natural clay mask for oily and acne-prone skin.',
+    faqs: [
+      { question: 'How often should I use this mask?', answer: 'For oily skin, 2-3 times a week is ideal. For normal or dry skin, once a week is sufficient.' }
+    ],
+    concernSlugs: ['acne-breakouts', 'oily-skin'],
+    ingredientsList: ['Multani Mitti']
+  },
+  {
+    slug: 'imported-pink-clay',
+    name: 'Imported Pink Clay',
+    category: 'Botanical Clays',
+    tagline: 'Gently Detoxify & Radiate',
+    hook: 'A delicate, mineral-rich clay that revives dull, tired skin to reveal a natural, rosy glow.',
+    placeholder: 'dawn',
+    image: '/images/products/imported_pink_clay.png',
+    description: 'Imported Pink Clay is renowned for its gentle purifying properties. Perfect for sensitive or mature skin, this mineral-rich clay lightly exfoliates while drawing out impurities, leaving your skin soft, smooth, and visibly brighter.',
+    bestFor: [
+      { title: 'Sensitive & Dry Skin', description: 'Cleanses without over-drying or irritating' },
+      { title: 'Dullness', description: 'Restores a natural, healthy radiance' }
+    ],
+    benefitSections: [
+      {
+        heading: 'Gentle Mineral Detox',
+        items: [
+          { title: 'Soft Exfoliation', description: 'Gently buffs away dead skin cells.' },
+          { title: 'Radiance Boost', description: 'Rich in silica, it helps improve skin elasticity and cell renewal.' }
+        ]
+      }
+    ],
+    howToUse: [
+      { label: 'Mix', text: 'Blend with water or Glow Quinch Elixir to create a silky paste.' },
+      { label: 'Apply', text: 'Smooth over your face and let it set for 10 minutes.' },
+      { label: 'Wash', text: 'Rinse off gently with warm water and follow with a moisturizer.' }
+    ],
+    care: 'Store in a cool, dry place away from direct sunlight.',
+    seoTitle: 'Imported Pink Clay - Gentle Detox Mask | Aandré Amelie',
+    seoDescription: 'Revive your glow with our Imported Pink Clay mask. Perfect for sensitive skin, it gently detoxifies and brightens.',
+    faqs: [
+      { question: 'Is Pink Clay safe for sensitive skin?', answer: 'Yes, pink clay is one of the mildest clays available, making it perfect for sensitive and easily irritated skin types.' }
+    ],
+    concernSlugs: ['dryness-dehydration', 'dull-skin'],
+    ingredientsList: ['Pink Clay']
+  },
+  {
+    slug: 'neem-and-multani-mitti',
+    name: 'Neem & Multani Mitti',
+    category: 'Botanical Clays',
+    tagline: 'Clarify & Banish Blemishes',
+    hook: 'A potent, antibacterial blend that targets stubborn acne and deeply purifies the skin.',
+    placeholder: 'moon',
+    image: '/images/products/neem_multani_mitti.png',
+    description: 'Combining the deep-cleansing power of Multani Mitti with the legendary antibacterial properties of Neem, this mask is the ultimate treatment for acne-prone skin. It actively fights acne-causing bacteria, reduces inflammation, and absorbs excess oil to keep breakouts at bay.',
+    bestFor: [
+      { title: 'Acne & Blemishes', description: 'Fights bacteria and reduces active pimples' },
+      { title: 'Oily Skin', description: 'Controls excessive sebum production' }
+    ],
+    benefitSections: [
+      {
+        heading: 'Antibacterial Powerhouse',
+        items: [
+          { title: 'Acne Control', description: 'Neem actively kills acne-causing bacteria.' },
+          { title: 'Pore Purification', description: 'Multani Mitti draws out impurities preventing future breakouts.' }
+        ]
+      }
+    ],
+    howToUse: [
+      { label: 'Mix', text: 'Combine with water or Acne Shield hydrosol to make a paste.' },
+      { label: 'Apply', text: 'Apply specifically to breakout-prone areas or the entire face.' },
+      { label: 'Rinse', text: 'Wash off after 10-15 minutes and pat dry.' }
+    ],
+    care: 'Store in an airtight container in a dry, cool place.',
+    seoTitle: 'Neem & Multani Mitti - Anti-Acne Clay Mask | Aandré Amelie',
+    seoDescription: 'Fight acne and blemishes with our Neem and Multani Mitti clay blend. A potent natural remedy for clear skin.',
+    faqs: [
+      { question: 'Can I use this as a spot treatment?', answer: 'Absolutely! Dab a thick paste directly onto an active pimple and leave it overnight to reduce inflammation.' }
+    ],
+    concernSlugs: ['acne-breakouts', 'oily-skin'],
+    ingredientsList: ['Multani Mitti', 'Neem Leaf Powder']
+  },
+  {
+    slug: 'rose-and-sandal-multani-mitti',
+    name: 'Rose & Sandal Multani Mitti',
+    category: 'Botanical Clays',
+    tagline: 'Soothe & Brighten',
+    hook: 'A luxurious, fragrant blend that cools, soothes, and imparts a bridal glow.',
+    placeholder: 'dawn',
+    image: '/images/products/rose_sandal_multani_mitti.png',
+    description: 'Infused with cooling Rose and complexion-brightening Sandalwood, this Multani Mitti blend is a treat for the senses and the skin. It reduces redness, evens out skin tone, and leaves you with a beautifully radiant and soft complexion.',
+    bestFor: [
+      { title: 'Uneven Skin Tone', description: 'Fades marks and brightens the complexion' },
+      { title: 'Sun Damaged Skin', description: 'Cools and soothes sunburns and inflammation' }
+    ],
+    benefitSections: [
+      {
+        heading: 'Luxurious Botanical Brightening',
+        items: [
+          { title: 'Soothes Redness', description: 'Rose powder calms irritated skin instantly.' },
+          { title: 'Bridal Glow', description: 'Sandalwood naturally brightens and evens skin tone.' }
+        ]
+      }
+    ],
+    howToUse: [
+      { label: 'Mix', text: 'Blend with Royal Rose Elixir to enhance the floral benefits.' },
+      { label: 'Apply', text: 'Apply an even layer to the face and neck.' },
+      { label: 'Rinse', text: 'Rinse with cool water after 15 minutes.' }
+    ],
+    care: 'Keep in a cool, dark place to preserve the delicate floral aromas.',
+    seoTitle: 'Rose & Sandal Multani Mitti - Brightening Clay | Aandré Amelie',
+    seoDescription: 'Soothe and brighten your skin with the luxurious blend of Rose, Sandalwood, and Multani Mitti.',
+    faqs: [
+      { question: 'Is this suitable for dry skin?', answer: 'Yes, the rose and sandalwood help balance the clay, making it suitable for normal to dry skin when mixed with milk or yogurt instead of water.' }
+    ],
+    concernSlugs: ['dull-skin', 'pigmentation'],
+    ingredientsList: ['Multani Mitti', 'Rose Petal Powder', 'Sandalwood Powder']
+  },
+  {
+    slug: 'turmeric-and-sandal-multani-mitti',
+    name: 'Turmeric & Sandal Multani Mitti',
+    category: 'Botanical Clays',
+    tagline: 'Glow & Heal',
+    hook: 'The traditional Indian remedy for a flawless, golden complexion and healed skin.',
+    placeholder: 'sun',
+    image: '/images/products/turmeric_sandal_multani_mitti.png',
+    description: 'This potent blend features Turmeric and Sandalwood—Ayurveda\'s most revered healing botanicals. It reduces hyperpigmentation, fights free radicals, and delivers an unmistakable, healthy glow while the Multani Mitti keeps the skin deeply cleansed.',
+    bestFor: [
+      { title: 'Hyperpigmentation', description: 'Fades dark spots and acne scars over time' },
+      { title: 'Dull Skin', description: 'Delivers an instant, healthy golden glow' }
+    ],
+    benefitSections: [
+      {
+        heading: 'Ayurvedic Healing',
+        items: [
+          { title: 'Antioxidant Protection', description: 'Turmeric fights environmental damage.' },
+          { title: 'Scar Healing', description: 'Promotes skin regeneration and fades marks.' }
+        ]
+      }
+    ],
+    howToUse: [
+      { label: 'Mix', text: 'Mix with water or rose water into a paste.' },
+      { label: 'Apply', text: 'Apply a thin layer (to avoid temporary turmeric staining) and leave for 10-15 minutes.' },
+      { label: 'Rinse', text: 'Wash thoroughly and follow up with a toner.' }
+    ],
+    care: 'Store in an airtight container to preserve the potency of the turmeric.',
+    seoTitle: 'Turmeric & Sandal Multani Mitti - Healing Glow | Aandré Amelie',
+    seoDescription: 'Fade dark spots and achieve a golden glow with our Turmeric, Sandalwood, and Multani Mitti healing clay mask.',
+    faqs: [
+      { question: 'Will the turmeric stain my skin?', answer: 'We use the perfect ratio to minimize staining. However, leaving it on for too long or using it on very pale skin might leave a temporary yellow tint which washes off with a gentle cleanser.' }
+    ],
+    concernSlugs: ['pigmentation', 'dull-skin'],
+    ingredientsList: ['Multani Mitti', 'Turmeric Powder', 'Sandalwood Powder']
+  },
+  {
     slug: "royal-rose-elixir",
     name: "Royal Rose Elixir",
     category: "The Elixirs",

@@ -191,6 +191,23 @@ export default async function JournalPostPage({
                   return <hr key={i} className="border-outline-variant/35 my-8" />;
                 }
 
+                // Handle Images
+                if (trimmed.startsWith("![") && trimmed.includes("](") && trimmed.endsWith(")")) {
+                  const altEndIndex = trimmed.indexOf("](");
+                  const alt = trimmed.substring(2, altEndIndex);
+                  const src = trimmed.substring(altEndIndex + 2, trimmed.length - 1);
+                  
+                  return (
+                    <div key={i} className="my-8 w-full overflow-hidden border border-outline-variant/20">
+                      <img 
+                        src={src} 
+                        alt={alt} 
+                        className="w-full h-auto object-cover" 
+                      />
+                    </div>
+                  );
+                }
+
                 // Normal Paragraph
                 return (
                   <div key={i} className="mb-4">
