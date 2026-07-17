@@ -15,27 +15,25 @@ import HeroVideo from "@/components/HeroVideo";
 
 const VALUES = [
   {
-    title: "Ethical Sourcing",
-    text: "Every botanical is harvested with respect for the earth's natural cycles and the hands that gather them.",
+    title: "100% Handmade",
+    text: "Every jar, balm, and serum is handcrafted by skilled artisans.",
     icon: (
       <path d="M12 3c-4 3-6 6-6 10a6 6 0 0 0 12 0c0-4-2-7-6-10Z M12 22v-9" />
     ),
   },
   {
-    title: "Alchemical Purity",
-    text: "Zero synthetic fillers. Our formulas are stabilized by nature's own preservatives and concentrated for efficacy.",
+    title: "Organic Botanicals",
+    text: "Carefully harvested roses, herbs, oils, and botanicals at peak freshness.",
     icon: <path d="M9 2h6 M10 2v6l-5 10a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-10V2" />,
   },
   {
-    title: "Bespoke Rituals",
-    text: "Skincare is a dialogue. We craft personalized regimes that adapt to your internal and external environment.",
+    title: "Cruelty-Free",
+    text: "Our formulations are paraben-free, sulfate-free, cruelty-free, and free from harsh chemicals.",
     icon: <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20 M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" />,
   },
 ];
 
 export default function Home() {
-  const featured = getProduct("royal-rose-elixir")!;
-
   return (
     <div>
       {/* Video Hero */}
@@ -50,7 +48,7 @@ export default function Home() {
             <h1 className="mb-6 font-serif text-5xl leading-[1.05] text-cream sm:text-6xl md:text-[72px]">
               Where the Sun Meets the Moon.
             </h1>
-            <p className="mb-10 max-w-xl text-base leading-relaxed text-cream/90 sm:text-lg">
+            <p className="mb-10 max-w-xl font-sans text-base leading-relaxed text-cream/90 sm:text-lg">
               Skincare crafted in the harmony of contrasts — for every shade,
               every soul. Experience the restorative calm of the moon and the
               radiant energy of the sun.
@@ -68,18 +66,17 @@ export default function Home() {
       {/* Philosophy pull-quote strip */}
       <section className="flex items-center justify-center overflow-hidden bg-cream px-5 py-16 sm:px-10 sm:py-32">
         <Reveal className="max-w-4xl text-center">
-          <span className="mb-6 block text-xs font-semibold tracking-[0.3em] text-sun-terracotta uppercase">
+          <span className="mb-6 block font-sans text-xs font-semibold tracking-[0.3em] text-sun-terracotta uppercase">
             Our Ethos
           </span>
           <PullQuote>
-            True radiance is not a finish, but a balance. Like the lunar
-            cycle and the solar path, your skin thrives in the equilibrium of
-            gentle restoration and potent vitality.
+            Just as the sun and moon share the same sky, we believe every individual deserves skincare
+            that respects their unique skin rather than trying to change it.
           </PullQuote>
           <div className="mt-8 flex items-center justify-center gap-4">
             <span className="h-px w-12 bg-outline-variant" />
-            <span className="text-xs tracking-widest text-outline uppercase">
-              The Alchemical Balance
+            <span className="font-sans text-xs tracking-widest text-outline uppercase">
+              All Shades. All Souls.
             </span>
             <span className="h-px w-12 bg-outline-variant" />
           </div>
@@ -98,18 +95,16 @@ export default function Home() {
               <h2 className="mb-6 font-serif text-3xl leading-tight text-sun-terracotta-dark sm:text-4xl lg:text-5xl">
                 The Symbolism Behind<br />Aandré Amelie
               </h2>
-              <p className="mb-6 text-sm leading-relaxed text-charcoal/80">
-                The name Aandré Amelie is a symbol of balance and duality. It draws from
-                the story of two complementary forces—Aandré, embodying the warmth
-                and energy of the sun, and Amelie, reflecting the calm and mystery of the
-                moon. In our brand imagery,
+              <p className="mb-6 font-sans text-sm leading-relaxed text-charcoal/80">
+                The name Aandré Amelie represents the perfect balance of two timeless forces.
+                Aandré embodies the warmth, strength, confidence, and life-giving energy of the sun.
+                Amelie reflects the calm, grace, intuition, and serenity of the moon.
               </p>
-              <h3 className="mb-2 text-sm font-semibold text-charcoal">The Magic of Ganga Jal</h3>
-              <p className="mb-8 text-sm leading-relaxed text-charcoal/80">
-                Ganga Jal is a vital component of our formulation, infusing our toner with
-                purity and positivity. We believe in the transformative power of this sacred
-                water, which is used at every stage of production—enhancing our
-                connection to nature and promoting vibrant skin health.
+              <h3 className="mb-2 font-serif text-xl font-semibold text-charcoal">Handcrafted with Purpose</h3>
+              <p className="mb-8 font-sans text-sm leading-relaxed text-charcoal/80">
+                In our identity, Aandré and Amelie stand back-to-back—not in opposition, but in unwavering
+                support of one another. Their connection symbolizes trust, acceptance, equality, and
+                unconditional respect.
               </p>
               <div>
                 <Button href="/shop/complete-collection-combo">
@@ -147,7 +142,7 @@ export default function Home() {
                 {v.icon}
               </svg>
               <h4 className="font-serif text-2xl text-moon-indigo">{v.title}</h4>
-              <p className="text-sm leading-relaxed text-charcoal/70">{v.text}</p>
+              <p className="font-sans text-sm leading-relaxed text-charcoal/70">{v.text}</p>
             </Reveal>
           ))}
         </div>
@@ -182,7 +177,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-10 px-5 sm:px-10 md:flex-row lg:px-16">
           <Reveal className="md:max-w-xl">
             <h2 className="mb-4 font-serif text-4xl">Enter the inner circle.</h2>
-            <p className="text-cream/70">
+            <p className="font-sans text-cream/70">
               Join our journal for lunar-cycle rituals, product launches, and
               exclusive apothecary insights.
             </p>
@@ -209,14 +204,14 @@ async function ProductGrid() {
         <div className="mb-12 sm:mb-20 flex flex-col items-end justify-between gap-6 sm:flex-row">
           <Reveal>
             <SectionHeader title="Curation for the Discerning." className="max-w-md" />
-            <p className="mt-4 text-sm text-charcoal/70">
+            <p className="mt-4 font-sans text-sm text-charcoal/70">
               Small batches, high-potency ingredients, and tactile pleasure
               in every bottle.
             </p>
           </Reveal>
           <Link
             href="/shop"
-            className="border-b border-charcoal/40 pb-2 text-xs font-semibold tracking-widest text-charcoal uppercase hover:border-moon-indigo hover:text-moon-indigo"
+            className="border-b border-charcoal/40 pb-2 font-sans text-xs font-semibold tracking-widest text-charcoal uppercase hover:border-moon-indigo hover:text-moon-indigo"
           >
             View All Products
           </Link>
