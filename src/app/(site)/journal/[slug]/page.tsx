@@ -107,6 +107,17 @@ export default async function JournalPostPage({
             <h1 className="font-serif text-4xl sm:text-5xl text-charcoal leading-[1.1] mb-10">
               {article.title}
             </h1>
+            
+            {/* Show visual like with that product */}
+            {article.coverImage && (
+              <div className="relative w-full aspect-video md:aspect-[21/9] overflow-hidden mb-12 border border-outline-variant/20 rounded-sm">
+                <img 
+                  src={article.coverImage} 
+                  alt={article.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
           </Reveal>
 
           {/* Render blog post content manually to ensure beautiful typographic control */}

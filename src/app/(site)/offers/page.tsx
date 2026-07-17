@@ -17,47 +17,55 @@ export default function OffersPage() {
         <h1 className="font-serif text-5xl text-charcoal">Botanical Offers</h1>
       </Reveal>
 
-      <Reveal delay={100} className="border border-outline-variant/30 bg-cream-deep p-12 mb-16 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <MediaVisual 
-            variant="sun" 
-            image="/images/real_assets/DSC00686.JPG" 
-            label="Complete Alchemy Set" 
-            ratio="aspect-square" 
-            className="w-full h-full object-cover" 
+      <Reveal delay={100} className="border border-outline-variant/30 bg-cream-deep mb-16 overflow-hidden flex flex-col md:flex-row items-stretch">
+        <div className="w-full md:w-1/2 relative min-h-[300px]">
+          <img 
+            src="/images/acne2.png" 
+            alt="Complete Acne Set" 
+            className="absolute inset-0 w-full h-full object-cover" 
           />
         </div>
-        <div className="relative z-10">
-          <h2 className="font-serif text-3xl text-charcoal mb-4">The Complete Alchemy Set</h2>
-          <p className="text-sm text-charcoal/70 mb-8 max-w-xl mx-auto">
-            Experience the full spectrum of our apothecary rituals. Purchase the Complete Botanical Kit and receive a complimentary travel-sized Glow Quinch Elixir.
+        <div className="w-full md:w-1/2 p-12 flex flex-col justify-center items-start text-left">
+          <h2 className="font-serif text-3xl text-charcoal mb-4">The Complete Acne Set</h2>
+          <p className="text-sm text-charcoal/70 mb-8 max-w-md">
+            Experience the full spectrum of our apothecary rituals. Purchase the Complete Botanical Acne Kit and receive a complimentary travel-sized glow elixir.
           </p>
           <Button href="/shop">Shop the Collection</Button>
         </div>
       </Reveal>
 
       <Reveal delay={200} className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="border border-outline-variant/20 p-8 flex flex-col items-center">
-          <span className="text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-3">
-            Gift with Purchase
-          </span>
-          <h3 className="font-serif text-xl text-charcoal mb-4">
-            Lunar Harmony Bonus
-          </h3>
-          <p className="text-sm text-charcoal/70 mb-6 text-center flex-grow">
-            Spend over ₹3500 and receive our limited-edition guided meditation and sleep ritual guide.
-          </p>
+        <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col">
+          <div className="relative w-full aspect-[4/3]">
+            <img src="/images/lavender1.png" alt="Lunar Harmony Bonus" className="w-full h-full object-cover" />
+          </div>
+          <div className="p-8 flex flex-col items-center flex-grow text-center">
+            <span className="text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-3">
+              Gift with Purchase
+            </span>
+            <h3 className="font-serif text-xl text-charcoal mb-4">
+              Lunar Harmony Bonus
+            </h3>
+            <p className="text-sm text-charcoal/70 mb-6 flex-grow">
+              Spend over ₹3500 and receive our limited-edition guided meditation and sleep ritual guide.
+            </p>
+          </div>
         </div>
-        <div className="border border-outline-variant/20 p-8 flex flex-col items-center">
-          <span className="text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-3">
-            Subscription
-          </span>
-          <h3 className="font-serif text-xl text-charcoal mb-4">
-            Apothecary Member
-          </h3>
-          <p className="text-sm text-charcoal/70 mb-6 text-center flex-grow">
-            Subscribe to your favorite elixirs and save 15% on every auto-replenishment order. Cancel anytime.
-          </p>
+        <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col">
+          <div className="relative w-full aspect-[4/3]">
+            <img src="/images/royal-rose-main.png" alt="Apothecary Member" className="w-full h-full object-cover" />
+          </div>
+          <div className="p-8 flex flex-col items-center flex-grow text-center">
+            <span className="text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-3">
+              Subscription
+            </span>
+            <h3 className="font-serif text-xl text-charcoal mb-4">
+              Apothecary Member
+            </h3>
+            <p className="text-sm text-charcoal/70 mb-6 flex-grow">
+              Subscribe to your favorite elixirs and save 15% on every auto-replenishment order. Cancel anytime.
+            </p>
+          </div>
         </div>
       </Reveal>
     </div>

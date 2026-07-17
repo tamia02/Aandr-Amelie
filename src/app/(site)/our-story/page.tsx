@@ -70,8 +70,8 @@ export default function OurStoryPage() {
               <Reveal delay={150}>
                 <div className="relative aspect-[16/10] overflow-hidden border border-outline-variant/20">
                   <Image
-                    src="/images/real_assets/DSC00687.JPG"
-                    alt="Flatlay of natural botanical ingredients representing diverse skin types"
+                    src="/images/harvest-women-field.jpg"
+                    alt="A celebration of diversity and natural beauty"
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="object-cover"
@@ -240,6 +240,19 @@ export default function OurStoryPage() {
               Letter from Founder
             </span>
             <h2 className="font-serif text-4xl text-charcoal">Heart to Heart (maan ki baat)</h2>
+          </Reveal>
+          <Reveal delay={50} className="mb-12">
+            <div className="mx-auto w-full max-w-[280px] sm:max-w-[320px] aspect-[4/5] bg-cream-deep/50 border-2 border-dashed border-outline-variant flex flex-col items-center justify-center p-6 text-center rounded-sm">
+              <svg className="w-8 h-8 text-outline mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span className="text-xs font-sans tracking-widest text-outline uppercase">
+                Founder Portrait Placeholder
+              </span>
+              <span className="text-[10px] text-charcoal/50 mt-2">
+                (Replace with founder image)
+              </span>
+            </div>
           </Reveal>
           <Reveal delay={100} className="space-y-6 font-sans text-base leading-relaxed text-charcoal/80">
             <p>
