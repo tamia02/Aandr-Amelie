@@ -502,9 +502,12 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "complete-collection-combo",
-    name: "Aandré Amelie Complete Collection",
-    category: "The Apothecary Bundle",
+    slug: 'the-trial-pack',
+    name: 'The Trial Pack',
+    category: 'Botanical Kits',
+    tagline: 'Experience Our Best',
+    hook: 'A curated selection of our best-selling elixirs in travel-friendly sizes.',
+    placeholder: 'dawn',
     image: "/images/image.png",
     images: [
       "/images/image.png",
@@ -513,11 +516,7 @@ export const products: Product[] = [
       "/images/four3.png",
       "/images/four4.png"
     ],
-    tagline: "The Ultimate Holistic Beauty Ritual",
-    hook: "Experience the full spectrum of botanical wellness.",
-    placeholder: "dawn",
-    description:
-      "All four of our signature hydrosols in one set — Royal Rose Elixir, Glow Quinch Elixir, Acne Shield, and Vital Grow Scalp. Everything you need to hydrate, balance, and care for your skin and hair, from head to toe.",
+    description: "Experience the full spectrum of our apothecary rituals. The perfect introduction to Aandré Amelie.",
     bestFor: [
       {
         title: "Complete Wellness",
@@ -554,8 +553,8 @@ export const products: Product[] = [
       },
     ],
     care: CARE_INSTRUCTIONS,
-    seoTitle: "Aandré Amelie Complete Collection — Organic Hydrosol Combo Set",
-    seoDescription: "The ultimate 4-piece holistic beauty bundle. Hydrate skin, clear acne, strengthen hair, and soothe your senses. Shop the complete collection.",
+    seoTitle: 'The Trial Pack | Aandré Amelie',
+    seoDescription: 'The ultimate 4-piece holistic beauty bundle. Hydrate skin, clear acne, strengthen hair, and soothe your senses. Shop the complete collection.',
     concernSlugs: ["sensitive-dry", "sleep-stress", "oily-acne", "hair-scalp"],
     ingredientsList: ["Rose", "Lavender", "Mandarin", "Rosemary", "Basil", "Turmeric", "Lemongrass", "Curry Leaf", "Tea Tree", "Jojoba Oil"],
     faqs: [
@@ -568,26 +567,6 @@ export const products: Product[] = [
         answer: "With daily use, the 100ml bottles typically last 4 to 6 weeks. Proper storage in a cool place ensures maximum freshness.",
       },
     ],
-  },
-  {
-    slug: 'the-trial-pack',
-    name: 'The Trial Pack',
-    category: 'Botanical Kits',
-    tagline: 'Experience Our Best',
-    hook: 'A curated selection of our best-selling elixirs in travel-friendly sizes.',
-    placeholder: 'dawn',
-    image: '/images/real_assets/DSC00686.JPG', 
-    images: ['/images/real_assets/DSC00686.JPG'],
-    description: 'Experience the full spectrum of our apothecary rituals. The perfect introduction to Aandré Amelie.',
-    bestFor: [],
-    benefitSections: [],
-    howToUse: [],
-    care: CARE_INSTRUCTIONS,
-    seoTitle: 'The Trial Pack | Aandré Amelie',
-    seoDescription: 'A curated selection of our best-selling elixirs in travel-friendly sizes.',
-    faqs: [],
-    concernSlugs: [],
-    ingredientsList: []
   },
   {
     slug: 'super-fine-multani-mitti',
