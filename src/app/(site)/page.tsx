@@ -46,12 +46,10 @@ export default function Home() {
         <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-10 lg:px-16">
           <Reveal className="max-w-3xl">
             <h1 className="mb-6 font-serif text-5xl leading-[1.05] text-cream sm:text-6xl md:text-[72px]">
-              Where the Sun Meets the Moon.
+              All Shades,<br />All Souls.
             </h1>
             <p className="mb-10 max-w-xl font-sans text-base leading-relaxed text-cream/90 sm:text-lg">
-              Skincare crafted in the harmony of contrasts — for every shade,
-              every soul. Experience the restorative calm of the moon and the
-              radiant energy of the sun.
+              Luxury organic skincare crafted in harmony with nature. Because true beauty is about revealing the healthiest, most radiant version of yourself.
             </p>
             <div className="flex flex-wrap items-center gap-5">
               <Button href="/shop">Browse Products</Button>
@@ -160,7 +158,7 @@ export default function Home() {
         <div className="mx-auto max-w-[1440px]">
           <details className="group outline-none">
             <summary className="flex cursor-pointer list-none items-center justify-between border-b border-outline-variant/30 pb-4 font-serif text-2xl text-charcoal outline-none transition-colors hover:text-sun-terracotta select-none sm:text-4xl">
-              <span>Meet Aandré Amelie</span>
+              <span>What Customers Say About Us</span>
               <span className="text-3xl text-outline/50 transition-transform duration-300 group-open:rotate-45">
                 +
               </span>
