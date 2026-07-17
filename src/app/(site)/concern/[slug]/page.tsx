@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { concerns, getConcern } from "@/data/concerns";
 import { products } from "@/data/products";
@@ -75,12 +76,14 @@ export default async function ConcernPage({
             {concern.intro}
           </p>
         </Reveal>
-        <Reveal delay={100} className="lg:col-span-5 hidden lg:block">
-           <div className="relative aspect-[21/9] w-full overflow-hidden border border-outline-variant/20">
-             <img 
+        <Reveal delay={100} className="lg:col-span-5 hidden lg:flex justify-end">
+           <div className="relative aspect-[4/5] w-full max-w-[280px] overflow-hidden border border-outline-variant/20 shadow-md">
+             <Image 
                 src={`/images/${concern.slug === 'oily-acne' ? 'acne2.png' : concern.slug === 'sensitive-dry' ? 'rose1.png' : concern.slug === 'hair-scalp' ? 'vital1.png' : 'lavender1.png'}`} 
                 alt={concern.name} 
-                className="object-cover w-full h-full" 
+                fill
+                sizes="280px"
+                className="object-cover" 
              />
            </div>
         </Reveal>

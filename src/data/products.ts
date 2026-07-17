@@ -555,7 +555,7 @@ export const products: Product[] = [
     care: CARE_INSTRUCTIONS,
     seoTitle: 'The Trial Pack | Aandré Amelie',
     seoDescription: 'The ultimate 4-piece holistic beauty bundle. Hydrate skin, clear acne, strengthen hair, and soothe your senses. Shop the complete collection.',
-    concernSlugs: ["sensitive-dry", "sleep-stress", "oily-acne", "hair-scalp"],
+    concernSlugs: [],
     ingredientsList: ["Rose", "Lavender", "Mandarin", "Rosemary", "Basil", "Turmeric", "Lemongrass", "Curry Leaf", "Tea Tree", "Jojoba Oil"],
     faqs: [
       {
