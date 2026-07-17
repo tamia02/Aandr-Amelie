@@ -39,7 +39,7 @@ export default function PurityPage() {
             <span className="mb-6 block text-xs font-sans tracking-[0.2em] text-sun-terracotta uppercase">
               Our Promise to You
             </span>
-            <h1 className="mb-8 font-serif text-5xl leading-tight sm:text-6xl md:text-7xl">
+            <h1 className="mb-8 font-serif text-4xl leading-tight sm:text-5xl md:text-6xl">
               Beauty Rooted in
               <br />
               <span className="font-serif italic">Nature.</span>

@@ -77,16 +77,37 @@ export default async function ConcernPage({
           </p>
         </Reveal>
         <Reveal delay={100} className="lg:col-span-5 hidden lg:flex justify-end">
-           <div className="relative aspect-[4/5] w-full max-w-[280px] overflow-hidden border border-outline-variant/20 shadow-md">
+           <div className="relative aspect-square sm:aspect-[4/5] w-full max-w-[280px] overflow-hidden border border-outline-variant/20 shadow-md bg-cream">
              <Image 
                 src={`/images/${concern.slug === 'oily-acne' ? 'acne2.png' : concern.slug === 'sensitive-dry' ? 'rose1.png' : concern.slug === 'hair-scalp' ? 'vital1.png' : 'lavender1.png'}`} 
                 alt={concern.name} 
                 fill
                 sizes="280px"
-                className="object-cover" 
+                className="object-contain p-2" 
              />
            </div>
         </Reveal>
+      </section>
+
+      {/* Mapped Products Grid */}
+      <section className="mb-12">
+        <div className="mb-8 border-b border-outline-variant/30 pb-4">
+          <h2 className="font-serif text-xl text-charcoal italic">Recommended Apothecary Objects</h2>
+        </div>
+        
+        <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-12">
+          {matchingProducts.map((product, i) => (
+            <Reveal key={product.slug} delay={i * 90}>
+              <div className="border border-outline-variant/15 p-4 sm:p-6 bg-cream-deep/30 hover:border-sun-terracotta transition-all duration-300">
+                <ProductCard
+                  product={product}
+                  price={priceOf(product.slug)}
+                  ratio="aspect-[4/5]"
+                />
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       {/* Educational Content (SEO focus) */}
@@ -124,27 +145,6 @@ export default async function ConcernPage({
               </p>
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      {/* Mapped Products Grid */}
-      <section className="mb-10">
-        <div className="mb-8 border-b border-outline-variant/30 pb-4">
-          <h2 className="font-serif text-xl text-charcoal italic">Recommended Apothecary Objects</h2>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-12">
-          {matchingProducts.map((product, i) => (
-            <Reveal key={product.slug} delay={i * 90}>
-              <div className="border border-outline-variant/15 p-6 bg-cream-deep/30 hover:border-sun-terracotta transition-all duration-300">
-                <ProductCard
-                  product={product}
-                  price={priceOf(product.slug)}
-                  ratio="aspect-[4/5]"
-                />
-              </div>
-            </Reveal>
-          ))}
         </div>
       </section>
     </div>

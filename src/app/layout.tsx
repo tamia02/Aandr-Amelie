@@ -60,7 +60,7 @@ export default function RootLayout({
       lang="en"
       className={`${caslon.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-cream text-charcoal">
+      <body className="min-h-full flex flex-col bg-cream text-charcoal overflow-x-hidden">
         <div className="grain-overlay" />
         {children}
       </body>

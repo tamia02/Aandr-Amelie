@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function OurStoryPage() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* Hero */}
       <section className="mx-auto max-w-[1440px] px-5 pt-12 pb-10 sm:px-10 lg:px-16">
         <div className="grid grid-cols-1 items-end gap-8 md:grid-cols-12">
@@ -149,23 +149,14 @@ export default function OurStoryPage() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7 order-2 lg:order-1 flex justify-center lg:justify-start">
             <Reveal>
-              <div className="relative aspect-square w-[280px] sm:w-[360px] overflow-hidden border border-outline-variant/25 bg-moon-indigo/5 flex items-center justify-center shadow-md">
-                <video
-                  className="absolute inset-0 h-full w-full object-cover"
-                  src="/videos/real_assets/C0003.MP4"
-                  poster="/images/real_assets/DSC00688.JPG"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
+              <div className="relative aspect-[4/5] w-[280px] sm:w-[360px] overflow-hidden border border-outline-variant/25 bg-moon-indigo/5 shadow-md">
+                <Image
+                  src="/images/stitch/lab-distillation.jpg"
+                  alt="Pure Craftsmanship"
+                  fill
+                  sizes="(min-width: 640px) 360px, 280px"
+                  className="object-cover"
                 />
-                <div className="absolute inset-0 bg-charcoal/15" />
-                <div className="relative z-10 p-4 text-center text-cream">
-                  <span className="text-[10px] font-sans tracking-[0.2em] text-sun-gold uppercase block mb-1">
-                    Visual Short
-                  </span>
-                  <p className="font-serif text-xs italic">Inspired by Nature.</p>
-                </div>
               </div>
             </Reveal>
           </div>
@@ -241,19 +232,6 @@ export default function OurStoryPage() {
             </span>
             <h2 className="font-serif text-4xl text-charcoal">Heart to Heart (maan ki baat)</h2>
           </Reveal>
-          <Reveal delay={50} className="mb-12">
-            <div className="mx-auto w-full max-w-[280px] sm:max-w-[320px] aspect-[4/5] bg-cream-deep/50 border-2 border-dashed border-outline-variant flex flex-col items-center justify-center p-6 text-center rounded-sm">
-              <svg className="w-8 h-8 text-outline mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <span className="text-xs font-sans tracking-widest text-outline uppercase">
-                Founder Portrait Placeholder
-              </span>
-              <span className="text-[10px] text-charcoal/50 mt-2">
-                (Replace with founder image)
-              </span>
-            </div>
-          </Reveal>
           <Reveal delay={100} className="space-y-6 font-sans text-base leading-relaxed text-charcoal/80">
             <p>
               Luxury isn't created in a factory. It begins with a seed, a sunrise, and the hands that nurture nature.
@@ -309,6 +287,26 @@ export default function OurStoryPage() {
             </p>
           </Reveal>
         </div>
+      </section>
+
+      {/* Big Video */}
+      <section className="relative flex h-[60vh] sm:h-[80vh] w-full items-center overflow-hidden border-t border-outline-variant/15">
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src="/videos/real_assets/C0003.MP4"
+          poster="/images/real_assets/DSC00688.JPG"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+        <div className="absolute inset-0 bg-charcoal/30" />
+        <Reveal className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-10 lg:px-16 text-center">
+          <span className="text-[10px] font-sans tracking-[0.3em] text-cream uppercase block mb-3">
+            The Amelie Way
+          </span>
+          <h2 className="font-serif text-4xl sm:text-5xl text-cream italic">A Ritual of Purity</h2>
+        </Reveal>
       </section>
 
       {/* Join Us CTA */}
