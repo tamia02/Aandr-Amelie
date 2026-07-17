@@ -44,6 +44,18 @@ export default function OurStoryPage() {
             </div>
           </Reveal>
         </div>
+
+        <Reveal delay={200} className="mt-12">
+          <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden border border-outline-variant/20 shadow-sm">
+            <Image
+              src="/images/stitch/sun-moon-botanical.jpg"
+              alt="Aandré Amelie Philosophy"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+        </Reveal>
       </section>
 
       {/* Philosophy: All Shades, All Souls */}
@@ -232,7 +244,7 @@ export default function OurStoryPage() {
             </span>
             <h2 className="font-serif text-4xl text-charcoal">Heart to Heart (maan ki baat)</h2>
           </Reveal>
-          <Reveal delay={100} className="columns-1 md:columns-2 gap-8 lg:gap-12 font-sans text-base leading-relaxed text-charcoal/80 text-justify [&>p]:mb-6 [&>div]:break-inside-avoid">
+          <Reveal delay={100} className="space-y-6 font-sans text-base leading-relaxed text-charcoal/80 text-justify">
             <p>
               Luxury isn't created in a factory. It begins with a seed, a sunrise, and the hands that nurture nature.
             </p>
