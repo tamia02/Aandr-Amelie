@@ -24,70 +24,32 @@ export default async function ShopPage() {
   const rest = products.filter((p) => p.slug !== SIGNATURE_SLUG);
 
   return (
-    <div className="mx-auto max-w-[1440px] px-5 pt-16 pb-32 sm:px-10 sm:pt-24 lg:px-16">
+    <div className="mx-auto max-w-[1440px] px-5 pt-8 pb-16 sm:px-10 sm:pt-12 lg:px-16">
       {/* Hero */}
-      <section className="mb-20 max-w-4xl sm:mb-28">
+      <section className="mb-10 sm:mb-16">
         <Reveal>
-          <h1 className="mb-6 font-serif text-5xl sm:text-6xl md:text-7xl leading-[1.05]">
+          <h1 className="mb-4 font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.05]">
             The Botanical
             <br />
             <span className="font-normal italic">Edit</span>
           </h1>
-          <p className="max-w-xl text-base leading-relaxed text-charcoal/70 sm:text-lg">
+          <p className="max-w-xl text-sm leading-relaxed text-charcoal/70 sm:text-base">
             Every piece, ready to shop in a click. Curious about the story
             behind it? It&rsquo;s here too — entirely optional.
           </p>
         </Reveal>
       </section>
 
-      {/* Signature / bestseller */}
-      <section className="mb-24 sm:mb-32">
-        <span className="mb-6 block text-xs font-semibold tracking-[0.25em] text-sun-terracotta-dark uppercase">
-          Our Bestseller
-        </span>
-        <Reveal className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-16">
-          <div className="md:col-span-7">
-            <MediaVisual
-              image={signature.image}
-              variant={signature.placeholder}
-              label={signature.name}
-              ratio="aspect-[4/5]"
-              fit="cover"
-              priority
-            />
-          </div>
-          <div className="md:col-span-5">
-            <span className="mb-2 block text-xs font-semibold tracking-[0.2em] text-charcoal/50 uppercase">
-              {signature.category}
-            </span>
-            <h2 className="font-serif text-4xl text-charcoal sm:text-5xl">
-              {signature.name}
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-charcoal/70">
-              {signature.hook}
-            </p>
-            <div className="mt-8 flex items-center gap-6">
-              <Button href={`/shop/${signature.slug}`}>Shop Now</Button>
-              {priceOf(signature.slug) && (
-                <span className="text-sm font-semibold text-charcoal">
-                  {priceOf(signature.slug)}
-                </span>
-              )}
-            </div>
-          </div>
-        </Reveal>
-      </section>
-
       {/* Shop all */}
-      <section>
-        <div className="mb-12 flex items-end justify-between border-b border-outline-variant/30 pb-4">
-          <h2 className="font-serif text-2xl text-charcoal">Shop All</h2>
-          <span className="text-xs font-semibold tracking-widest text-charcoal/50 uppercase">
+      <section className="mb-16 sm:mb-24">
+        <div className="mb-8 flex items-end justify-between border-b border-outline-variant/30 pb-3">
+          <h2 className="font-serif text-xl sm:text-2xl text-charcoal">Shop All</h2>
+          <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-charcoal/50 uppercase">
             {products.length} Objects
           </span>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-4 gap-y-12 sm:gap-x-6 sm:gap-y-16 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-3">
           <Reveal>
             <ProductCard product={signature} price={priceOf(signature.slug)} ratio="aspect-square" />
           </Reveal>
@@ -97,6 +59,44 @@ export default async function ShopPage() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* Signature / bestseller */}
+      <section>
+        <span className="mb-4 block text-[10px] sm:text-xs font-semibold tracking-[0.25em] text-sun-terracotta-dark uppercase">
+          Our Bestseller
+        </span>
+        <Reveal className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-12">
+          <div className="md:col-span-6">
+            <MediaVisual
+              image={signature.image}
+              variant={signature.placeholder}
+              label={signature.name}
+              ratio="aspect-[4/5]"
+              fit="cover"
+              priority
+            />
+          </div>
+          <div className="md:col-span-6">
+            <span className="mb-2 block text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-charcoal/50 uppercase">
+              {signature.category}
+            </span>
+            <h2 className="font-serif text-3xl text-charcoal sm:text-4xl">
+              {signature.name}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-charcoal/70 sm:text-base">
+              {signature.hook}
+            </p>
+            <div className="mt-6 flex items-center gap-5">
+              <Button href={`/shop/${signature.slug}`}>Shop Now</Button>
+              {priceOf(signature.slug) && (
+                <span className="text-sm font-semibold text-charcoal">
+                  {priceOf(signature.slug)}
+                </span>
+              )}
+            </div>
+          </div>
+        </Reveal>
       </section>
     </div>
   );

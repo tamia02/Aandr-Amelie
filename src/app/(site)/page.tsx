@@ -44,14 +44,14 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-charcoal/35" />
         <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-10 lg:px-16">
-          <Reveal className="max-w-3xl">
-            <h1 className="mb-6 font-serif text-5xl leading-[1.05] text-cream sm:text-6xl md:text-[72px]">
+          <Reveal className="max-w-2xl">
+            <h1 className="mb-4 font-serif text-4xl leading-[1.05] text-cream sm:text-5xl md:text-6xl">
               All Shades,<br />All Souls.
             </h1>
-            <p className="mb-10 max-w-xl font-sans text-base leading-relaxed text-cream/90 sm:text-lg">
+            <p className="mb-8 max-w-lg font-sans text-sm leading-relaxed text-cream/90 sm:text-base">
               Luxury organic skincare crafted in harmony with nature. Because true beauty is about revealing the healthiest, most radiant version of yourself.
             </p>
-            <div className="flex flex-wrap items-center gap-5">
+            <div className="flex flex-wrap items-center gap-4">
               <Button href="/shop">Browse Products</Button>
               <Button href="/our-story" variant="ghost" className="border-cream/40 text-cream hover:border-cream hover:text-cream">
                 Our Story
@@ -62,8 +62,8 @@ export default function Home() {
       </section>
 
       {/* Philosophy pull-quote strip */}
-      <section className="flex items-center justify-center overflow-hidden bg-cream px-5 py-16 sm:px-10 sm:py-32">
-        <Reveal className="max-w-4xl text-center">
+      <section className="flex items-center justify-center overflow-hidden bg-cream px-5 py-12 sm:px-10 sm:py-20">
+        <Reveal className="max-w-3xl text-center">
           <span className="mb-6 block font-sans text-xs font-semibold tracking-[0.3em] text-sun-terracotta uppercase">
             Our Ethos
           </span>
@@ -85,39 +85,39 @@ export default function Home() {
       <ProductGrid />
 
       {/* Trial Pack Section */}
-      <section className="bg-cream-deep px-5 py-16 sm:px-10 lg:px-16">
-        <div className="mx-auto max-w-[1440px]">
+      <section className="bg-cream-deep px-5 py-10 sm:px-10 lg:px-16">
+        <div className="mx-auto max-w-[1024px]">
           <div className="flex flex-col md:flex-row items-stretch overflow-hidden bg-cream border border-outline-variant/30">
             {/* Left Content */}
-            <div className="flex flex-1 flex-col justify-center p-8 sm:p-10 lg:p-16">
-              <h2 className="mb-6 font-serif text-3xl leading-tight text-sun-terracotta-dark sm:text-4xl lg:text-5xl">
+            <div className="flex flex-1 flex-col justify-center p-6 sm:p-8 lg:p-10">
+              <h2 className="mb-4 font-serif text-2xl leading-tight text-sun-terracotta-dark sm:text-3xl">
                 The Symbolism Behind<br />Aandré Amelie
               </h2>
-              <p className="mb-6 font-sans text-sm leading-relaxed text-charcoal/80">
+              <p className="mb-4 font-sans text-xs leading-relaxed text-charcoal/80">
                 The name Aandré Amelie represents the perfect balance of two timeless forces.
                 Aandré embodies the warmth, strength, confidence, and life-giving energy of the sun.
                 Amelie reflects the calm, grace, intuition, and serenity of the moon.
               </p>
-              <h3 className="mb-2 font-serif text-xl font-semibold text-charcoal">Handcrafted with Purpose</h3>
-              <p className="mb-8 font-sans text-sm leading-relaxed text-charcoal/80">
+              <h3 className="mb-2 font-serif text-lg font-semibold text-charcoal">Handcrafted with Purpose</h3>
+              <p className="mb-6 font-sans text-xs leading-relaxed text-charcoal/80">
                 In our identity, Aandré and Amelie stand back-to-back—not in opposition, but in unwavering
                 support of one another. Their connection symbolizes trust, acceptance, equality, and
                 unconditional respect.
               </p>
               <div>
-                <Button href="/shop/complete-collection-combo">
+                <Button href="/shop/the-trial-pack">
                   Buy Trial Pack — ₹1,000
                 </Button>
               </div>
             </div>
 
             {/* Right Image */}
-            <div className="relative min-h-[300px] flex-1 bg-cream-deep sm:min-h-[400px] md:min-h-full">
+            <div className="relative min-h-[250px] flex-1 bg-cream-deep sm:min-h-[300px]">
               <Image
                 src="/images/image.png"
-                alt="Aandré Amelie Complete Collection Trial Pack"
+                alt="Aandré Amelie Trial Pack"
                 fill
-                className="object-contain"
+                className="object-cover"
               />
             </div>
           </div>
@@ -125,8 +125,8 @@ export default function Home() {
       </section>
 
       {/* Purity / values strip */}
-      <section className="border-y border-outline-variant/30 bg-cream px-5 py-16 sm:px-10 sm:py-32">
-        <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 text-center md:grid-cols-3 md:text-left">
+      <section className="border-y border-outline-variant/30 bg-cream px-5 py-12 sm:px-10 sm:py-20">
+        <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-10 text-center md:grid-cols-3 md:text-left">
           {VALUES.map((v, i) => (
             <Reveal key={v.title} delay={i * 90} className="space-y-4">
               <svg
@@ -171,11 +171,11 @@ export default function Home() {
       </section>
 
       {/* Email signup band */}
-      <section className="relative overflow-hidden bg-moon-indigo py-16 sm:py-24 text-cream">
-        <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-10 px-5 sm:px-10 md:flex-row lg:px-16">
-          <Reveal className="md:max-w-xl">
-            <h2 className="mb-4 font-serif text-4xl">Enter the inner circle.</h2>
-            <p className="font-sans text-cream/70">
+      <section className="relative overflow-hidden bg-moon-indigo py-12 sm:py-16 text-cream">
+        <div className="mx-auto flex max-w-[1200px] flex-col items-center justify-between gap-8 px-5 sm:px-10 md:flex-row lg:px-16">
+          <Reveal className="md:max-w-lg">
+            <h2 className="mb-3 font-serif text-3xl">Enter the inner circle.</h2>
+            <p className="font-sans text-sm text-cream/70">
               Join our journal for lunar-cycle rituals, product launches, and
               exclusive apothecary insights.
             </p>
@@ -207,12 +207,12 @@ async function ProductGrid() {
     commerce[slug] ? formatINR(commerce[slug].priceCents) : undefined;
 
   return (
-    <section className="bg-cream-deep px-5 py-16 sm:px-10 sm:py-32">
+    <section className="bg-cream-deep px-5 py-12 sm:px-10 sm:py-20">
       <div className="mx-auto max-w-[1440px]">
-        <div className="mb-12 sm:mb-20 flex flex-col items-end justify-between gap-6 sm:flex-row">
+        <div className="mb-8 sm:mb-12 flex flex-col items-end justify-between gap-4 sm:flex-row">
           <Reveal>
-            <SectionHeader title="Curation for the Discerning." className="max-w-md" />
-            <p className="mt-4 font-sans text-sm text-charcoal/70">
+            <SectionHeader title="Curation for the Discerning." className="max-w-sm" />
+            <p className="mt-3 font-sans text-xs text-charcoal/70">
               Small batches, high-potency ingredients, and tactile pleasure
               in every bottle and jar.
             </p>
