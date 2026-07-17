@@ -193,7 +193,7 @@ async function ProductGrid() {
   const selectedSlugs = [
     "royal-rose-elixir",
     "glow-quinch-elixir",
-    "acne-shield-hydrosol",
+    "acne-shield",
     "super-fine-multani-mitti"
   ];
   const featuredProducts = selectedSlugs.map(slug => products.find(p => p.slug === slug)).filter(Boolean) as typeof products;
