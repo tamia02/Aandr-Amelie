@@ -89,12 +89,21 @@ export default function JournalPage() {
                 </div>
               </div>
               <div className="lg:col-span-5 flex items-center justify-center p-4">
-                <div className="relative aspect-square w-full max-w-[320px] bg-moon-sage/10 rounded-full flex items-center justify-center border border-outline-variant/20">
-                  {/* Elegant decorative element representing the Sun/Moon transition */}
-                  <div className="absolute inset-4 rounded-full border border-dashed border-outline-variant/40 animate-spin-slow" />
-                  <span className="font-serif text-6xl text-outline/35 italic select-none">
-                    {featuredArticle.ingredient}
-                  </span>
+                <div className="relative aspect-square w-full max-w-[320px] rounded-full overflow-hidden border border-outline-variant/20 shadow-xl">
+                  {/* Actual realistic image instead of just text */}
+                  {featuredArticle.coverImage ? (
+                    <img 
+                      src={featuredArticle.coverImage} 
+                      alt={featuredArticle.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-moon-sage/10 flex items-center justify-center">
+                      <span className="font-serif text-6xl text-outline/35 italic select-none">
+                        {featuredArticle.ingredient}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

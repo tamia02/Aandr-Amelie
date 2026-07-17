@@ -116,26 +116,43 @@ export default async function JournalPostPage({
                 const trimmed = paragraph.trim();
                 if (!trimmed) return null;
 
-                // Handle subheadings
-                if (trimmed.startsWith("###")) {
+                const renderParagraph = (text: string) => {
                   return (
-                    <h3
-                      key={i}
-                      className="font-serif text-2xl text-moon-indigo pt-6 pb-2 border-b border-outline-variant/20"
-                    >
-                      {trimmed.replace("###", "").trim()}
-                    </h3>
+                    <p className="text-sm sm:text-base leading-relaxed text-charcoal/75">
+                      {text.split(/\*\*(.*?)\*\*/g).map((chunk, index) => {
+                        if (index % 2 === 1) {
+                          return <strong key={index} className="text-moon-indigo font-semibold">{chunk}</strong>;
+                        }
+                        return chunk;
+                      })}
+                    </p>
+                  );
+                };
+
+                // Split block into lines in case a heading and paragraph are combined
+                const lines = trimmed.split("\n");
+                const firstLine = lines[0].trim();
+                const restLines = lines.slice(1).join("\n").trim();
+
+                if (firstLine.startsWith("#### ")) {
+                  return (
+                    <div key={i} className="space-y-2 mb-6">
+                      <h4 className="font-serif text-lg text-charcoal pt-4 pb-1 font-bold">
+                        {firstLine.replace("#### ", "").trim()}
+                      </h4>
+                      {restLines && renderParagraph(restLines)}
+                    </div>
                   );
                 }
 
-                if (trimmed.startsWith("####")) {
+                if (firstLine.startsWith("### ")) {
                   return (
-                    <h4
-                      key={i}
-                      className="font-serif text-lg text-charcoal pt-4 pb-1 font-bold"
-                    >
-                      {trimmed.replace("####", "").trim()}
-                    </h4>
+                    <div key={i} className="space-y-4 mb-6">
+                      <h3 className="font-serif text-2xl text-moon-indigo pt-6 pb-2 border-b border-outline-variant/20">
+                        {firstLine.replace("### ", "").trim()}
+                      </h3>
+                      {restLines && renderParagraph(restLines)}
+                    </div>
                   );
                 }
 
@@ -176,15 +193,9 @@ export default async function JournalPostPage({
 
                 // Normal Paragraph
                 return (
-                  <p key={i} className="text-sm sm:text-base leading-relaxed text-charcoal/75">
-                    {/* Render bold text inline replacement simple helper */}
-                    {trimmed.split(/\*\*(.*?)\*\*/g).map((chunk, index) => {
-                      if (index % 2 === 1) {
-                        return <strong key={index} className="text-moon-indigo font-semibold">{chunk}</strong>;
-                      }
-                      return chunk;
-                    })}
-                  </p>
+                  <div key={i} className="mb-4">
+                    {renderParagraph(trimmed)}
+                  </div>
                 );
               })}
             </div>
