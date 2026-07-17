@@ -12,7 +12,7 @@ const products = [
   { slug: "glow-quinch-elixir", priceCents: 210000, stock: 50 },
   { slug: "acne-shield", priceCents: 210000, stock: 50 },
   { slug: "vital-grow-scalp", priceCents: 210000, stock: 50 },
-  { slug: "complete-collection-combo", priceCents: 100000, stock: 50 },
+  { slug: "the-trial-pack", priceCents: 100000, stock: 50 },
 ];
 
 async function main() {

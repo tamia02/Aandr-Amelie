@@ -27,7 +27,7 @@ export async function getCommerceForSlugs(
   // Fallback to static data if database is unavailable or empty
   const fallback: Record<string, Commerce> = {};
   for (const slug of slugs) {
-    if (slug === "complete-collection-combo") {
+    if (slug === "the-trial-pack") {
       fallback[slug] = { slug, priceCents: 100000, compareAtPriceCents: null, currency: "INR", stock: 50 };
     } else {
       fallback[slug] = { slug, priceCents: 210000, compareAtPriceCents: null, currency: "INR", stock: 50 };
