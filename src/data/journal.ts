@@ -38,6 +38,7 @@ At Aandré Amelie, our *Royal Rose Elixir* is crafted from fresh organic roses, 
 ### 1. Cellular Rejuvenation and Hydration
 
 Rose hydrosol is a powerful humectant, meaning it draws moisture into the skin and seals it. It is naturally rich in vitamins and antioxidants:
+
 *   **Vitamin C:** Synthesizes collagen production, helps brighten the skin, and neutralizes free radicals.
 *   **Vitamin A (Retinol-like):** Gently supports cellular turnover, refining texture and fading dark spots over time.
 *   **Antioxidants:** Shield skin cells from environmental pollutants and UV-induced oxidative stress.
@@ -49,6 +50,7 @@ Applied topically, it balances the skin’s pH, constricts capillaries to reduce
 ### 2. Nervous System Calm (Aromatherapy)
 
 The aromatic profile of pure steam-distilled rosewater has direct physiological effects. Inhaling its scent has been shown to:
+
 1.  Lower cortisol (stress hormone) levels.
 2.  Reduce blood pressure and heart rate.
 3.  Activate the parasympathetic nervous system, inducing emotional balance and relaxation.
@@ -60,10 +62,12 @@ A simple misting of rosewater during moments of anxiety acts as an immediate res
 ### 3. Digestion and Internal Cooling
 
 Because our rosewater is distilled without synthetic preservatives or alcohol, it is edible-grade. In Ayurvedic tradition, rosewater is known as a powerful cooling agent (*Pitta pacifier*). 
+
 *   **Heartburn Relief:** Sipping rosewater cools acid reflux and soothes the esophagus.
 *   **Digestive Comfort:** It eases mild bloating, calms stomach inflammation, and stimulates bile production for better digestion.
 
 ### How to Integrate Rose Hydrosol into Your Daily Ritual
+
 *   **Morning Mist:** Spray on clean skin immediately after waking up to tone and prep for moisture.
 *   **Botanical Sip:** Add 1 tablespoon of Royal Rose Elixir to warm water or your morning tea to soothe digestion and set a calm intention.
 *   **Evening Eye Compress:** Soak organic cotton pads in chilled rose hydrosol and place them over closed eyes for 10 minutes to reduce puffiness and eye strain.
@@ -142,6 +146,7 @@ If you struggle to quiet your mind at night, **lavender hydrosol** (lavender wat
 Lavender isn’t just a pleasant scent; it contains active organic compounds, primarily **linalool** and **linalyl acetate**. 
 
 When inhaled or absorbed, these molecules:
+
 *   **Calm the Brain:** They interact with the neurotransmitter GABA to quiet overactive neural activity, acting as a natural, mild sedative.
 *   **Lower Vital Signs:** Clinical studies show that inhaling lavender aroma slows down the heart rate, decreases blood pressure, and lowers skin temperature—shifting the body out of 'fight or flight' (sympathetic state) and into 'rest and digest' (parasympathetic state).
 *   **Improve Sleep Quality:** Lavender increases the percentage of deep, slow-wave sleep, allowing you to wake up feeling more restored.
@@ -192,6 +197,7 @@ Jojoba oil is not actually an oil; it is a **liquid wax ester**. Why does this d
 Human sebum—the natural oil produced by your sebaceous glands—is composed of about 25% wax esters. Jojoba oil is the only botanical substance in nature that chemically mimics human sebum.
 
 When you apply a lightweight layer of jojoba oil to oily skin:
+
 1.  **The Deception:** Your sebaceous glands sense the presence of sufficient wax esters on the skin surface.
 2.  **The Regulation:** Perceiving that the skin is already lubricated, the glands slow down their internal sebum production.
 3.  **The Result:** Your skin naturally achieves a matte, balanced state over time, reducing the oily shine.
@@ -203,11 +209,13 @@ When you apply a lightweight layer of jojoba oil to oily skin:
 Jojoba oil has a comedogenic rating of **2 out of 5**, meaning it is highly unlikely to clog pores. Unlike heavy mineral or coconut oils, jojoba is non-occlusive, allowing the skin to breathe. 
 
 Additionally, jojoba oil contains:
+
 *   **Zinc and Copper:** Essential minerals that help repair damaged skin tissues and reduce acne scarring.
 *   **Vitamin E:** A potent antioxidant that prevents sebum from oxidizing. Oxidized sebum is sticky and mixes with dead skin cells to form blackheads and clogged pores; Jojoba stops this process in its tracks.
 *   **Anti-inflammatory Lipids:** Calm the swelling, pain, and redness of active acne breakouts.
 
 ### How to Use Acne Shield for Oily Skin
+
 Shake the bottle of Acne Shield thoroughly to blend the hydrosols and the Jojoba oil. Mist it onto your clean face, or spray it onto a organic cotton pad and gently sweep it across your T-zone. You will get the dual benefit of purifying botanical waters and barrier-balancing jojoba esters in a single step.
     `,
   },
@@ -258,6 +266,7 @@ Hair growth is a slow physiological process. Here is what to expect when using a
 *   **Month 4–6:** New hair growth. You will begin to see 'baby hairs' sprouting along the hairline and parting, and overall hair density will improve.
 
 ### Application Tips for Best Results
+
 Mist Vital Grow Scalp directly onto your scalp after washing while your hair is still damp. Use your fingertips to massage it in for 2 minutes to further stimulate blood flow. Leave it in—do not rinse it out. Consistency is the secret; apply it daily for at least 4 months to unlock its full potential.
     `,
   },
