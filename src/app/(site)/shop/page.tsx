@@ -28,7 +28,7 @@ export default async function ShopPage() {
       {/* Hero */}
       <section className="mb-20 max-w-4xl sm:mb-28">
         <Reveal>
-          <h1 className="mb-6 font-serif text-6xl leading-[1.05] sm:text-7xl">
+          <h1 className="mb-6 font-serif text-5xl sm:text-6xl md:text-7xl leading-[1.05]">
             The Botanical
             <br />
             <span className="font-normal italic">Edit</span>

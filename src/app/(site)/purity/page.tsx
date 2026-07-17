@@ -39,7 +39,7 @@ export default function PurityPage() {
             <span className="mb-6 block text-xs font-sans tracking-[0.2em] text-sun-terracotta uppercase">
               Our Promise to You
             </span>
-            <h1 className="mb-8 font-serif text-6xl leading-tight sm:text-7xl">
+            <h1 className="mb-8 font-serif text-5xl leading-tight sm:text-6xl md:text-7xl">
               Beauty Rooted in
               <br />
               <span className="font-serif italic">Nature.</span>
@@ -79,7 +79,7 @@ export default function PurityPage() {
             <span className="text-xs font-sans tracking-[0.25em] text-sun-terracotta uppercase block mb-3">
               Why Aandre Amelie?
             </span>
-            <h2 className="mb-6 font-serif text-4xl">
+            <h2 className="mb-6 font-serif text-3xl sm:text-4xl">
               Handpicked Ingredients
             </h2>
             <p className="text-sm font-sans text-charcoal/70">
@@ -91,8 +91,8 @@ export default function PurityPage() {
             <Reveal className="md:col-span-7">
               <div className="relative mb-6 h-[500px] overflow-hidden">
                 <Image
-                  src="/images/harvest-women-field.jpg"
-                  alt="Women harvesting botanicals by hand in a field"
+                  src="/images/lavender1.png"
+                  alt="Lavender botanicals used in our formulas"
                   fill
                   sizes="(min-width: 768px) 58vw, 100vw"
                   className="object-cover transition-transform duration-1000 hover:scale-105"

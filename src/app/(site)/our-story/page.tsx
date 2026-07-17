@@ -23,7 +23,7 @@ export default function OurStoryPage() {
             <span className="mb-6 block text-xs font-sans tracking-[0.2em] text-sun-terracotta uppercase">
               Brand Story
             </span>
-            <h1 className="font-serif text-5xl leading-tight sm:text-7xl text-charcoal">
+            <h1 className="font-serif text-4xl leading-tight sm:text-5xl md:text-7xl text-charcoal">
               Aandré Amelie
               <br />
               <span className="font-serif italic">All Shades, All Souls.</span>
@@ -55,7 +55,7 @@ export default function OurStoryPage() {
                 <span className="text-xs font-sans tracking-[0.25em] text-sun-terracotta-dark uppercase block mb-2">
                   Our Promise
                 </span>
-                <h2 className="font-serif text-4xl text-charcoal leading-tight">
+                <h2 className="font-serif text-3xl sm:text-4xl text-charcoal leading-tight">
                   All Shades. All Souls.
                 </h2>
               </Reveal>
@@ -70,8 +70,8 @@ export default function OurStoryPage() {
               <Reveal delay={150}>
                 <div className="relative aspect-[16/10] overflow-hidden border border-outline-variant/20">
                   <Image
-                    src="/images/harvest-women-field.jpg"
-                    alt="A celebration of diversity and natural beauty"
+                    src="/images/rose1.png"
+                    alt="Rose Elixir representing natural beauty"
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="object-cover"
@@ -175,7 +175,7 @@ export default function OurStoryPage() {
               <span className="text-xs font-sans tracking-[0.25em] text-sun-terracotta uppercase block mb-2">
                 Pure Craftsmanship
               </span>
-              <h2 className="font-serif text-4xl text-charcoal leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl text-charcoal leading-tight">
                 Small Batches. Exceptional Care.
               </h2>
             </Reveal>
