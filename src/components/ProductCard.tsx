@@ -18,7 +18,7 @@ export default function ProductCard({
         variant={product.placeholder}
         label={product.image ? undefined : product.name}
         ratio={ratio}
-        fit="contain"
+        fit={["royal-rose-elixir", "glow-quinch-elixir", "acne-shield", "vital-grow-scalp"].includes(product.slug) ? "cover" : "contain"}
       />
       <div className="mt-4 sm:mt-8 flex flex-col sm:flex-row items-start justify-between gap-2 sm:gap-4">
         <div>

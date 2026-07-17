@@ -52,7 +52,7 @@ export default async function ShopPage() {
               variant={signature.placeholder}
               label={signature.name}
               ratio="aspect-[4/5]"
-              fit="contain"
+              fit="cover"
               priority
             />
           </div>
