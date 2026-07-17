@@ -7,7 +7,7 @@ export default function AdminLoginPage() {
   const [state, formAction, pending] = useActionState(adminLogin, undefined);
 
   return (
-    <div className="flex min-h-full flex-1 items-center justify-center bg-moon-indigo px-6 py-20">
+    <div className="flex min-h-full flex-1 items-center justify-center bg-moon-indigo px-6 py-8">
       <form
         action={formAction}
         className="w-full max-w-sm bg-cream p-10 shadow-lg"

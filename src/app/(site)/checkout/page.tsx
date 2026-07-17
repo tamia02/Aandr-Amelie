@@ -127,7 +127,7 @@ export default function CheckoutPage() {
 
   if (items.length === 0) {
     return (
-      <div className="px-6 py-20 text-center sm:px-10 md:py-28">
+      <div className="px-6 py-8 text-center sm:px-10 md:py-28">
         <SectionHeader eyebrow="Checkout" title="Your cart is empty" align="center" />
         <div className="mt-8 flex justify-center">
           <Button href="/shop">Shop the Collection</Button>
@@ -137,7 +137,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="px-6 py-20 sm:px-10 md:py-28">
+    <div className="px-6 py-8 sm:px-10 md:py-28">
       <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="lazyOnload" />
       <div className="mx-auto grid max-w-5xl gap-14 md:grid-cols-[1.2fr_1fr]">
         <div>

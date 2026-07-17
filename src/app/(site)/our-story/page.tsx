@@ -17,7 +17,7 @@ export default function OurStoryPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="mx-auto max-w-[1440px] px-5 pt-32 pb-24 sm:px-10 lg:px-16">
+      <section className="mx-auto max-w-[1440px] px-5 pt-12 pb-10 sm:px-10 lg:px-16">
         <div className="grid grid-cols-1 items-end gap-8 md:grid-cols-12">
           <Reveal className="md:col-span-7">
             <span className="mb-6 block text-xs font-sans tracking-[0.2em] text-sun-terracotta uppercase">
@@ -47,7 +47,7 @@ export default function OurStoryPage() {
       </section>
 
       {/* Philosophy: All Shades, All Souls */}
-      <section className="border-t border-outline-variant/20 bg-cream-deep/20 py-24 sm:py-32">
+      <section className="border-t border-outline-variant/20 bg-cream-deep/20 py-10 sm:py-12">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-10 lg:px-16">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 items-center">
             <div className="lg:col-span-5 space-y-6">
@@ -84,8 +84,8 @@ export default function OurStoryPage() {
       </section>
 
       {/* Duality: Aandré & Amelie */}
-      <section className="py-24 sm:py-32 border-t border-outline-variant/25 bg-cream">
-        <div className="mx-auto max-w-[1440px] px-5 sm:px-10 lg:px-16 text-center mb-16">
+      <section className="py-10 sm:py-12 border-t border-outline-variant/25 bg-cream">
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-10 lg:px-16 text-center mb-8">
           <Reveal>
             <span className="text-xs font-sans tracking-[0.25em] text-sun-terracotta uppercase block mb-3">
               Why Us
@@ -101,7 +101,7 @@ export default function OurStoryPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Aandré: The Sun */}
-          <div className="bg-sun-blush/20 py-20 px-5 sm:px-10 lg:px-16 border-r border-outline-variant/20 flex flex-col justify-center">
+          <div className="bg-sun-blush/20 py-8 px-5 sm:px-10 lg:px-16 border-r border-outline-variant/20 flex flex-col justify-center">
             <Reveal className="max-w-md mx-auto space-y-6">
               <span className="text-xs font-sans tracking-[0.2em] text-sun-terracotta-dark uppercase block">
                 Aandré
@@ -116,7 +116,7 @@ export default function OurStoryPage() {
           </div>
 
           {/* Amelie: The Moon */}
-          <div className="bg-moon-indigo/5 py-20 px-5 sm:px-10 lg:px-16 flex flex-col justify-center">
+          <div className="bg-moon-indigo/5 py-8 px-5 sm:px-10 lg:px-16 flex flex-col justify-center">
             <Reveal className="max-w-md mx-auto space-y-6">
               <span className="text-xs font-sans tracking-[0.2em] text-moon-indigo uppercase block">
                 Amelie
@@ -133,7 +133,7 @@ export default function OurStoryPage() {
       </section>
 
       {/* Pull Quote */}
-      <section className="bg-cream-deep border-y border-outline-variant/30 px-5 py-24 text-center sm:px-10 sm:py-32">
+      <section className="bg-cream-deep border-y border-outline-variant/30 px-5 py-10 text-center sm:px-10 sm:py-12">
         <Reveal className="mx-auto max-w-4xl">
           <PullQuote>
             Just as the sun and moon share the same sky, we believe every individual deserves skincare that respects their unique skin rather than trying to change it.
@@ -145,7 +145,7 @@ export default function OurStoryPage() {
       </section>
 
       {/* Handcrafted Apothecary */}
-      <section className="mx-auto max-w-[1440px] px-5 py-24 sm:px-10 sm:py-32 lg:px-16">
+      <section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-10 sm:py-12 lg:px-16">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7 order-2 lg:order-1">
             <Reveal>
@@ -195,9 +195,9 @@ export default function OurStoryPage() {
       </section>
 
       {/* Values */}
-      <section className="bg-cream-deep/40 border-t border-outline-variant/25 py-24 sm:py-32">
+      <section className="bg-cream-deep/40 border-t border-outline-variant/25 py-10 sm:py-12">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-10 lg:px-16">
-          <Reveal className="mb-20 text-center">
+          <Reveal className="mb-8 text-center">
             <span className="mb-4 block text-xs font-sans tracking-[0.2em] text-outline uppercase">
               Our Values
             </span>
@@ -233,9 +233,9 @@ export default function OurStoryPage() {
       </section>
 
       {/* Heart to Heart / Founder Letter */}
-      <section className="bg-cream py-24 sm:py-32 border-t border-outline-variant/15">
+      <section className="bg-cream py-10 sm:py-12 border-t border-outline-variant/15">
         <div className="mx-auto max-w-4xl px-5 sm:px-10 lg:px-16">
-          <Reveal className="mb-16 text-center">
+          <Reveal className="mb-8 text-center">
             <span className="text-xs font-sans tracking-[0.25em] text-sun-terracotta uppercase block mb-3">
               Letter from Founder
             </span>
@@ -312,7 +312,7 @@ export default function OurStoryPage() {
       </section>
 
       {/* Join Us CTA */}
-      <section className="bg-moon-indigo text-cream py-24 text-center px-5 border-t border-outline-variant/15">
+      <section className="bg-moon-indigo text-cream py-10 text-center px-5 border-t border-outline-variant/15">
         <Reveal className="mx-auto max-w-2xl">
           <span className="text-[10px] font-sans tracking-[0.3em] text-sun-gold uppercase block mb-4">
             Our Philosophy

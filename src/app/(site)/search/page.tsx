@@ -31,8 +31,8 @@ export default async function SearchPage({
   const commerceData = await getCommerceForSlugs(searchResults.map((p) => p.slug));
 
   return (
-    <div className="mx-auto max-w-[1440px] px-5 py-32 sm:px-10 lg:px-16 min-h-[60vh]">
-      <Reveal className="mb-16 text-center">
+    <div className="mx-auto max-w-[1440px] px-5 py-12 sm:px-10 lg:px-16 min-h-[60vh]">
+      <Reveal className="mb-8 text-center">
         <span className="mb-4 block text-xs font-semibold tracking-[0.25em] text-sun-terracotta uppercase">
           {query ? `Search Results for "${query}"` : "Search"}
         </span>

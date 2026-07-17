@@ -78,7 +78,7 @@ export default async function JournalPostPage({
   };
 
   return (
-    <div className="mx-auto max-w-[1440px] px-5 pt-32 pb-32 sm:px-10 lg:px-16">
+    <div className="mx-auto max-w-[1440px] px-5 pt-12 pb-12 sm:px-10 lg:px-16">
       {/* Article Schema */}
       <script
         type="application/ld+json"

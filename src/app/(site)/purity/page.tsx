@@ -33,7 +33,7 @@ export default function PurityPage() {
   return (
     <div>
       {/* Hero */}
-      <header className="mx-auto max-w-[1440px] px-5 pt-32 pb-24 sm:px-10 lg:px-16">
+      <header className="mx-auto max-w-[1440px] px-5 pt-12 pb-10 sm:px-10 lg:px-16">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12">
           <Reveal className="md:col-span-6">
             <span className="mb-6 block text-xs font-sans tracking-[0.2em] text-sun-terracotta uppercase">
@@ -73,9 +73,9 @@ export default function PurityPage() {
       </header>
 
       {/* Why Aandre Amelie? */}
-      <section className="bg-cream-deep py-24 sm:py-32">
+      <section className="bg-cream-deep py-10 sm:py-12">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-10 lg:px-16">
-          <Reveal className="mx-auto mb-24 max-w-2xl text-center">
+          <Reveal className="mx-auto mb-10 max-w-2xl text-center">
             <span className="text-xs font-sans tracking-[0.25em] text-sun-terracotta uppercase block mb-3">
               Why Aandre Amelie?
             </span>
@@ -183,7 +183,7 @@ export default function PurityPage() {
       </section>
 
       {/* Trust Signals & Brand Story */}
-      <section className="mx-auto max-w-[1440px] px-5 py-24 sm:px-10 sm:py-32 lg:px-16">
+      <section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-10 sm:py-12 lg:px-16">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-12">
           <Reveal className="relative md:col-span-6">
             <h2 className="mb-8 font-serif text-4xl leading-tight">
@@ -223,7 +223,7 @@ export default function PurityPage() {
       </section>
 
       {/* Purity quote */}
-      <section className="relative flex items-center justify-center overflow-hidden py-32 bg-cream-deep/40 border-t border-outline-variant/15">
+      <section className="relative flex items-center justify-center overflow-hidden py-12 bg-cream-deep/40 border-t border-outline-variant/15">
         <span
           aria-hidden="true"
           className="pointer-events-none absolute font-serif text-[22vw] leading-none text-charcoal/5 select-none"

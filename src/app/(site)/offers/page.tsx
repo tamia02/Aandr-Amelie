@@ -9,15 +9,15 @@ export const metadata = {
 
 export default function OffersPage() {
   return (
-    <div className="mx-auto max-w-4xl px-5 py-32 sm:px-10 lg:px-16 text-center">
-      <Reveal className="mb-16">
+    <div className="mx-auto max-w-4xl px-5 py-12 sm:px-10 lg:px-16 text-center">
+      <Reveal className="mb-8">
         <span className="mb-4 block text-xs font-semibold tracking-[0.25em] text-sun-terracotta uppercase">
           Exclusive Rituals
         </span>
         <h1 className="font-serif text-5xl text-charcoal">Botanical Offers</h1>
       </Reveal>
 
-      <Reveal delay={100} className="border border-outline-variant/30 bg-cream-deep mb-16 overflow-hidden flex flex-col md:flex-row items-stretch">
+      <Reveal delay={100} className="border border-outline-variant/30 bg-cream-deep mb-8 overflow-hidden flex flex-col md:flex-row items-stretch">
         <div className="w-full md:w-1/2 relative min-h-[300px]">
           <img 
             src="/images/acne2.png" 

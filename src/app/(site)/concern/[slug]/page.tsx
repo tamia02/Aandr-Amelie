@@ -52,7 +52,7 @@ export default async function ConcernPage({
     commerce[productSlug] ? formatINR(commerce[productSlug].priceCents) : undefined;
 
   return (
-    <div className="mx-auto max-w-[1440px] px-5 pt-32 pb-32 sm:px-10 lg:px-16">
+    <div className="mx-auto max-w-[1440px] px-5 pt-12 pb-12 sm:px-10 lg:px-16">
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[
@@ -62,7 +62,7 @@ export default async function ConcernPage({
       />
 
       {/* Concern Header */}
-      <section className="mb-20 max-w-4xl">
+      <section className="mb-8 max-w-4xl">
         <Reveal>
           <SectionHeader
             eyebrow="Targeted Solution"
@@ -76,7 +76,7 @@ export default async function ConcernPage({
       </section>
 
       {/* Educational Content (SEO focus) */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-28 border-y border-outline-variant/30 py-20 bg-cream-deep/20 px-4 sm:px-8">
+      <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-28 border-y border-outline-variant/30 py-8 bg-cream-deep/20 px-4 sm:px-8">
         <div className="lg:col-span-6">
           <Reveal>
             <h2 className="font-serif text-2xl text-moon-indigo mb-6">
@@ -117,7 +117,7 @@ export default async function ConcernPage({
       </section>
 
       {/* Mapped Products Grid */}
-      <section className="mb-24">
+      <section className="mb-10">
         <div className="mb-12 border-b border-outline-variant/30 pb-4">
           <h2 className="font-serif text-2xl text-charcoal">Recommended Apothecary Objects</h2>
         </div>

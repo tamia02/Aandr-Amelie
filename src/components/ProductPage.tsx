@@ -70,7 +70,7 @@ export default function ProductPage({
       />
 
       {/* Breadcrumbs */}
-      <div className="mx-auto max-w-[1440px] px-5 pt-32 pb-2 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-[1440px] px-5 pt-12 pb-2 sm:px-10 lg:px-16">
         <Breadcrumbs
           items={[
             { label: "Shop", href: "/shop" },
@@ -80,7 +80,7 @@ export default function ProductPage({
       </div>
 
       {/* Hero */}
-      <section className="mx-auto grid max-w-[1440px] grid-cols-1 gap-x-6 gap-y-14 px-5 pt-4 pb-24 sm:px-10 md:grid-cols-12 lg:px-16 items-start">
+      <section className="mx-auto grid max-w-[1440px] grid-cols-1 gap-x-6 gap-y-14 px-5 pt-4 pb-10 sm:px-10 md:grid-cols-12 lg:px-16 items-start">
         <Reveal className="md:col-span-7 md:sticky md:top-32">
           <ProductGallery
             images={product.images}
@@ -118,7 +118,7 @@ export default function ProductPage({
 
       {/* Best For */}
       {product.bestFor.length > 0 && (
-        <section className="mx-auto max-w-[1440px] px-5 pb-24 sm:px-10 lg:px-16">
+        <section className="mx-auto max-w-[1440px] px-5 pb-10 sm:px-10 lg:px-16">
           <Reveal>
             <h2 className="mb-12 text-center text-xs font-semibold tracking-[0.2em] text-outline uppercase">
               Best for Skin Type
@@ -151,7 +151,7 @@ export default function ProductPage({
 
       {/* Health Boost */}
       {product.healthBoost && (
-        <section className="bg-moon-indigo px-5 py-24 text-cream sm:px-10">
+        <section className="bg-moon-indigo px-5 py-10 text-cream sm:px-10">
           <div className="mx-auto max-w-[1440px]">
             <Reveal>
               <span className="mb-4 block text-xs font-semibold tracking-[0.25em] text-sun-gold uppercase">
@@ -175,7 +175,7 @@ export default function ProductPage({
 
       {/* Composition */}
       {composition && (
-        <section className="mx-auto max-w-[1440px] px-5 py-24 sm:px-10 lg:px-16">
+        <section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-10 lg:px-16">
           <div className="relative border border-outline-variant/10 bg-cream-deep p-10 sm:p-12">
             <div className="absolute -top-4 -left-4 bg-sun-blush px-4 py-1 text-[10px] font-semibold tracking-widest text-sun-terracotta-dark uppercase">
               Master Apothecary Note
@@ -206,7 +206,7 @@ export default function ProductPage({
       )}
 
       {restSections.map((section) => (
-        <section key={section.heading} className="mx-auto max-w-[1440px] px-5 pb-24 sm:px-10 lg:px-16">
+        <section key={section.heading} className="mx-auto max-w-[1440px] px-5 pb-10 sm:px-10 lg:px-16">
           <Reveal>
             <h2 className="mb-14 font-serif text-4xl text-charcoal">{section.heading}</h2>
           </Reveal>
@@ -228,7 +228,7 @@ export default function ProductPage({
       ))}
 
       {/* How to Use (Accordion-based for reduced scroll fatigue and structured SEO parsing) */}
-      <section className="bg-cream-deep py-24">
+      <section className="bg-cream-deep py-10">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-10 lg:px-16">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -289,7 +289,7 @@ export default function ProductPage({
       </section>
 
       {/* Apothecary FAQs (Long-tail Search Intent Optimization) */}
-      <section className="bg-cream py-20 border-b border-outline-variant/30">
+      <section className="bg-cream py-8 border-b border-outline-variant/30">
         <div className="mx-auto max-w-4xl px-5">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold tracking-[0.25em] text-sun-terracotta uppercase block mb-3">
@@ -320,7 +320,7 @@ export default function ProductPage({
 
       {/* Related Journal Articles (Internal Linking) */}
       {relatedArticles.length > 0 && (
-        <section className="mx-auto max-w-[1440px] px-5 py-24 sm:px-10 lg:px-16">
+        <section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-10 lg:px-16">
           <div className="mb-12">
             <span className="text-xs font-semibold tracking-[0.25em] text-outline uppercase block mb-3">
               The Journal
@@ -360,7 +360,7 @@ export default function ProductPage({
       <ProductReviews productName={product.name} />
 
       {/* CTA */}
-      <section className="mx-auto max-w-[1440px] px-5 py-24 sm:px-10 lg:px-16">
+      <section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-10 lg:px-16">
         <Reveal className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="max-w-md font-serif text-3xl leading-tight text-charcoal">
             Continue exploring the full ritual.

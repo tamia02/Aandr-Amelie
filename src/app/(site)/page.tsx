@@ -66,7 +66,7 @@ export default function Home() {
       </section>
 
       {/* Philosophy pull-quote strip */}
-      <section className="flex items-center justify-center overflow-hidden bg-cream px-5 py-12 sm:px-10 sm:py-20 border-b border-sun-terracotta/20">
+      <section className="flex items-center justify-center overflow-hidden bg-cream px-5 py-12 sm:px-10 sm:py-8 border-b border-sun-terracotta/20">
         <Reveal className="max-w-3xl text-center border-y-2 border-double border-sun-terracotta/30 py-12">
           <span className="mb-6 block font-sans text-[10px] font-semibold tracking-[0.3em] text-sun-terracotta uppercase">
             Our Ethos
@@ -133,7 +133,7 @@ export default function Home() {
       </section>
 
       {/* Purity / values strip */}
-      <section className="border-y border-sun-terracotta/20 bg-cream px-5 py-12 sm:px-10 sm:py-20">
+      <section className="border-y border-sun-terracotta/20 bg-cream px-5 py-12 sm:px-10 sm:py-8">
         <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-10 text-center md:grid-cols-3 md:text-left divide-y md:divide-y-0 md:divide-x divide-sun-terracotta/20">
           {VALUES.map((v, i) => (
             <Reveal key={v.title} delay={i * 90} className="space-y-4 pt-10 first:pt-0 md:pt-0 md:px-10 md:first:pl-0 md:last:pr-0 flex flex-col items-center md:items-start">
@@ -217,7 +217,7 @@ async function ProductGrid() {
     commerce[slug] ? formatINR(commerce[slug].priceCents) : undefined;
 
   return (
-    <section className="bg-cream-deep px-5 py-12 sm:px-10 sm:py-20">
+    <section className="bg-cream-deep px-5 py-12 sm:px-10 sm:py-8">
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-8 sm:mb-12 flex flex-col items-end justify-between gap-4 sm:flex-row">
           <Reveal>

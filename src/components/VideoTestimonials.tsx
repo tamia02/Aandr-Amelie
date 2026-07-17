@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 
 export default function VideoTestimonials() {
   return (
-    <Reveal className="mx-auto mt-10 sm:mt-20 max-w-6xl">
+    <Reveal className="mx-auto mt-10 sm:mt-8 max-w-6xl">
       <h3 className="mb-6 sm:mb-10 text-center text-xs font-semibold tracking-widest uppercase text-sun-terracotta">
         From Our Channel
       </h3>

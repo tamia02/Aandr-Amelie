@@ -32,12 +32,12 @@ export default function CartPage() {
   }, 0);
 
   return (
-    <div className="px-6 py-20 sm:px-10 md:py-28">
+    <div className="px-6 py-8 sm:px-10 md:py-28">
       <div className="mx-auto max-w-4xl">
         <SectionHeader eyebrow="Your Ritual" title="Shopping Cart" />
 
         {!loading && items.length === 0 && (
-          <div className="mt-16 text-center">
+          <div className="mt-8 text-center">
             <p className="text-base text-charcoal/70">
               Your cart is empty — let&rsquo;s find your ritual.
             </p>

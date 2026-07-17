@@ -5,7 +5,7 @@ import SocialIcon from "./SocialIcon";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-outline-variant/30 bg-cream-deep py-24">
+    <footer className="w-full border-t border-outline-variant/30 bg-cream-deep py-10">
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 px-5 sm:px-10 md:grid-cols-12 lg:px-16">
         <div className="md:col-span-4">
           <div className="mb-6 block">

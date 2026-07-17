@@ -24,7 +24,7 @@ export default async function OrderConfirmationPage({
   const hasFreshAccess = (await cookies()).get(`order_access_${order.id}`) !== undefined;
 
   return (
-    <div className="px-6 py-20 sm:px-10 md:py-28">
+    <div className="px-6 py-8 sm:px-10 md:py-28">
       <div className="mx-auto max-w-2xl">
         <SectionHeader
           eyebrow="Thank You"

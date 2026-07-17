@@ -172,8 +172,8 @@ const FAQ_SECTIONS = [
 
 export default function FaqPage() {
   return (
-    <div className="mx-auto max-w-4xl px-5 py-32 sm:px-10 lg:px-16">
-      <Reveal className="mb-16 text-center">
+    <div className="mx-auto max-w-4xl px-5 py-12 sm:px-10 lg:px-16">
+      <Reveal className="mb-8 text-center">
         <span className="mb-4 block text-xs font-sans tracking-[0.25em] text-sun-terracotta uppercase">
           Support
         </span>
@@ -206,7 +206,7 @@ export default function FaqPage() {
         ))}
       </div>
 
-      <Reveal className="mt-24 text-center border-t border-outline-variant/30 pt-16">
+      <Reveal className="mt-10 text-center border-t border-outline-variant/30 pt-16">
         <span className="mb-4 block text-xs font-sans tracking-[0.25em] text-sun-terracotta uppercase">
           🌿 Our Promise
         </span>

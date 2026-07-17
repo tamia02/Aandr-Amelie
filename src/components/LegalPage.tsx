@@ -8,12 +8,12 @@ export function LegalLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mx-auto max-w-3xl px-5 pt-32 pb-32 sm:px-10">
+    <div className="mx-auto max-w-3xl px-5 pt-12 pb-12 sm:px-10">
       <span className="mb-6 block text-xs font-semibold tracking-[0.2em] text-sun-terracotta uppercase">
         Legal
       </span>
       <h1 className="mb-4 font-serif text-5xl leading-tight">{title}</h1>
-      <p className="mb-16 text-sm text-charcoal/50">Last updated: {lastUpdated}</p>
+      <p className="mb-8 text-sm text-charcoal/50">Last updated: {lastUpdated}</p>
       <div className="space-y-10">{children}</div>
     </div>
   );

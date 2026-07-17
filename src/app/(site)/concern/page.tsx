@@ -16,11 +16,11 @@ export const metadata: Metadata = {
 
 export default function ConcernsPage() {
   return (
-    <div className="mx-auto max-w-[1440px] px-5 pt-32 pb-32 sm:px-10 lg:px-16">
+    <div className="mx-auto max-w-[1440px] px-5 pt-12 pb-12 sm:px-10 lg:px-16">
       {/* Breadcrumbs */}
       <Breadcrumbs items={[{ label: "Shop by Concern" }]} />
 
-      <section className="mb-16 max-w-4xl">
+      <section className="mb-8 max-w-4xl">
         <Reveal>
           <SectionHeader
             eyebrow="Targeted Rituals"

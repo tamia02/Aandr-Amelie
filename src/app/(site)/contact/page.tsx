@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-[1440px] px-5 pt-32 pb-32 sm:px-10 lg:px-16">
+    <div className="mx-auto max-w-[1440px] px-5 pt-12 pb-12 sm:px-10 lg:px-16">
       {/* Breadcrumbs */}
       <Breadcrumbs items={[{ label: "Contact" }]} />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mt-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
         {/* Info Column */}
         <div className="lg:col-span-5 space-y-12">
           <Reveal>

@@ -20,11 +20,11 @@ export default function JournalPage() {
   const restArticles = filteredArticles.filter((art) => art.slug !== featuredArticle.slug);
 
   return (
-    <div className="mx-auto max-w-[1440px] px-5 pt-32 pb-32 sm:px-10 lg:px-16">
+    <div className="mx-auto max-w-[1440px] px-5 pt-12 pb-12 sm:px-10 lg:px-16">
       {/* Breadcrumbs */}
       <Breadcrumbs items={[{ label: "Journal" }]} />
 
-      <section className="mb-16 max-w-4xl">
+      <section className="mb-8 max-w-4xl">
         <Reveal>
           <SectionHeader
             eyebrow="The Apothecary Journal"
@@ -59,7 +59,7 @@ export default function JournalPage() {
 
       {/* Articles Layout */}
       {selectedCategory === "All" && filteredArticles.length > 0 && (
-        <section className="mb-20">
+        <section className="mb-8">
           <Reveal>
             <div className="border border-outline-variant/25 bg-cream-deep p-8 sm:p-12 hover:border-sun-terracotta transition-all duration-500 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-7 space-y-6">
