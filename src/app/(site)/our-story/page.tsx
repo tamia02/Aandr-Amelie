@@ -232,7 +232,7 @@ export default function OurStoryPage() {
             </span>
             <h2 className="font-serif text-4xl text-charcoal">Heart to Heart (maan ki baat)</h2>
           </Reveal>
-          <Reveal delay={100} className="space-y-6 font-sans text-base leading-relaxed text-charcoal/80">
+          <Reveal delay={100} className="columns-1 md:columns-2 gap-8 lg:gap-12 font-sans text-base leading-relaxed text-charcoal/80 text-justify [&>p]:mb-6 [&>div]:break-inside-avoid">
             <p>
               Luxury isn't created in a factory. It begins with a seed, a sunrise, and the hands that nurture nature.
             </p>

@@ -62,91 +62,98 @@ export default async function ConcernPage({
         ]}
       />
 
-      {/* Concern Header */}
-      <section className="mb-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border-b border-sun-terracotta/20 pb-8">
-        <Reveal className="lg:col-span-7">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="h-px w-6 bg-sun-terracotta/40"></span>
-            <span className="text-[10px] font-semibold tracking-[0.2em] text-sun-terracotta uppercase">
-              Targeted Solution
-            </span>
-          </div>
-          <h1 className="font-serif text-2xl text-charcoal italic mb-3">{concern.name}</h1>
-          <p className="max-w-xl text-[11px] leading-relaxed text-charcoal/70">
-            {concern.intro}
-          </p>
-        </Reveal>
-        <Reveal delay={100} className="lg:col-span-5 hidden lg:flex justify-end">
-           <div className="relative aspect-square sm:aspect-[4/5] w-full max-w-[280px] overflow-hidden border border-outline-variant/20 shadow-md bg-cream">
-             <Image 
-                src={`/images/${concern.slug === 'oily-acne' ? 'acne2.png' : concern.slug === 'sensitive-dry' ? 'rose1.png' : concern.slug === 'hair-scalp' ? 'vital1.png' : 'lavender1.png'}`} 
-                alt={concern.name} 
-                fill
-                sizes="280px"
-                className="object-contain p-2" 
-             />
-           </div>
-        </Reveal>
-      </section>
-
-      {/* Mapped Products Grid */}
-      <section className="mb-12">
-        <div className="mb-8 border-b border-outline-variant/30 pb-4">
-          <h2 className="font-serif text-xl text-charcoal italic">Recommended Apothecary Objects</h2>
-        </div>
-        
-        <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-12">
-          {matchingProducts.map((product, i) => (
-            <Reveal key={product.slug} delay={i * 90}>
-              <div className="border border-outline-variant/15 p-4 sm:p-6 bg-cream-deep/30 hover:border-sun-terracotta transition-all duration-300">
-                <ProductCard
-                  product={product}
-                  price={priceOf(product.slug)}
-                  ratio="aspect-[4/5]"
-                />
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* Educational Content (SEO focus) */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-28 border-y border-outline-variant/30 py-8 bg-cream-deep/20 px-4 sm:px-8">
-        <div className="lg:col-span-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mt-8">
+        {/* Left Column: Title, Intro, Products */}
+        <div className="lg:col-span-6 xl:col-span-7 flex flex-col gap-10">
           <Reveal>
-            <h2 className="font-serif text-xl text-moon-indigo mb-4 italic">
-              Understanding the Condition
-            </h2>
-            <p className="text-[11px] leading-relaxed text-charcoal/70 mb-6">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="h-px w-6 bg-sun-terracotta/40"></span>
+              <span className="text-[10px] font-semibold tracking-[0.2em] text-sun-terracotta uppercase">
+                Targeted Solution
+              </span>
+            </div>
+            <h1 className="font-serif text-3xl sm:text-4xl text-charcoal italic mb-4">{concern.name}</h1>
+            <p className="max-w-xl text-xs sm:text-sm leading-relaxed text-charcoal/75">
               {concern.intro}
             </p>
-            <h2 className="font-serif text-xl text-moon-indigo mb-4 italic">
-              What Botanicals to Look For
-            </h2>
-            <p className="text-[11px] leading-relaxed text-charcoal/70">
-              {concern.whatToLookFor}
-            </p>
           </Reveal>
-        </div>
-        <div className="lg:col-span-6">
-          <Reveal delay={100}>
-            <h2 className="font-serif text-xl text-moon-indigo mb-4 italic">
-              How Our Formulations Help
-            </h2>
-            <p className="text-[11px] leading-relaxed text-charcoal/70 mb-6">
-              {concern.howOurProductsHelp}
-            </p>
-            <div className="border-l border-sun-terracotta bg-sun-blush/10 p-5 mb-8">
-              <h3 className="text-[10px] font-semibold tracking-[0.2em] text-sun-terracotta-dark uppercase mb-2">
-                Apothecary Recommendation
-              </h3>
-              <p className="text-[11px] leading-relaxed text-charcoal/75 italic font-serif">
-                {concern.howToChoose}
-              </p>
+
+          {/* Mapped Products Grid */}
+          <Reveal delay={100} className="mt-4 border-t border-sun-terracotta/20 pt-8">
+            <div className="mb-6">
+              <h2 className="font-serif text-xl sm:text-2xl text-charcoal italic">Recommended Apothecary Objects</h2>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-12">
+              {matchingProducts.map((product, i) => (
+                <Reveal key={product.slug} delay={i * 90}>
+                  <div className="border border-outline-variant/15 p-4 sm:p-6 bg-cream-deep/30 hover:border-sun-terracotta transition-all duration-300">
+                    <ProductCard
+                      product={product}
+                      price={priceOf(product.slug)}
+                      ratio="aspect-[4/5]"
+                    />
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </Reveal>
         </div>
-      </section>
+
+        {/* Right Column: Hero Image, Educational Text */}
+        <div className="lg:col-span-6 xl:col-span-5 flex flex-col gap-10">
+          {/* Hero Image */}
+          <Reveal delay={150}>
+            <div className="relative aspect-[4/5] w-full max-w-[480px] overflow-hidden border border-outline-variant/20 shadow-md bg-cream mx-auto lg:mx-0">
+              <Image 
+                src={`/images/${concern.slug === 'oily-acne' ? 'acne2.png' : concern.slug === 'sensitive-dry' ? 'rose1.png' : concern.slug === 'hair-scalp' ? 'vital1.png' : 'lavender1.png'}`} 
+                alt={concern.name} 
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-contain p-4" 
+              />
+            </div>
+          </Reveal>
+
+          {/* Educational Content */}
+          <Reveal delay={200} className="bg-cream-deep/30 p-6 sm:p-8 border border-outline-variant/20 shadow-sm space-y-8">
+            <div>
+              <h2 className="font-serif text-xl text-moon-indigo mb-3 italic">
+                Understanding the Condition
+              </h2>
+              <p className="text-[11px] sm:text-xs leading-relaxed text-charcoal/70">
+                {concern.intro}
+              </p>
+            </div>
+            
+            <div>
+              <h2 className="font-serif text-xl text-moon-indigo mb-3 italic">
+                What Botanicals to Look For
+              </h2>
+              <p className="text-[11px] sm:text-xs leading-relaxed text-charcoal/70">
+                {concern.whatToLookFor}
+              </p>
+            </div>
+
+            <div>
+              <h2 className="font-serif text-xl text-moon-indigo mb-3 italic">
+                How Our Formulations Help
+              </h2>
+              <p className="text-[11px] sm:text-xs leading-relaxed text-charcoal/70 mb-4">
+                {concern.howOurProductsHelp}
+              </p>
+              <div className="border-l border-sun-terracotta bg-sun-blush/10 p-5">
+                <h3 className="text-[10px] font-semibold tracking-[0.2em] text-sun-terracotta-dark uppercase mb-2">
+                  Apothecary Recommendation
+                </h3>
+                <p className="text-[11px] sm:text-xs leading-relaxed text-charcoal/75 italic font-serif">
+                  {concern.howToChoose}
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </div>
     </div>
   );
 }
