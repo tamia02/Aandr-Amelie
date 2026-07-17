@@ -194,15 +194,17 @@ async function ProductGrid() {
     "royal-rose-elixir",
     "glow-quinch-elixir",
     "acne-shield",
-    "super-fine-multani-mitti"
+    "vital-grow-scalp",
+    "super-fine-multani-mitti",
+    "imported-pink-clay",
+    "neem-and-multani-mitti",
+    "rose-and-sandal-multani-mitti"
   ];
   const featuredProducts = selectedSlugs.map(slug => products.find(p => p.slug === slug)).filter(Boolean) as typeof products;
 
   const commerce = await getCommerceForSlugs(featuredProducts.map((p) => p.slug));
   const priceOf = (slug: string) =>
     commerce[slug] ? formatINR(commerce[slug].priceCents) : undefined;
-
-  const [p1, p2, p3, p4] = featuredProducts;
 
   return (
     <section className="bg-cream-deep px-5 py-16 sm:px-10 sm:py-32">
@@ -212,7 +214,7 @@ async function ProductGrid() {
             <SectionHeader title="Curation for the Discerning." className="max-w-md" />
             <p className="mt-4 font-sans text-sm text-charcoal/70">
               Small batches, high-potency ingredients, and tactile pleasure
-              in every bottle.
+              in every bottle and jar.
             </p>
           </Reveal>
           <Link
@@ -224,18 +226,11 @@ async function ProductGrid() {
         </div>
 
         <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-16 lg:grid-cols-4">
-          <Reveal>
-            <ProductCard product={p1} price={priceOf(p1.slug)} ratio="aspect-[4/5]" />
-          </Reveal>
-          <Reveal delay={90}>
-            <ProductCard product={p2} price={priceOf(p2.slug)} ratio="aspect-[4/5]" />
-          </Reveal>
-          <Reveal delay={180}>
-            <ProductCard product={p3} price={priceOf(p3.slug)} ratio="aspect-[4/5]" />
-          </Reveal>
-          <Reveal delay={270}>
-            <ProductCard product={p4} price={priceOf(p4.slug)} ratio="aspect-[4/5]" />
-          </Reveal>
+          {featuredProducts.map((product, i) => (
+            <Reveal key={product.slug} delay={i * 90}>
+              <ProductCard product={product} price={priceOf(product.slug)} ratio="aspect-[4/5]" />
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
