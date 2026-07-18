@@ -37,7 +37,7 @@ export default function OffersPage() {
         </div>
       </Reveal>
 
-      <Reveal delay={200} className="grid grid-cols-2 gap-4 sm:gap-8">
+      <Reveal delay={200} className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
         <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col">
           <div className="relative w-full aspect-[4/3]">
             <img src="/images/lavender1.png" alt="Lunar Harmony Bonus" className="w-full h-full object-cover" />
@@ -116,8 +116,8 @@ export default function OffersPage() {
         </div>
         
         {/* Trial Pack */}
-        <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-row col-span-2 max-w-2xl mx-auto w-full">
-          <div className="p-4 sm:p-8 flex flex-col items-center justify-center w-1/2 text-center border-r border-outline-variant/20">
+        <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col sm:flex-row sm:col-span-2 max-w-2xl mx-auto w-full">
+          <div className="p-4 sm:p-8 flex flex-col items-center justify-center w-full sm:w-1/2 text-center border-b sm:border-b-0 sm:border-r border-outline-variant/20">
             <span className="text-[9px] sm:text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-2 sm:mb-3">
               Starter Set
             </span>
@@ -129,7 +129,7 @@ export default function OffersPage() {
             </p>
             <Button href="/shop/the-trial-pack" className="w-full max-w-[200px] text-[10px] sm:text-xs">Shop Trial Pack</Button>
           </div>
-          <div className="relative w-1/2 min-h-[250px]">
+          <div className="relative w-full sm:w-1/2 min-h-[250px]">
             <img src="/images/trial-pack-new.png" alt="The Trial Pack" className="w-full h-full object-contain object-center" />
           </div>
         </div>

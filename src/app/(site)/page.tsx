@@ -91,9 +91,9 @@ export default function Home() {
       {/* Trial Pack Section */}
       <section className="bg-cream-deep px-5 py-10 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-[1024px]">
-          <div className="flex flex-row items-stretch overflow-hidden bg-cream border border-outline-variant/30">
+          <div className="flex flex-col md:flex-row items-stretch overflow-hidden bg-cream border border-outline-variant/30">
             {/* Left Content */}
-            <div className="flex w-1/2 flex-col justify-center p-4 sm:p-8 lg:p-10 border-r border-sun-terracotta/20">
+            <div className="flex w-full md:w-1/2 flex-col justify-center p-4 sm:p-8 lg:p-10 border-b md:border-b-0 md:border-r border-sun-terracotta/20">
               <span className="mb-4 block text-[10px] font-semibold tracking-[0.25em] text-sun-terracotta-dark uppercase">
                 The Trial Pack
               </span>
@@ -120,7 +120,7 @@ export default function Home() {
             </div>
 
             {/* Right Image */}
-            <div className="relative min-h-[250px] w-1/2 bg-cream-deep sm:min-h-[300px]">
+            <div className="relative min-h-[250px] w-full md:w-1/2 bg-cream-deep sm:min-h-[300px]">
               <Image
                 src="/images/trial-pack-new.png"
                 alt="Aandré Amelie Trial Pack"

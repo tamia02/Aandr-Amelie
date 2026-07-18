@@ -115,7 +115,7 @@ export default function JournalPage() {
 
       {/* Grid for secondary/filtered articles */}
       <section>
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {/* If filtering, show all matches; otherwise show non-featured */}
           {(selectedCategory === "All" ? restArticles : filteredArticles).map((article, i) => (
             <Reveal key={article.slug} delay={i * 80}>

@@ -18,7 +18,7 @@ export default function OurStoryPage() {
     <div className="overflow-x-hidden">
       {/* Hero */}
       <section className="mx-auto max-w-[1440px] px-5 pt-12 pb-10 sm:px-10 lg:px-16">
-        <div className="grid grid-cols-2 gap-6 sm:gap-10 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 items-center">
           <div className="flex flex-col text-left space-y-4 sm:space-y-8">
             <Reveal className="w-full">
               <span className="mb-6 block text-xs font-sans tracking-[0.2em] text-sun-terracotta uppercase">
@@ -63,7 +63,7 @@ export default function OurStoryPage() {
       {/* Philosophy: All Shades, All Souls */}
       <section className="border-t border-outline-variant/20 bg-cream-deep/20 py-10 sm:py-12">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-10 lg:px-16">
-          <div className="grid grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="space-y-6">
               <Reveal>
                 <span className="text-xs font-sans tracking-[0.25em] text-sun-terracotta-dark uppercase block mb-2">
@@ -113,7 +113,7 @@ export default function OurStoryPage() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Aandré: The Sun */}
           <div className="bg-sun-blush/20 py-8 px-5 sm:px-10 lg:px-16 border-r border-outline-variant/20 flex flex-col justify-center">
             <Reveal className="max-w-md mx-auto space-y-6">
