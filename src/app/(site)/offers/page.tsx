@@ -116,11 +116,8 @@ export default function OffersPage() {
         </div>
         
         {/* Trial Pack */}
-        <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col col-span-2 max-w-md mx-auto w-full">
-          <div className="relative w-full aspect-[4/3] border-b border-outline-variant/20">
-            <img src="/images/image.png" alt="The Trial Pack" className="w-full h-full object-cover object-top" />
-          </div>
-          <div className="p-4 sm:p-8 flex flex-col items-center flex-grow text-center">
+        <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-row col-span-2 max-w-2xl mx-auto w-full">
+          <div className="p-4 sm:p-8 flex flex-col items-center justify-center w-1/2 text-center border-r border-outline-variant/20">
             <span className="text-[9px] sm:text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-2 sm:mb-3">
               Starter Set
             </span>
@@ -131,6 +128,9 @@ export default function OffersPage() {
               Experience the harmony of Aandré Amelie with our signature 5-piece trial collection.
             </p>
             <Button href="/shop/the-trial-pack" className="w-full max-w-[200px] text-[10px] sm:text-xs">Shop Trial Pack</Button>
+          </div>
+          <div className="relative w-1/2 min-h-[250px]">
+            <img src="/images/DSC00800.JPG" alt="The Trial Pack" className="w-full h-full object-cover object-center" />
           </div>
         </div>
       </Reveal>

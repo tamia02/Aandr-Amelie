@@ -36,7 +36,7 @@ export default function ConcernsPage() {
       </section>
 
       {/* Concerns Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-2 gap-4 sm:gap-8">
         {concerns.map((concern, i) => (
           <Reveal key={concern.slug} delay={i * 80}>
             <div className="group border border-outline-variant/30 bg-cream-deep p-8 sm:p-12 hover:border-sun-terracotta transition-all duration-500 h-full flex flex-col justify-between">

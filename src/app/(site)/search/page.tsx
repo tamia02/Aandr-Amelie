@@ -48,7 +48,7 @@ export default async function SearchPage({
       )}
 
       {searchResults.length > 0 && (
-        <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-16 md:grid-cols-3">
           {searchResults.map((product, i) => {
             const price = commerceData[product.slug];
             return (

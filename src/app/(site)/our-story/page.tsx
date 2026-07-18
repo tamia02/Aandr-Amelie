@@ -18,50 +18,52 @@ export default function OurStoryPage() {
     <div className="overflow-x-hidden">
       {/* Hero */}
       <section className="mx-auto max-w-[1440px] px-5 pt-12 pb-10 sm:px-10 lg:px-16">
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-8">
-          <Reveal className="w-full">
-            <span className="mb-6 block text-xs font-sans tracking-[0.2em] text-sun-terracotta uppercase">
-              Brand Story
-            </span>
-            <h1 className="font-serif text-3xl leading-tight sm:text-4xl text-charcoal italic">
-              Aandré Amelie
-              <br />
-              <span className="font-serif italic font-normal">All Shades, All Souls.</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={120} className="w-full">
-            <div className="space-y-4">
-              <span className="text-[10px] font-sans tracking-[0.2em] text-sun-terracotta uppercase block">
-                Embracing Diversity and Beauty
+        <div className="grid grid-cols-2 gap-6 sm:gap-10 items-center">
+          <div className="flex flex-col text-left space-y-4 sm:space-y-8">
+            <Reveal className="w-full">
+              <span className="mb-6 block text-xs font-sans tracking-[0.2em] text-sun-terracotta uppercase">
+                Brand Story
               </span>
-              <p className="font-sans text-base leading-relaxed text-charcoal/80">
-                Beauty is not defined by one shade, one tradition, or one ideal.
-                It is found in diversity, in authenticity, and in the stories that make each of us unique.
-              </p>
-              <p className="font-sans text-base leading-relaxed text-charcoal/80">
-                At Aandré Amelie, we believe skincare is more than a daily ritual—it is an expression of self-love, confidence, and respect for nature. Every product we create is inspired by the belief that beauty flourishes when people, nature, and craftsmanship exist in harmony.
-              </p>
+              <h1 className="font-serif text-3xl leading-tight sm:text-4xl text-charcoal italic">
+                Aandré Amelie
+                <br />
+                <span className="font-serif italic font-normal">All Shades, All Souls.</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={120} className="w-full">
+              <div className="space-y-4">
+                <span className="text-[10px] font-sans tracking-[0.2em] text-sun-terracotta uppercase block">
+                  Embracing Diversity and Beauty
+                </span>
+                <p className="font-sans text-base leading-relaxed text-charcoal/80">
+                  Beauty is not defined by one shade, one tradition, or one ideal.
+                  It is found in diversity, in authenticity, and in the stories that make each of us unique.
+                </p>
+                <p className="font-sans text-base leading-relaxed text-charcoal/80">
+                  At Aandré Amelie, we believe skincare is more than a daily ritual—it is an expression of self-love, confidence, and respect for nature. Every product we create is inspired by the belief that beauty flourishes when people, nature, and craftsmanship exist in harmony.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={200} className="w-full">
+            <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden border border-outline-variant/20 shadow-sm">
+              <Image
+                src="/images/DSC00800.JPG"
+                alt="Aandré Amelie Philosophy"
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
             </div>
           </Reveal>
         </div>
-
-        <Reveal delay={200} className="mt-12">
-          <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden border border-outline-variant/20 shadow-sm">
-            <Image
-              src="/images/stitch/sun-moon-botanical.jpg"
-              alt="Aandré Amelie Philosophy"
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
-        </Reveal>
       </section>
 
       {/* Philosophy: All Shades, All Souls */}
       <section className="border-t border-outline-variant/20 bg-cream-deep/20 py-10 sm:py-12">
         <div className="mx-auto max-w-[1440px] px-5 sm:px-10 lg:px-16">
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 items-center">
+          <div className="grid grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="space-y-6">
               <Reveal>
                 <span className="text-xs font-sans tracking-[0.25em] text-sun-terracotta-dark uppercase block mb-2">
@@ -111,7 +113,7 @@ export default function OurStoryPage() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="grid grid-cols-2">
           {/* Aandré: The Sun */}
           <div className="bg-sun-blush/20 py-8 px-5 sm:px-10 lg:px-16 border-r border-outline-variant/20 flex flex-col justify-center">
             <Reveal className="max-w-md mx-auto space-y-6">
@@ -162,12 +164,13 @@ export default function OurStoryPage() {
           <div className="lg:col-span-7 order-2 lg:order-1 flex justify-center lg:justify-start">
             <Reveal>
               <div className="relative aspect-[4/5] w-[280px] sm:w-[360px] overflow-hidden border border-outline-variant/25 bg-moon-indigo/5 shadow-md">
-                <Image
-                  src="/images/stitch/lab-distillation.jpg"
-                  alt="Pure Craftsmanship"
-                  fill
-                  sizes="(min-width: 640px) 360px, 280px"
-                  className="object-cover"
+                <video
+                  src="/videos/compressed_C0064.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="h-full w-full object-cover"
                 />
               </div>
             </Reveal>
