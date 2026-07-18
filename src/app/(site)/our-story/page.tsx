@@ -163,7 +163,7 @@ export default function OurStoryPage() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7 order-2 lg:order-1 flex justify-center lg:justify-start">
             <Reveal>
-              <div className="relative aspect-[4/5] w-[280px] sm:w-[360px] overflow-hidden border border-outline-variant/25 bg-moon-indigo/5 shadow-md">
+              <div className="relative aspect-video w-full max-w-2xl overflow-hidden border border-outline-variant/25 bg-moon-indigo/5 shadow-md">
                 <video
                   src="/videos/compressed_C0064.mp4"
                   autoPlay

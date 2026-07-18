@@ -39,7 +39,7 @@ export default function PurityPage() {
             <span className="mb-4 block text-[10px] sm:text-xs font-sans tracking-[0.2em] text-sun-terracotta uppercase">
               Our Promise to You
             </span>
-            <h1 className="mb-4 font-serif text-4xl leading-tight sm:text-5xl">
+            <h1 className="mb-4 font-serif text-3xl leading-tight sm:text-4xl">
               Beauty Rooted in <span className="font-serif italic">Nature.</span>
             </h1>
             <p className="mb-6 max-w-2xl mx-auto text-sm sm:text-base font-sans leading-relaxed text-charcoal/70">
@@ -48,7 +48,7 @@ export default function PurityPage() {
             <Button href="/shop">Explore Our Botanicals</Button>
           </Reveal>
           <Reveal delay={120} className="relative w-full max-w-4xl mx-auto mt-4">
-            <div className="relative w-full h-[250px] sm:h-[350px] overflow-hidden border border-outline-variant/20 shadow-sm">
+            <div className="relative w-full h-[200px] sm:h-[280px] overflow-hidden border border-outline-variant/20 shadow-sm">
               <Image
                 src="/images/stitch/purity-hero-garden.jpg"
                 alt="Botanical rose garden at dawn"
@@ -57,7 +57,7 @@ export default function PurityPage() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-4 right-4 sm:right-8 hidden max-w-[260px] bg-cream-deep p-4 sm:p-5 md:block shadow-sm border border-outline-variant/20 z-10">
+            <div className="absolute bottom-4 right-4 sm:right-8 hidden max-w-[260px] bg-cream-deep p-4 sm:p-5 md:block shadow-sm border border-outline-variant/20 z-10">
               <p className="font-serif text-sm sm:text-base leading-snug italic">
                 &ldquo;Nature does not hurry, yet everything is
                 accomplished.&rdquo;
