@@ -162,8 +162,8 @@ export default function OurStoryPage() {
       <section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-10 sm:py-12 lg:px-16">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7 order-2 lg:order-1 flex justify-center lg:justify-start">
-            <Reveal className="w-full max-w-[480px]">
-              <div className="relative aspect-[4/5] w-full overflow-hidden border border-outline-variant/25 bg-moon-indigo/5 shadow-md">
+            <Reveal className="w-full">
+              <div className="relative aspect-video w-full overflow-hidden border border-outline-variant/25 bg-moon-indigo/5 shadow-md">
                 <video
                   src="/videos/compressed_C0064.mp4"
                   autoPlay

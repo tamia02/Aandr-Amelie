@@ -125,7 +125,7 @@ export default function Home() {
                 src="/images/DSC00800.JPG"
                 alt="Aandré Amelie Trial Pack"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           </div>
