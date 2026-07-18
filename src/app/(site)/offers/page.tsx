@@ -130,7 +130,7 @@ export default function OffersPage() {
             <Button href="/shop/the-trial-pack" className="w-full max-w-[200px] text-[10px] sm:text-xs">Shop Trial Pack</Button>
           </div>
           <div className="relative w-1/2 min-h-[250px]">
-            <img src="/images/DSC00800.JPG" alt="The Trial Pack" className="w-full h-full object-contain object-center" />
+            <img src="/images/trial-pack-new.png" alt="The Trial Pack" className="w-full h-full object-contain object-center" />
           </div>
         </div>
       </Reveal>

@@ -122,7 +122,7 @@ export default function Home() {
             {/* Right Image */}
             <div className="relative min-h-[250px] w-1/2 bg-cream-deep sm:min-h-[300px]">
               <Image
-                src="/images/DSC00800.JPG"
+                src="/images/trial-pack-new.png"
                 alt="Aandré Amelie Trial Pack"
                 fill
                 className="object-contain"

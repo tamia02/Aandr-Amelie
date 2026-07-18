@@ -508,9 +508,9 @@ export const products: Product[] = [
     tagline: 'Experience Our Best',
     hook: 'A curated selection of our best-selling elixirs in travel-friendly sizes.',
     placeholder: 'dawn',
-    image: "/images/image.png",
+    image: "/images/trial-pack-new.png",
     images: [
-      "/images/image.png",
+      "/images/trial-pack-new.png",
       "/images/four1.png",
       "/images/four2.png",
       "/images/four3.png",
