@@ -49,11 +49,11 @@ export default function OurStoryPage() {
           <Reveal delay={200} className="w-full">
             <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden border border-outline-variant/20 shadow-sm">
               <Image
-                src="/images/DSC00800.JPG"
+                src="/images/trial-pack-new.png"
                 alt="Aandré Amelie Philosophy"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           </Reveal>
