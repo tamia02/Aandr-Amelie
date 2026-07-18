@@ -116,7 +116,7 @@ export default function OffersPage() {
         </div>
         
         {/* Trial Pack */}
-        <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col col-span-2 sm:col-span-1 sm:col-start-2">
+        <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col col-span-2 max-w-md mx-auto w-full">
           <div className="relative w-full aspect-[4/3] border-b border-outline-variant/20">
             <img src="/images/image.png" alt="The Trial Pack" className="w-full h-full object-cover object-top" />
           </div>

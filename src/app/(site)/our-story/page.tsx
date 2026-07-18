@@ -18,8 +18,8 @@ export default function OurStoryPage() {
     <div className="overflow-x-hidden">
       {/* Hero */}
       <section className="mx-auto max-w-[1440px] px-5 pt-12 pb-10 sm:px-10 lg:px-16">
-        <div className="grid grid-cols-1 items-end gap-8 md:grid-cols-12">
-          <Reveal className="md:col-span-7">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-8">
+          <Reveal className="w-full">
             <span className="mb-6 block text-xs font-sans tracking-[0.2em] text-sun-terracotta uppercase">
               Brand Story
             </span>
@@ -29,7 +29,7 @@ export default function OurStoryPage() {
               <span className="font-serif italic font-normal">All Shades, All Souls.</span>
             </h1>
           </Reveal>
-          <Reveal delay={120} className="md:col-span-5">
+          <Reveal delay={120} className="w-full">
             <div className="space-y-4">
               <span className="text-[10px] font-sans tracking-[0.2em] text-sun-terracotta uppercase block">
                 Embracing Diversity and Beauty

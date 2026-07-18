@@ -33,38 +33,36 @@ export default function PurityPage() {
   return (
     <div>
       {/* Hero */}
-      <header className="mx-auto max-w-[1440px] px-5 pt-12 pb-10 sm:px-10 lg:px-16">
-        <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12">
-          <Reveal className="md:col-span-6">
-            <span className="mb-6 block text-xs font-sans tracking-[0.2em] text-sun-terracotta uppercase">
+      <header className="mx-auto max-w-[1440px] px-5 pt-8 pb-6 sm:px-10 lg:px-16">
+        <div className="flex flex-col items-center text-center">
+          <Reveal className="w-full max-w-3xl mb-6">
+            <span className="mb-4 block text-[10px] sm:text-xs font-sans tracking-[0.2em] text-sun-terracotta uppercase">
               Our Promise to You
             </span>
-            <h1 className="mb-8 font-serif text-4xl leading-tight sm:text-5xl md:text-6xl">
-              Beauty Rooted in
-              <br />
-              <span className="font-serif italic">Nature.</span>
+            <h1 className="mb-4 font-serif text-4xl leading-tight sm:text-5xl">
+              Beauty Rooted in <span className="font-serif italic">Nature.</span>
             </h1>
-            <p className="mb-10 max-w-md text-base font-sans leading-relaxed text-charcoal/70 sm:text-lg">
+            <p className="mb-6 max-w-2xl mx-auto text-sm sm:text-base font-sans leading-relaxed text-charcoal/70">
               Luxury organic skincare handcrafted with handpicked ingredients, artisan care, and a commitment to farming families across India.
             </p>
             <Button href="/shop">Explore Our Botanicals</Button>
           </Reveal>
-          <Reveal delay={120} className="relative md:col-span-6">
-            <div className="relative aspect-[4/5] overflow-hidden">
+          <Reveal delay={120} className="relative w-full max-w-4xl mx-auto mt-4">
+            <div className="relative w-full h-[250px] sm:h-[350px] overflow-hidden border border-outline-variant/20 shadow-sm">
               <Image
                 src="/images/stitch/purity-hero-garden.jpg"
                 alt="Botanical rose garden at dawn"
                 fill
-                sizes="(min-width: 768px) 50vw, 100vw"
+                sizes="100vw"
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-8 -left-8 hidden max-w-[280px] bg-cream-deep p-8 md:block">
-              <p className="font-serif text-lg leading-snug italic">
+            <div className="absolute -bottom-4 right-4 sm:right-8 hidden max-w-[260px] bg-cream-deep p-4 sm:p-5 md:block shadow-sm border border-outline-variant/20 z-10">
+              <p className="font-serif text-sm sm:text-base leading-snug italic">
                 &ldquo;Nature does not hurry, yet everything is
                 accomplished.&rdquo;
               </p>
-              <span className="mt-4 block text-[10px] font-sans tracking-widest uppercase">
+              <span className="mt-2 block text-[9px] sm:text-[10px] font-sans tracking-widest uppercase text-charcoal/80">
                 — Aandré Amelie
               </span>
             </div>
