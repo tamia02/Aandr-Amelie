@@ -220,7 +220,7 @@ export default async function JournalPostPage({
                   const src = trimmed.substring(altEndIndex + 2, trimmed.length - 1);
                   
                   return (
-                    <div key={i} className="my-8 w-full overflow-hidden border border-outline-variant/20">
+                    <div key={i} className="my-8 w-full max-w-xs mx-auto overflow-hidden rounded-md border border-outline-variant/10 shadow-sm">
                       <img 
                         src={src} 
                         alt={alt} 

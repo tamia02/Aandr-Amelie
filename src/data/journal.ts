@@ -110,8 +110,6 @@ Rosewater is highly alkaline and acts as a natural antacid. If you experience ac
 #### 2. Enhancing Digestion and Relieving Bloating
 Rosewater acts as a mild carminative, helping to relax digestive muscles and expel gas. It stimulates bile flow, which aids in the breakdown of fats, making it an excellent post-meal digestif.
 
-![Rosewater for Mood](/images/journal/rose_water_mood.png)
-
 #### 3. Uplifting Mood and Easing Headaches
 The water-soluble compounds absorbed through ingestion help calm the nervous system. Drinking rosewater has been shown to alleviate tension headaches, soothe irritability, and promote a general feeling of emotional comfort.
 
