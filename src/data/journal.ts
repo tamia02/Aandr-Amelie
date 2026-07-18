@@ -101,14 +101,17 @@ Our *Royal Rose Elixir* is 100% pure, single-origin steam-distilled organic rose
 When you drink pure rose hydrosol, its active bio-compounds interact with your digestive system and nervous system in several key ways:
 
 ![Rosewater for Acid Reflux](/images/journal/rose_water_glass.png)
+
 #### 1. Neutralizing Acid Reflux and Heartburn
 Rosewater is highly alkaline and acts as a natural antacid. If you experience acid reflux, drinking a tablespoon of rosewater in a glass of cool or lukewarm water provides immediate, cooling relief to the lining of the stomach and esophagus, reducing the burning sensation.
 
 ![Rosewater for Digestion](/images/journal/rose_water_digestion.png)
+
 #### 2. Enhancing Digestion and Relieving Bloating
 Rosewater acts as a mild carminative, helping to relax digestive muscles and expel gas. It stimulates bile flow, which aids in the breakdown of fats, making it an excellent post-meal digestif.
 
 ![Rosewater for Mood](/images/journal/rose_water_mood.png)
+
 #### 3. Uplifting Mood and Easing Headaches
 The water-soluble compounds absorbed through ingestion help calm the nervous system. Drinking rosewater has been shown to alleviate tension headaches, soothe irritability, and promote a general feeling of emotional comfort.
 
@@ -161,14 +164,17 @@ When inhaled or absorbed, these molecules:
 Incorporate lavender water into your evening wind-down routine to transition from solar energy to lunar calm.
 
 ![Lavender Mist](/images/journal/lavender_mist.png)
+
 #### Step 1: The Evening Cleanse & Mist
 After washing your face, mist *Glow Quinch Elixir* generously over your face and neck. Let the fine spray settle into your skin to soothe the day's environmental irritation. The mild antiseptic qualities of lavender also help prevent night-time breakouts.
 
 ![Lavender Pillow](/images/journal/lavender_pillow.png)
+
 #### Step 2: Pillow & Space Aromatherapy
 Mist the lavender water over your pillowcases, sheets, and the air around your bed. As you lie down, the slow evaporation of the hydrosol will release linalool molecules, creating a calming micro-environment.
 
 ![Lavender Tea](/images/journal/lavender_tea.png)
+
 #### Step 3: Calming Lavender Sleep Tea
 Add 1–2 teaspoons of Glow Quinch Elixir to a cup of warm (not boiling) water. Sip slowly 30 minutes before sleep. The gentle internal warmth combined with the botanical compounds relaxes your abdominal muscles and prepares your system for rest.
     `,
@@ -253,10 +259,12 @@ At Aandré Amelie, we harness this botanical power in *Vital Grow Scalp*, combin
 Rosemary contains a high concentration of **rosmarinic acid** and **carnosic acid**, which stimulate cellular repair and blood flow.
 
 ![Rosemary Scalp Application](/images/journal/rosemary_scalp.png)
+
 #### 1. Micro-Circulation Boost
 When applied to the scalp, rosemary water dilates blood vessels, increasing micro-circulation to the hair follicles. This surge of blood delivers oxygen and vital nutrients directly to the root, revitalizing dormant follicles and encouraging new growth.
 
 ![Rosemary and DHT](/images/journal/rosemary_dht.png)
+
 #### 2. Blocking DHT (Dihydrotestosterone)
 DHT is a hormone responsible for shrinking hair follicles, leading to thinning hair and pattern baldness. Carnosic acid in rosemary has been shown to inhibit DHT binding, helping to prevent follicle miniaturization.
 

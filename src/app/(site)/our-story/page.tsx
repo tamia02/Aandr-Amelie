@@ -305,8 +305,7 @@ export default function OurStoryPage() {
       <section className="relative flex h-[60vh] sm:h-[80vh] w-full items-center overflow-hidden border-t border-outline-variant/15">
         <video
           className="absolute inset-0 h-full w-full object-cover"
-          src="/videos/real_assets/C0003.MP4"
-          poster="/images/real_assets/DSC00688.JPG"
+          src="/videos/founder_fast.mp4"
           autoPlay
           muted
           loop

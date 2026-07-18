@@ -127,15 +127,26 @@ export default async function JournalPostPage({
                 const trimmed = paragraph.trim();
                 if (!trimmed) return null;
 
+                const renderInlineText = (inlineText: string) => {
+                  const boldParts = inlineText.split(/\*\*(.*?)\*\*/g);
+                  return boldParts.map((boldChunk, bIndex) => {
+                    if (bIndex % 2 === 1) {
+                      return <strong key={bIndex} className="text-moon-indigo font-semibold">{boldChunk}</strong>;
+                    }
+                    const italicParts = boldChunk.split(/\*(.*?)\*/g);
+                    return italicParts.map((italicChunk, iIndex) => {
+                      if (iIndex % 2 === 1) {
+                        return <em key={`${bIndex}-${iIndex}`} className="font-serif italic text-moon-indigo">{italicChunk}</em>;
+                      }
+                      return italicChunk;
+                    });
+                  });
+                };
+
                 const renderParagraph = (text: string) => {
                   return (
                     <p className="text-sm sm:text-base leading-relaxed text-charcoal/75">
-                      {text.split(/\*\*(.*?)\*\*/g).map((chunk, index) => {
-                        if (index % 2 === 1) {
-                          return <strong key={index} className="text-moon-indigo font-semibold">{chunk}</strong>;
-                        }
-                        return chunk;
-                      })}
+                      {renderInlineText(text)}
                     </p>
                   );
                 };
@@ -175,7 +186,7 @@ export default async function JournalPostPage({
                         .split("\n")
                         .map((li, idx) => (
                           <li key={idx}>
-                            {li.replace(/^[\*\-]\s+/, "").trim().replace(/\*\*(.*?)\*\*/g, "$1")}
+                            {renderInlineText(li.replace(/^[\*\-]\s+/, "").trim())}
                           </li>
                         ))}
                     </ul>
@@ -190,7 +201,7 @@ export default async function JournalPostPage({
                         .split("\n")
                         .map((li, idx) => (
                           <li key={idx}>
-                            {li.replace(/^\d+\.\s+/, "").trim().replace(/\*\*(.*?)\*\*/g, "$1")}
+                            {renderInlineText(li.replace(/^\d+\.\s+/, "").trim())}
                           </li>
                         ))}
                     </ol>
