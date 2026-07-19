@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { useCart } from "@/lib/cart-context";
 import { formatINR } from "@/lib/money";
 import type { Commerce } from "@/lib/actions/products";
@@ -13,6 +14,7 @@ export default function StickyBuyBar({
   productName: string;
 }) {
   const { addItem } = useCart();
+  const router = useRouter();
   const [visible, setVisible] = useState(false);
   const [added, setAdded] = useState(false);
 
@@ -33,7 +35,10 @@ export default function StickyBuyBar({
   const handleAdd = () => {
     addItem(commerce.slug, 1);
     setAdded(true);
-    setTimeout(() => setAdded(false), 2000);
+    setTimeout(() => {
+      setAdded(false);
+      router.push("/cart");
+    }, 400);
   };
 
   return (

@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useCart } from "@/lib/cart-context";
 import { formatINR } from "@/lib/money";
 import type { Commerce } from "@/lib/actions/products";
 
 export default function AddToCart({ commerce }: { commerce: Commerce | null }) {
+  const router = useRouter();
   const { addItem } = useCart();
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
@@ -23,7 +25,10 @@ export default function AddToCart({ commerce }: { commerce: Commerce | null }) {
   const handleAdd = () => {
     addItem(commerce.slug, qty);
     setAdded(true);
-    setTimeout(() => setAdded(false), 2000);
+    setTimeout(() => {
+      setAdded(false);
+      router.push("/cart");
+    }, 400);
   };
 
   return (

@@ -95,7 +95,7 @@ export default function Home() {
             {/* Left Content */}
             <div className="flex w-full md:w-1/2 flex-col justify-center p-4 sm:p-8 lg:p-10 border-b md:border-b-0 md:border-r border-sun-terracotta/20">
               <span className="mb-4 block text-[10px] font-semibold tracking-[0.25em] text-sun-terracotta-dark uppercase">
-                The Trial Pack
+                The Visual Story
               </span>
               <h2 className="mb-4 font-serif text-2xl leading-tight text-charcoal sm:text-3xl italic">
                 The Symbolism Behind<br />Aandré Amelie

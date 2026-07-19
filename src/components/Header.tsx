@@ -132,13 +132,15 @@ export default function Header() {
           </div>
 
           {/* Mobile Navigation */}
-          <div className="relative md:hidden" ref={mobileMenuRef}>
-            <button 
-              className="cursor-pointer text-xs font-semibold tracking-[0.15em] text-charcoal/70 uppercase outline-none select-none"
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
-            >
-              {isMobileOpen ? "Close" : "Menu"}
-            </button>
+          <div className="flex items-center gap-5 md:hidden">
+            <CartIndicator />
+            <div className="relative" ref={mobileMenuRef}>
+              <button 
+                className="cursor-pointer text-xs font-semibold tracking-[0.15em] text-charcoal/70 uppercase outline-none select-none"
+                onClick={() => setIsMobileOpen(!isMobileOpen)}
+              >
+                {isMobileOpen ? "Close" : "Menu"}
+              </button>
             {isMobileOpen && (
               <div className="absolute right-0 z-50 mt-4 w-60 border border-outline-variant/30 bg-cream py-3 shadow-lg rounded-sm animate-fade-in">
                 <div className="border-b border-outline-variant/20 mb-2 pb-3 px-5">
@@ -215,6 +217,7 @@ export default function Header() {
                 </div>
               </div>
             )}
+            </div>
           </div>
         </div>
       </div>

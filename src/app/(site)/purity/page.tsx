@@ -228,7 +228,16 @@ export default function PurityPage() {
                 </h4>
                 <div className="text-xs font-sans leading-relaxed text-charcoal/70 space-y-4">
                   <p>
-                    What makes our Rose Ark toner truly special is how we charge the water used in its creation. By harnessing the gentle glow of moonlight, we amplify the positive energies within our products. This practice ensures that our toner is more than a beauty treatment; it is a ritual steeped in intention, inviting peace and positivity into your skincare routine.
+                    <strong>Full moon ritual:</strong> Every Aandré Amelie toner is thoughtfully crafted with intention, inspired by the timeless wisdom of Ayurveda, botanical traditions, and holistic wellness. As part of our signature ritual, the water used in all our toners is placed under the Full Moon, allowing it to rest beneath the moonlight before it becomes part of our formulations.
+                  </p>
+                  <p>
+                    In Ayurveda and ancient wellness traditions, the Full Moon is often associated with harmony, calmness, radiance, and natural beauty. We honor this tradition as a mindful ritual that symbolizes purity, positivity, and balance. While we embrace this practice as part of our brand philosophy, it reflects our respect for nature and conscious craftsmanship.
+                  </p>
+                  <p>
+                    Our collection of luxury Ayurvedic toners is enriched with carefully selected botanical extracts, floral hydrosols, steam-distilled floral waters, Rose Water, Lavender Hydrosol, Aloe Vera, Rosemary, herbal extracts, essential oils, and plant-based ingredients to refresh, hydrate, and nourish your skin.
+                  </p>
+                  <p>
+                    At Aandré Amelie, we believe skincare is more than a routine—it's a daily ritual of self-care. Every bottle is crafted with mindfulness, inspired by Ayurveda, powered by nature, and designed to bring a luxurious botanical experience to your skincare journey.
                   </p>
                 </div>
               </div>
