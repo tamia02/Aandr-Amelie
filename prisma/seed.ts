@@ -13,6 +13,8 @@ const products = [
   { slug: "acne-shield", priceCents: 210000, stock: 50 },
   { slug: "vital-grow-scalp", priceCents: 210000, stock: 50 },
   { slug: "the-trial-pack", priceCents: 100000, stock: 50 },
+  { slug: "pure-radiance-multani-mitti", priceCents: 49900, stock: 50 },
+  { slug: "botanical-brightening-multani-mitti", priceCents: 59900, stock: 50 },
 ];
 
 async function main() {

@@ -753,6 +753,86 @@ export const products: Product[] = [
     concernSlugs: ['pigmentation', 'dull-skin'],
     ingredientsList: ['Multani Mitti', 'Turmeric Powder', 'Sandalwood Powder']
   },
+  {
+    slug: "pure-radiance-multani-mitti",
+    name: "Pure Radiance Multani Mitti",
+    category: "The Masks",
+    tagline: "100% Organic & Triple Filtered",
+    hook: "Deeply cleanses pores, removes excess oil, and gives your skin a natural healthy glow.",
+    placeholder: "sun",
+    description: "100% pure, natural, and triple-filtered for microfine application. Aandré Amelie's Multani Mitti cleanses and purifies your skin by pulling out excess oil, dirt, and impurities without stripping natural moisture. Suitable as a weekly facial pack or hair mask.",
+    bestFor: [
+      { title: "Deep Cleansing", description: "Pulls out excess oil, dirt, and impurities from pores." },
+      { title: "Oil Control", description: "Absorbs excess sebum without over-drying." },
+      { title: "Gentle Exfoliation", description: "Removes dead skin cells for a fresh complexion." },
+      { title: "Acne Relief", description: "Helps reduce acne-causing impurities." },
+    ],
+    benefitSections: [
+      {
+        heading: "A Microfine Ayurvedic Ritual",
+        items: [
+          { title: "100% Pure & Natural", description: "Free from any preservatives or synthetic chemicals." },
+          { title: "Triple Filtered", description: "Smooth and microfine particles for the best results on skin and hair." },
+          { title: "Hair Conditioning", description: "Soothes dryness of hair, eliminating dandruff and flakes." },
+        ]
+      }
+    ],
+    howToUse: [
+      { label: "Step 1", text: "Mix 1–2 teaspoons to 1 tablespoon of powder with water, rose water, milk, or curd to form a smooth paste." },
+      { label: "Step 2", text: "Apply evenly to face and neck, avoiding the eye area." },
+      { label: "Step 3", text: "Leave on for 8–12 minutes. Do not let it crack completely if you have dry skin." },
+      { label: "Step 4", text: "Gently rinse off with lukewarm water and pat dry. Use 1–2 times per week." },
+    ],
+    care: CARE_INSTRUCTIONS,
+    seoTitle: "100% Organic Triple Filtered Multani Mitti Face & Hair Pack",
+    seoDescription: "Aandré Amelie's 100% pure, natural, and triple-filtered Multani Mitti. Deep cleanses pores, removes oil, and acts as a soothing mask for skin and hair.",
+    faqs: [
+      { question: "Can I use this on my hair?", answer: "Yes! It acts as a natural cleanser and conditioner, soothing the scalp and removing flakes." },
+      { question: "How often should I use it?", answer: "We recommend using it 1-2 times per week for best results." },
+    ],
+    concernSlugs: ["acne", "oily-skin", "dull-skin"],
+    ingredientsList: ["100% Organic Triple-Filtered Multani Mitti"]
+  },
+  {
+    slug: "botanical-brightening-multani-mitti",
+    name: "Botanical Brightening Multani Mitti",
+    category: "The Masks",
+    tagline: "Beetroot, Rose & Orange Infusion",
+    hook: "A modern ritual for an instant glow and even skin tone.",
+    placeholder: "dawn",
+    description: "Infused with beetroot, rose, and orange, this Aandré Amelie multani mitti face pack helps enhance your natural glow, improves dull skin, and provides a fresh, radiant look. Triple-filtered purity with ethically harvested botanicals—no hidden synthetics.",
+    bestFor: [
+      { title: "Instant Glow", description: "Enhances natural radiance and improves dull skin." },
+      { title: "Tan Removal", description: "Reduces tanning and pigmentation for an even tone." },
+      { title: "Skin Brightening", description: "Vitamin C from orange peel brightens the complexion." },
+      { title: "Pore Care", description: "Unclogs pores and leaves skin smooth." },
+    ],
+    benefitSections: [
+      {
+        heading: "Ancient Wisdom, Modern Radiance",
+        items: [
+          { title: "Botanical Extracts", description: "Made with natural extracts of beetroot, rose, and orange." },
+          { title: "No Synthetic Fillers", description: "Ethically harvested botanicals with no hidden synthetics." },
+          { title: "Face & Body Multi-Use", description: "Use as a weekly facial pack or as a full-body clay treatment before bathing." },
+        ]
+      }
+    ],
+    howToUse: [
+      { label: "Step 1", text: "Mix 1–2 teaspoons of the powder with rose water or plain water to form a perfectly smooth, clump-free paste." },
+      { label: "Step 2", text: "Apply the 100% organic clay evenly to your face and neck." },
+      { label: "Step 3", text: "Leave on for 10–15 minutes until it begins to tighten." },
+      { label: "Step 4", text: "Rinse with lukewarm water for instant clarity and refreshed skin." },
+    ],
+    care: CARE_INSTRUCTIONS,
+    seoTitle: "Botanical Brightening Multani Mitti with Beetroot & Rose",
+    seoDescription: "An infused multani mitti face pack with beetroot, rose, and orange for tan removal, instant glow, and deep cleansing. 100% natural.",
+    faqs: [
+      { question: "Is this suitable for dry skin?", answer: "Yes, but we recommend mixing it with milk or curd instead of water for added hydration, and don't let it dry completely before rinsing." },
+      { question: "Will the beetroot stain my skin?", answer: "No, the natural beetroot extract is perfectly balanced to provide a rosy glow without staining the skin." },
+    ],
+    concernSlugs: ["pigmentation", "dull-skin", "acne"],
+    ingredientsList: ["Multani Mitti", "Beetroot Extract", "Rose Extract", "Orange Peel Extract"]
+  }
 ];
 
 export function getProduct(slug: string): Product | undefined {
