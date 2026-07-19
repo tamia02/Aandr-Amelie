@@ -29,12 +29,6 @@ export async function getCommerceForSlugs(
   for (const slug of slugs) {
     if (slug === "the-trial-pack") {
       fallback[slug] = { slug, priceCents: 100000, compareAtPriceCents: null, currency: "INR", stock: 50 };
-    } else if (slug === "super-fine-multani-mitti") {
-      fallback[slug] = { slug, priceCents: 49900, compareAtPriceCents: null, currency: "INR", stock: 50 };
-    } else if (slug === "imported-pink-neem-multani-mitti") {
-      fallback[slug] = { slug, priceCents: 59900, compareAtPriceCents: null, currency: "INR", stock: 50 };
-    } else if (slug === "rose-sandalwood-multani-mitti") {
-      fallback[slug] = { slug, priceCents: 59900, compareAtPriceCents: null, currency: "INR", stock: 50 };
     } else {
       fallback[slug] = { slug, priceCents: 210000, compareAtPriceCents: null, currency: "INR", stock: 50 };
     }
