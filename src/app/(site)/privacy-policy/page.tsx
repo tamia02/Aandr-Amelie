@@ -76,8 +76,8 @@ export default function PrivacyPolicyPage() {
         <p>
           You can ask us to access, correct, or delete the personal
           information we hold about you at any time by emailing{" "}
-          <a href="mailto:hello@aandreamelie.com" className="underline hover:text-moon-indigo">
-            hello@aandreamelie.com
+          <a href="mailto:contact@aandreamelie.com" className="underline hover:text-moon-indigo">
+            contact@aandreamelie.com
           </a>
           .
         </p>
@@ -100,8 +100,8 @@ export default function PrivacyPolicyPage() {
       <LegalSection title="Contact Us">
         <p>
           Questions about this policy? Email us at{" "}
-          <a href="mailto:hello@aandreamelie.com" className="underline hover:text-moon-indigo">
-            hello@aandreamelie.com
+          <a href="mailto:contact@aandreamelie.com" className="underline hover:text-moon-indigo">
+            contact@aandreamelie.com
           </a>
           .
         </p>

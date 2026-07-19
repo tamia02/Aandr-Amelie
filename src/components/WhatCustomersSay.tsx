@@ -14,8 +14,8 @@ export default function WhatCustomersSay({ subject }: { subject: string }) {
       <p className="text-sm leading-relaxed text-charcoal/60">
         No reviews yet — be the first to share your experience with {subject}. Tried it
         already? Email us at{" "}
-        <a href="mailto:hello@aandreamelie.com" className="underline hover:text-moon-indigo">
-          hello@aandreamelie.com
+        <a href="mailto:contact@aandreamelie.com" className="underline hover:text-moon-indigo">
+          contact@aandreamelie.com
         </a>{" "}
         and we may feature it here.
       </p>

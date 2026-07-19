@@ -81,7 +81,7 @@ export default async function ConcernPage({
           {/* Mapped Products Grid */}
           <Reveal delay={100} className="mt-4 border-t border-sun-terracotta/20 pt-8">
             <div className="mb-6">
-              <h2 className="font-serif text-xl sm:text-2xl text-charcoal italic">Recommended Apothecary Objects</h2>
+              <h2 className="font-serif text-xl sm:text-2xl text-charcoal italic">Recommended Skincare Products</h2>
             </div>
             
             <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-12">
@@ -131,7 +131,7 @@ export default async function ConcernPage({
               </p>
               <div className="border-l border-sun-terracotta bg-sun-blush/10 p-5">
                 <h3 className="text-[10px] font-semibold tracking-[0.2em] text-sun-terracotta-dark uppercase mb-2">
-                  Apothecary Recommendation
+                  Skincare Recommendation
                 </h3>
                 <p className="text-[11px] sm:text-xs leading-relaxed text-charcoal/75 italic font-serif">
                   {concern.howToChoose}

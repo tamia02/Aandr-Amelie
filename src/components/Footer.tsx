@@ -93,7 +93,7 @@ export default function Footer() {
             Newsletter
           </h5>
           <p className="mb-6 text-sm text-charcoal/70">
-            Join the apothecary journal for exclusive access and botanical
+            Join the skincare journal for exclusive access and botanical
             insights.
           </p>
           <NewsletterForm />
@@ -109,7 +109,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col gap-4 border-t border-outline-variant/30 pt-8 text-xs tracking-[0.1em] text-charcoal/50 uppercase sm:flex-row sm:items-center sm:justify-between md:col-span-12">
-          <p>© {new Date().getFullYear()} Aandré Amelie Apothecary. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Aandré Amelie Skincare. All rights reserved.</p>
           <p>All Shades, All Souls.</p>
         </div>
       </div>

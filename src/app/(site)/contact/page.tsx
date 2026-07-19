@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Reveal from "@/components/Reveal";
 import SectionHeader from "@/components/SectionHeader";
+import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Contact Our Apothecary | Aandré Amelie",
+  title: "Contact Our Store | Aandré Amelie",
   description:
     "Get in touch with Aandré Amelie. Send us a message regarding general inquiries, custom ritual advice, wholesale orders, or sourcing details.",
   alternates: {
@@ -23,15 +24,18 @@ export default function ContactPage() {
         <div className="lg:col-span-5 space-y-12">
           <Reveal>
             <SectionHeader
-              eyebrow="Apothecary Enquiries"
+              eyebrow="Skincare Enquiries"
               title="Speak with Us"
               className="mb-6"
             />
-            <p className="text-base leading-relaxed text-charcoal/70 max-w-sm">
+            <p className="text-base leading-relaxed text-charcoal/70 max-w-sm mb-6">
               Whether you are seeking guidance on building your daily ritual, 
               inquiring about wholesale partnerships, or curious about our alchemical 
               distillation process, we welcome your dialogue.
             </p>
+            <Button href="/faq" variant="ghost">
+              Frequently Asked Questions
+            </Button>
           </Reveal>
 
           <Reveal delay={100} className="space-y-6">
@@ -40,10 +44,10 @@ export default function ContactPage() {
                 Customer Care &amp; Ritual Consultations
               </h3>
               <a
-                href="mailto:hello@aandreamelie.com"
+                href="mailto:contact@aandreamelie.com"
                 className="font-serif text-lg text-charcoal hover:text-moon-indigo transition-colors"
               >
-                hello@aandreamelie.com
+                contact@aandreamelie.com
               </a>
             </div>
 

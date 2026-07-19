@@ -178,7 +178,7 @@ export default function ProductPage({
         <section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-10 lg:px-16">
           <div className="relative border border-outline-variant/10 bg-cream-deep p-10 sm:p-12">
             <div className="absolute -top-4 -left-4 bg-sun-blush px-4 py-1 text-[10px] font-semibold tracking-widest text-sun-terracotta-dark uppercase">
-              Master Apothecary Note
+              Master Skincare Note
             </div>
             <h3 className="mb-8 font-serif text-3xl text-charcoal">{composition.heading}</h3>
             {composition.intro && (
@@ -282,18 +282,18 @@ export default function ProductPage({
             <p className="text-xs leading-relaxed tracking-widest text-outline uppercase">
               Handcrafted in small batches. Due to the natural provenance of
               our ingredients, slight variations in color and aroma may
-              occur between harvests — the mark of true living apothecary.
+              occur between harvests — the mark of true living skincare.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Apothecary FAQs (Long-tail Search Intent Optimization) */}
+      {/* Skincare FAQs (Long-tail Search Intent Optimization) */}
       <section className="bg-cream py-8 border-b border-outline-variant/30">
         <div className="mx-auto max-w-4xl px-5">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold tracking-[0.25em] text-sun-terracotta uppercase block mb-3">
-              Apothecary FAQ
+              Skincare FAQ
             </span>
             <h2 className="font-serif text-3xl text-charcoal">Common Inquiries</h2>
           </div>

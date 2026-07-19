@@ -158,7 +158,7 @@ export default function OurStoryPage() {
         </Reveal>
       </section>
 
-      {/* Handcrafted Apothecary */}
+      {/* Handcrafted Skincare */}
       <section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-10 sm:py-12 lg:px-16">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7 order-2 lg:order-1 flex justify-center lg:justify-start">

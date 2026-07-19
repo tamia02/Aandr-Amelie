@@ -120,7 +120,7 @@ The water-soluble compounds absorbed through ingestion help calm the nervous sys
 To get the most out of your edible rosewater, try these simple preparations:
 
 1.  **The Purifying Morning Sip:** Mix 1–2 tablespoons of Royal Rose Elixir in a glass of warm water and drink it on an empty stomach. This helps flush toxins and calm the digestive tract.
-2.  **Alchemical Rose Tea:** Add 1 tablespoon of rosewater to a cup of warm chamomile or light green tea. Avoid boiling the rosewater directly to preserve its delicate compounds.
+2.  **Alchemical Rose Tea:** Add 1 tablespoon of rosewater to a cup of warm water or light green tea. Avoid boiling the rosewater directly to preserve its delicate compounds.
 3.  **Culinary Alchemy:** Add a splash to traditional desserts like kheer and gulab jamun, or mist it over fresh fruit salads and smoothies for an authentic floral accent.
     `,
   },

@@ -516,7 +516,7 @@ export const products: Product[] = [
       "/images/four3.png",
       "/images/four4.png"
     ],
-    description: "Experience the full spectrum of our apothecary rituals. The perfect introduction to Aandré Amelie.",
+    description: "Experience the full spectrum of our skincare rituals. The perfect introduction to Aandré Amelie.",
     bestFor: [
       {
         title: "Complete Wellness",

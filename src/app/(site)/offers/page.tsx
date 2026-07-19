@@ -4,7 +4,7 @@ import Image from "next/image";
 import MediaVisual from "@/components/MediaVisual";
 
 export const metadata = {
-  title: "Apothecary Offers",
+  title: "Skincare Offers",
   description: "Discover our current botanical offers and sets.",
 };
 
@@ -31,7 +31,7 @@ export default function OffersPage() {
         <div className="w-full md:w-1/2 p-10 flex flex-col justify-center items-start text-left border-l border-outline-variant/30">
           <h2 className="font-serif text-xl text-charcoal mb-4 italic">The Complete Acne Set</h2>
           <p className="text-[11px] leading-relaxed text-charcoal/70 mb-8 max-w-md">
-            Experience the full spectrum of our apothecary rituals. Purchase the Complete Botanical Acne Kit and receive a complimentary travel-sized glow elixir.
+            Experience the full spectrum of our skincare rituals. Purchase the Complete Botanical Acne Kit and receive a complimentary travel-sized glow elixir.
           </p>
           <Button href="/shop">Shop the Collection</Button>
         </div>
@@ -59,14 +59,14 @@ export default function OffersPage() {
         </div>
         <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col">
           <div className="relative w-full aspect-[4/3] border-b border-outline-variant/20">
-            <img src="/images/royal-rose-main.png" alt="Apothecary Member" className="w-full h-full object-cover" />
+            <img src="/images/royal-rose-main.png" alt="Skincare Member" className="w-full h-full object-cover" />
           </div>
           <div className="p-4 sm:p-8 flex flex-col items-center flex-grow text-center">
             <span className="text-[9px] sm:text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-2 sm:mb-3">
               Subscription
             </span>
             <h3 className="font-serif text-base sm:text-lg text-charcoal mb-3 sm:mb-4 italic">
-              Apothecary Member
+              Skincare Member
             </h3>
             <p className="hidden sm:block text-[11px] leading-relaxed text-charcoal/70 mb-6 flex-grow">
               Subscribe to your favorite elixirs and save 15% on every auto-replenishment order. Cancel anytime.

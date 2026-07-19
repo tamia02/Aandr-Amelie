@@ -30,7 +30,7 @@ export default function JournalPage() {
           <div className="flex items-center gap-3 mb-2">
             <span className="h-px w-6 bg-sun-terracotta/40"></span>
             <span className="text-[10px] font-semibold tracking-[0.2em] text-sun-terracotta uppercase">
-              The Apothecary Journal
+              The Skincare Journal
             </span>
           </div>
           <h1 className="font-serif text-2xl text-charcoal italic mb-3">Sip, Spray, &amp; Reflect</h1>

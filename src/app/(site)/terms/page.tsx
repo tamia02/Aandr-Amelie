@@ -109,8 +109,8 @@ export default function TermsPage() {
       <LegalSection title="Contact Us">
         <p>
           Questions about these terms? Email us at{" "}
-          <a href="mailto:hello@aandreamelie.com" className="underline hover:text-moon-indigo">
-            hello@aandreamelie.com
+          <a href="mailto:contact@aandreamelie.com" className="underline hover:text-moon-indigo">
+            contact@aandreamelie.com
           </a>
           .
         </p>

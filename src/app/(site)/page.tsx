@@ -16,7 +16,7 @@ import HeroVideo from "@/components/HeroVideo";
 const VALUES = [
   {
     title: "100% Handmade",
-    text: "Every jar, balm, and serum is handcrafted by skilled artisans.",
+    text: "Every product is handcrafted by skilled artisans.",
     icon: (
       <path d="M12 3c-4 3-6 6-6 10a6 6 0 0 0 12 0c0-4-2-7-6-10Z M12 22v-9" />
     ),
@@ -187,7 +187,7 @@ export default function Home() {
             <h2 className="mb-3 font-serif text-3xl">Enter the inner circle.</h2>
             <p className="font-sans text-sm text-cream/70">
               Join our journal for lunar-cycle rituals, product launches, and
-              exclusive apothecary insights.
+              exclusive skincare insights.
             </p>
           </Reveal>
           <Reveal delay={120} className="w-full md:w-auto">

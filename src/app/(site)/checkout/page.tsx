@@ -87,7 +87,7 @@ export default function CheckoutPage() {
       amount: result.amount,
       currency: "INR",
       name: "Aandré Amelie",
-      description: "Apothecary Purchase",
+      description: "Skincare Purchase",
       order_id: result.razorpayOrderId,
       handler: async function (response: any) {
         const verify = await verifyRazorpayPayment(
