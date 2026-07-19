@@ -88,10 +88,13 @@ export default function PurityPage() {
           <div className="mx-auto max-w-4xl space-y-16 py-8">
             {/* Small-Batch Production */}
             <Reveal className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-              <div className="relative aspect-square w-full max-w-[200px] shrink-0 overflow-hidden bg-outline-variant/20 rounded-full border border-sun-terracotta/20 shadow-sm flex items-center justify-center bg-cream text-sun-terracotta">
-                <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                </svg>
+              <div className="relative aspect-square w-full max-w-[200px] shrink-0 overflow-hidden rounded-full border border-sun-terracotta/20 shadow-sm">
+                <Image
+                  src="/images/stitch/lab-distillation.jpg"
+                  alt="Small-Batch Production"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="flex-1 text-center md:text-left">
                 <span className="mb-2 block text-[10px] font-sans tracking-[0.2em] text-sun-terracotta-dark uppercase">
@@ -108,10 +111,13 @@ export default function PurityPage() {
 
             {/* Handmade with Purpose */}
             <Reveal delay={100} className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16">
-              <div className="relative aspect-square w-full max-w-[200px] shrink-0 overflow-hidden bg-outline-variant/20 rounded-full border border-sun-terracotta/20 shadow-sm flex items-center justify-center bg-cream text-sun-terracotta">
-                <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
+              <div className="relative aspect-square w-full max-w-[200px] shrink-0 overflow-hidden rounded-full border border-sun-terracotta/20 shadow-sm">
+                <Image
+                  src="/images/stitch/farmer-portrait.jpg"
+                  alt="Handmade with Purpose"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="flex-1 text-center md:text-right">
                 <span className="mb-2 block text-[10px] font-sans tracking-[0.2em] text-sun-terracotta-dark uppercase">
@@ -128,10 +134,13 @@ export default function PurityPage() {
 
             {/* Clean & Conscious Beauty */}
             <Reveal delay={150} className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-              <div className="relative aspect-square w-full max-w-[200px] shrink-0 overflow-hidden bg-outline-variant/20 rounded-full border border-sun-terracotta/20 shadow-sm flex items-center justify-center bg-cream text-sun-terracotta">
-                <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                </svg>
+              <div className="relative aspect-square w-full max-w-[200px] shrink-0 overflow-hidden rounded-full border border-sun-terracotta/20 shadow-sm">
+                <Image
+                  src="/images/stitch/rose-petal-macro.jpg"
+                  alt="Clean and Conscious Beauty"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="flex-1 text-center md:text-left">
                 <span className="mb-2 block text-[10px] font-sans tracking-[0.2em] text-sun-terracotta-dark uppercase">
@@ -148,10 +157,13 @@ export default function PurityPage() {
 
             {/* Farm to Face */}
             <Reveal delay={200} className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16">
-              <div className="relative aspect-square w-full max-w-[200px] shrink-0 overflow-hidden bg-outline-variant/20 rounded-full border border-sun-terracotta/20 shadow-sm flex items-center justify-center bg-cream text-sun-terracotta">
-                <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+              <div className="relative aspect-square w-full max-w-[200px] shrink-0 overflow-hidden rounded-full border border-sun-terracotta/20 shadow-sm">
+                <Image
+                  src="/images/stitch/lavender-field.jpg"
+                  alt="Our Farm-to-Face Promise"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="flex-1 text-center md:text-right">
                 <span className="mb-2 block text-[10px] font-sans tracking-[0.2em] text-sun-terracotta-dark uppercase">
@@ -171,10 +183,13 @@ export default function PurityPage() {
 
             {/* The Magic of Ganga Jal */}
             <Reveal delay={250} className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-              <div className="relative aspect-square w-full max-w-[200px] shrink-0 overflow-hidden bg-outline-variant/20 rounded-full border border-sun-terracotta/20 shadow-sm flex items-center justify-center bg-cream text-sun-terracotta">
-                <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-                </svg>
+              <div className="relative aspect-square w-full max-w-[200px] shrink-0 overflow-hidden rounded-full border border-sun-terracotta/20 shadow-sm">
+                <Image
+                  src="/images/stitch/gangajal.jpg"
+                  alt="The Magic of Ganga Jal"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="flex-1 text-center md:text-left">
                 <span className="mb-2 block text-[10px] font-sans tracking-[0.2em] text-sun-terracotta-dark uppercase">
