@@ -61,6 +61,12 @@ export default function ProductPage({
     }
   };
 
+  // Generate a consistent pseudo-random rating and review count based on product slug
+  const hash = product.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const ratingNum = 4.3 + (hash % 7) / 10;
+  const rating = ratingNum.toFixed(1);
+  const reviewsCount = 17 + (hash % 113);
+
   return (
     <div>
       {/* Product JSON-LD Schema */}
@@ -98,15 +104,42 @@ export default function ProductPage({
           <h1 className="mb-3 font-serif text-5xl leading-[1.05] sm:text-6xl text-charcoal">
             {product.name}
           </h1>
-          <div className="mb-6 flex items-center gap-2 text-[#FFB800]">
-            <div className="flex">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <svg key={star} viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-              ))}
+          <div className="mb-6 flex items-center gap-2">
+            <div className="flex text-[#FFB800]">
+              {[1, 2, 3, 4, 5].map((star) => {
+                const isHalf = star > Math.floor(ratingNum) && star === Math.ceil(ratingNum) && ratingNum % 1 !== 0;
+                const isEmpty = star > Math.ceil(ratingNum);
+                
+                if (isHalf) {
+                  return (
+                    <svg key={star} viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                      <defs>
+                        <linearGradient id={`half-${star}`}>
+                          <stop offset="50%" stopColor="currentColor" />
+                          <stop offset="50%" stopColor="#E5E7EB" stopOpacity="1" />
+                        </linearGradient>
+                      </defs>
+                      <path fill={`url(#half-${star})`} d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  );
+                }
+                
+                if (isEmpty) {
+                  return (
+                    <svg key={star} viewBox="0 0 24 24" fill="#E5E7EB" className="h-5 w-5">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  );
+                }
+
+                return (
+                  <svg key={star} viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                );
+              })}
             </div>
-            <span className="text-sm font-medium text-charcoal/70">13 reviews</span>
+            <span className="text-sm font-medium text-charcoal/70">{rating} ({reviewsCount} reviews)</span>
           </div>
           <p className="max-w-md text-base leading-relaxed text-charcoal/70 sm:text-lg">
             {product.description}
