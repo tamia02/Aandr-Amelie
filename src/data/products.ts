@@ -752,7 +752,6 @@ export const products: Product[] = [
     ],
     concernSlugs: ['pigmentation', 'dull-skin'],
     ingredientsList: ['Multani Mitti', 'Turmeric Powder', 'Sandalwood Powder']
-  },
   }
 ];
 
