@@ -58,7 +58,7 @@ export default function NewsletterPopup() {
             Join Our Family
           </span>
           <h2 className="mb-4 font-serif text-2xl leading-tight text-charcoal italic">
-            Unlock Exclusive Skincare Insights
+            Unlock 10% Discount on Every Product
           </h2>
           
           {submitted ? (
@@ -68,7 +68,7 @@ export default function NewsletterPopup() {
           ) : (
             <>
               <p className="mb-6 font-sans text-xs text-charcoal/70 leading-relaxed">
-                Be the first to know about new botanical rituals, special offers, and farm-to-face stories.
+                Sign up now to get your exclusive 10% off code and elevate your skincare ritual.
               </p>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-left">
@@ -121,7 +121,7 @@ export default function NewsletterPopup() {
                   type="submit"
                   className="mt-4 bg-moon-indigo py-3 text-xs font-semibold tracking-[0.2em] text-cream uppercase transition-opacity hover:opacity-90 w-full"
                 >
-                  Join the Journal
+                  Get 10% Off
                 </button>
               </form>
             </>

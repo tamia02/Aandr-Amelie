@@ -2,6 +2,7 @@
 
 import type { Product } from "@/data/products";
 import type { Commerce } from "@/lib/actions/products";
+import type { Review } from "@/lib/actions/reviews";
 import ProductGallery from "./ProductGallery";
 import Reveal from "./Reveal";
 import Button from "./Button";
@@ -22,9 +23,11 @@ const SKIN_ICONS = [
 export default function ProductPage({
   product,
   commerce = null,
+  reviews = [],
 }: {
   product: Product;
   commerce?: Commerce | null;
+  reviews?: Review[];
 }) {
   const composition = product.benefitSections[0];
   const restSections = product.benefitSections.slice(1);
@@ -61,11 +64,19 @@ export default function ProductPage({
     }
   };
 
-  // Generate a consistent pseudo-random rating and review count based on product slug
+  // Generate actual rating and review count from db reviews
+  const reviewsCount = reviews.length;
+  const ratingNum = reviewsCount > 0
+    ? reviews.reduce((sum, r) => sum + r.rating, 0) / reviewsCount
+    : 0;
+  
+  // Use pseudo-random fallback if no reviews yet
   const hash = product.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  const ratingNum = 4.3 + (hash % 7) / 10;
-  const rating = ratingNum.toFixed(1);
-  const reviewsCount = 17 + (hash % 113);
+  const fallbackRatingNum = 4.3 + (hash % 7) / 10;
+  
+  const displayRatingNum = reviewsCount > 0 ? ratingNum : fallbackRatingNum;
+  const rating = displayRatingNum.toFixed(1);
+  const displayReviewsCount = reviewsCount > 0 ? reviewsCount : (17 + (hash % 113));
 
   return (
     <div>
@@ -107,8 +118,8 @@ export default function ProductPage({
           <div className="mb-6 flex items-center gap-2">
             <div className="flex text-[#FFB800]">
               {[1, 2, 3, 4, 5].map((star) => {
-                const isHalf = star > Math.floor(ratingNum) && star === Math.ceil(ratingNum) && ratingNum % 1 !== 0;
-                const isEmpty = star > Math.ceil(ratingNum);
+                const isHalf = star > Math.floor(displayRatingNum) && star === Math.ceil(displayRatingNum) && displayRatingNum % 1 !== 0;
+                const isEmpty = star > Math.ceil(displayRatingNum);
                 
                 if (isHalf) {
                   return (
@@ -139,7 +150,7 @@ export default function ProductPage({
                 );
               })}
             </div>
-            <span className="text-sm font-medium text-charcoal/70">{rating} ({reviewsCount} reviews)</span>
+            <span className="text-sm font-medium text-charcoal/70">{rating} ({displayReviewsCount} reviews)</span>
           </div>
           <p className="max-w-md text-base leading-relaxed text-charcoal/70 sm:text-lg">
             {product.description}
@@ -400,7 +411,7 @@ export default function ProductPage({
       )}
 
       {/* Reviews */}
-      <ProductReviews productName={product.name} />
+      <ProductReviews productName={product.name} productSlug={product.slug} reviews={reviews} />
 
       {/* CTA */}
       <section className="mx-auto max-w-[1440px] px-5 py-10 sm:px-10 lg:px-16">

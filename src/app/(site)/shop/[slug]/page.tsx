@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { products, getProduct } from "@/data/products";
 import { getCommerceForSlugs } from "@/lib/actions/products";
+import { getReviewsForProduct } from "@/lib/actions/reviews";
 import ProductPage from "@/components/ProductPage";
 
 export const revalidate = 60;
@@ -50,5 +51,6 @@ export default async function ProductDetailPage({
   const product = getProduct(slug);
   if (!product) notFound();
   const commerce = await getCommerceForSlugs([slug]);
-  return <ProductPage product={product} commerce={commerce[slug] ?? null} />;
+  const reviews = await getReviewsForProduct(slug);
+  return <ProductPage product={product} commerce={commerce[slug] ?? null} reviews={reviews} />;
 }

@@ -17,6 +17,7 @@ model Product {
   currency            String  @default("INR")
   stock               Int     @default(0)
   sku                 String?
+  reviews             Review[]
 }
 
 model Order {
@@ -52,4 +53,14 @@ model OrderItem {
   unitPriceCents Int    // snapshot at order time
   qty            Int
   totalCents     Int
+}
+
+model Review {
+  id          String   @id @default(cuid())
+  productSlug String
+  product     Product  @relation(fields: [productSlug], references: [slug])
+  authorName  String
+  rating      Int
+  content     String
+  createdAt   DateTime @default(now())
 }
