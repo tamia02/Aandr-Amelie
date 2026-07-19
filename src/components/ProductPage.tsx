@@ -9,6 +9,7 @@ import Button from "./Button";
 import AddToCart from "./AddToCart";
 import StickyBuyBar from "./StickyBuyBar";
 import ProductReviews from "./ProductReviews";
+import ProductIngredients from "./ProductIngredients";
 import Breadcrumbs from "./Breadcrumbs";
 import Link from "next/link";
 import { journalArticles } from "@/data/journal";
@@ -280,6 +281,9 @@ export default function ProductPage({
           )}
         </section>
       ))}
+
+      {/* Product Ingredients */}
+      <ProductIngredients ingredients={product.ingredientsList} />
 
       {/* How to Use (Accordion-based for reduced scroll fatigue and structured SEO parsing) */}
       <section className="bg-cream-deep py-10">
