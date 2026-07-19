@@ -205,6 +205,28 @@ export default function PurityPage() {
                   <p>
                     Ganga Jal is a vital component of our formulation, infusing our toner with purity and positivity. We believe in the transformative power of this sacred water, which is used at every stage of production—enhancing our connection to nature and promoting vibrant skin health.
                   </p>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Charged by Moonlight */}
+            <Reveal delay={300} className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16">
+              <div className="relative aspect-square w-full max-w-[200px] shrink-0 overflow-hidden rounded-full border border-sun-terracotta/20 shadow-sm">
+                <Image
+                  src="/images/stitch/full-moon.jpg"
+                  alt="Charged by the Full Moon"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex-1 text-center md:text-right">
+                <span className="mb-2 block text-[10px] font-sans tracking-[0.2em] text-sun-terracotta-dark uppercase">
+                  Lunar Energy
+                </span>
+                <h4 className="mb-3 font-serif text-2xl leading-tight italic">
+                  Charged by the Full Moon
+                </h4>
+                <div className="text-xs font-sans leading-relaxed text-charcoal/70 space-y-4">
                   <p>
                     What makes our Rose Ark toner truly special is how we charge the water used in its creation. By harnessing the gentle glow of moonlight, we amplify the positive energies within our products. This practice ensures that our toner is more than a beauty treatment; it is a ritual steeped in intention, inviting peace and positivity into your skincare routine.
                   </p>
