@@ -25,10 +25,7 @@ export default function AddToCart({ commerce }: { commerce: Commerce | null }) {
   const handleAdd = () => {
     addItem(commerce.slug, qty);
     setAdded(true);
-    setTimeout(() => {
-      setAdded(false);
-      router.push("/cart");
-    }, 400);
+    window.location.href = "/cart";
   };
 
   return (

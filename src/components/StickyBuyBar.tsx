@@ -35,10 +35,7 @@ export default function StickyBuyBar({
   const handleAdd = () => {
     addItem(commerce.slug, 1);
     setAdded(true);
-    setTimeout(() => {
-      setAdded(false);
-      router.push("/cart");
-    }, 400);
+    window.location.href = "/cart";
   };
 
   return (
