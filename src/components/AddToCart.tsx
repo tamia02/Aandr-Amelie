@@ -23,6 +23,12 @@ export default function AddToCart({ commerce }: { commerce: Commerce | null }) {
   const outOfStock = commerce.stock <= 0;
 
   const handleAdd = () => {
+    const hasSubmitted = sessionStorage.getItem("hasSubmittedNewsletter");
+    if (!hasSubmitted) {
+      window.dispatchEvent(new Event("showNewsletterPopup"));
+      return;
+    }
+
     addItem(commerce.slug, qty);
     setAdded(true);
     window.location.href = "/cart";

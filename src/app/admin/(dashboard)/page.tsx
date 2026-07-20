@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 const LOW_STOCK_THRESHOLD = 10;
 
 export default async function AdminDashboardPage() {
-  let orderCount, pendingCount, revenueAgg, lowStockProducts, recentOrders;
+  let orderCount, pendingCount, revenueAgg, lowStockProducts, recentOrders, leadCount, reviewCount, recentReviews;
   try {
     // Run sequentially rather than Promise.all — Supabase's free-tier pooler
     // caps concurrent connections low enough that 5 parallel queries can get
@@ -27,6 +27,12 @@ export default async function AdminDashboardPage() {
       orderBy: { createdAt: "desc" },
       take: 5,
     });
+    leadCount = await prisma.lead.count();
+    reviewCount = await prisma.review.count();
+    recentReviews = await prisma.review.findMany({
+      orderBy: { createdAt: "desc" },
+      take: 5,
+    });
   } catch (error) {
     console.error("AdminDashboardPage: database unavailable", error);
     return <DbUnavailableNotice />;
@@ -37,6 +43,8 @@ export default async function AdminDashboardPage() {
     { label: "Pending", value: pendingCount },
     { label: "Revenue", value: formatINR(revenueAgg._sum.totalCents ?? 0) },
     { label: "Low stock items", value: lowStockProducts.length },
+    { label: "Leads / Form Submissions", value: leadCount },
+    { label: "Product Reviews", value: reviewCount },
   ];
 
   return (
@@ -102,6 +110,26 @@ export default async function AdminDashboardPage() {
           )}
         </ul>
       </div>
+
+      {recentReviews.length > 0 && (
+        <div className="mt-10">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/50">
+            Recent Reviews
+          </h2>
+          <ul className="mt-3 divide-y divide-charcoal/10 bg-cream">
+            {recentReviews.map((review) => (
+              <li key={review.id} className="px-5 py-4 text-sm hover:bg-cream-deep">
+                <div className="flex items-center justify-between">
+                  <span className="font-medium text-charcoal">{review.authorName}</span>
+                  <span className="text-[#FFB800]">{"★".repeat(review.rating)}{"☆".repeat(5 - review.rating)}</span>
+                </div>
+                <p className="mt-1 text-xs text-charcoal/60 uppercase tracking-wider">{review.productSlug}</p>
+                <p className="mt-2 text-charcoal/80">"{review.content}"</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

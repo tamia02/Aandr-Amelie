@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { submitNewsletterForm } from "@/lib/actions/newsletter";
 
 export default function NewsletterPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,31 +9,42 @@ export default function NewsletterPopup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Check if the user has already seen or submitted the popup
-    const hasSeen = sessionStorage.getItem("hasSeenNewsletter");
-    if (!hasSeen) {
-      // Show popup after 2 seconds
-      const timer = setTimeout(() => {
+    const handleShow = () => {
+      const hasSubmitted = sessionStorage.getItem("hasSubmittedNewsletter");
+      if (!hasSubmitted) {
         setIsOpen(true);
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
+      }
+    };
+    window.addEventListener("showNewsletterPopup", handleShow);
+    return () => window.removeEventListener("showNewsletterPopup", handleShow);
   }, []);
 
   const handleClose = () => {
     setIsOpen(false);
-    sessionStorage.setItem("hasSeenNewsletter", "true");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate submission
-    setSubmitted(true);
-    sessionStorage.setItem("hasSeenNewsletter", "true");
+    setError(null);
     
-    // Close after showing success message briefly
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("phone", phone);
+
+    const result = await submitNewsletterForm(null, formData);
+
+    if (result.error) {
+      setError(result.error);
+      return;
+    }
+
+    setSubmitted(true);
+    sessionStorage.setItem("hasSubmittedNewsletter", "true");
+    
     setTimeout(() => {
       setIsOpen(false);
     }, 2500);
@@ -70,6 +82,7 @@ export default function NewsletterPopup() {
               <p className="mb-6 font-sans text-xs text-charcoal/70 leading-relaxed">
                 Sign up now to get your exclusive 10% off code and elevate your skincare ritual.
               </p>
+              {error && <p className="mb-4 text-xs text-red-600">{error}</p>}
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-left">
                 <div>

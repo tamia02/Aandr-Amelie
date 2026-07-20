@@ -59,7 +59,6 @@ export const products: Product[] = [
     image: "/images/royal-rose-new-main.jpg",
     images: [
       "/images/royal-rose-new-main.jpg",
-      "/images/rose1.png",
       "/images/rose3.png"
     ],
     description:
@@ -163,7 +162,6 @@ export const products: Product[] = [
     image: "/images/glow-quinch-elixir.jpg",
     images: [
       "/images/glow-quinch-elixir.jpg",
-      "/images/lavender1.png",
       "/images/lavender2.png"
     ],
     tagline: "A Gentle Hug for Skin and Senses",

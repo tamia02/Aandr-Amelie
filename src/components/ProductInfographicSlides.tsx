@@ -33,13 +33,13 @@ export function getInfographicSlides(product: Product): CustomSlide[] {
       content: (
         <>
           <Image src={bgImage} alt="Background" fill className="object-cover opacity-30" />
-          <div className="absolute inset-0 p-6 sm:p-10 flex flex-col justify-center text-cream z-10 bg-charcoal/40 backdrop-blur-sm">
-            <h3 className="font-serif text-3xl mb-8 border-b border-cream/20 pb-4">Key Benefits</h3>
-            <div className="space-y-6">
-              {product.bestFor.slice(0, 4).map((item) => (
+          <div className="absolute inset-0 p-5 sm:p-8 flex flex-col justify-center text-cream z-10 bg-charcoal/40 backdrop-blur-sm">
+            <h3 className="font-serif text-2xl mb-4 border-b border-cream/20 pb-2">Key Benefits</h3>
+            <div className="space-y-4 overflow-y-auto pr-2 no-scrollbar" style={{ maxHeight: '75%' }}>
+              {product.bestFor.map((item) => (
                 <div key={item.title}>
-                  <h4 className="font-serif text-lg text-sun-gold mb-1">{item.title}</h4>
-                  <p className="text-sm text-cream/80 leading-relaxed">{item.description}</p>
+                  <h4 className="font-serif text-base text-sun-gold mb-1">{item.title}</h4>
+                  <p className="text-xs text-cream/80 leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -64,13 +64,13 @@ export function getInfographicSlides(product: Product): CustomSlide[] {
       content: (
         <>
           <Image src={bgImage} alt="Background" fill className="object-cover opacity-30" />
-          <div className="absolute inset-0 p-6 sm:p-10 flex flex-col justify-center text-cream z-10 bg-charcoal/40 backdrop-blur-sm">
-            <h3 className="font-serif text-3xl mb-6 border-b border-cream/20 pb-4">{composition.heading || "Composition"}</h3>
-            {composition.intro && <p className="text-sm text-cream/90 italic mb-6">{composition.intro}</p>}
-            <div className="space-y-5 overflow-y-auto pr-2" style={{ maxHeight: '60%' }}>
+          <div className="absolute inset-0 p-5 sm:p-8 flex flex-col justify-center text-cream z-10 bg-charcoal/40 backdrop-blur-sm">
+            <h3 className="font-serif text-2xl mb-4 border-b border-cream/20 pb-2">{composition.heading || "Composition"}</h3>
+            {composition.intro && <p className="text-xs text-cream/90 italic mb-4">{composition.intro}</p>}
+            <div className="space-y-4 overflow-y-auto pr-2 no-scrollbar" style={{ maxHeight: '65%' }}>
               {composition.items?.map((item) => (
                 <div key={item.title}>
-                  <h4 className="font-serif text-md text-sun-gold mb-1">{item.title}</h4>
+                  <h4 className="font-serif text-sm text-sun-gold mb-1">{item.title}</h4>
                   <p className="text-xs text-cream/70 leading-relaxed">{item.description}</p>
                 </div>
               ))}
@@ -96,15 +96,15 @@ export function getInfographicSlides(product: Product): CustomSlide[] {
       content: (
         <>
           <Image src={bgImage} alt="Background" fill className="object-cover opacity-30" />
-          <div className="absolute inset-0 p-6 sm:p-10 flex flex-col justify-center text-cream z-10 bg-charcoal/40 backdrop-blur-sm">
-            <h3 className="font-serif text-3xl mb-8 border-b border-cream/20 pb-4">How To Use</h3>
-            <div className="space-y-6 overflow-y-auto pr-2" style={{ maxHeight: '70%' }}>
+          <div className="absolute inset-0 p-5 sm:p-8 flex flex-col justify-center text-cream z-10 bg-charcoal/40 backdrop-blur-sm">
+            <h3 className="font-serif text-2xl mb-4 border-b border-cream/20 pb-2">How To Use</h3>
+            <div className="space-y-4 overflow-y-auto pr-2 no-scrollbar" style={{ maxHeight: '75%' }}>
               {product.howToUse.map((step, i) => (
-                <div key={step.label} className="flex gap-4">
-                   <span className="text-sun-gold text-lg font-serif italic">{i+1}.</span>
+                <div key={step.label} className="flex gap-3">
+                   <span className="text-sun-gold text-base font-serif italic">{i+1}.</span>
                    <div>
-                    <h4 className="font-serif text-md text-cream mb-1">{step.label}</h4>
-                    <p className="text-sm text-cream/70 leading-relaxed">{step.text}</p>
+                    <h4 className="font-serif text-sm text-cream mb-1">{step.label}</h4>
+                    <p className="text-xs text-cream/70 leading-relaxed">{step.text}</p>
                    </div>
                 </div>
               ))}

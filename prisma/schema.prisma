@@ -64,3 +64,12 @@ model Review {
   content     String
   createdAt   DateTime @default(now())
 }
+
+model Lead {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String
+  createdAt DateTime @default(now())
+}
+
