@@ -259,8 +259,6 @@ export const products: Product[] = [
     image: "/images/acne-shield.jpg",
     images: [
       "/images/acne-shield.jpg",
-      "/images/achne1.png",
-      "/images/acne2.png",
       "/images/acne3.png"
     ],
     tagline: "Clear, Calm, Balanced — Naturally",
