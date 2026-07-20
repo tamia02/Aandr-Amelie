@@ -71,7 +71,7 @@ export default function ProductGallery({
   };
 
   if (allMedia.length === 0) {
-    return <MediaVisual variant={variant} label={label} ratio="aspect-[4/5]" />;
+    return <MediaVisual variant={variant} label={label} ratio="aspect-[4/5] md:aspect-square" />;
   }
 
   return (
@@ -117,7 +117,7 @@ export default function ProductGallery({
       )}
 
       {/* Main Display Area (Swipeable on mobile) */}
-      <div className={`relative flex-1 aspect-[4/5] ${MEDIA_FRAME} group bg-cream-deep/30`}>
+      <div className={`relative flex-1 aspect-[4/5] md:aspect-square ${MEDIA_FRAME} group bg-cream-deep/30`}>
         <div 
           ref={carouselRef}
           onScroll={handleScroll}
