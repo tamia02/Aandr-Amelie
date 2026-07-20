@@ -13,6 +13,7 @@ export default function ProductGallery({
   poster,
   variant = "dawn",
   label,
+  customSlides,
 }: {
   images?: string[];
   fallbackImage?: string;
@@ -20,20 +21,25 @@ export default function ProductGallery({
   poster?: string;
   variant?: PlaceholderVariant;
   label?: string;
+  customSlides?: { id: string; thumbnail: React.ReactNode; content: React.ReactNode }[];
 }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
   const [isAutoScrolling, setIsAutoScrolling] = useState(false);
 
   // Create an array of all media items
-  const allMedia: { type: "video" | "image"; src: string; poster?: string }[] = [];
+  const allMedia: { type: "video" | "image" | "custom"; id?: string; src?: string; poster?: string; content?: React.ReactNode; thumbnail?: React.ReactNode }[] = [];
   
   if (video) {
-    allMedia.push({ type: "video", src: video, poster });
+    allMedia.push({ type: "video", id: "video", src: video, poster });
   }
   
   const imageList = images.length > 0 ? images : (fallbackImage ? [fallbackImage] : []);
-  imageList.forEach((img) => allMedia.push({ type: "image", src: img }));
+  imageList.forEach((img, i) => allMedia.push({ type: "image", id: `img-${i}`, src: img }));
+  
+  if (customSlides) {
+    customSlides.forEach((slide) => allMedia.push({ type: "custom", id: slide.id, content: slide.content, thumbnail: slide.thumbnail }));
+  }
   
   // Sync scroll when clicking thumbnails
   useEffect(() => {
@@ -92,14 +98,18 @@ export default function ProductGallery({
                   muted
                   playsInline
                 />
-              ) : (
+              ) : media.type === "image" ? (
                 <Image
-                  src={media.src}
+                  src={media.src!}
                   alt={`${label} thumbnail ${i + 1}`}
                   fill
                   className="object-contain bg-cream-deep/30"
                   sizes="96px"
                 />
+              ) : (
+                <div className="w-full h-full bg-charcoal overflow-hidden">
+                  {media.thumbnail}
+                </div>
               )}
             </button>
           ))}
@@ -123,9 +133,9 @@ export default function ProductGallery({
                 priority={i === 0}
                 className="h-full w-full"
               />
-            ) : (
+            ) : media.type === "image" ? (
               <Image
-                src={media.src}
+                src={media.src!}
                 alt={label ?? "Product Image"}
                 fill
                 quality={95}
@@ -133,6 +143,10 @@ export default function ProductGallery({
                 sizes="(min-width: 1024px) 40vw, 90vw"
                 className="object-contain"
               />
+            ) : (
+              <div className="w-full h-full relative overflow-hidden bg-charcoal">
+                {media.content}
+              </div>
             )}
           </div>
         ))}

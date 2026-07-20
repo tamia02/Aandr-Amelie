@@ -11,7 +11,7 @@ import StickyBuyBar from "./StickyBuyBar";
 import ProductReviews from "./ProductReviews";
 import ProductIngredients from "./ProductIngredients";
 import Breadcrumbs from "./Breadcrumbs";
-import ProductInfographics from "./ProductInfographics";
+import { getInfographicSlides } from "./ProductInfographicSlides";
 import Link from "next/link";
 import { journalArticles } from "@/data/journal";
 import { formatINR } from "@/lib/money";
@@ -108,6 +108,7 @@ export default function ProductPage({
             poster={product.heroPoster}
             variant={product.placeholder}
             label={product.name}
+            customSlides={getInfographicSlides(product)}
           />
         </Reveal>
         <Reveal delay={150} className="flex flex-col justify-center md:col-span-5">
@@ -171,9 +172,6 @@ export default function ProductPage({
           <div id="buy-sentinel" />
         </Reveal>
       </section>
-
-      {/* Visual Experience Infographics */}
-      <ProductInfographics product={product} />
 
       {/* Best For */}
       {product.bestFor.length > 0 && (
