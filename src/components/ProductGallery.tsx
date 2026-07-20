@@ -75,15 +75,15 @@ export default function ProductGallery({
   }
 
   return (
-    <div className="flex flex-col-reverse gap-4 md:flex-row h-full">
+    <div className="flex flex-col-reverse gap-4 h-full w-full">
       {/* Thumbnails Strip */}
       {allMedia.length > 1 && (
-        <div className="flex gap-3 overflow-x-auto pb-2 no-scrollbar md:flex-col md:w-20 md:overflow-y-auto md:pb-0 lg:w-24">
+        <div className="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
           {allMedia.map((media, i) => (
             <button
               key={`${media.type}-${i}`}
               onClick={() => setSelectedIndex(i)}
-              className={`relative flex-shrink-0 w-16 h-20 md:w-full md:h-24 lg:h-28 overflow-hidden ${MEDIA_FRAME} border transition-all duration-300 ease-out ${
+              className={`relative flex-shrink-0 w-16 h-20 md:w-20 md:h-24 lg:w-24 lg:h-28 overflow-hidden ${MEDIA_FRAME} border transition-all duration-300 ease-out ${
                 selectedIndex === i
                   ? "border-sun-terracotta opacity-100"
                   : "border-transparent opacity-60 hover:opacity-100 hover:border-outline-variant/50"
