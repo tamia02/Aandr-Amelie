@@ -62,8 +62,6 @@ export const products: Product[] = [
       "/images/rose1.png",
       "/images/rose3.png"
     ],
-    heroVideo: "/videos/royal-rose-elixir.mp4?v=2",
-    heroPoster: "/images/royal-rose-elixir.jpg",
     description:
       "A deeply hydrating toner that soothes your skin and fades discoloration while refining pores. Works for every skin type — smooths texture, evens out tone, and leaves your complexion looking fresh and balanced.",
     bestFor: [
