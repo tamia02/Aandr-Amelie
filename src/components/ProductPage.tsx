@@ -99,8 +99,8 @@ export default function ProductPage({
       </div>
 
       {/* Hero */}
-      <section className="mx-auto grid max-w-[1440px] grid-cols-1 gap-x-6 gap-y-14 px-5 pt-4 pb-10 sm:px-10 md:grid-cols-12 lg:px-16 items-start">
-        <Reveal className="md:col-span-7 md:sticky md:top-32">
+      <section className="mx-auto grid max-w-[1440px] grid-cols-1 gap-x-8 gap-y-8 px-5 pt-4 pb-10 sm:px-10 md:grid-cols-12 lg:px-16 items-start">
+        <Reveal className="md:col-span-6 md:sticky md:top-24">
           <ProductGallery
             images={product.images}
             fallbackImage={product.image}
@@ -111,14 +111,14 @@ export default function ProductPage({
             customSlides={getInfographicSlides(product)}
           />
         </Reveal>
-        <Reveal delay={150} className="flex flex-col justify-center md:col-span-5">
-          <span className="mb-4 text-xs font-semibold tracking-[0.25em] text-sun-terracotta uppercase">
+        <Reveal delay={150} className="flex flex-col justify-center md:col-span-6">
+          <span className="mb-2 text-[10px] font-semibold tracking-[0.25em] text-sun-terracotta uppercase sm:mb-3 sm:text-xs">
             {product.tagline}
           </span>
-          <h1 className="mb-3 font-serif text-5xl leading-[1.05] sm:text-6xl text-charcoal">
+          <h1 className="mb-2 font-serif text-4xl leading-[1.05] sm:text-5xl lg:text-5xl text-charcoal">
             {product.name}
           </h1>
-          <div className="mb-6 flex items-center gap-2">
+          <div className="mb-4 flex items-center gap-2">
             <div className="flex text-[#FFB800]">
               {[1, 2, 3, 4, 5].map((star) => {
                 const isHalf = star > Math.floor(displayRatingNum) && star === Math.ceil(displayRatingNum) && displayRatingNum % 1 !== 0;
@@ -155,15 +155,15 @@ export default function ProductPage({
             </div>
             <span className="text-sm font-medium text-charcoal/70">{rating} ({displayReviewsCount} reviews)</span>
           </div>
-          <p className="max-w-md text-base leading-relaxed text-charcoal/70 sm:text-lg">
+          <p className="max-w-md text-sm leading-relaxed text-charcoal/70 sm:text-base">
             {product.description}
           </p>
           {product.afterShaveBenefit && (
-            <div className="mt-6 max-w-md border-l-2 border-sun-gold bg-sun-blush/20 px-5 py-4">
-              <p className="mb-1 text-xs font-semibold tracking-[0.2em] text-sun-terracotta-dark uppercase">
+            <div className="mt-4 max-w-md border-l-2 border-sun-gold bg-sun-blush/20 px-4 py-3">
+              <p className="mb-1 text-[10px] font-semibold tracking-[0.2em] text-sun-terracotta-dark uppercase sm:text-xs">
                 After-Shave Benefit
               </p>
-              <p className="text-sm leading-relaxed text-charcoal/75">
+              <p className="text-xs leading-relaxed text-charcoal/75 sm:text-sm">
                 {product.afterShaveBenefit}
               </p>
             </div>

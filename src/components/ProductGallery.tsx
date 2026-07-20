@@ -117,39 +117,57 @@ export default function ProductGallery({
       )}
 
       {/* Main Display Area (Swipeable on mobile) */}
-      <div 
-        ref={carouselRef}
-        onScroll={handleScroll}
-        className={`relative flex-1 aspect-[4/5] flex overflow-x-auto md:overflow-hidden snap-x snap-mandatory no-scrollbar ${MEDIA_FRAME} group bg-cream-deep/30`}
-      >
-        {allMedia.map((media, i) => (
-          <div key={`${media.type}-${i}-main`} className="relative min-w-full h-full snap-center snap-always flex-shrink-0">
-            {media.type === "video" ? (
-              <MediaVisual
-                video={media.src}
-                poster={media.poster}
-                label={label}
-                ratio="aspect-auto h-full"
-                priority={i === 0}
-                className="h-full w-full"
+      <div className={`relative flex-1 aspect-[4/5] ${MEDIA_FRAME} group bg-cream-deep/30`}>
+        <div 
+          ref={carouselRef}
+          onScroll={handleScroll}
+          className="w-full h-full flex overflow-x-auto md:overflow-hidden snap-x snap-mandatory no-scrollbar"
+        >
+          {allMedia.map((media, i) => (
+            <div key={`${media.type}-${i}-main`} className="relative min-w-full h-full snap-center snap-always flex-shrink-0">
+              {media.type === "video" ? (
+                <MediaVisual
+                  video={media.src}
+                  poster={media.poster}
+                  label={label}
+                  ratio="aspect-auto h-full"
+                  priority={i === 0}
+                  className="h-full w-full"
+                />
+              ) : media.type === "image" ? (
+                <Image
+                  src={media.src!}
+                  alt={label ?? "Product Image"}
+                  fill
+                  quality={95}
+                  priority={i === 0}
+                  sizes="(min-width: 1024px) 40vw, 90vw"
+                  className="object-contain"
+                />
+              ) : (
+                <div className="w-full h-full relative overflow-hidden bg-charcoal">
+                  {media.content}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Pagination Dots */}
+        {allMedia.length > 1 && (
+          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10 pointer-events-none">
+            {allMedia.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setSelectedIndex(i)}
+                className={`h-2 rounded-full transition-all duration-300 pointer-events-auto ${
+                  selectedIndex === i ? "bg-sun-terracotta w-6" : "bg-charcoal/30 hover:bg-charcoal/50 w-2"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
               />
-            ) : media.type === "image" ? (
-              <Image
-                src={media.src!}
-                alt={label ?? "Product Image"}
-                fill
-                quality={95}
-                priority={i === 0}
-                sizes="(min-width: 1024px) 40vw, 90vw"
-                className="object-contain"
-              />
-            ) : (
-              <div className="w-full h-full relative overflow-hidden bg-charcoal">
-                {media.content}
-              </div>
-            )}
+            ))}
           </div>
-        ))}
+        )}
       </div>
     </div>
   );
