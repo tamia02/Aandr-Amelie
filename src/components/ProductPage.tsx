@@ -11,6 +11,7 @@ import StickyBuyBar from "./StickyBuyBar";
 import ProductReviews from "./ProductReviews";
 import ProductIngredients from "./ProductIngredients";
 import Breadcrumbs from "./Breadcrumbs";
+import ProductInfographics from "./ProductInfographics";
 import Link from "next/link";
 import { journalArticles } from "@/data/journal";
 import { formatINR } from "@/lib/money";
@@ -170,6 +171,9 @@ export default function ProductPage({
           <div id="buy-sentinel" />
         </Reveal>
       </section>
+
+      {/* Visual Experience Infographics */}
+      <ProductInfographics product={product} />
 
       {/* Best For */}
       {product.bestFor.length > 0 && (
