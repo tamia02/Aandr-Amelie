@@ -102,7 +102,7 @@ export default function ReviewForm({ productSlug }: { productSlug: string }) {
               rows={4}
               className="w-full border border-outline-variant/30 bg-transparent px-4 py-3 text-sm focus:border-sun-terracotta focus:outline-none"
               placeholder="Tell us what you think..."
-            </textarea>
+            ></textarea>
           </div>
 
           <div>
