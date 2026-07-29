@@ -14,6 +14,7 @@ import Button from "@/components/Button";
 
 const FREE_SHIPPING_THRESHOLD_CENTS = 49900;
 const FLAT_SHIPPING_CENTS = 5000;
+const STORAGE_KEY = "aandre-checkout-form";
 
 const emptyForm = {
   customerName: "",
@@ -40,6 +41,21 @@ export default function CheckoutPage() {
     if (items.length === 0) return;
     getCommerceForSlugs(items.map((i) => i.slug)).then(setCommerce);
   }, [items]);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        setForm(JSON.parse(saved));
+      }
+    } catch {}
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(form));
+    } catch {}
+  }, [form]);
 
   const subtotalCents = items.reduce((sum, item) => {
     const price = commerce[item.slug]?.priceCents ?? 0;

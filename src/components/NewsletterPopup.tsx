@@ -24,6 +24,7 @@ export default function NewsletterPopup() {
 
   const handleClose = () => {
     setIsOpen(false);
+    sessionStorage.setItem("hasSubmittedNewsletter", "true");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
