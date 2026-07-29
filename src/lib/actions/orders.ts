@@ -256,3 +256,30 @@ export async function verifyRazorpayPayment(
     return { ok: false, error: "Failed to verify payment." };
   }
 }
+
+export async function getLatestDeliveryInfo(email: string) {
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return null;
+  }
+
+  try {
+    const latestOrder = await prisma.order.findFirst({
+      where: { email },
+      orderBy: { createdAt: 'desc' },
+      select: {
+        customerName: true,
+        phone: true,
+        addressLine1: true,
+        addressLine2: true,
+        city: true,
+        state: true,
+        pincode: true,
+      }
+    });
+    
+    return latestOrder;
+  } catch (error) {
+    console.error("Failed to fetch latest delivery info:", error);
+    return null;
+  }
+}

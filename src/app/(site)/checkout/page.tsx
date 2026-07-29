@@ -6,7 +6,7 @@ import Script from "next/script";
 import { useRouter } from "next/navigation";
 import { useCart } from "@/lib/cart-context";
 import { getCommerceForSlugs, type Commerce } from "@/lib/actions/products";
-import { placeOrder, checkPincode, verifyRazorpayPayment } from "@/lib/actions/orders";
+import { placeOrder, checkPincode, verifyRazorpayPayment, getLatestDeliveryInfo } from "@/lib/actions/orders";
 import { getProduct } from "@/data/products";
 import { formatINR } from "@/lib/money";
 import SectionHeader from "@/components/SectionHeader";
@@ -14,7 +14,6 @@ import Button from "@/components/Button";
 
 const FREE_SHIPPING_THRESHOLD_CENTS = 49900;
 const FLAT_SHIPPING_CENTS = 5000;
-const STORAGE_KEY = "aandre-checkout-form";
 
 const emptyForm = {
   customerName: "",
@@ -42,20 +41,22 @@ export default function CheckoutPage() {
     getCommerceForSlugs(items.map((i) => i.slug)).then(setCommerce);
   }, [items]);
 
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        setForm(JSON.parse(saved));
-      }
-    } catch {}
-  }, []);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(form));
-    } catch {}
-  }, [form]);
+  const handleEmailBlur = async () => {
+    if (!form.email || !form.email.includes("@")) return;
+    const info = await getLatestDeliveryInfo(form.email);
+    if (info) {
+      setForm((prev) => ({
+        ...prev,
+        customerName: prev.customerName || info.customerName,
+        phone: prev.phone || info.phone,
+        addressLine1: prev.addressLine1 || info.addressLine1,
+        addressLine2: prev.addressLine2 || info.addressLine2 || "",
+        city: prev.city || info.city,
+        state: prev.state || info.state,
+        pincode: prev.pincode || info.pincode,
+      }));
+    }
+  };
 
   const subtotalCents = items.reduce((sum, item) => {
     const price = commerce[item.slug]?.priceCents ?? 0;
@@ -188,6 +189,7 @@ export default function CheckoutPage() {
                   type="email"
                   value={form.email}
                   onChange={handleField("email")}
+                  onBlur={handleEmailBlur}
                   className="w-full rounded-sm border border-charcoal/20 bg-transparent px-4 py-3 text-sm focus:border-sun-terracotta-dark focus:outline-none"
                 />
               </div>
