@@ -49,6 +49,16 @@ export default function ReviewList({ reviews, productName }: { reviews: Review[]
           <p className="text-sm leading-relaxed text-charcoal/80 whitespace-pre-wrap">
             {review.content}
           </p>
+          {review.photoUrl && (
+            <div className="mt-4">
+              <img 
+                src={review.photoUrl} 
+                alt={`Photo for review by ${review.authorName}`} 
+                className="w-32 h-32 object-cover border border-outline-variant/30 rounded-sm"
+                loading="lazy"
+              />
+            </div>
+          )}
         </div>
       ))}
     </div>

@@ -45,7 +45,7 @@ export default function ReviewForm({ productSlug }: { productSlug: string }) {
           {state.message}
         </div>
       ) : (
-        <form action={formAction} className="space-y-5">
+        <form action={formAction} className="space-y-5" encType="multipart/form-data">
           <input type="hidden" name="productSlug" value={productSlug} />
           <input type="hidden" name="rating" value={rating} />
           
@@ -102,7 +102,21 @@ export default function ReviewForm({ productSlug }: { productSlug: string }) {
               rows={4}
               className="w-full border border-outline-variant/30 bg-transparent px-4 py-3 text-sm focus:border-sun-terracotta focus:outline-none"
               placeholder="Tell us what you think..."
-            ></textarea>
+            </textarea>
+          </div>
+
+          <div>
+            <label htmlFor="photo" className="block text-xs font-semibold tracking-widest uppercase text-charcoal mb-2">
+              Add a Photo (Optional)
+            </label>
+            <input
+              type="file"
+              id="photo"
+              name="photo"
+              accept="image/*"
+              capture="environment"
+              className="w-full text-sm text-charcoal/70 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-xs file:font-semibold file:uppercase file:tracking-widest file:bg-sun-sage/20 file:text-moon-sage hover:file:bg-sun-sage/30 transition-all cursor-pointer"
+            />
           </div>
 
           {state?.error && (
