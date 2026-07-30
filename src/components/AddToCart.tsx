@@ -23,16 +23,9 @@ export default function AddToCart({ commerce }: { commerce: Commerce | null }) {
   const outOfStock = commerce.stock <= 0;
 
   const handleAdd = () => {
-    const hasSubmitted = sessionStorage.getItem("hasSubmittedNewsletter");
-    
     addItem(commerce.slug, qty);
     setAdded(true);
-
-    if (!hasSubmitted) {
-      window.dispatchEvent(new Event("showNewsletterPopup"));
-    } else {
-      router.push("/cart");
-    }
+    router.push("/cart");
   };
 
   return (

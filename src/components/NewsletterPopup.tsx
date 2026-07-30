@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { submitNewsletterForm } from "@/lib/actions/newsletter";
 
 export default function NewsletterPopup() {
@@ -11,20 +12,23 @@ export default function NewsletterPopup() {
   const [phone, setPhone] = useState("");
   const [error, setError] = useState<string | null>(null);
 
+  const pathname = usePathname();
+
   useEffect(() => {
-    const handleShow = () => {
-      const hasSubmitted = sessionStorage.getItem("hasSubmittedNewsletter");
+    // Only show on individual product pages
+    if (pathname && pathname.startsWith("/shop/") && pathname !== "/shop") {
+      const hasSubmitted = localStorage.getItem("hasSubmittedNewsletter");
       if (!hasSubmitted) {
-        setIsOpen(true);
+        // slight delay to let the page load visually
+        const timer = setTimeout(() => setIsOpen(true), 2000);
+        return () => clearTimeout(timer);
       }
-    };
-    window.addEventListener("showNewsletterPopup", handleShow);
-    return () => window.removeEventListener("showNewsletterPopup", handleShow);
-  }, []);
+    }
+  }, [pathname]);
 
   const handleClose = () => {
     setIsOpen(false);
-    sessionStorage.setItem("hasSubmittedNewsletter", "true");
+    localStorage.setItem("hasSubmittedNewsletter", "true");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -44,7 +48,8 @@ export default function NewsletterPopup() {
     }
 
     setSubmitted(true);
-    sessionStorage.setItem("hasSubmittedNewsletter", "true");
+    localStorage.setItem("hasSubmittedNewsletter", "true");
+    localStorage.setItem("userEmail", email);
     
     setTimeout(() => {
       setIsOpen(false);

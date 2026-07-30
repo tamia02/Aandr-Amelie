@@ -39,6 +39,26 @@ export default function CheckoutPage() {
   useEffect(() => {
     if (items.length === 0) return;
     getCommerceForSlugs(items.map((i) => i.slug)).then(setCommerce);
+
+    // Auto-fill delivery info if user is known
+    const storedEmail = localStorage.getItem("userEmail");
+    if (storedEmail && !form.email) {
+      setForm((prev) => ({ ...prev, email: storedEmail }));
+      getLatestDeliveryInfo(storedEmail).then((info) => {
+        if (info) {
+          setForm((prev) => ({
+            ...prev,
+            customerName: prev.customerName || info.customerName,
+            phone: prev.phone || info.phone,
+            addressLine1: prev.addressLine1 || info.addressLine1,
+            addressLine2: prev.addressLine2 || info.addressLine2 || "",
+            city: prev.city || info.city,
+            state: prev.state || info.state,
+            pincode: prev.pincode || info.pincode,
+          }));
+        }
+      });
+    }
   }, [items]);
 
   const handleEmailBlur = async () => {
@@ -121,6 +141,7 @@ export default function CheckoutPage() {
         }
 
         clear();
+        localStorage.setItem("userEmail", form.email);
         router.push(`/order-confirmation/${result.orderId}`);
       },
       prefill: {
