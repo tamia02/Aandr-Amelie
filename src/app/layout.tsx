@@ -48,6 +48,9 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: ["/images/royal-rose-new-main.jpg"],
   },
+  verification: {
+    google: "dP-2LvuqDW7VgUJ3ByQcND4GuKXca33ZAYkFBQ_EA6E",
+  },
 };
 
 export default function RootLayout({
