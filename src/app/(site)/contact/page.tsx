@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Get in touch with Aandré Amelie. Send us a message regarding general inquiries, custom ritual advice, wholesale orders, or sourcing details.",
   alternates: {
-    canonical: "https://aandreamelie.com/contact",
+    canonical: "https://www.aandreamelie.com/contact",
   },
 };
 

@@ -28,7 +28,7 @@ export async function generateMetadata({
     title: article.seoTitle,
     description: article.seoDescription,
     alternates: {
-      canonical: `https://aandreamelie.com/journal/${article.slug}`,
+      canonical: `https://www.aandreamelie.com/journal/${article.slug}`,
     },
   };
 }
@@ -62,19 +62,19 @@ export default async function JournalPostPage({
     "author": {
       "@type": "Person",
       "name": "Soniyaa Sethi",
-      "url": "https://aandreamelie.com/our-story"
+      "url": "https://www.aandreamelie.com/our-story"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Aandré Amelie",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://aandreamelie.com/logo.png"
+        "url": "https://www.aandreamelie.com/logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://aandreamelie.com/journal/${article.slug}`
+      "@id": `https://www.aandreamelie.com/journal/${article.slug}`
     }
   };
 

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Ingredient science and rituals for rosewater, lavender, jojoba, and rosemary — the research behind every Aandré Amelie formula.",
   alternates: {
-    canonical: "https://aandreamelie.com/journal",
+    canonical: "https://www.aandreamelie.com/journal",
   },
 };
 

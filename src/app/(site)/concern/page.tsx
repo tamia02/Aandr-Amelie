@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Explore our targeted skincare and wellness collections organized by skin concerns, sleep and stress, or hair and scalp care.",
   alternates: {
-    canonical: "https://aandreamelie.com/concern",
+    canonical: "https://www.aandreamelie.com/concern",
   },
 };
 
@@ -20,13 +20,13 @@ export default function ConcernsPage() {
     "@type": "CollectionPage",
     "name": "Shop by Skin & Wellness Concern",
     "description": "Explore our targeted skincare and wellness collections organized by skin concerns, sleep and stress, or hair and scalp care.",
-    "url": "https://aandreamelie.com/concern",
+    "url": "https://www.aandreamelie.com/concern",
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": concerns.map((concern, index) => ({
         "@type": "ListItem",
         "position": index + 1,
-        "url": `https://aandreamelie.com/concern/${concern.slug}`,
+        "url": `https://www.aandreamelie.com/concern/${concern.slug}`,
         "name": concern.name
       }))
     }

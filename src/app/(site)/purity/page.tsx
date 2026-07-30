@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Organic sourcing, ethical farming, and the promise behind every Aandré Amelie product.",
   alternates: {
-    canonical: "https://aandreamelie.com/purity",
+    canonical: "https://www.aandreamelie.com/purity",
   },
 };
 

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Privacy policy and data protection guidelines for Aandré Amelie.",
   alternates: {
-    canonical: "https://aandreamelie.com/privacy-policy",
+    canonical: "https://www.aandreamelie.com/privacy-policy",
   },
 };
 

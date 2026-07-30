@@ -28,7 +28,7 @@ export async function generateMetadata({
     title: concern.seoTitle,
     description: concern.seoDescription,
     alternates: {
-      canonical: `https://aandreamelie.com/concern/${concern.slug}`,
+      canonical: `https://www.aandreamelie.com/concern/${concern.slug}`,
     },
   };
 }
@@ -57,13 +57,13 @@ export default async function ConcernPage({
     "@type": "CollectionPage",
     "name": concern.seoTitle,
     "description": concern.seoDescription,
-    "url": `https://aandreamelie.com/concern/${concern.slug}`,
+    "url": `https://www.aandreamelie.com/concern/${concern.slug}`,
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": matchingProducts.map((product, index) => ({
         "@type": "ListItem",
         "position": index + 1,
-        "url": `https://aandreamelie.com/shop/${product.slug}`,
+        "url": `https://www.aandreamelie.com/shop/${product.slug}`,
         "name": product.name
       }))
     }

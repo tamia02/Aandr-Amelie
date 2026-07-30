@@ -19,7 +19,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const product = getProduct(slug);
   if (!product) return {};
-  const url = `https://aandreamelie.com/shop/${product.slug}`;
+  const url = `https://www.aandreamelie.com/shop/${product.slug}`;
   return {
     title: product.seoTitle,
     description: product.seoDescription,

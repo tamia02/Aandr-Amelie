@@ -36,7 +36,7 @@ const VALUES = [
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://aandreamelie.com/",
+    canonical: "https://www.aandreamelie.com/",
   },
 };
 
@@ -45,8 +45,8 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Aandré Amelie",
-    "url": "https://aandreamelie.com",
-    "logo": "https://aandreamelie.com/images/logo.png",
+    "url": "https://www.aandreamelie.com",
+    "logo": "https://www.aandreamelie.com/images/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-9540331566",
@@ -63,10 +63,10 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Aandré Amelie",
-    "url": "https://aandreamelie.com",
+    "url": "https://www.aandreamelie.com",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://aandreamelie.com/search?q={search_term_string}",
+      "target": "https://www.aandreamelie.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };

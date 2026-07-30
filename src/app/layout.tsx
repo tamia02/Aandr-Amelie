@@ -15,7 +15,7 @@ const inter = Inter({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const siteUrl = "https://aandreamelie.com";
+const siteUrl = "https://www.aandreamelie.com";
 const siteTitle = "Aandré Amelie — All Shades, All Souls";
 const siteDescription =
   "Natural hydrosol skincare crafted for every shade and soul. Discover Royal Rose Elixir, Glow Quinch, Acne Shield, and Vital Grow Scalp.";

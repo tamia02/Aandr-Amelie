@@ -4,7 +4,7 @@ import { concerns } from "@/data/concerns";
 import { journalArticles } from "@/data/journal";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://aandreamelie.com";
+  const baseUrl = "https://www.aandreamelie.com";
 
   // Static routes
   const staticRoutes = [

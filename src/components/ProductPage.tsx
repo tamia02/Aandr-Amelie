@@ -48,7 +48,7 @@ export default function ProductPage({
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
-    "image": product.image ? [`https://aandreamelie.com${product.image}`] : [],
+    "image": product.image ? [`https://www.aandreamelie.com${product.image}`] : [],
     "description": product.description,
     "sku": product.slug,
     "mpn": product.slug,
@@ -58,7 +58,7 @@ export default function ProductPage({
     },
     "offers": {
       "@type": "Offer",
-      "url": `https://aandreamelie.com/shop/${product.slug}`,
+      "url": `https://www.aandreamelie.com/shop/${product.slug}`,
       "priceCurrency": "INR",
       "price": priceDecimal,
       "itemCondition": "https://schema.org/NewCondition",

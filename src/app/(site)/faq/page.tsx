@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Frequently Asked Questions (FAQs)",
   description: "Frequently asked questions about Aandré Amelie, our skincare, haircare, and usage instructions.",
   alternates: {
-    canonical: "https://aandreamelie.com/faq",
+    canonical: "https://www.aandreamelie.com/faq",
   },
 };
 

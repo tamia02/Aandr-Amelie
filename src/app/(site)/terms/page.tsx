@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Terms of service, conditions of use, and policies for Aandré Amelie.",
   alternates: {
-    canonical: "https://aandreamelie.com/terms",
+    canonical: "https://www.aandreamelie.com/terms",
   },
 };
 

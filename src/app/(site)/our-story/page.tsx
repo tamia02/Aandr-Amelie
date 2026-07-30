@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "The philosophy of sun and moon, balance and inclusivity behind Aandré Amelie's natural skincare. Discover All Shades, All Souls.",
   alternates: {
-    canonical: "https://aandreamelie.com/our-story",
+    canonical: "https://www.aandreamelie.com/our-story",
   },
 };
 
@@ -23,7 +23,7 @@ export default function OurStoryPage() {
       "@type": "Organization",
       "name": "Aandré Amelie"
     },
-    "url": "https://aandreamelie.com/our-story"
+    "url": "https://www.aandreamelie.com/our-story"
   };
 
   return (
