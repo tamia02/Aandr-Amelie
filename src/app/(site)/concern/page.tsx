@@ -15,8 +15,29 @@ export const metadata: Metadata = {
 };
 
 export default function ConcernsPage() {
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Shop by Skin & Wellness Concern",
+    "description": "Explore our targeted skincare and wellness collections organized by skin concerns, sleep and stress, or hair and scalp care.",
+    "url": "https://aandreamelie.com/concern",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": concerns.map((concern, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "url": `https://aandreamelie.com/concern/${concern.slug}`,
+        "name": concern.name
+      }))
+    }
+  };
+
   return (
     <div className="mx-auto max-w-[1440px] px-5 pt-12 pb-12 sm:px-10 lg:px-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
       {/* Breadcrumbs */}
       <Breadcrumbs items={[{ label: "Shop by Concern" }]} />
 

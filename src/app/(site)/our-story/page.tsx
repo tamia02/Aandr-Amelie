@@ -14,8 +14,24 @@ export const metadata: Metadata = {
 };
 
 export default function OurStoryPage() {
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Soniyaa Sethi",
+    "jobTitle": "Founder",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Aandré Amelie"
+    },
+    "url": "https://aandreamelie.com/our-story"
+  };
+
   return (
     <div className="overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       {/* Hero */}
       <section className="mx-auto max-w-[1440px] px-5 pt-12 pb-10 sm:px-10 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 items-center">

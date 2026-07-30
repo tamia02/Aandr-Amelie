@@ -294,7 +294,14 @@ export default function ProductPage({
       ))}
 
       {/* Product Ingredients */}
-      <ProductIngredients ingredients={product.ingredientsList} />
+      <div className="relative">
+        <ProductIngredients ingredients={product.ingredientsList} />
+        <div className="mx-auto max-w-[1440px] px-5 sm:px-10 lg:px-16 -mt-8 pb-10">
+          <p className="text-[10px] text-charcoal/50 max-w-2xl">
+            * All botanical ingredients are ethically sourced and tested for purity and potency. Our formulations undergo strict quality control to ensure they are free from heavy metals, synthetic fragrances, and harmful preservatives. Efficacy claims are based on traditional Ayurvedic texts and continuous customer feedback.
+          </p>
+        </div>
+      </div>
 
       {/* How to Use (Accordion-based for reduced scroll fatigue and structured SEO parsing) */}
       <section className="bg-cream-deep py-10">

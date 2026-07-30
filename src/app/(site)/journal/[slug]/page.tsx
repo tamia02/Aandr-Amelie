@@ -60,8 +60,9 @@ export default async function JournalPostPage({
     "description": article.seoDescription,
     "datePublished": new Date(article.date).toISOString().split("T")[0],
     "author": {
-      "@type": "Organization",
-      "name": "Aandré Amelie"
+      "@type": "Person",
+      "name": "Soniyaa Sethi",
+      "url": "https://aandreamelie.com/our-story"
     },
     "publisher": {
       "@type": "Organization",

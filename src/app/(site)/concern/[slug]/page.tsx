@@ -52,8 +52,29 @@ export default async function ConcernPage({
   const priceOf = (productSlug: string) =>
     commerce[productSlug] ? formatINR(commerce[productSlug].priceCents) : undefined;
 
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": concern.seoTitle,
+    "description": concern.seoDescription,
+    "url": `https://aandreamelie.com/concern/${concern.slug}`,
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": matchingProducts.map((product, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "url": `https://aandreamelie.com/shop/${product.slug}`,
+        "name": product.name
+      }))
+    }
+  };
+
   return (
     <div className="mx-auto max-w-[1440px] px-5 pt-12 pb-12 sm:px-10 lg:px-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[

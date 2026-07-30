@@ -21,7 +21,7 @@ export default function ProductCard({
         <MediaVisual
           image={product.image}
           variant={product.placeholder}
-          label={product.image ? undefined : product.name}
+          label={product.name}
           ratio={ratio}
           fit={["royal-rose-elixir", "glow-quinch-elixir", "acne-shield", "vital-grow-scalp"].includes(product.slug) ? "cover" : "contain"}
         />

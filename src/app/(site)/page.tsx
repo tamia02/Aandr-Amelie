@@ -34,8 +34,47 @@ const VALUES = [
 ];
 
 export default function Home() {
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aandré Amelie",
+    "url": "https://aandreamelie.com",
+    "logo": "https://aandreamelie.com/images/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9540331566",
+      "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://www.instagram.com/aandreamelie",
+      "https://www.linkedin.com/company/aandreamelie",
+      "https://www.amazon.in/stores/AandreAmelie"
+    ]
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Aandré Amelie",
+    "url": "https://aandreamelie.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://aandreamelie.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      
       {/* Video Hero */}
       <section className="relative flex h-screen w-full items-center overflow-hidden">
         <HeroVideo

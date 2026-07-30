@@ -171,8 +171,27 @@ const FAQ_SECTIONS = [
 ];
 
 export default function FaqPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQ_SECTIONS.flatMap((section) =>
+      section.items.map((item) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
+    )
+  };
+
   return (
     <div className="mx-auto max-w-4xl px-5 py-12 sm:px-10 lg:px-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Reveal className="mb-8 text-center">
         <span className="mb-4 block text-xs font-sans tracking-[0.25em] text-sun-terracotta uppercase">
           Support
