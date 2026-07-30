@@ -168,9 +168,9 @@ export async function placeOrder(
     });
 
     return { ok: true, orderId: order.id };
-  } catch (error) {
+  } catch (error: any) {
     console.error("placeOrder: database unavailable", error);
-    return { ok: false, error: "We couldn't place your order right now. Please try again shortly." };
+    return { ok: false, error: `We couldn't place your order right now: ${error.message || String(error)}` };
   }
 }
 
