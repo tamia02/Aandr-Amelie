@@ -12,6 +12,7 @@ import ProductReviews from "./ProductReviews";
 import ProductIngredients from "./ProductIngredients";
 import Breadcrumbs from "./Breadcrumbs";
 import { getInfographicSlides } from "./ProductInfographicSlides";
+import WishlistButton from "./WishlistButton";
 import Link from "next/link";
 import { journalArticles } from "@/data/journal";
 import { formatINR } from "@/lib/money";
@@ -111,13 +112,21 @@ export default function ProductPage({
             customSlides={getInfographicSlides(product)}
           />
         </Reveal>
-        <Reveal delay={150} className="flex flex-col justify-center md:col-span-6">
-          <span className="mb-2 text-[10px] font-semibold tracking-[0.25em] text-sun-terracotta uppercase sm:mb-3 sm:text-xs">
+        <Reveal delay={150} className="flex flex-col justify-center md:col-span-6 relative">
+          <div className="absolute right-0 top-0 hidden sm:block">
+            <WishlistButton slug={product.slug} className="rounded-full border border-charcoal/10 bg-cream-deep p-3 text-charcoal/70 transition-colors hover:border-sun-terracotta hover:text-sun-terracotta-dark" />
+          </div>
+          <span className="mb-2 text-[10px] font-semibold tracking-[0.25em] text-sun-terracotta uppercase sm:mb-3 sm:text-xs pr-12">
             {product.tagline}
           </span>
-          <h1 className="mb-2 font-serif text-4xl leading-[1.05] sm:text-5xl lg:text-5xl text-charcoal">
-            {product.name}
-          </h1>
+          <div className="flex items-start justify-between gap-4 pr-12 sm:pr-0 mb-2">
+            <h1 className="font-serif text-4xl leading-[1.05] sm:text-5xl lg:text-5xl text-charcoal">
+              {product.name}
+            </h1>
+            <div className="sm:hidden mt-2">
+              <WishlistButton slug={product.slug} className="rounded-full border border-charcoal/10 bg-cream-deep p-2.5 text-charcoal/70 hover:border-sun-terracotta hover:text-sun-terracotta-dark" />
+            </div>
+          </div>
           <div className="mb-4 flex items-center gap-2">
             <div className="flex text-[#FFB800]">
               {[1, 2, 3, 4, 5].map((star) => {

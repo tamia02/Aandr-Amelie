@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Product } from "@/data/products";
 import MediaVisual from "./MediaVisual";
+import WishlistButton from "./WishlistButton";
 
 export default function ProductCard({
   product,
@@ -12,7 +13,10 @@ export default function ProductCard({
   ratio?: string;
 }) {
   return (
-    <Link href={`/shop/${product.slug}`} className="group flex flex-col h-full border border-sun-terracotta/20 bg-cream transition-colors hover:border-sun-terracotta/50">
+    <Link href={`/shop/${product.slug}`} className="group relative flex flex-col h-full border border-sun-terracotta/20 bg-cream transition-colors hover:border-sun-terracotta/50">
+      <div className="absolute right-3 top-3 z-10">
+        <WishlistButton slug={product.slug} className="bg-cream/80 rounded-full p-1.5 shadow-sm hover:text-sun-terracotta-dark" />
+      </div>
       <div className="flex-shrink-0 border-b border-sun-terracotta/10">
         <MediaVisual
           image={product.image}

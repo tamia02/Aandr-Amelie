@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { nav, concernsSubnav } from "@/data/site";
 import CartIndicator from "./CartIndicator";
+import WishlistIndicator from "./WishlistIndicator";
 import { useState, useRef, useEffect } from "react";
 
 export default function Header() {
@@ -128,11 +129,13 @@ export default function Header() {
                 </svg>
               </button>
             </form>
+            <WishlistIndicator />
             <CartIndicator />
           </div>
 
           {/* Mobile Navigation */}
-          <div className="flex items-center gap-5 md:hidden">
+          <div className="flex items-center gap-4 md:hidden">
+            <WishlistIndicator />
             <CartIndicator />
             <div className="relative" ref={mobileMenuRef}>
               <button 
