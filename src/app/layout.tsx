@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Libre_Caslon_Text, Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const caslon = Libre_Caslon_Text({
@@ -66,6 +67,32 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-cream text-charcoal overflow-x-hidden">
         <div className="grain-overlay" />
         {children}
+
+        {/* Google Analytics */}
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
+              `}
+            </Script>
+          </>
+        )}
+
+        {/* Klaviyo */}
+        {process.env.NEXT_PUBLIC_KLAVIYO_COMPANY_ID && (
+          <Script
+            src={`https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=${process.env.NEXT_PUBLIC_KLAVIYO_COMPANY_ID}`}
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   );
