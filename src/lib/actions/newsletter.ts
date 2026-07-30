@@ -12,13 +12,19 @@ export async function submitNewsletterForm(prevState: any, formData: FormData) {
   }
 
   try {
-    await prisma.lead.create({
-      data: {
-        name,
-        email,
-        phone,
-      },
-    });
+    await prisma.$transaction([
+      prisma.lead.create({
+        data: { name, email, phone },
+      }),
+      prisma.customer.upsert({
+        where: { email },
+        create: { name, email, phone },
+        update: {
+          name, // update name and phone if they filled the newsletter again
+          phone,
+        },
+      }),
+    ]);
 
     return { success: true, message: "Thank you for joining our family!" };
   } catch (error) {

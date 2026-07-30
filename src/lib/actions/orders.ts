@@ -85,8 +85,32 @@ export async function placeOrder(
     const totalCents = subtotalCents + shippingCents;
 
     const order = await prisma.$transaction(async (tx) => {
+      const customer = await tx.customer.upsert({
+        where: { email: data.email },
+        create: {
+          email: data.email,
+          name: data.customerName,
+          phone: data.phone,
+          addressLine1: data.addressLine1,
+          addressLine2: data.addressLine2 || null,
+          city: data.city,
+          state: data.state,
+          pincode: data.pincode,
+        },
+        update: {
+          name: data.customerName,
+          phone: data.phone,
+          addressLine1: data.addressLine1,
+          addressLine2: data.addressLine2 || null,
+          city: data.city,
+          state: data.state,
+          pincode: data.pincode,
+        },
+      });
+
       const created = await tx.order.create({
         data: {
+          customerId: customer.id,
           customerName: data.customerName,
           email: data.email,
           phone: data.phone,
@@ -263,6 +287,32 @@ export async function getLatestDeliveryInfo(email: string) {
   }
 
   try {
+    const customer = await prisma.customer.findUnique({
+      where: { email },
+      select: {
+        name: true,
+        phone: true,
+        addressLine1: true,
+        addressLine2: true,
+        city: true,
+        state: true,
+        pincode: true,
+      }
+    });
+    
+    if (customer) {
+      return {
+        customerName: customer.name,
+        phone: customer.phone,
+        addressLine1: customer.addressLine1,
+        addressLine2: customer.addressLine2,
+        city: customer.city,
+        state: customer.state,
+        pincode: customer.pincode,
+      };
+    }
+    
+    // Fallback to latest order if customer record doesn't exist
     const latestOrder = await prisma.order.findFirst({
       where: { email },
       orderBy: { createdAt: 'desc' },

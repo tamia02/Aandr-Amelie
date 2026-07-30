@@ -34,6 +34,8 @@ export default function CheckoutPage() {
   const [pincodeStatus, setPincodeStatus] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [previousAddress, setPreviousAddress] = useState<any>(null);
+  const [showAddressPrompt, setShowAddressPrompt] = useState(false);
   const paymentMethod = "razorpay";
 
   useEffect(() => {
@@ -45,17 +47,9 @@ export default function CheckoutPage() {
     if (storedEmail && !form.email) {
       setForm((prev) => ({ ...prev, email: storedEmail }));
       getLatestDeliveryInfo(storedEmail).then((info) => {
-        if (info) {
-          setForm((prev) => ({
-            ...prev,
-            customerName: prev.customerName || info.customerName,
-            phone: prev.phone || info.phone,
-            addressLine1: prev.addressLine1 || info.addressLine1,
-            addressLine2: prev.addressLine2 || info.addressLine2 || "",
-            city: prev.city || info.city,
-            state: prev.state || info.state,
-            pincode: prev.pincode || info.pincode,
-          }));
+        if (info && (info.addressLine1 || info.city)) {
+          setPreviousAddress(info);
+          setShowAddressPrompt(true);
         }
       });
     }
@@ -68,12 +62,12 @@ export default function CheckoutPage() {
       setForm((prev) => ({
         ...prev,
         customerName: prev.customerName || info.customerName,
-        phone: prev.phone || info.phone,
-        addressLine1: prev.addressLine1 || info.addressLine1,
+        phone: prev.phone || info.phone || "",
+        addressLine1: prev.addressLine1 || info.addressLine1 || "",
         addressLine2: prev.addressLine2 || info.addressLine2 || "",
-        city: prev.city || info.city,
-        state: prev.state || info.state,
-        pincode: prev.pincode || info.pincode,
+        city: prev.city || info.city || "",
+        state: prev.state || info.state || "",
+        pincode: prev.pincode || info.pincode || "",
       }));
     }
   };
@@ -180,6 +174,48 @@ export default function CheckoutPage() {
       <div className="mx-auto grid max-w-5xl gap-14 md:grid-cols-[1.2fr_1fr]">
         <div>
           <SectionHeader eyebrow="Checkout" title="Delivery Details" />
+
+          {showAddressPrompt && previousAddress && (
+            <div className="mt-8 rounded-sm border border-moon-indigo/20 bg-moon-indigo/5 p-6">
+              <h4 className="font-serif text-lg text-moon-indigo">Welcome back!</h4>
+              <p className="mt-2 text-sm text-charcoal/70">
+                Would you like to use your previous address?
+              </p>
+              <div className="mt-3 text-sm text-charcoal/60">
+                <p>{previousAddress.customerName}</p>
+                <p>{previousAddress.addressLine1}{previousAddress.addressLine2 ? `, ${previousAddress.addressLine2}` : ""}</p>
+                <p>{previousAddress.city}, {previousAddress.state} {previousAddress.pincode}</p>
+              </div>
+              <div className="mt-5 flex gap-4">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setForm((prev) => ({
+                      ...prev,
+                      customerName: prev.customerName || previousAddress.customerName,
+                      phone: prev.phone || previousAddress.phone || "",
+                      addressLine1: prev.addressLine1 || previousAddress.addressLine1 || "",
+                      addressLine2: prev.addressLine2 || previousAddress.addressLine2 || "",
+                      city: prev.city || previousAddress.city || "",
+                      state: prev.state || previousAddress.state || "",
+                      pincode: prev.pincode || previousAddress.pincode || "",
+                    }));
+                    setShowAddressPrompt(false);
+                  }}
+                  className="rounded-sm bg-moon-indigo px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition-opacity hover:opacity-90"
+                >
+                  Yes, Use Address
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setShowAddressPrompt(false)}
+                  className="rounded-sm border border-charcoal/20 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-charcoal/70 transition-colors hover:border-charcoal hover:text-charcoal"
+                >
+                  No, Enter New
+                </button>
+              </div>
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="mt-10 space-y-6">
             <div>

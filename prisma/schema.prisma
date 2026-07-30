@@ -37,6 +37,8 @@ model Order {
   shippingCents Int
   totalCents        Int
   items             OrderItem[]
+  customerId        String?
+  customer          Customer?   @relation(fields: [customerId], references: [id])
   
   // Razorpay fields
   razorpayOrderId   String?
@@ -72,5 +74,19 @@ model Lead {
   email     String
   phone     String
   createdAt DateTime @default(now())
+}
+
+model Customer {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  phone        String?
+  addressLine1 String?
+  addressLine2 String?
+  city         String?
+  state        String?
+  pincode      String?
+  createdAt    DateTime @default(now())
+  orders       Order[]
 }
 
