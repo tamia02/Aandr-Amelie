@@ -5,7 +5,7 @@ import SectionHeader from "@/components/SectionHeader";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Contact Our Store | Aandré Amelie",
+  title: "Contact Our Store",
   description:
     "Get in touch with Aandré Amelie. Send us a message regarding general inquiries, custom ritual advice, wholesale orders, or sourcing details.",
   alternates: {
@@ -27,6 +27,7 @@ export default function ContactPage() {
               eyebrow="Skincare Enquiries"
               title="Speak with Us"
               className="mb-6"
+              as="h1"
             />
             <p className="text-base leading-relaxed text-charcoal/70 max-w-sm mb-6">
               Whether you are seeking guidance on building your daily ritual, 

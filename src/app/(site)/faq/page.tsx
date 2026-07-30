@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions (FAQs) | Aandré Amelie",
+  title: "Frequently Asked Questions (FAQs)",
   description: "Frequently asked questions about Aandré Amelie, our skincare, haircare, and usage instructions.",
   alternates: {
     canonical: "https://aandreamelie.com/faq",

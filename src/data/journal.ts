@@ -17,7 +17,7 @@ export const journalArticles: BlogPost[] = [
   {
     slug: "rosewater-benefits",
     title: "Rose Hydrosol: Benefits for Skin, Mood, and Digestion",
-    seoTitle: "Rose Hydrosol: Skin, Mood & Digestion Benefits | Aandré Amelie",
+    seoTitle: "Rose Hydrosol: Skin, Mood & Digestion Benefits",
     seoDescription: "Discover how steam-distilled rose hydrosol rejuvenates skin cells, calms the nervous system, and supports digestive wellness.",
     excerpt: "Discover how steam-distilled rose hydrosol rejuvenates skin cells, calms the nervous system, and supports digestive wellness.",
     date: "July 02, 2026",
@@ -76,7 +76,7 @@ Because our rosewater is distilled without synthetic preservatives or alcohol, i
   {
     slug: "can-you-drink-rosewater",
     title: "Can You Drink Rosewater? Here's What It Actually Does",
-    seoTitle: "Can You Drink Rosewater? Safety & Health Benefits | Aandré Amelie",
+    seoTitle: "Can You Drink Rosewater? Safety & Health Benefits",
     seoDescription: "An in-depth look at the ancient wellness ritual of drinking rosewater—its physiological benefits for digestion, reflux, and mood.",
     excerpt: "An in-depth look at the ancient wellness ritual of drinking rosewater—its physiological benefits for digestion, reflux, and mood.",
     date: "June 25, 2026",
@@ -127,7 +127,7 @@ To get the most out of your edible rosewater, try these simple preparations:
   {
     slug: "lavender-sleep-ritual",
     title: "Lavender Water for Better Sleep: The Science and the Ritual",
-    seoTitle: "Lavender Water for Sleep: Scientific Sleep Ritual | Aandré Amelie",
+    seoTitle: "Lavender Water for Sleep: Scientific Sleep Ritual",
     seoDescription: "Uncover how lavender hydrosol activates the parasympathetic nervous system, easing stress and preparing your body for restorative sleep.",
     excerpt: "Uncover how lavender hydrosol activates the parasympathetic nervous system, easing stress and preparing your body for restorative sleep.",
     date: "June 18, 2026",
@@ -180,7 +180,7 @@ Add 1–2 teaspoons of Glow Quinch Elixir to a cup of warm (not boiling) water. 
   {
     slug: "jojoba-oil-acne",
     title: "Jojoba Oil and Acne: Why an Oil Can Help Oily Skin",
-    seoTitle: "Jojoba Oil for Acne: How It Works on Oily Skin | Aandré Amelie",
+    seoTitle: "Jojoba Oil for Acne: How It Works on Oily Skin",
     seoDescription: "It sounds counterintuitive, but applying jojoba oil can regulate sebum and clear breakouts. Learn the molecular science behind sebum mimicry.",
     excerpt: "It sounds counterintuitive, but applying jojoba oil can regulate sebum and clear breakouts. Learn the molecular science behind sebum mimicry.",
     date: "June 10, 2026",
@@ -232,7 +232,7 @@ Shake the bottle of Acne Shield thoroughly to blend the hydrosols and the Jojoba
   {
     slug: "rosemary-hair-growth",
     title: "Rosemary Water for Hair Growth: What to Expect",
-    seoTitle: "Rosemary Water for Hair Growth: Science & Results | Aandré Amelie",
+    seoTitle: "Rosemary Water for Hair Growth: Science & Results",
     seoDescription: "How steam-distilled rosemary water stimulates follicular circulation, reduces dandruff, and promotes thicker, stronger hair.",
     excerpt: "How steam-distilled rosemary water stimulates follicular circulation, reduces dandruff, and promotes thicker, stronger hair.",
     date: "June 03, 2026",
@@ -284,6 +284,159 @@ Hair growth is a slow physiological process. Here is what to expect when using a
 Mist Vital Grow Scalp directly onto your scalp after washing while your hair is still damp. Use your fingertips to massage it in for 2 minutes to further stimulate blood flow. Leave it in—do not rinse it out. Consistency is the secret; apply it daily for at least 4 months to unlock its full potential.
     `,
   },
+  {
+    slug: "multani-mitti-oily-skin",
+    title: "Multani Mitti for Oily Skin: The Ultimate Clay Mask Guide",
+    seoTitle: "Multani Mitti for Oily Skin: Ultimate Clay Mask Guide",
+    seoDescription: "Learn how Super Fine Multani Mitti absorbs excess sebum, tightens pores, and naturally treats acne-prone skin.",
+    excerpt: "Learn how Super Fine Multani Mitti absorbs excess sebum, tightens pores, and naturally treats acne-prone skin.",
+    date: "July 20, 2026",
+    readTime: "4 min read",
+    category: "Ingredient Guide",
+    ingredient: "Multani Mitti",
+    relatedProductSlug: "super-fine-multani-mitti",
+    coverImage: "",
+    content: `
+### The Earth's Natural Astringent
+
+Multani Mitti, or Fuller's Earth, has been a staple in Indian skincare for centuries. Its incredible ability to absorb excess oil and impurities makes it an unparalleled natural remedy for oily and acne-prone skin.
+
+Our *Super Fine Multani Mitti* is triple-sifted to ensure a smooth, luxurious texture that glides onto the skin without micro-tears.
+
+---
+
+### How Multani Mitti Transforms Oily Skin
+
+Multani Mitti is rich in magnesium chloride, a mineral known for its skin-clearing properties. When applied as a mask, it acts like a magnet for toxins and excess sebum trapped deep within the pores.
+
+#### 1. Sebum Regulation
+By drawing out the oil that clogs pores, Multani Mitti prevents the formation of blackheads and whiteheads, significantly reducing the likelihood of severe acne breakouts.
+
+#### 2. Pore Tightening
+As the clay dries on your skin, it gently tightens, improving skin elasticity and minimizing the appearance of enlarged pores.
+
+#### 3. Exfoliation and Brightening
+The fine texture of the clay provides a mild exfoliation, removing dead skin cells and revealing a brighter, more even complexion underneath.
+
+### The Ideal Multani Mitti Ritual
+
+For oily skin, we recommend mixing one tablespoon of our Super Fine Multani Mitti with an equal amount of *Acne Shield* or *Royal Rose Elixir* hydrosol. Apply an even layer to your face, avoiding the delicate eye area. Let it dry completely (about 15 minutes) before rinsing with lukewarm water. Use 2-3 times a week for a consistently matte, clear complexion.
+    `,
+  },
+  {
+    slug: "rose-sandalwood-brightening",
+    title: "Rose & Sandalwood: The Ancient Brightening Secret",
+    seoTitle: "Rose & Sandalwood: The Ancient Brightening Secret",
+    seoDescription: "Discover the synergistic benefits of Rose and Sandalwood in Ayurvedic skincare for a radiant, balanced, and soothed complexion.",
+    excerpt: "Discover the synergistic benefits of Rose and Sandalwood in Ayurvedic skincare for a radiant, balanced, and soothed complexion.",
+    date: "July 12, 2026",
+    readTime: "5 min read",
+    category: "Ritual",
+    ingredient: "Sandalwood",
+    relatedProductSlug: "rose-and-sandal-multani-mitti",
+    coverImage: "",
+    content: `
+### A Synergy of Royals
+
+In the realm of Ayurvedic beauty, few combinations are as revered as Rose and Sandalwood. This pairing is a testament to the power of botanical synergy, where the cooling, hydrating properties of the rose perfectly complement the purifying and brightening effects of sandalwood.
+
+Our *Rose & Sandal Multani Mitti* blends these two royal ingredients into a potent, clarifying clay mask.
+
+---
+
+### The Power of Sandalwood (Chandan)
+
+Sandalwood is renowned for its anti-microbial and anti-inflammatory properties. It has been used for generations to soothe sunburn, reduce pigmentation, and heal blemishes.
+
+*   **Brightening:** Sandalwood contains natural skin-lightening agents that help fade dark spots and acne scars, evening out the skin tone.
+*   **Cooling:** It pacifies excess *Pitta* (heat) in the skin, reducing redness and irritation.
+*   **Aromatherapy:** The grounding scent of sandalwood calms the mind, making your skincare routine a meditative experience.
+
+### Enhanced by Rose
+
+When combined with Rose, the benefits of Sandalwood are magnified. Rose provides essential hydration, ensuring that the purifying action of the clay and sandalwood doesn't strip the skin of its natural moisture. The high Vitamin C content in rose also acts as a catalyst for the brightening effects of the sandalwood.
+
+### Your Weekly Brightening Ritual
+
+Mix one to two teaspoons of the Rose & Sandal Multani Mitti with enough milk or yogurt (for dry skin) or rosewater (for normal to oily skin) to form a smooth paste. Apply to the face and neck, and leave for 15 minutes. As the mask works, close your eyes and breathe in the rich, earthy aroma. Rinse with cool water to reveal a visibly brighter, more luminous complexion.
+    `,
+  },
+  {
+    slug: "pink-clay-detox-sensitive",
+    title: "Pink Clay Detox for Sensitive Skin",
+    seoTitle: "Pink Clay Detox for Sensitive Skin",
+    seoDescription: "Why Imported Pink Clay is the gentlest, most effective detoxifying treatment for sensitive, reactive, and easily irritated skin.",
+    excerpt: "Why Imported Pink Clay is the gentlest, most effective detoxifying treatment for sensitive, reactive, and easily irritated skin.",
+    date: "July 05, 2026",
+    readTime: "4 min read",
+    category: "Use-Case",
+    ingredient: "Pink Clay",
+    relatedProductSlug: "imported-pink-clay",
+    coverImage: "",
+    content: `
+### The Dilemma of Sensitive Skin Detox
+
+Detoxifying masks are essential for clear skin, but for those with sensitive or reactive skin, traditional clay masks can be far too harsh. They often draw out too much moisture, leading to redness, flakiness, and a compromised skin barrier. 
+
+The solution? **Imported Pink Clay**.
+
+---
+
+### What Makes Pink Clay Different?
+
+Pink clay is a naturally occurring blend of red and white clays. It gets its beautiful hue from high levels of iron oxide and trace minerals. 
+
+1.  **Mild Absorption:** Unlike bentonite or pure fuller's earth, pink clay does not aggressively strip the skin of its natural oils. It provides a gentle, balanced detox, drawing out impurities without causing dehydration.
+2.  **Rich in Silica:** Silica is a crucial mineral for skin elasticity and cell renewal. Regular use of pink clay helps to promote a youthful, plump appearance.
+3.  **Soothing Properties:** It naturally calms inflammation and reduces the appearance of broken capillaries and redness.
+
+### The Gentle Detox Ritual
+
+For a soothing weekly treatment, blend a spoonful of our *Imported Pink Clay* with *Glow Quinch Elixir* (Lavender water) instead of plain water. The anti-inflammatory properties of the lavender will further soothe your skin. Apply a thin layer and remove it just *before* it dries completely (when it is still slightly tacky to the touch). This ensures maximum mineral absorption without any drying effect. Follow immediately with a lightweight moisturizer.
+    `,
+  },
+  {
+    slug: "turmeric-neem-acne-healing",
+    title: "Turmeric and Neem: Healing Acne with Ayurveda",
+    seoTitle: "Turmeric and Neem: Healing Acne with Ayurveda",
+    seoDescription: "Explore the anti-inflammatory and antibacterial powers of Turmeric and Neem for clearing severe acne and preventing future breakouts.",
+    excerpt: "Explore the anti-inflammatory and antibacterial powers of Turmeric and Neem for clearing severe acne and preventing future breakouts.",
+    date: "June 28, 2026",
+    readTime: "6 min read",
+    category: "Wellness",
+    ingredient: "Turmeric",
+    relatedProductSlug: "neem-and-multani-mitti",
+    coverImage: "",
+    content: `
+### The Ayurvedic Approach to Acne
+
+In Ayurveda, acne (Yauvanapidika) is often seen as a manifestation of aggravated Pitta (fire) and Kapha (water/earth) doshas, leading to excess heat and sluggish detoxification. The traditional remedy for this imbalance involves cooling, purifying, and antibacterial herbs.
+
+At the forefront of these remedies are two legendary botanicals: **Neem** and **Turmeric**. Our *Neem & Multani Mitti* and *Turmeric & Sandal Multani Mitti* masks are formulated to harness these ancient healers.
+
+---
+
+### Neem: The Natural Purifier
+
+Neem (Azadirachta indica) is unparalleled in its antibacterial and antifungal properties. 
+
+*   **Pore Cleansing:** Neem deeply purifies the pores, eliminating the *P. acnes* bacteria that cause breakouts.
+*   **Regulating Sebum:** It helps to normalize oil production, creating an environment where acne cannot thrive.
+
+### Turmeric (Haldi): The Golden Healer
+
+Turmeric's active compound, curcumin, is a potent anti-inflammatory and antioxidant.
+
+*   **Reducing Inflammation:** It quickly takes down the swelling, redness, and pain associated with cystic acne.
+*   **Scar Healing:** Turmeric speeds up the skin's natural healing process, minimizing the dark spots and scarring left behind by breakouts.
+
+### The Targeted Healing Ritual
+
+For active breakouts, create a targeted spot treatment using the *Neem & Multani Mitti* mask. Mix a small amount with our *Acne Shield* hydrosol and apply directly to the blemish. Leave it on overnight. 
+
+To prevent future breakouts and heal scarring, use the *Turmeric & Sandal Multani Mitti* mask once a week. Mix it with rosewater to create a cooling paste, leave for 15 minutes, and gently wash off to reveal a clearer, glowing complexion.
+    `,
+  }
 ];
 
 export function getArticle(slug: string): BlogPost | undefined {

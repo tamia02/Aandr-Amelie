@@ -3,7 +3,11 @@ import { LegalLayout, LegalSection } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "How Aandré Amelie collects, uses, and protects your information.",
+  description:
+    "Privacy policy and data protection guidelines for Aandré Amelie.",
+  alternates: {
+    canonical: "https://aandreamelie.com/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {

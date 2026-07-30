@@ -4,12 +4,14 @@ export default function SectionHeader({
   align = "left",
   tone = "dark",
   className = "",
+  as: Component = "h2",
 }: {
   eyebrow?: string;
   title: string;
   align?: "left" | "center";
   tone?: "dark" | "light";
   className?: string;
+  as?: "h1" | "h2" | "h3";
 }) {
   return (
     <div
@@ -24,13 +26,13 @@ export default function SectionHeader({
           {eyebrow}
         </p>
       )}
-      <h2
+      <Component
         className={`text-balance font-serif text-4xl leading-[1.15] font-normal sm:text-5xl ${
           tone === "dark" ? "text-charcoal" : "text-cream"
         }`}
       >
         {title}
-      </h2>
+      </Component>
     </div>
   );
 }

@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import { LegalLayout, LegalSection } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions",
-  description: "The terms that govern your use of the Aandré Amelie site and orders.",
+  title: "Terms of Service",
+  description:
+    "Terms of service, conditions of use, and policies for Aandré Amelie.",
+  alternates: {
+    canonical: "https://aandreamelie.com/terms",
+  },
 };
 
 export default function TermsPage() {

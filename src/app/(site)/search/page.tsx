@@ -5,7 +5,7 @@ import { getCommerceForSlugs } from "@/lib/actions/products";
 import { formatINR } from "@/lib/money";
 
 export const metadata = {
-  title: "Search Results | Aandré Amelie",
+  title: "Search Results",
   description: "Search for our botanical elixirs and skincare rituals.",
 };
 

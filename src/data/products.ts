@@ -132,7 +132,7 @@ export const products: Product[] = [
       },
     ],
     care: CARE_INSTRUCTIONS,
-    seoTitle: "Royal Rose Elixir — Edible Rosewater Toner & Mist | Aandré Amelie",
+    seoTitle: "Royal Rose Elixir — Edible Rosewater Toner & Mist",
     seoDescription: "Sip and spray pure organic rosewater. Rejuvenates skin, aids digestion, eases reflux, and calms eyes. Zero preservatives. Shop now.",
     concernSlugs: ["sensitive-dry", "oily-acne"],
     ingredientsList: ["Rose"],
@@ -233,7 +233,7 @@ export const products: Product[] = [
       },
     ],
     care: CARE_INSTRUCTIONS,
-    seoTitle: "Glow Quinch Elixir — Soothing Lavender Mist & Sleep Drink | Aandré Amelie",
+    seoTitle: "Glow Quinch Elixir — Lavender Mist & Sleep Drink",
     seoDescription: "Premium edible lavender water for skin and sleep. Calms anxiety, eases razor burn, and improves sleep. Organic, preservative-free.",
     concernSlugs: ["sensitive-dry", "sleep-stress"],
     ingredientsList: ["Lavender"],
@@ -367,7 +367,7 @@ export const products: Product[] = [
       },
     ],
     care: "To experience the full benefits apply it regularly. Store the 100ml mist dispensing bottle at a cool place, with a maximum temperature of 25°C. Always close the lid tightly immediately after use. Ensure it remains free from contamination. As it contains no preservatives, regular use and proper storage are essential to ensure maximum benefits.",
-    seoTitle: "Acne Shield — Clarifying Mandarin & Basil Hydrosol Toner | Aandré Amelie",
+    seoTitle: "Acne Shield — Mandarin & Basil Hydrosol Toner",
     seoDescription: "Clear breakouts naturally. A clarifying facial toner blending Mandarin, Rose, Basil, Turmeric hydrosols, and jojoba oil. Non-comedogenic.",
     concernSlugs: ["oily-acne"],
     ingredientsList: ["Mandarin", "Rose", "Rosemary", "Basil", "Turmeric", "Jojoba Oil"],
@@ -472,7 +472,7 @@ export const products: Product[] = [
       },
     ],
     care: CARE_INSTRUCTIONS,
-    seoTitle: "Vital Grow Scalp — Hair Growth Rosemary & Curry Leaf Tonic | Aandré Amelie",
+    seoTitle: "Vital Grow Scalp — Rosemary & Curry Leaf Tonic",
     seoDescription: "Strengthen hair from root to tip. Rosemary water, curry leaf hydrosol, and tea tree scalp tonic. Reduces dandruff and stimulates growth.",
     concernSlugs: ["hair-scalp"],
     ingredientsList: ["Rosemary", "Lemongrass", "Curry Leaf", "Basil", "Tea Tree", "Jojoba Oil"],
@@ -547,7 +547,7 @@ export const products: Product[] = [
       },
     ],
     care: CARE_INSTRUCTIONS,
-    seoTitle: 'The Trial Pack | Aandré Amelie',
+    seoTitle: 'The Trial Pack',
     seoDescription: 'The ultimate 4-piece holistic beauty bundle. Hydrate skin, clear acne, strengthen hair, and soothe your senses. Shop the complete collection.',
     concernSlugs: [],
     ingredientsList: ["Rose", "Lavender", "Mandarin", "Rosemary", "Basil", "Turmeric", "Lemongrass", "Curry Leaf", "Tea Tree", "Jojoba Oil"],
@@ -591,7 +591,7 @@ export const products: Product[] = [
       { label: 'Rinse', text: 'Leave on for 10-15 minutes until semi-dry, then rinse thoroughly with lukewarm water.' }
     ],
     care: 'Store in a cool, dry place. Keep the jar tightly closed to prevent moisture from entering.',
-    seoTitle: 'Super Fine Multani Mitti - Pure Clay Face Mask | Aandré Amelie',
+    seoTitle: 'Super Fine Multani Mitti - Pure Clay Face Mask',
     seoDescription: 'Clarify and purify your skin with our Super Fine Multani Mitti. The ultimate natural clay mask for oily and acne-prone skin.',
     faqs: [
       { question: 'How often should I use this mask?', answer: 'For oily skin, 2-3 times a week is ideal. For normal or dry skin, once a week is sufficient.' }
@@ -628,7 +628,7 @@ export const products: Product[] = [
       { label: 'Wash', text: 'Rinse off gently with warm water and follow with a moisturizer.' }
     ],
     care: 'Store in a cool, dry place away from direct sunlight.',
-    seoTitle: 'Imported Pink Clay - Gentle Detox Mask | Aandré Amelie',
+    seoTitle: 'Imported Pink Clay - Gentle Detox Mask',
     seoDescription: 'Revive your glow with our Imported Pink Clay mask. Perfect for sensitive skin, it gently detoxifies and brightens.',
     faqs: [
       { question: 'Is Pink Clay safe for sensitive skin?', answer: 'Yes, pink clay is one of the mildest clays available, making it perfect for sensitive and easily irritated skin types.' }
@@ -665,7 +665,7 @@ export const products: Product[] = [
       { label: 'Rinse', text: 'Wash off after 10-15 minutes and pat dry.' }
     ],
     care: 'Store in an airtight container in a dry, cool place.',
-    seoTitle: 'Neem & Multani Mitti - Anti-Acne Clay Mask | Aandré Amelie',
+    seoTitle: 'Neem & Multani Mitti - Anti-Acne Clay Mask',
     seoDescription: 'Fight acne and blemishes with our Neem and Multani Mitti clay blend. A potent natural remedy for clear skin.',
     faqs: [
       { question: 'Can I use this as a spot treatment?', answer: 'Absolutely! Dab a thick paste directly onto an active pimple and leave it overnight to reduce inflammation.' }
@@ -702,7 +702,7 @@ export const products: Product[] = [
       { label: 'Rinse', text: 'Rinse with cool water after 15 minutes.' }
     ],
     care: 'Keep in a cool, dark place to preserve the delicate floral aromas.',
-    seoTitle: 'Rose & Sandal Multani Mitti - Brightening Clay | Aandré Amelie',
+    seoTitle: 'Rose & Sandal Multani Mitti - Brightening Clay',
     seoDescription: 'Soothe and brighten your skin with the luxurious blend of Rose, Sandalwood, and Multani Mitti.',
     faqs: [
       { question: 'Is this suitable for dry skin?', answer: 'Yes, the rose and sandalwood help balance the clay, making it suitable for normal to dry skin when mixed with milk or yogurt instead of water.' }
@@ -739,7 +739,7 @@ export const products: Product[] = [
       { label: 'Rinse', text: 'Wash thoroughly and follow up with a toner.' }
     ],
     care: 'Store in an airtight container to preserve the potency of the turmeric.',
-    seoTitle: 'Turmeric & Sandal Multani Mitti - Healing Glow | Aandré Amelie',
+    seoTitle: 'Turmeric & Sandal Multani Mitti - Healing Glow',
     seoDescription: 'Fade dark spots and achieve a golden glow with our Turmeric, Sandalwood, and Multani Mitti healing clay mask.',
     faqs: [
       { question: 'Will the turmeric stain my skin?', answer: 'We use the perfect ratio to minimize staining. However, leaving it on for too long or using it on very pale skin might leave a temporary yellow tint which washes off with a gentle cleanser.' }

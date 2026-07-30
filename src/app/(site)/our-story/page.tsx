@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Our Story — All Shades, All Souls | Aandré Amelie",
+  title: "Our Story — All Shades, All Souls",
   description:
     "The philosophy of sun and moon, balance and inclusivity behind Aandré Amelie's natural skincare. Discover All Shades, All Souls.",
   alternates: {

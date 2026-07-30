@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 import SectionHeader from "@/components/SectionHeader";
 
 export const metadata: Metadata = {
-  title: "Shop by Skin & Wellness Concern | Aandré Amelie",
+  title: "Shop by Skin & Wellness Concern",
   description:
     "Explore our targeted skincare and wellness collections organized by skin concerns, sleep and stress, or hair and scalp care.",
   alternates: {
@@ -47,6 +47,7 @@ export default function ConcernsPage() {
             eyebrow="Targeted Rituals"
             title="Shop by Concern"
             className="mb-6"
+            as="h1"
           />
           <p className="max-w-2xl text-base leading-relaxed text-charcoal/70 sm:text-lg">
             We believe skincare is a dialogue between your internal and external environment. 

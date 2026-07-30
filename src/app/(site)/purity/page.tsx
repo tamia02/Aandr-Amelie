@@ -5,9 +5,12 @@ import Button from "@/components/Button";
 import PullQuote from "@/components/PullQuote";
 
 export const metadata: Metadata = {
-  title: "Purity & Sourcing | Aandré Amelie",
+  title: "Purity & Sourcing",
   description:
     "Organic sourcing, ethical farming, and the promise behind every Aandré Amelie product.",
+  alternates: {
+    canonical: "https://aandreamelie.com/purity",
+  },
 };
 
 const TRUST_SIGNALS = [
