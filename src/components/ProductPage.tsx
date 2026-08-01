@@ -11,6 +11,7 @@ import StickyBuyBar from "./StickyBuyBar";
 import ProductReviews from "./ProductReviews";
 import ProductIngredients from "./ProductIngredients";
 import Breadcrumbs from "./Breadcrumbs";
+import ProductComparison from "./ProductComparison";
 import { getInfographicSlides } from "./ProductInfographicSlides";
 import WishlistButton from "./WishlistButton";
 import ShareButton from "./ShareButton";
@@ -312,6 +313,19 @@ export default function ProductPage({
             </div>
           </div>
         </section>
+      )}
+
+      {/* Comparison Section */}
+      {/* @ts-ignore */}
+      {product.comparison && (
+        <ProductComparison
+          // @ts-ignore
+          marketName={product.comparison.marketName}
+          // @ts-ignore
+          ourName={product.comparison.ourName}
+          // @ts-ignore
+          pointers={product.comparison.pointers}
+        />
       )}
 
       {/* Composition */}

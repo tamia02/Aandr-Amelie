@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
 interface HeroVideoProps {
   src: string;
   poster?: string;
@@ -9,39 +7,25 @@ interface HeroVideoProps {
 }
 
 export default function HeroVideo({ src, poster, className }: HeroVideoProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    // Attempt to force play the video when the component mounts
-    if (videoRef.current) {
-      // Explicitly set muted to true to bypass browser autoplay policies
-      // React sometimes fails to apply this attribute properly during hydration
-      videoRef.current.defaultMuted = true;
-      videoRef.current.muted = true;
-      
-      // Small timeout to ensure it plays after React has fully settled
-      const timeoutId = setTimeout(() => {
-        if (videoRef.current) {
-          videoRef.current.play().catch((err) => {
-            console.warn("Video autoplay failed:", err);
-          });
-        }
-      }, 100);
-      return () => clearTimeout(timeoutId);
-    }
-  }, []);
-
+  // Using dangerouslySetInnerHTML ensures that autoplay, muted, and playsinline 
+  // are actually rendered in the DOM from the very start, which fixes iOS/Safari
+  // and general React hydration issues with video autoplay.
   return (
-    <video
-      ref={videoRef}
+    <div
       className={className}
-      poster={poster}
-      autoPlay
-      muted
-      loop
-      playsInline
-    >
-      <source src={src} type="video/mp4" />
-    </video>
+      dangerouslySetInnerHTML={{
+        __html: `
+          <video
+            src="${src}"
+            ${poster ? `poster="${poster}"` : ""}
+            autoplay
+            muted
+            loop
+            playsinline
+            style="width: 100%; height: 100%; object-fit: cover; object-position: center;"
+          ></video>
+        `,
+      }}
+    />
   );
 }

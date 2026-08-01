@@ -19,6 +19,12 @@ export interface FAQItem {
   answer: string;
 }
 
+export interface ProductComparison {
+  marketName: string;
+  ourName: string;
+  pointers: { name: string; market: boolean; ours: boolean }[];
+}
+
 export interface Product {
   slug: string;
   name: string;
@@ -44,6 +50,7 @@ export interface Product {
   concernSlugs: string[];
   ingredientsList: string[];
   beforeAfterImage?: string;
+  comparison?: ProductComparison;
   howToUseVideo?: string;
 }
 
@@ -52,7 +59,17 @@ export const CARE_INSTRUCTIONS =
 
 export const products: Product[] = [
   {
-    slug: "royal-rose-elixir",
+    slug: 'royal-rose-elixir',
+    comparison: {
+      marketName: 'Market Rose Water',
+      ourName: 'Royal Rose Elixir',
+      pointers: [
+        { name: 'Zero Preservatives', market: false, ours: true },
+        { name: 'Edible & Safe to Drink', market: false, ours: true },
+        { name: '100% Steam Distilled', market: false, ours: true },
+        { name: 'Synthetic Fragrances', market: true, ours: false }
+      ]
+    },
     name: "Royal Rose Elixir",
     category: "The Elixirs",
     tagline: "Sip on Wellness, Sniff on Wellness, Shine from Within",
@@ -159,7 +176,17 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "glow-quinch-elixir",
+    slug: 'glow-quinch-elixir',
+    comparison: {
+      marketName: 'Regular Lavender Water',
+      ourName: 'Glow Quinch Elixir',
+      pointers: [
+        { name: 'Zero Preservatives', market: false, ours: true },
+        { name: 'Edible Grade', market: false, ours: true },
+        { name: 'Promotes Deep Sleep', market: false, ours: true },
+        { name: 'Artificial Scents', market: true, ours: false }
+      ]
+    },
     name: "Glow Quinch Elixir",
     category: "Lunar Calm",
     image: "/images/glow-quinch-elixir.jpg",
@@ -257,7 +284,17 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "acne-shield",
+    slug: 'acne-shield',
+    comparison: {
+      marketName: 'Chemical Acne Toners',
+      ourName: 'Acne Shield',
+      pointers: [
+        { name: 'Harsh Drying Alcohols', market: true, ours: false },
+        { name: 'Synthetic Acids', market: true, ours: false },
+        { name: 'Hydrating & Healing', market: false, ours: true },
+        { name: '100% Botanical Hydrosols', market: false, ours: true }
+      ]
+    },
     name: "Acne Shield",
     category: "Solar Clarity",
     image: "/images/acne-shield.jpg",
@@ -396,7 +433,17 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "vital-grow-scalp",
+    slug: 'vital-grow-scalp',
+    comparison: {
+      marketName: 'Market Hair Tonics',
+      ourName: 'Vital Grow Scalp',
+      pointers: [
+        { name: 'Zero Preservatives', market: false, ours: true },
+        { name: 'Pure Steam Distilled', market: false, ours: true },
+        { name: 'Sticky Residue', market: true, ours: false },
+        { name: 'Artificial Chemicals', market: true, ours: false }
+      ]
+    },
     name: "Vital Grow Scalp",
     category: "Root Ritual",
     image: "/images/vital-grow-scalp.jpg",
@@ -503,6 +550,16 @@ export const products: Product[] = [
   },
   {
     slug: 'the-trial-pack',
+    comparison: {
+      marketName: 'Ordinary Skincare Kits',
+      ourName: 'Aandré Amelie Trial Pack',
+      pointers: [
+        { name: 'Holistic Skin & Hair Care', market: false, ours: true },
+        { name: '100% Edible & Organic', market: false, ours: true },
+        { name: 'Chemical Preservatives', market: true, ours: false },
+        { name: 'Synthetic Fragrances', market: true, ours: false }
+      ]
+    },
     name: 'The Trial Pack',
     category: 'Botanical Kits',
     tagline: 'Experience Our Best',
@@ -557,6 +614,7 @@ export const products: Product[] = [
     seoDescription: 'The ultimate 4-piece holistic beauty bundle. Hydrate skin, clear acne, strengthen hair, and soothe your senses. Shop the complete collection.',
     concernSlugs: [],
     ingredientsList: ["Rose", "Lavender", "Mandarin", "Rosemary", "Basil", "Turmeric", "Lemongrass", "Curry Leaf", "Tea Tree", "Jojoba Oil"],
+    beforeAfterImage: "/images/before_after_trial_pack_1785604106074.png",
     faqs: [
       {
         question: "Does this collection come in a gift box?",
@@ -570,6 +628,16 @@ export const products: Product[] = [
   },
   {
     slug: 'super-fine-multani-mitti',
+    comparison: {
+      marketName: 'Standard Face Clays',
+      ourName: 'Super Fine Multani Mitti',
+      pointers: [
+        { name: 'Ultra-Milled & Fine', market: false, ours: true },
+        { name: 'Zero Cheap Fillers', market: false, ours: true },
+        { name: 'Pure Botanical Additions', market: false, ours: true },
+        { name: 'Artificial Colors', market: true, ours: false }
+      ]
+    },
     name: 'Super Fine Multani Mitti',
     category: 'Botanical Clays',
     tagline: 'Deep Cleanse & Clarify',
@@ -608,6 +676,16 @@ export const products: Product[] = [
   },
   {
     slug: 'imported-pink-clay',
+    comparison: {
+      marketName: 'Standard Face Clays',
+      ourName: 'Imported Pink Clay',
+      pointers: [
+        { name: 'Ultra-Milled & Fine', market: false, ours: true },
+        { name: 'Zero Cheap Fillers', market: false, ours: true },
+        { name: 'Pure Botanical Additions', market: false, ours: true },
+        { name: 'Artificial Colors', market: true, ours: false }
+      ]
+    },
     name: 'Imported Pink Clay',
     category: 'Botanical Clays',
     tagline: 'Gently Detoxify & Radiate',
@@ -646,6 +724,16 @@ export const products: Product[] = [
   },
   {
     slug: 'neem-and-multani-mitti',
+    comparison: {
+      marketName: 'Standard Face Clays',
+      ourName: 'Neem & Multani Mitti',
+      pointers: [
+        { name: 'Ultra-Milled & Fine', market: false, ours: true },
+        { name: 'Zero Cheap Fillers', market: false, ours: true },
+        { name: 'Pure Botanical Additions', market: false, ours: true },
+        { name: 'Artificial Colors', market: true, ours: false }
+      ]
+    },
     name: 'Neem & Multani Mitti',
     category: 'Botanical Clays',
     tagline: 'Clarify & Banish Blemishes',
@@ -684,6 +772,16 @@ export const products: Product[] = [
   },
   {
     slug: 'rose-and-sandal-multani-mitti',
+    comparison: {
+      marketName: 'Standard Face Clays',
+      ourName: 'Rose & Sandal Multani Mitti',
+      pointers: [
+        { name: 'Ultra-Milled & Fine', market: false, ours: true },
+        { name: 'Zero Cheap Fillers', market: false, ours: true },
+        { name: 'Pure Botanical Additions', market: false, ours: true },
+        { name: 'Artificial Colors', market: true, ours: false }
+      ]
+    },
     name: 'Rose & Sandal Multani Mitti',
     category: 'Botanical Clays',
     tagline: 'Soothe & Brighten',
@@ -722,6 +820,16 @@ export const products: Product[] = [
   },
   {
     slug: 'turmeric-and-sandal-multani-mitti',
+    comparison: {
+      marketName: 'Standard Face Clays',
+      ourName: 'Turmeric & Sandal Multani Mitti',
+      pointers: [
+        { name: 'Ultra-Milled & Fine', market: false, ours: true },
+        { name: 'Zero Cheap Fillers', market: false, ours: true },
+        { name: 'Pure Botanical Additions', market: false, ours: true },
+        { name: 'Artificial Colors', market: true, ours: false }
+      ]
+    },
     name: 'Turmeric & Sandal Multani Mitti',
     category: 'Botanical Clays',
     tagline: 'Glow & Heal',
