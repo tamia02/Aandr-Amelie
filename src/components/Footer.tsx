@@ -110,7 +110,18 @@ export default function Footer() {
 
         <div className="mt-8 flex flex-col gap-4 border-t border-outline-variant/30 pt-8 text-xs tracking-[0.1em] text-charcoal/50 uppercase sm:flex-row sm:items-center sm:justify-between md:col-span-12">
           <p>© {new Date().getFullYear()} Aandré Amelie Skincare. All rights reserved.</p>
-          <p>All Shades, All Souls.</p>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            <p>All Shades, All Souls.</p>
+            <span className="hidden sm:inline text-charcoal/30">|</span>
+            <Link 
+              href="https://vaslix.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="font-semibold hover:text-moon-indigo transition-colors"
+            >
+              Made by Tasmiya :)
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
