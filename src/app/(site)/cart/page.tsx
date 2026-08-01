@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { useCart } from "@/lib/cart-context";
 import { getCommerceForSlugs, type Commerce } from "@/lib/actions/products";
-import { getProduct } from "@/data/products";
+import { getProduct, products } from "@/data/products";
+import ProductCard from "@/components/ProductCard";
 import { formatINR } from "@/lib/money";
 import MediaVisual from "@/components/MediaVisual";
 import SectionHeader from "@/components/SectionHeader";
@@ -123,6 +124,21 @@ export default function CartPage() {
             </div>
           </div>
         )}
+
+        {/* You May Also Like / Suggestions */}
+        <div className="mt-24 border-t border-charcoal/10 pt-16">
+          <SectionHeader eyebrow="Curated For You" title="You May Also Like" />
+          <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
+            {products
+              .filter(p => !items.find(i => i.slug === p.slug))
+              .slice(0, 3)
+              .map((product) => (
+                <div key={product.slug} className="flex-1">
+                  <ProductCard product={product} />
+                </div>
+              ))}
+          </div>
+        </div>
       </div>
     </div>
   );

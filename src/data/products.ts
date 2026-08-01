@@ -43,6 +43,8 @@ export interface Product {
   faqs: FAQItem[];
   concernSlugs: string[];
   ingredientsList: string[];
+  beforeAfterImage?: string;
+  howToUseVideo?: string;
 }
 
 export const CARE_INSTRUCTIONS =
@@ -591,7 +593,7 @@ export const products: Product[] = [
       { label: 'Rinse', text: 'Leave on for 10-15 minutes until semi-dry, then rinse thoroughly with lukewarm water.' }
     ],
     care: 'Store in a cool, dry place. Keep the jar tightly closed to prevent moisture from entering.',
-    seoTitle: 'Super Fine Multani Mitti - Pure Clay Face Mask',
+    seoTitle: 'Super Fine Multani Mitti – Pure Clay Face Mask',
     seoDescription: 'Clarify and purify your skin with our Super Fine Multani Mitti. The ultimate natural clay mask for oily and acne-prone skin.',
     faqs: [
       { question: 'How often should I use this mask?', answer: 'For oily skin, 2-3 times a week is ideal. For normal or dry skin, once a week is sufficient.' }
@@ -628,7 +630,7 @@ export const products: Product[] = [
       { label: 'Wash', text: 'Rinse off gently with warm water and follow with a moisturizer.' }
     ],
     care: 'Store in a cool, dry place away from direct sunlight.',
-    seoTitle: 'Imported Pink Clay - Gentle Detox Mask',
+    seoTitle: 'Imported Pink Clay – Gentle Detox Mask',
     seoDescription: 'Revive your glow with our Imported Pink Clay mask. Perfect for sensitive skin, it gently detoxifies and brightens.',
     faqs: [
       { question: 'Is Pink Clay safe for sensitive skin?', answer: 'Yes, pink clay is one of the mildest clays available, making it perfect for sensitive and easily irritated skin types.' }
@@ -665,7 +667,7 @@ export const products: Product[] = [
       { label: 'Rinse', text: 'Wash off after 10-15 minutes and pat dry.' }
     ],
     care: 'Store in an airtight container in a dry, cool place.',
-    seoTitle: 'Neem & Multani Mitti - Anti-Acne Clay Mask',
+    seoTitle: 'Neem & Multani Mitti – Anti-Acne Clay Mask',
     seoDescription: 'Fight acne and blemishes with our Neem and Multani Mitti clay blend. A potent natural remedy for clear skin.',
     faqs: [
       { question: 'Can I use this as a spot treatment?', answer: 'Absolutely! Dab a thick paste directly onto an active pimple and leave it overnight to reduce inflammation.' }
@@ -702,7 +704,7 @@ export const products: Product[] = [
       { label: 'Rinse', text: 'Rinse with cool water after 15 minutes.' }
     ],
     care: 'Keep in a cool, dark place to preserve the delicate floral aromas.',
-    seoTitle: 'Rose & Sandal Multani Mitti - Brightening Clay',
+    seoTitle: 'Rose & Sandal Multani Mitti – Brightening Clay',
     seoDescription: 'Soothe and brighten your skin with the luxurious blend of Rose, Sandalwood, and Multani Mitti.',
     faqs: [
       { question: 'Is this suitable for dry skin?', answer: 'Yes, the rose and sandalwood help balance the clay, making it suitable for normal to dry skin when mixed with milk or yogurt instead of water.' }
@@ -739,7 +741,7 @@ export const products: Product[] = [
       { label: 'Rinse', text: 'Wash thoroughly and follow up with a toner.' }
     ],
     care: 'Store in an airtight container to preserve the potency of the turmeric.',
-    seoTitle: 'Turmeric & Sandal Multani Mitti - Healing Glow',
+    seoTitle: 'Turmeric & Sandal Multani Mitti – Healing Glow',
     seoDescription: 'Fade dark spots and achieve a golden glow with our Turmeric, Sandalwood, and Multani Mitti healing clay mask.',
     faqs: [
       { question: 'Will the turmeric stain my skin?', answer: 'We use the perfect ratio to minimize staining. However, leaving it on for too long or using it on very pale skin might leave a temporary yellow tint which washes off with a gentle cleanser.' }

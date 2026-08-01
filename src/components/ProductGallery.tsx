@@ -135,15 +135,17 @@ export default function ProductGallery({
                   className="h-full w-full"
                 />
               ) : media.type === "image" ? (
-                <Image
-                  src={media.src!}
-                  alt={label ?? "Product Image"}
-                  fill
-                  quality={95}
-                  priority={i === 0}
-                  sizes="(min-width: 1024px) 40vw, 90vw"
-                  className="object-contain"
-                />
+                <div className="w-full h-full relative overflow-hidden group/zoom cursor-zoom-in">
+                  <Image
+                    src={media.src!}
+                    alt={label ?? "Product Image"}
+                    fill
+                    quality={95}
+                    priority={i === 0}
+                    sizes="(min-width: 1024px) 40vw, 90vw"
+                    className="object-contain transition-transform duration-500 md:group-hover/zoom:scale-[1.7]"
+                  />
+                </div>
               ) : (
                 <div className="w-full h-full relative overflow-hidden bg-charcoal">
                   {media.content}

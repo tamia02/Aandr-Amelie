@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Libre_Caslon_Text, Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import RecentPurchaseToast from "@/components/RecentPurchaseToast";
 
 const caslon = Libre_Caslon_Text({
   variable: "--font-caslon",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: siteTitle,
-    template: "%s | Aandré Amelie",
+    template: "%s",
   },
   description: siteDescription,
   openGraph: {
@@ -67,6 +68,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-cream text-charcoal overflow-x-hidden">
         <div className="grain-overlay" />
         {children}
+        <RecentPurchaseToast />
 
         {/* Google Analytics */}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (

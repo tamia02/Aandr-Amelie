@@ -13,6 +13,7 @@ import ProductIngredients from "./ProductIngredients";
 import Breadcrumbs from "./Breadcrumbs";
 import { getInfographicSlides } from "./ProductInfographicSlides";
 import WishlistButton from "./WishlistButton";
+import ShareButton from "./ShareButton";
 import Link from "next/link";
 import { journalArticles } from "@/data/journal";
 import { formatINR } from "@/lib/money";
@@ -113,8 +114,13 @@ export default function ProductPage({
           />
         </Reveal>
         <Reveal delay={150} className="flex flex-col justify-center md:col-span-6 relative">
-          <div className="absolute right-0 top-0 hidden sm:block">
+          <div className="absolute right-0 top-0 hidden sm:flex flex-col gap-2">
             <WishlistButton slug={product.slug} className="rounded-full border border-charcoal/10 bg-cream-deep p-3 text-charcoal/70 transition-colors hover:border-sun-terracotta hover:text-sun-terracotta-dark" />
+            <ShareButton 
+              url={`https://www.aandreamelie.com/shop/${product.slug}`} 
+              title={product.name} 
+              className="rounded-full border border-charcoal/10 bg-cream-deep p-3 text-charcoal/70 transition-colors hover:border-sun-terracotta hover:text-sun-terracotta-dark" 
+            />
           </div>
           <span className="mb-2 text-[10px] font-semibold tracking-[0.25em] text-sun-terracotta uppercase sm:mb-3 sm:text-xs pr-12">
             {product.tagline}
@@ -123,8 +129,13 @@ export default function ProductPage({
             <h1 className="font-serif text-4xl leading-[1.05] sm:text-5xl lg:text-5xl text-charcoal">
               {product.name}
             </h1>
-            <div className="sm:hidden mt-2">
+            <div className="sm:hidden mt-2 flex gap-2">
               <WishlistButton slug={product.slug} className="rounded-full border border-charcoal/10 bg-cream-deep p-2.5 text-charcoal/70 hover:border-sun-terracotta hover:text-sun-terracotta-dark" />
+              <ShareButton 
+                url={`https://www.aandreamelie.com/shop/${product.slug}`} 
+                title={product.name} 
+                className="rounded-full border border-charcoal/10 bg-cream-deep p-2.5 text-charcoal/70 hover:border-sun-terracotta hover:text-sun-terracotta-dark" 
+              />
             </div>
           </div>
           <div className="mb-4 flex items-center gap-2">
@@ -178,7 +189,71 @@ export default function ProductPage({
             </div>
           )}
           <AddToCart commerce={commerce} />
+          
+          {/* Marquee USP Bar */}
+          <div className="mt-6 w-full overflow-hidden border-y border-outline-variant/30 py-3 bg-cream-deep/50">
+            <div className="flex whitespace-nowrap animate-marquee">
+              {[...Array(2)].map((_, i) => (
+                <div key={i} className="flex items-center gap-8 mx-4 text-xs font-semibold tracking-widest text-charcoal/70 uppercase">
+                  <span>Non Sticky</span>
+                  <span className="text-sun-terracotta">•</span>
+                  <span>No Alcohol</span>
+                  <span className="text-sun-terracotta">•</span>
+                  <span>Small Batches</span>
+                  <span className="text-sun-terracotta">•</span>
+                  <span>Hand Made</span>
+                  <span className="text-sun-terracotta">•</span>
+                  <span>No Artificial Fragrance</span>
+                  <span className="text-sun-terracotta">•</span>
+                </div>
+              ))}
+            </div>
+          </div>
           <div id="buy-sentinel" />
+        </Reveal>
+      </section>
+
+      {/* Real Results (Before & After) */}
+      <section className="mx-auto max-w-[1440px] px-5 pb-10 sm:px-10 lg:px-16">
+        <Reveal>
+          <div className="border border-outline-variant/20 bg-cream-deep p-8 sm:p-12">
+            <h2 className="mb-8 text-center text-xs font-semibold tracking-[0.2em] text-outline uppercase">
+              Real Results
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="relative aspect-square md:aspect-[4/3] bg-charcoal/5 w-full flex flex-col items-center justify-center border border-dashed border-outline-variant/40">
+                {product.beforeAfterImage ? (
+                  <img src={product.beforeAfterImage} alt="Before and After" className="object-cover w-full h-full" />
+                ) : (
+                  <div className="text-center p-6 text-charcoal/50">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-12 h-12 mx-auto mb-3 opacity-50">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                    <p className="text-sm">Before & After image coming soon.</p>
+                  </div>
+                )}
+              </div>
+              <div className="flex flex-col justify-center">
+                <h3 className="font-serif text-3xl text-charcoal mb-4">Visible Transformation</h3>
+                <p className="text-base text-charcoal/70 leading-relaxed mb-6">
+                  Experience the difference of pure, potent botanicals. With consistent use, our targeted formulations work deep within the skin's layers to restore balance, clarity, and a natural radiant glow.
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="flex flex-col">
+                    <span className="text-xl font-serif text-moon-indigo">94%</span>
+                    <span className="text-[10px] tracking-wider uppercase text-charcoal/50">Saw Improvement</span>
+                  </div>
+                  <div className="w-px h-8 bg-outline-variant/30"></div>
+                  <div className="flex flex-col">
+                    <span className="text-xl font-serif text-moon-indigo">14 Days</span>
+                    <span className="text-[10px] tracking-wider uppercase text-charcoal/50">To Visible Results</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </Reveal>
       </section>
 
@@ -319,8 +394,24 @@ export default function ProductPage({
               </Reveal>
             </div>
             
-            <div className="lg:col-span-8 space-y-4">
-              {product.howToUse.map((step, i) => (
+            <div className="lg:col-span-8 space-y-8">
+              {product.howToUseVideo && (
+                <Reveal delay={30}>
+                  <div className="relative aspect-video bg-charcoal/5 w-full flex items-center justify-center overflow-hidden border border-outline-variant/20 mb-8">
+                    {/* Placeholder for video until actual video is provided */}
+                    <div className="text-center p-6 text-charcoal/50 absolute z-10">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-12 h-12 mx-auto mb-3 opacity-50">
+                        <circle cx="12" cy="12" r="10" />
+                        <polygon points="10 8 16 12 10 16 10 8" />
+                      </svg>
+                      <p className="text-sm">How to use video tutorial</p>
+                    </div>
+                    <video src={product.howToUseVideo} controls className="w-full h-full object-cover relative z-20" />
+                  </div>
+                </Reveal>
+              )}
+              <div className="space-y-4">
+                {product.howToUse.map((step, i) => (
                 <Reveal key={step.label} delay={i * 60}>
                   <details className="group border-b border-outline-variant/30 pb-4 outline-none">
                     <summary className="flex cursor-pointer list-none items-center justify-between font-serif text-lg sm:text-xl text-charcoal outline-none py-2 select-none hover:text-sun-terracotta transition-colors">
@@ -340,6 +431,7 @@ export default function ProductPage({
                   </details>
                 </Reveal>
               ))}
+              </div>
             </div>
           </div>
         </div>
