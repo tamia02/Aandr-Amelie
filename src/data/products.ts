@@ -138,6 +138,7 @@ export const products: Product[] = [
     seoDescription: "Sip and spray pure organic rosewater. Rejuvenates skin, aids digestion, eases reflux, and calms eyes. Zero preservatives. Shop now.",
     concernSlugs: ["sensitive-dry", "oily-acne"],
     ingredientsList: ["Rose"],
+    beforeAfterImage: "/images/before_after_rose_1785597822314.png",
     faqs: [
       {
         question: "Can I drink Royal Rose Elixir?",
@@ -239,6 +240,7 @@ export const products: Product[] = [
     seoDescription: "Premium edible lavender water for skin and sleep. Calms anxiety, eases razor burn, and improves sleep. Organic, preservative-free.",
     concernSlugs: ["sensitive-dry", "sleep-stress"],
     ingredientsList: ["Lavender"],
+    beforeAfterImage: "/images/before_after_rose_1785597822314.png",
     faqs: [
       {
         question: "How does lavender water help with sleep?",
@@ -373,6 +375,7 @@ export const products: Product[] = [
     seoDescription: "Clear breakouts naturally. A clarifying facial toner blending Mandarin, Rose, Basil, Turmeric hydrosols, and jojoba oil. Non-comedogenic.",
     concernSlugs: ["oily-acne"],
     ingredientsList: ["Mandarin", "Rose", "Rosemary", "Basil", "Turmeric", "Jojoba Oil"],
+    beforeAfterImage: "/images/before_after_acne_1785597840429.png",
     faqs: [
       {
         question: "Why does Acne Shield contain jojoba oil if it is for oily skin?",
@@ -478,6 +481,7 @@ export const products: Product[] = [
     seoDescription: "Strengthen hair from root to tip. Rosemary water, curry leaf hydrosol, and tea tree scalp tonic. Reduces dandruff and stimulates growth.",
     concernSlugs: ["hair-scalp"],
     ingredientsList: ["Rosemary", "Lemongrass", "Curry Leaf", "Basil", "Tea Tree", "Jojoba Oil"],
+    beforeAfterImage: "/images/before_after_hair_1785597859985.png",
     faqs: [
       {
         question: "How does rosemary water help hair growth?",
@@ -599,7 +603,8 @@ export const products: Product[] = [
       { question: 'How often should I use this mask?', answer: 'For oily skin, 2-3 times a week is ideal. For normal or dry skin, once a week is sufficient.' }
     ],
     concernSlugs: ['acne-breakouts', 'oily-skin'],
-    ingredientsList: ['Multani Mitti']
+    ingredientsList: ['Multani Mitti'],
+    beforeAfterImage: "/images/before_after_clay_1785597877178.png",
   },
   {
     slug: 'imported-pink-clay',
@@ -636,7 +641,8 @@ export const products: Product[] = [
       { question: 'Is Pink Clay safe for sensitive skin?', answer: 'Yes, pink clay is one of the mildest clays available, making it perfect for sensitive and easily irritated skin types.' }
     ],
     concernSlugs: ['dryness-dehydration', 'dull-skin'],
-    ingredientsList: ['Pink Clay']
+    ingredientsList: ['Pink Clay'],
+    beforeAfterImage: "/images/before_after_clay_1785597877178.png",
   },
   {
     slug: 'neem-and-multani-mitti',
@@ -673,7 +679,8 @@ export const products: Product[] = [
       { question: 'Can I use this as a spot treatment?', answer: 'Absolutely! Dab a thick paste directly onto an active pimple and leave it overnight to reduce inflammation.' }
     ],
     concernSlugs: ['acne-breakouts', 'oily-skin'],
-    ingredientsList: ['Multani Mitti', 'Neem Leaf Powder']
+    ingredientsList: ['Multani Mitti', 'Neem Leaf Powder'],
+    beforeAfterImage: "/images/before_after_acne_1785597840429.png",
   },
   {
     slug: 'rose-and-sandal-multani-mitti',
@@ -710,7 +717,8 @@ export const products: Product[] = [
       { question: 'Is this suitable for dry skin?', answer: 'Yes, the rose and sandalwood help balance the clay, making it suitable for normal to dry skin when mixed with milk or yogurt instead of water.' }
     ],
     concernSlugs: ['dull-skin', 'pigmentation'],
-    ingredientsList: ['Multani Mitti', 'Rose Petal Powder', 'Sandalwood Powder']
+    ingredientsList: ['Multani Mitti', 'Rose Petal Powder', 'Sandalwood Powder'],
+    beforeAfterImage: "/images/before_after_clay_1785597877178.png",
   },
   {
     slug: 'turmeric-and-sandal-multani-mitti',
@@ -747,7 +755,8 @@ export const products: Product[] = [
       { question: 'Will the turmeric stain my skin?', answer: 'We use the perfect ratio to minimize staining. However, leaving it on for too long or using it on very pale skin might leave a temporary yellow tint which washes off with a gentle cleanser.' }
     ],
     concernSlugs: ['pigmentation', 'dull-skin'],
-    ingredientsList: ['Multani Mitti', 'Turmeric Powder', 'Sandalwood Powder']
+    ingredientsList: ['Multani Mitti', 'Turmeric Powder', 'Sandalwood Powder'],
+    beforeAfterImage: "/images/before_after_clay_1785597877178.png",
   }
 ];
 

@@ -212,17 +212,12 @@ export default function Home() {
       {/* Brand Video Accordion */}
       <section className="bg-cream-deep px-5 pt-10 pb-16 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-[1440px]">
-          <details className="group outline-none">
-            <summary className="flex cursor-pointer list-none items-center justify-between border-b border-outline-variant/30 pb-4 font-serif text-2xl text-charcoal outline-none transition-colors hover:text-sun-terracotta select-none sm:text-4xl">
-              <span>What Customers Say About Us</span>
-              <span className="text-3xl text-outline/50 transition-transform duration-300 group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <div className="mt-4 pb-10">
-              <VideoTestimonials />
-            </div>
-          </details>
+          <h2 className="mb-10 text-center font-serif text-3xl sm:text-4xl text-charcoal">
+            What Customers Say About Us
+          </h2>
+          <div className="pb-10">
+            <VideoTestimonials />
+          </div>
         </div>
       </section>
 
