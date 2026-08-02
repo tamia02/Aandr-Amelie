@@ -9,8 +9,8 @@ export default function VideoTestimonials() {
       <div className="flex w-full snap-x snap-mandatory overflow-x-auto pb-8 gap-6 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 no-scrollbar">
         {[
           "rKPwUw4IIFk",
-          "BxnUVh6rk_U",
           "INgBmwNvqaU",
+          "BxnUVh6rk_U",
         ].map((videoId, index) => (
           <div key={index} className="flex min-w-[75vw] snap-center flex-col gap-4 sm:min-w-[45vw] md:min-w-0">
             <div className="relative aspect-[9/16] w-full overflow-hidden rounded-md bg-outline-variant/20">
