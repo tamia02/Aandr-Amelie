@@ -15,7 +15,7 @@ export default function VideoTestimonials() {
           <div key={index} className="flex min-w-[75vw] snap-center flex-col gap-4 sm:min-w-[45vw] md:min-w-0">
             <div className="relative aspect-[9/16] w-full overflow-hidden rounded-md bg-outline-variant/20">
               <iframe
-                className="absolute top-0 left-0 h-full w-full object-cover"
+                className="absolute top-0 left-0 h-full w-full"
                 src={`https://www.youtube.com/embed/${videoId}`}
                 title="YouTube video testimonial"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
