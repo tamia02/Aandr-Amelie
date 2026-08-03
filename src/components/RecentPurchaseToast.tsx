@@ -5,6 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/data/products";
 
+// Indian names for the popup
+const names = [
+  "Shruti", "Riya", "Ananya", "Priya", "Neha", "Pooja", "Sneha", 
+  "Aditi", "Kavya", "Aisha", "Meera", "Kiara", "Nithya", "Tanya",
+  "Roshni", "Sanya", "Simran", "Meghna", "Diya", "Isha"
+];
+
 // Cities in India for the popup
 const cities = [
   "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Ahmedabad", "Chennai", 
@@ -21,6 +28,7 @@ export default function RecentPurchaseToast() {
   const [isVisible, setIsVisible] = useState(false);
   const [currentProduct, setCurrentProduct] = useState(products[0]);
   const [currentCity, setCurrentCity] = useState(cities[0]);
+  const [currentName, setCurrentName] = useState(names[0]);
   const [currentTime, setCurrentTime] = useState(times[0]);
 
   useEffect(() => {
@@ -36,10 +44,12 @@ export default function RecentPurchaseToast() {
     // Pick random data
     const randomProduct = products[Math.floor(Math.random() * products.length)];
     const randomCity = cities[Math.floor(Math.random() * cities.length)];
+    const randomName = names[Math.floor(Math.random() * names.length)];
     const randomTime = times[Math.floor(Math.random() * times.length)];
 
     setCurrentProduct(randomProduct);
     setCurrentCity(randomCity);
+    setCurrentName(randomName);
     setCurrentTime(randomTime);
     setIsVisible(true);
 
@@ -69,7 +79,7 @@ export default function RecentPurchaseToast() {
       </Link>
       <div className="flex-1 min-w-0 pr-4">
         <p className="text-[10px] text-charcoal/60 uppercase tracking-widest mb-1">
-          Someone in {currentCity} bought
+          {currentName} from {currentCity} bought
         </p>
         <Link href={`/shop/${currentProduct.slug}`} className="block">
           <p className="text-sm font-serif text-charcoal font-semibold truncate hover:text-moon-indigo transition-colors">
