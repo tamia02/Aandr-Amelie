@@ -108,7 +108,11 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-8 flex flex-col gap-4 border-t border-outline-variant/30 pt-8 text-xs tracking-[0.1em] text-charcoal/50 uppercase sm:flex-row sm:items-center sm:justify-between md:col-span-12">
+        <div className="md:col-span-12 mt-8 text-center text-[10px] text-charcoal/50 uppercase tracking-widest border-t border-outline-variant/30 pt-8">
+          <p>Registered Address: 123 Skincare Avenue, Mumbai, Maharashtra 400001 | GSTIN: 27AABCU9603R1ZM</p>
+        </div>
+
+        <div className="mt-4 flex flex-col gap-4 text-xs tracking-[0.1em] text-charcoal/50 uppercase sm:flex-row sm:items-center sm:justify-between md:col-span-12">
           <p>© {new Date().getFullYear()} Aandré Amelie Skincare. All rights reserved.</p>
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
             <p>All Shades, All Souls.</p>

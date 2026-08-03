@@ -5,6 +5,32 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.join(__dirname),
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'andreamelie.com',
+          },
+        ],
+        destination: 'https://www.aandreamelie.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'andremelie.com',
+          },
+        ],
+        destination: 'https://www.aandreamelie.com/:path*',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

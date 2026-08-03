@@ -71,17 +71,12 @@ export default function ProductPage({
 
   // Generate actual rating and review count from db reviews
   const reviewsCount = reviews.length;
-  const ratingNum = reviewsCount > 0
+  const displayRatingNum = reviewsCount > 0
     ? reviews.reduce((sum, r) => sum + r.rating, 0) / reviewsCount
     : 0;
   
-  // Use pseudo-random fallback if no reviews yet
-  const hash = product.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  const fallbackRatingNum = 4.3 + (hash % 7) / 10;
-  
-  const displayRatingNum = reviewsCount > 0 ? ratingNum : fallbackRatingNum;
   const rating = displayRatingNum.toFixed(1);
-  const displayReviewsCount = reviewsCount > 0 ? reviewsCount : (17 + (hash % 113));
+  const displayReviewsCount = reviewsCount;
 
   return (
     <div>
@@ -139,43 +134,45 @@ export default function ProductPage({
               />
             </div>
           </div>
-          <div className="mb-4 flex items-center gap-2">
-            <div className="flex text-[#FFB800]">
-              {[1, 2, 3, 4, 5].map((star) => {
-                const isHalf = star > Math.floor(displayRatingNum) && star === Math.ceil(displayRatingNum) && displayRatingNum % 1 !== 0;
-                const isEmpty = star > Math.ceil(displayRatingNum);
-                
-                if (isHalf) {
+          {reviewsCount > 0 && (
+            <div className="mb-4 flex items-center gap-2">
+              <div className="flex text-[#FFB800]">
+                {[1, 2, 3, 4, 5].map((star) => {
+                  const isHalf = star > Math.floor(displayRatingNum) && star === Math.ceil(displayRatingNum) && displayRatingNum % 1 !== 0;
+                  const isEmpty = star > Math.ceil(displayRatingNum);
+                  
+                  if (isHalf) {
+                    return (
+                      <svg key={star} viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                        <defs>
+                          <linearGradient id={`half-${star}`}>
+                            <stop offset="50%" stopColor="currentColor" />
+                            <stop offset="50%" stopColor="#E5E7EB" stopOpacity="1" />
+                          </linearGradient>
+                        </defs>
+                        <path fill={`url(#half-${star})`} d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                    );
+                  }
+                  
+                  if (isEmpty) {
+                    return (
+                      <svg key={star} viewBox="0 0 24 24" fill="#E5E7EB" className="h-5 w-5">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                    );
+                  }
+
                   return (
                     <svg key={star} viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-                      <defs>
-                        <linearGradient id={`half-${star}`}>
-                          <stop offset="50%" stopColor="currentColor" />
-                          <stop offset="50%" stopColor="#E5E7EB" stopOpacity="1" />
-                        </linearGradient>
-                      </defs>
-                      <path fill={`url(#half-${star})`} d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                  );
-                }
-                
-                if (isEmpty) {
-                  return (
-                    <svg key={star} viewBox="0 0 24 24" fill="#E5E7EB" className="h-5 w-5">
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                     </svg>
                   );
-                }
-
-                return (
-                  <svg key={star} viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                );
-              })}
+                })}
+              </div>
+              <span className="text-sm font-medium text-charcoal/70">{rating} ({displayReviewsCount} reviews)</span>
             </div>
-            <span className="text-sm font-medium text-charcoal/70">{rating} ({displayReviewsCount} reviews)</span>
-          </div>
+          )}
           <p className="max-w-md text-sm leading-relaxed text-charcoal/70 sm:text-base">
             {product.description}
           </p>
@@ -311,6 +308,11 @@ export default function ProductPage({
                 </Reveal>
               ))}
             </div>
+            <Reveal delay={200}>
+              <p className="mt-12 text-[10px] text-cream/50 max-w-2xl border-t border-cream/20 pt-4">
+                * These statements have not been evaluated by the FSSAI. This product is not intended to diagnose, treat, cure, or prevent any disease. If you are pregnant, nursing, or taking medication, consult your physician before use. Not intended for ophthalmic use without medical supervision.
+              </p>
+            </Reveal>
           </div>
         </section>
       )}

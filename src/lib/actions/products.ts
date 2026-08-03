@@ -13,18 +13,6 @@ export interface Commerce {
 export async function getCommerceForSlugs(
   slugs: string[],
 ): Promise<Record<string, Commerce>> {
-  try {
-    const rows = await prisma.product.findMany({
-      where: { slug: { in: slugs } },
-    });
-    if (rows.length > 0) {
-      return Object.fromEntries(rows.map((row) => [row.slug, row]));
-    }
-  } catch (error) {
-    console.error("getCommerceForSlugs: database unavailable", error);
-  }
-
-  // Fallback to static data if database is unavailable or empty
   const fallback: Record<string, Commerce> = {};
   for (const slug of slugs) {
     if (slug === "the-trial-pack") {
@@ -33,5 +21,20 @@ export async function getCommerceForSlugs(
       fallback[slug] = { slug, priceCents: 210000, compareAtPriceCents: null, currency: "INR", stock: 50 };
     }
   }
+
+  try {
+    const rows = await prisma.product.findMany({
+      where: { slug: { in: slugs } },
+    });
+    
+    if (rows.length > 0) {
+      const dbResult = Object.fromEntries(rows.map((row) => [row.slug, row]));
+      // Merge db results over fallbacks
+      return { ...fallback, ...dbResult };
+    }
+  } catch (error) {
+    console.error("getCommerceForSlugs: database unavailable", error);
+  }
+
   return fallback;
 }

@@ -76,6 +76,18 @@ export default function ContactPage() {
                 </a>.
               </p>
             </div>
+
+            <div>
+              <h3 className="text-xs font-semibold tracking-[0.2em] text-sun-terracotta uppercase mb-2">
+                Registered Office
+              </h3>
+              <p className="text-sm leading-relaxed text-charcoal/70 max-w-xs">
+                Aandré Amelie Skincare<br />
+                123 Skincare Avenue<br />
+                Mumbai, Maharashtra 400001<br />
+                GSTIN: 27AABCU9603R1ZM
+              </p>
+            </div>
           </Reveal>
         </div>
 
