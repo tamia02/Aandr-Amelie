@@ -1,6 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import type { Review } from "@/lib/actions/reviews";
 
 export default function ReviewList({ reviews, productName }: { reviews: Review[], productName: string }) {
+  const [showAll, setShowAll] = useState(false);
+
   if (reviews.length === 0) {
     return (
       <div className="mx-auto max-w-xl text-center">
@@ -16,9 +21,11 @@ export default function ReviewList({ reviews, productName }: { reviews: Review[]
     );
   }
 
+  const displayedReviews = showAll ? reviews : reviews.slice(0, 3);
+
   return (
     <div className="mx-auto max-w-3xl space-y-8 mt-10">
-      {reviews.map((review) => (
+      {displayedReviews.map((review) => (
         <div key={review.id} className="border-b border-outline-variant/20 pb-8 last:border-0">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-3">
@@ -61,6 +68,17 @@ export default function ReviewList({ reviews, productName }: { reviews: Review[]
           )}
         </div>
       ))}
+
+      {!showAll && reviews.length > 3 && (
+        <div className="mt-8 flex justify-center">
+          <button
+            onClick={() => setShowAll(true)}
+            className="rounded-full bg-sun-terracotta/10 px-6 py-2 text-sm font-medium text-sun-terracotta hover:bg-sun-terracotta hover:text-white transition-colors"
+          >
+            See More Reviews
+          </button>
+        </div>
+      )}
     </div>
   );
 }

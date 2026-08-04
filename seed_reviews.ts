@@ -29,6 +29,9 @@ const positiveReviews = [
 ];
 
 async function main() {
+  console.log("Deleting existing reviews...");
+  await prisma.review.deleteMany();
+
   console.log("Seeding fake reviews...");
   for (const product of products) {
     const slug = product.slug;
@@ -47,12 +50,10 @@ async function main() {
     }
 
     const numReviews = Math.floor(Math.random() * (75 - 55 + 1)) + 55; // 55 to 75
-    const writtenReviewsCount = Math.floor(Math.random() * (15 - 11 + 1)) + 11; // 11 to 15
 
     for (let i = 0; i < numReviews; i++) {
-      const isWritten = i < writtenReviewsCount;
       const authorName = names[Math.floor(Math.random() * names.length)];
-      const content = isWritten ? positiveReviews[Math.floor(Math.random() * positiveReviews.length)] : "";
+      const content = positiveReviews[Math.floor(Math.random() * positiveReviews.length)];
       const rating = Math.random() > 0.15 ? 5 : 4; // Mostly 5 stars, some 4 stars
       const createdAt = new Date(Date.now() - Math.floor(Math.random() * 10000000000));
 
