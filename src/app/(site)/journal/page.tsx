@@ -96,7 +96,9 @@ export default function JournalPage() {
                   {featuredArticle.coverImage ? (
                     <img 
                       src={featuredArticle.coverImage} 
-                      alt={featuredArticle.title}
+                      alt={`Cover for ${featuredArticle.title}`}
+                      loading="eager"
+                      fetchPriority="high"
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     />
                   ) : (

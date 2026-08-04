@@ -44,7 +44,9 @@ export default function Header() {
         >
           <img
             src="/images/logo.png"
-            alt="Aandré Amelie"
+            alt="Aandré Amelie Skincare Logo"
+            loading="eager"
+            fetchPriority="high"
             className="h-9 w-auto object-contain"
           />
         </Link>

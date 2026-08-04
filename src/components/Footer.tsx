@@ -11,7 +11,8 @@ export default function Footer() {
           <div className="mb-6 block">
             <img
               src="/images/logo.png"
-              alt="Aandré Amelie"
+              alt="Aandré Amelie Skincare Logo"
+              loading="lazy"
               className="h-9 w-auto object-contain"
             />
           </div>

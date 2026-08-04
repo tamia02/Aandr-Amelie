@@ -22,9 +22,10 @@ export default function OffersPage() {
         <div className="w-full md:w-1/2 relative min-h-[300px] bg-cream">
           <Image 
             src="/images/acne2.png" 
-            alt="The Complete Acne Set" 
+            alt="The Complete Botanical Acne Set" 
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
+            priority
             className="object-contain p-6" 
           />
         </div>
@@ -40,7 +41,7 @@ export default function OffersPage() {
       <Reveal delay={200} className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
         <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col">
           <div className="relative w-full aspect-[4/3]">
-            <img src="/images/lavender1.png" alt="Lunar Harmony Bonus" className="w-full h-full object-cover" />
+            <img src="/images/lavender1.png" alt="Lunar Harmony Bonus Sleep Guide" loading="lazy" className="w-full h-full object-cover" />
           </div>
           <div className="p-4 sm:p-8 flex flex-col items-center flex-grow text-center">
             <span className="text-[9px] sm:text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-2 sm:mb-3">
@@ -59,7 +60,7 @@ export default function OffersPage() {
         </div>
         <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col">
           <div className="relative w-full aspect-[4/3] border-b border-outline-variant/20">
-            <img src="/images/royal-rose-main.png" alt="Skincare Member" className="w-full h-full object-cover" />
+            <img src="/images/royal-rose-main.png" alt="Skincare Member Subscription" loading="lazy" className="w-full h-full object-cover" />
           </div>
           <div className="p-4 sm:p-8 flex flex-col items-center flex-grow text-center">
             <span className="text-[9px] sm:text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-2 sm:mb-3">
@@ -78,7 +79,7 @@ export default function OffersPage() {
         </div>
         <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col">
           <div className="relative w-full aspect-[4/3] border-b border-outline-variant/20">
-            <img src="/images/rose1.png" alt="Welcome Journey" className="w-full h-full object-cover" />
+            <img src="/images/rose1.png" alt="Welcome Journey 10% Off" loading="lazy" className="w-full h-full object-cover" />
           </div>
           <div className="p-4 sm:p-8 flex flex-col items-center flex-grow text-center">
             <span className="text-[9px] sm:text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-2 sm:mb-3">
@@ -97,7 +98,7 @@ export default function OffersPage() {
         </div>
         <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col">
           <div className="relative w-full aspect-[4/3] border-b border-outline-variant/20">
-            <img src="/images/four1.png" alt="Rose Quartz Ritual" className="w-full h-full object-cover" />
+            <img src="/images/four1.png" alt="The Clay Canvas Mixing Bowl Set" loading="lazy" className="w-full h-full object-cover" />
           </div>
           <div className="p-4 sm:p-8 flex flex-col items-center flex-grow text-center">
             <span className="text-[9px] sm:text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-2 sm:mb-3">
@@ -130,7 +131,7 @@ export default function OffersPage() {
             <Button href="/shop/the-trial-pack" className="w-full max-w-[200px] text-[10px] sm:text-xs">Shop Trial Pack</Button>
           </div>
           <div className="relative w-full sm:w-1/2 min-h-[250px]">
-            <img src="/images/trial-pack-new.png" alt="The Trial Pack" className="w-full h-full object-contain object-center" />
+            <img src="/images/trial-pack-new.png" alt="Aandré Amelie Signature Trial Pack" loading="lazy" className="w-full h-full object-contain object-center" />
           </div>
         </div>
       </Reveal>

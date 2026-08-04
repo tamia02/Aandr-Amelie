@@ -221,7 +221,7 @@ export default function ProductPage({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="relative aspect-square md:aspect-[4/3] bg-charcoal/5 w-full flex flex-col items-center justify-center border border-dashed border-outline-variant/40">
                 {product.beforeAfterImage ? (
-                  <img src={product.beforeAfterImage} alt="Before and After" className="object-cover w-full h-full" />
+                  <img src={product.beforeAfterImage} alt={`Before and After using ${product.name}`} loading="lazy" className="object-cover w-full h-full" />
                 ) : (
                   <div className="text-center p-6 text-charcoal/50">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-12 h-12 mx-auto mb-3 opacity-50">

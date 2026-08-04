@@ -114,7 +114,9 @@ export default async function JournalPostPage({
               <div className="relative w-full aspect-video md:aspect-[21/9] overflow-hidden mb-12 border border-outline-variant/20 rounded-sm">
                 <img 
                   src={article.coverImage} 
-                  alt={article.title}
+                  alt={`${article.title} cover image`}
+                  loading="eager"
+                  fetchPriority="high"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -224,7 +226,8 @@ export default async function JournalPostPage({
                     <div key={i} className="my-8 w-full max-w-xs mx-auto overflow-hidden rounded-md border border-outline-variant/10 shadow-sm">
                       <img 
                         src={src} 
-                        alt={alt} 
+                        alt={alt || "Article illustration"} 
+                        loading="lazy"
                         className="w-full h-auto object-cover" 
                       />
                     </div>

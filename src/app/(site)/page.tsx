@@ -169,8 +169,9 @@ export default function Home() {
             <div className="relative min-h-[250px] w-full md:w-1/2 bg-cream-deep sm:min-h-[300px]">
               <Image
                 src="/images/trial-pack-new.png"
-                alt="Aandré Amelie Trial Pack"
+                alt="Aandré Amelie Signature Trial Pack - 5 piece holistic collection"
                 fill
+                loading="lazy"
                 className="object-contain"
               />
             </div>

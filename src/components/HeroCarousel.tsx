@@ -25,7 +25,9 @@ export default function HeroCarousel() {
         <img
           key={src}
           src={src}
-          alt="Multani Mitti Botanical Bowls"
+          alt={`Botanical product showcasing ${src.split('/').pop()?.replace('.png', '').replace(/_/g, ' ')}`}
+          loading={index === 0 ? "eager" : "lazy"}
+          fetchPriority={index === 0 ? "high" : "auto"}
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           }`}
