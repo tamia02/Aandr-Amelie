@@ -54,7 +54,15 @@ async function main() {
     for (let i = 0; i < numReviews; i++) {
       const authorName = names[Math.floor(Math.random() * names.length)];
       const content = generateUniqueReview(usedReviews);
-      const rating = Math.random() > 0.15 ? 5 : 4; // Mostly 5 stars, some 4 stars
+      
+      const rand = Math.random();
+      let rating = 5;
+      if (rand < 0.05) rating = 1; // 5% chance of 1 star
+      else if (rand < 0.10) rating = 2; // 5% chance of 2 star
+      else if (rand < 0.20) rating = 3; // 10% chance of 3 star
+      else if (rand < 0.50) rating = 4; // 30% chance of 4 star
+      else rating = 5; // 50% chance of 5 star
+
       const createdAt = new Date(Date.now() - Math.floor(Math.random() * 10000000000));
 
       await prisma.review.create({
