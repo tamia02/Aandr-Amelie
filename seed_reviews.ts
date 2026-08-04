@@ -57,11 +57,9 @@ async function main() {
       
       const rand = Math.random();
       let rating = 5;
-      if (rand < 0.05) rating = 1; // 5% chance of 1 star
-      else if (rand < 0.10) rating = 2; // 5% chance of 2 star
-      else if (rand < 0.20) rating = 3; // 10% chance of 3 star
-      else if (rand < 0.50) rating = 4; // 30% chance of 4 star
-      else rating = 5; // 50% chance of 5 star
+      if (rand < 0.10) rating = 3; // 10% chance of 3 star
+      else if (rand < 0.40) rating = 4; // 30% chance of 4 star
+      else rating = 5; // 60% chance of 5 star
 
       const createdAt = new Date(Date.now() - Math.floor(Math.random() * 10000000000));
 
