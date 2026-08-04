@@ -77,7 +77,7 @@ export default function CartPage() {
                         </div>
                         <button
                           onClick={() => removeItem(item.slug)}
-                          className="text-xs tracking-wide text-charcoal/50 uppercase hover:text-sun-terracotta-dark"
+                          className="text-xs tracking-wide text-charcoal/70 uppercase hover:text-sun-terracotta-dark"
                         >
                           Remove
                         </button>
@@ -113,7 +113,7 @@ export default function CartPage() {
                   {loading ? "…" : formatINR(subtotalCents)}
                 </span>
               </div>
-              <p className="w-full max-w-xs text-xs text-charcoal/50 sm:w-64">
+              <p className="w-full max-w-xs text-xs text-charcoal/70 sm:w-64">
                 Shipping & taxes calculated at checkout.
               </p>
               <div className="mt-4 w-full max-w-xs sm:w-64">

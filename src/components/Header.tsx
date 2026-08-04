@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { nav, concernsSubnav } from "@/data/site";
 import CartIndicator from "./CartIndicator";
@@ -42,11 +43,12 @@ export default function Header() {
           href="/"
           className="hover:opacity-85 transition-opacity block py-1"
         >
-          <img
+          <Image
             src="/images/logo.png"
             alt="Aandré Amelie Skincare Logo"
-            loading="eager"
-            fetchPriority="high"
+            width={140}
+            height={36}
+            priority
             className="h-9 w-auto object-contain"
           />
         </Link>
@@ -116,9 +118,9 @@ export default function Header() {
                 type="text"
                 name="q"
                 placeholder="Search..."
-                className="w-40 border-b border-outline-variant/30 bg-transparent py-1 pr-6 text-xs text-charcoal outline-none transition-all focus:w-48 focus:border-moon-indigo placeholder:text-charcoal/40"
+                className="w-40 border-b border-outline-variant/30 bg-transparent py-1 pr-6 text-xs text-charcoal outline-none transition-all focus:w-48 focus:border-moon-indigo placeholder:text-charcoal/60"
               />
-              <button type="submit" className="absolute right-0 text-charcoal/60 hover:text-moon-indigo transition-colors cursor-pointer outline-none">
+              <button type="submit" aria-label="Search" className="absolute right-0 text-charcoal/70 hover:text-moon-indigo transition-colors cursor-pointer outline-none">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -143,6 +145,7 @@ export default function Header() {
               <button 
                 className="cursor-pointer text-xs font-semibold tracking-[0.15em] text-charcoal/70 uppercase outline-none select-none"
                 onClick={() => setIsMobileOpen(!isMobileOpen)}
+                aria-label={isMobileOpen ? "Close menu" : "Open menu"}
               >
                 {isMobileOpen ? "Close" : "Menu"}
               </button>
@@ -154,9 +157,9 @@ export default function Header() {
                       type="text"
                       name="q"
                       placeholder="Search..."
-                      className="w-full border-b border-outline-variant/30 bg-transparent py-1.5 pr-6 text-xs text-charcoal outline-none focus:border-moon-indigo placeholder:text-charcoal/40"
+                      className="w-full border-b border-outline-variant/30 bg-transparent py-1.5 pr-6 text-xs text-charcoal outline-none focus:border-moon-indigo placeholder:text-charcoal/60"
                     />
-                    <button type="submit" className="absolute right-0 text-charcoal/60 hover:text-moon-indigo transition-colors cursor-pointer outline-none">
+                    <button type="submit" aria-label="Search" className="absolute right-0 text-charcoal/70 hover:text-moon-indigo transition-colors cursor-pointer outline-none">
                       <svg
                         viewBox="0 0 24 24"
                         fill="none"
@@ -177,7 +180,7 @@ export default function Header() {
                   if (isConcern) {
                     return (
                       <div key={item.href} className="border-b border-outline-variant/20 pb-2 mb-2">
-                        <span className="block px-5 py-2 text-[10px] font-bold tracking-[0.15em] text-charcoal/40 uppercase">
+                        <span className="block px-5 py-2 text-[10px] font-bold tracking-[0.15em] text-charcoal/60 uppercase">
                           {item.label}
                         </span>
                         {concernsSubnav.map((sub) => (

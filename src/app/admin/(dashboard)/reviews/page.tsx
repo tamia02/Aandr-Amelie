@@ -55,7 +55,7 @@ export default async function AdminReviewsPage() {
             ))}
             {reviews.length === 0 && (
               <tr>
-                <td colSpan={7} className="px-6 py-8 text-center text-sm text-charcoal/50">
+                <td colSpan={7} className="px-6 py-8 text-center text-sm text-charcoal/70">
                   No reviews found.
                 </td>
               </tr>

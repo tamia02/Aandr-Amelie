@@ -62,7 +62,7 @@ export default async function AdminOrderDetailPage({
 
       <div className="mt-6 grid gap-6 sm:grid-cols-2">
         <div className="bg-cream p-6">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/50">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/70">
             Customer
           </h2>
           <p className="mt-3 text-sm">
@@ -74,7 +74,7 @@ export default async function AdminOrderDetailPage({
           </p>
         </div>
         <div className="bg-cream p-6">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/50">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/70">
             Delivery address
           </h2>
           <p className="mt-3 text-sm">
@@ -87,7 +87,7 @@ export default async function AdminOrderDetailPage({
       </div>
 
       <div className="mt-6 bg-cream p-6">
-        <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/50">
+        <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/70">
           Items
         </h2>
         <ul className="mt-4 space-y-3">

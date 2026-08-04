@@ -50,7 +50,7 @@ export default function JournalPage() {
               className={`pb-3 text-xs font-semibold tracking-[0.15em] uppercase transition-all duration-300 border-b cursor-pointer ${
                 selectedCategory === cat
                   ? "border-moon-indigo text-moon-indigo font-bold"
-                  : "border-transparent text-charcoal/50 hover:text-charcoal"
+                  : "border-transparent text-charcoal/70 hover:text-charcoal"
               }`}
             >
               {cat}
@@ -79,7 +79,7 @@ export default function JournalPage() {
                   {featuredArticle.excerpt}
                 </p>
                 <div className="flex items-center justify-between pt-4">
-                  <span className="text-[11px] font-medium text-charcoal/50 uppercase tracking-widest">
+                  <span className="text-[11px] font-medium text-charcoal/70 uppercase tracking-widest">
                     {featuredArticle.readTime}
                   </span>
                   <Link
@@ -136,7 +136,7 @@ export default function JournalPage() {
                   </p>
                 </div>
                 <div className="flex items-center justify-between pt-4 border-t border-outline-variant/20 mt-auto">
-                  <span className="text-[10px] font-medium text-charcoal/50 uppercase tracking-wider">
+                  <span className="text-[10px] font-medium text-charcoal/70 uppercase tracking-wider">
                     {article.readTime}
                   </span>
                   <Link

@@ -39,7 +39,7 @@ export default function TrackOrderForm() {
 
         <div className="space-y-4">
           <div className="flex flex-col">
-            <label htmlFor="orderId" className="text-[10px] font-bold tracking-[0.2em] text-charcoal/50 uppercase mb-2">
+            <label htmlFor="orderId" className="text-[10px] font-bold tracking-[0.2em] text-charcoal/70 uppercase mb-2">
               Order ID
             </label>
             <input
@@ -54,7 +54,7 @@ export default function TrackOrderForm() {
           </div>
 
           <div className="flex flex-col">
-            <label htmlFor="email" className="text-[10px] font-bold tracking-[0.2em] text-charcoal/50 uppercase mb-2">
+            <label htmlFor="email" className="text-[10px] font-bold tracking-[0.2em] text-charcoal/70 uppercase mb-2">
               Email Address
             </label>
             <input

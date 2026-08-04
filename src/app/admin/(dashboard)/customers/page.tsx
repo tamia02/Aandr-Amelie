@@ -36,7 +36,7 @@ export default async function AdminCustomersPage() {
       <div className="mt-6 overflow-x-auto bg-cream">
         <table className="w-full min-w-[560px] text-sm">
           <thead>
-            <tr className="border-b border-charcoal/10 text-left text-xs font-semibold uppercase tracking-[0.1em] text-charcoal/50">
+            <tr className="border-b border-charcoal/10 text-left text-xs font-semibold uppercase tracking-[0.1em] text-charcoal/70">
               <th className="px-5 py-3">Customer</th>
               <th className="px-5 py-3">Orders</th>
               <th className="px-5 py-3">Lifetime value</th>
@@ -48,7 +48,7 @@ export default async function AdminCustomersPage() {
               <tr key={c.email} className="border-b border-charcoal/10 last:border-0">
                 <td className="px-5 py-4">
                   <p className="font-medium">{c.name}</p>
-                  <p className="text-xs text-charcoal/50">
+                  <p className="text-xs text-charcoal/70">
                     {c.email} · {c.phone}
                   </p>
                 </td>
@@ -61,7 +61,7 @@ export default async function AdminCustomersPage() {
             ))}
             {customersWithStats.length === 0 && (
               <tr>
-                <td className="px-5 py-4 text-charcoal/50" colSpan={4}>
+                <td className="px-5 py-4 text-charcoal/70" colSpan={4}>
                   No customers yet.
                 </td>
               </tr>

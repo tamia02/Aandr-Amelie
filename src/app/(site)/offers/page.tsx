@@ -41,7 +41,7 @@ export default function OffersPage() {
       <Reveal delay={200} className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
         <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col">
           <div className="relative w-full aspect-[4/3]">
-            <img src="/images/lavender1.png" alt="Lunar Harmony Bonus Sleep Guide" loading="lazy" className="w-full h-full object-cover" />
+            <Image src="/images/lavender1.png" alt="Lunar Harmony Bonus Sleep Guide" fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
           </div>
           <div className="p-4 sm:p-8 flex flex-col items-center flex-grow text-center">
             <span className="text-[9px] sm:text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-2 sm:mb-3">
@@ -60,7 +60,7 @@ export default function OffersPage() {
         </div>
         <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col">
           <div className="relative w-full aspect-[4/3] border-b border-outline-variant/20">
-            <img src="/images/royal-rose-main.png" alt="Skincare Member Subscription" loading="lazy" className="w-full h-full object-cover" />
+            <Image src="/images/royal-rose-main.png" alt="Skincare Member Subscription" fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
           </div>
           <div className="p-4 sm:p-8 flex flex-col items-center flex-grow text-center">
             <span className="text-[9px] sm:text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-2 sm:mb-3">
@@ -79,7 +79,7 @@ export default function OffersPage() {
         </div>
         <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col">
           <div className="relative w-full aspect-[4/3] border-b border-outline-variant/20">
-            <img src="/images/rose1.png" alt="Welcome Journey 10% Off" loading="lazy" className="w-full h-full object-cover" />
+            <Image src="/images/rose1.png" alt="Welcome Journey 10% Off" fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
           </div>
           <div className="p-4 sm:p-8 flex flex-col items-center flex-grow text-center">
             <span className="text-[9px] sm:text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-2 sm:mb-3">
@@ -98,7 +98,7 @@ export default function OffersPage() {
         </div>
         <div className="border border-outline-variant/20 bg-cream-deep/50 overflow-hidden flex flex-col">
           <div className="relative w-full aspect-[4/3] border-b border-outline-variant/20">
-            <img src="/images/four1.png" alt="The Clay Canvas Mixing Bowl Set" loading="lazy" className="w-full h-full object-cover" />
+            <Image src="/images/four1.png" alt="The Clay Canvas Mixing Bowl Set" fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
           </div>
           <div className="p-4 sm:p-8 flex flex-col items-center flex-grow text-center">
             <span className="text-[9px] sm:text-[10px] font-bold tracking-widest text-moon-indigo uppercase block mb-2 sm:mb-3">
@@ -131,7 +131,7 @@ export default function OffersPage() {
             <Button href="/shop/the-trial-pack" className="w-full max-w-[200px] text-[10px] sm:text-xs">Shop Trial Pack</Button>
           </div>
           <div className="relative w-full sm:w-1/2 min-h-[250px]">
-            <img src="/images/trial-pack-new.png" alt="Aandré Amelie Signature Trial Pack" loading="lazy" className="w-full h-full object-contain object-center" />
+            <Image src="/images/trial-pack-new.png" alt="Aandré Amelie Signature Trial Pack" fill sizes="(min-width: 640px) 50vw, 100vw" className="object-contain object-center" />
           </div>
         </div>
       </Reveal>

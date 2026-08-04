@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const images = [
   '/images/products/imported_pink_clay.png',
@@ -22,13 +23,14 @@ export default function HeroCarousel() {
   return (
     <div className="absolute inset-0 h-full w-full bg-cream-deep">
       {images.map((src, index) => (
-        <img
+        <Image
           key={src}
           src={src}
           alt={`Botanical product showcasing ${src.split('/').pop()?.replace('.png', '').replace(/_/g, ' ')}`}
-          loading={index === 0 ? "eager" : "lazy"}
-          fetchPriority={index === 0 ? "high" : "auto"}
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
+          fill
+          priority={index === 0}
+          sizes="100vw"
+          className={`object-cover transition-opacity duration-1000 ease-in-out ${
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           }`}
         />

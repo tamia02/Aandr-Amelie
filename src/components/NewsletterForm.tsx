@@ -37,7 +37,7 @@ export default function NewsletterForm({
         className={`w-full bg-transparent py-2 text-sm italic focus:outline-none ${
           isDark
             ? "text-cream placeholder:text-cream/50"
-            : "text-charcoal placeholder:text-charcoal/40"
+            : "text-charcoal placeholder:text-charcoal/70"
         }`}
       />
       <button

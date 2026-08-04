@@ -22,6 +22,7 @@ export default function HeroVideo({ src, poster, className }: HeroVideoProps) {
             muted
             loop
             playsinline
+            aria-hidden="true"
             style="width: 100%; height: 100%; object-fit: cover; object-position: center;"
           ></video>
         `,

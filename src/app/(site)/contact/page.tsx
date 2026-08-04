@@ -102,7 +102,7 @@ export default function ContactPage() {
                 <div className="flex flex-col">
                   <label
                     htmlFor="name"
-                    className="text-[10px] font-bold tracking-[0.2em] text-charcoal/50 uppercase mb-2"
+                    className="text-[10px] font-bold tracking-[0.2em] text-charcoal/70 uppercase mb-2"
                   >
                     Your Name
                   </label>
@@ -117,7 +117,7 @@ export default function ContactPage() {
                 <div className="flex flex-col">
                   <label
                     htmlFor="email"
-                    className="text-[10px] font-bold tracking-[0.2em] text-charcoal/50 uppercase mb-2"
+                    className="text-[10px] font-bold tracking-[0.2em] text-charcoal/70 uppercase mb-2"
                   >
                     Email Address
                   </label>
@@ -134,7 +134,7 @@ export default function ContactPage() {
               <div className="flex flex-col">
                 <label
                   htmlFor="subject"
-                  className="text-[10px] font-bold tracking-[0.2em] text-charcoal/50 uppercase mb-2"
+                  className="text-[10px] font-bold tracking-[0.2em] text-charcoal/70 uppercase mb-2"
                 >
                   Nature of Enquiry
                 </label>
@@ -152,7 +152,7 @@ export default function ContactPage() {
               <div className="flex flex-col">
                 <label
                   htmlFor="message"
-                  className="text-[10px] font-bold tracking-[0.2em] text-charcoal/50 uppercase mb-2"
+                  className="text-[10px] font-bold tracking-[0.2em] text-charcoal/70 uppercase mb-2"
                 >
                   Your Message
                 </label>

@@ -14,7 +14,7 @@ export default function AddToCart({ commerce }: { commerce: Commerce | null }) {
 
   if (!commerce) {
     return (
-      <p className="mt-8 text-sm text-charcoal/50 italic">
+      <p className="mt-8 text-sm text-charcoal/70 italic">
         Pricing coming soon.
       </p>
     );
@@ -33,7 +33,7 @@ export default function AddToCart({ commerce }: { commerce: Commerce | null }) {
       <div className="mb-10 flex items-baseline gap-4">
         <span className="font-serif text-3xl">{formatINR(commerce.priceCents)}</span>
         {commerce.compareAtPriceCents && commerce.compareAtPriceCents > commerce.priceCents && (
-          <span className="text-sm text-charcoal/40 line-through">
+          <span className="text-sm text-charcoal/70 line-through">
             {formatINR(commerce.compareAtPriceCents)}
           </span>
         )}

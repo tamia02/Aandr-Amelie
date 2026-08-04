@@ -264,7 +264,7 @@ export default async function JournalPostPage({
                   />
                 </div>
 
-                <span className="text-[10px] font-semibold tracking-widest text-charcoal/50 uppercase block mb-1">
+                <span className="text-[10px] font-semibold tracking-widest text-charcoal/70 uppercase block mb-1">
                   Featured Ingredient: {article.ingredient}
                 </span>
                 <h3 className="font-serif text-2xl text-charcoal mb-2">

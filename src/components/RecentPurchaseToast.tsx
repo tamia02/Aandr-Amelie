@@ -86,13 +86,13 @@ export default function RecentPurchaseToast() {
             {currentProduct.name}
           </p>
         </Link>
-        <p className="text-[10px] text-charcoal/50 mt-1">
+        <p className="text-[10px] text-charcoal/70 mt-1">
           {currentTime}
         </p>
       </div>
       <button 
         onClick={() => setIsVisible(false)}
-        className="absolute top-2 right-2 text-charcoal/40 hover:text-charcoal"
+        className="absolute top-2 right-2 text-charcoal/70 hover:text-charcoal"
         aria-label="Close"
       >
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">

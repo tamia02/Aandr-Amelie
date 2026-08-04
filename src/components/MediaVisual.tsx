@@ -51,7 +51,7 @@ export default function MediaVisual({
           muted
           loop
           playsInline
-          aria-label={label}
+          aria-hidden="true"
         />
       </div>
     );

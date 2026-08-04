@@ -36,7 +36,7 @@ export default async function ShopPage() {
       {/* Shop all */}
       <section>
         <div className="mb-6 flex items-end justify-between border-b border-sun-terracotta/20 pb-2">
-          <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-charcoal/50 uppercase">
+          <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-charcoal/70 uppercase">
             {products.length} Objects
           </span>
         </div>

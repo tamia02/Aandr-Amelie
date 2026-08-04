@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { nav, socials } from "@/data/site";
 import NewsletterForm from "./NewsletterForm";
 import SocialIcon from "./SocialIcon";
@@ -8,14 +9,18 @@ export default function Footer() {
     <footer className="w-full border-t border-outline-variant/30 bg-cream-deep py-10">
       <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 px-5 sm:px-10 md:grid-cols-12 lg:px-16">
         <div className="md:col-span-4">
-          <div className="mb-6 block">
-            <img
+          <Link
+            href="/"
+            className="mb-6 block hover:opacity-85 transition-opacity"
+          >
+            <Image
               src="/images/logo.png"
               alt="Aandré Amelie Skincare Logo"
-              loading="lazy"
+              width={140}
+              height={36}
               className="h-9 w-auto object-contain"
             />
-          </div>
+          </Link>
           <p className="mb-8 max-w-xs text-sm text-charcoal/70">
             Elevating daily skincare into a sacred ritual of self-discovery
             and balance.
@@ -109,15 +114,15 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="md:col-span-12 mt-8 text-center text-[10px] text-charcoal/50 uppercase tracking-widest border-t border-outline-variant/30 pt-8">
+        <div className="md:col-span-12 mt-8 text-center text-[10px] text-charcoal/70 uppercase tracking-widest border-t border-outline-variant/30 pt-8">
           <p>Registered Address: 123 Skincare Avenue, Mumbai, Maharashtra 400001 | GSTIN: 27AABCU9603R1ZM</p>
         </div>
 
-        <div className="mt-4 flex flex-col gap-4 text-xs tracking-[0.1em] text-charcoal/50 uppercase sm:flex-row sm:items-center sm:justify-between md:col-span-12">
+        <div className="mt-4 flex flex-col gap-4 text-xs tracking-[0.1em] text-charcoal/70 uppercase sm:flex-row sm:items-center sm:justify-between md:col-span-12">
           <p>© {new Date().getFullYear()} Aandré Amelie Skincare. All rights reserved.</p>
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
             <p>All Shades, All Souls.</p>
-            <span className="hidden sm:inline text-charcoal/30">|</span>
+            <span className="hidden sm:inline text-charcoal/70">|</span>
             <Link 
               href="https://vaslix.com" 
               target="_blank" 

@@ -223,7 +223,7 @@ export default function ProductPage({
                 {product.beforeAfterImage ? (
                   <img src={product.beforeAfterImage} alt={`Before and After using ${product.name}`} loading="lazy" className="object-cover w-full h-full" />
                 ) : (
-                  <div className="text-center p-6 text-charcoal/50">
+                  <div className="text-center p-6 text-charcoal/70">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-12 h-12 mx-auto mb-3 opacity-50">
                       <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
                       <circle cx="8.5" cy="8.5" r="1.5" />
@@ -241,12 +241,12 @@ export default function ProductPage({
                 <div className="flex items-center gap-4">
                   <div className="flex flex-col">
                     <span className="text-xl font-serif text-moon-indigo">94%</span>
-                    <span className="text-[10px] tracking-wider uppercase text-charcoal/50">Saw Improvement</span>
+                    <span className="text-[10px] tracking-wider uppercase text-charcoal/70">Saw Improvement</span>
                   </div>
                   <div className="w-px h-8 bg-outline-variant/30"></div>
                   <div className="flex flex-col">
                     <span className="text-xl font-serif text-moon-indigo">14 Days</span>
-                    <span className="text-[10px] tracking-wider uppercase text-charcoal/50">To Visible Results</span>
+                    <span className="text-[10px] tracking-wider uppercase text-charcoal/70">To Visible Results</span>
                   </div>
                 </div>
               </div>
@@ -351,7 +351,7 @@ export default function ProductPage({
                     className="flex flex-col justify-between gap-1 border-b border-outline-variant/30 pb-3 sm:flex-row sm:items-baseline sm:gap-4"
                   >
                     <span>{item.title}</span>
-                    <span className="max-w-sm text-right font-sans text-xs font-normal tracking-wide text-charcoal/50 not-italic sm:max-w-md">
+                    <span className="max-w-sm text-right font-sans text-xs font-normal tracking-wide text-charcoal/70 not-italic sm:max-w-md">
                       {item.description}
                     </span>
                   </li>
@@ -388,7 +388,7 @@ export default function ProductPage({
       <div className="relative">
         <ProductIngredients ingredients={product.ingredientsList} />
         <div className="mx-auto max-w-[1440px] px-5 sm:px-10 lg:px-16 -mt-8 pb-10">
-          <p className="text-[10px] text-charcoal/50 max-w-2xl">
+          <p className="text-[10px] text-charcoal/70 max-w-2xl">
             * All botanical ingredients are ethically sourced and tested for purity and potency. Our formulations undergo strict quality control to ensure they are free from heavy metals, synthetic fragrances, and harmful preservatives. Efficacy claims are based on traditional Ayurvedic texts and continuous customer feedback.
           </p>
         </div>
@@ -415,7 +415,7 @@ export default function ProductPage({
                 <Reveal delay={30}>
                   <div className="relative aspect-video bg-charcoal/5 w-full flex items-center justify-center overflow-hidden border border-outline-variant/20 mb-8">
                     {/* Placeholder for video until actual video is provided */}
-                    <div className="text-center p-6 text-charcoal/50 absolute z-10">
+                    <div className="text-center p-6 text-charcoal/70 absolute z-10">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-12 h-12 mx-auto mb-3 opacity-50">
                         <circle cx="12" cy="12" r="10" />
                         <polygon points="10 8 16 12 10 16 10 8" />

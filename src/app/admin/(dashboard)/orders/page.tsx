@@ -59,7 +59,7 @@ export default async function AdminOrdersPage({
                 <span className="text-charcoal/60">{order.customerName}</span>
               </span>
               <span className="flex items-center gap-4">
-                <span className="text-charcoal/50">
+                <span className="text-charcoal/70">
                   {order.createdAt.toLocaleDateString("en-IN")}
                 </span>
                 <span className="text-charcoal/60 capitalize">{order.status}</span>
@@ -69,7 +69,7 @@ export default async function AdminOrdersPage({
           </li>
         ))}
         {orders.length === 0 && (
-          <li className="px-5 py-4 text-sm text-charcoal/50">No orders found.</li>
+          <li className="px-5 py-4 text-sm text-charcoal/70">No orders found.</li>
         )}
       </ul>
     </div>

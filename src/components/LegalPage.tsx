@@ -13,7 +13,7 @@ export function LegalLayout({
         Legal
       </span>
       <h1 className="mb-4 font-serif text-5xl leading-tight">{title}</h1>
-      <p className="mb-8 text-sm text-charcoal/50">Last updated: {lastUpdated}</p>
+      <p className="mb-8 text-sm text-charcoal/70">Last updated: {lastUpdated}</p>
       <div className="space-y-10">{children}</div>
     </div>
   );

@@ -40,7 +40,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      <ol className="flex flex-wrap items-center gap-2 text-xs font-semibold tracking-wider text-charcoal/50 uppercase">
+      <ol className="flex flex-wrap items-center gap-2 text-xs font-semibold tracking-wider text-charcoal/70 uppercase">
         <li>
           <Link href="/" className="transition-colors hover:text-moon-indigo">
             Home

@@ -370,7 +370,7 @@ export default function CheckoutPage() {
               {submitting ? "Processing…" : "Place Order (Pay Now)"}
             </button>
 
-            <p className="text-center text-xs text-charcoal/50">
+            <p className="text-center text-xs text-charcoal/70">
               By placing your order, you agree to our{" "}
               <Link href="/terms" className="underline hover:text-moon-indigo">
                 Terms &amp; Conditions

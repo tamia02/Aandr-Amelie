@@ -21,7 +21,7 @@ export default async function AdminProductsPage() {
       <div className="mt-6 overflow-x-auto bg-cream">
         <table className="w-full min-w-[560px] text-sm">
           <thead>
-            <tr className="border-b border-charcoal/10 text-left text-xs font-semibold uppercase tracking-[0.1em] text-charcoal/50">
+            <tr className="border-b border-charcoal/10 text-left text-xs font-semibold uppercase tracking-[0.1em] text-charcoal/70">
               <th className="px-5 py-3">Product</th>
               <th className="px-5 py-3">Price (paise) / Stock</th>
             </tr>
@@ -33,7 +33,7 @@ export default async function AdminProductsPage() {
                 <tr key={product.slug} className="border-b border-charcoal/10 last:border-0">
                   <td className="px-5 py-4">
                     <p className="font-medium">{name}</p>
-                    <p className="text-xs text-charcoal/50">{product.slug}</p>
+                    <p className="text-xs text-charcoal/70">{product.slug}</p>
                   </td>
                   <td className="px-5 py-4">
                     <form
@@ -70,7 +70,7 @@ export default async function AdminProductsPage() {
             })}
           </tbody>
         </table>
-        <p className="px-5 py-3 text-xs text-charcoal/50">
+        <p className="px-5 py-3 text-xs text-charcoal/70">
           Price is stored in paise (₹1 = 100). Enter e.g. 89900 for ₹899.
         </p>
       </div>

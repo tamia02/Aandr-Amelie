@@ -30,7 +30,7 @@ export default function ReviewList({ reviews, productName }: { reviews: Review[]
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-3">
               <span className="font-serif text-lg text-charcoal">{review.authorName}</span>
-              <span className="text-xs text-charcoal/50">
+              <span className="text-xs text-charcoal/70">
                 {new Date(review.createdAt).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',

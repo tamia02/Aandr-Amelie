@@ -54,7 +54,7 @@ export default async function AdminDashboardPage() {
       <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
         {stats.map((stat) => (
           <div key={stat.label} className="bg-cream p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/50">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/70">
               {stat.label}
             </p>
             <p className="mt-2 font-serif text-2xl text-charcoal">{stat.value}</p>
@@ -64,7 +64,7 @@ export default async function AdminDashboardPage() {
 
       {lowStockProducts.length > 0 && (
         <div className="mt-10">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/50">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/70">
             Low stock
           </h2>
           <ul className="mt-3 space-y-2">
@@ -80,7 +80,7 @@ export default async function AdminDashboardPage() {
 
       <div className="mt-10">
         <div className="flex items-center justify-between">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/50">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/70">
             Recent orders
           </h2>
           <Link href="/admin/orders" className="text-xs font-semibold text-moon-indigo hover:underline">
@@ -106,14 +106,14 @@ export default async function AdminDashboardPage() {
             </li>
           ))}
           {recentOrders.length === 0 && (
-            <li className="px-5 py-4 text-sm text-charcoal/50">No orders yet.</li>
+            <li className="px-5 py-4 text-sm text-charcoal/70">No orders yet.</li>
           )}
         </ul>
       </div>
 
       {recentReviews.length > 0 && (
         <div className="mt-10">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/50">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/70">
             Recent Reviews
           </h2>
           <ul className="mt-3 divide-y divide-charcoal/10 bg-cream">

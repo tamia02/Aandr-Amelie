@@ -196,7 +196,7 @@ export default function Home() {
                   {v.icon}
                 </svg>
               </div>
-              <h4 className="font-serif text-xl text-charcoal italic">{v.title}</h4>
+              <h3 className="font-serif text-xl text-charcoal italic">{v.title}</h3>
               <p className="font-sans text-xs leading-relaxed text-charcoal/70">{v.text}</p>
             </Reveal>
           ))}
