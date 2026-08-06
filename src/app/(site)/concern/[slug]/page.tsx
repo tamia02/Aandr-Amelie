@@ -51,6 +51,11 @@ export default async function ConcernPage({
   const commerce = await getCommerceForSlugs(matchingProducts.map((p) => p.slug));
   const priceOf = (productSlug: string) =>
     commerce[productSlug] ? formatINR(commerce[productSlug].priceCents) : undefined;
+  
+  const comparePriceOf = (productSlug: string) =>
+    commerce[productSlug] && commerce[productSlug].compareAtPriceCents
+      ? formatINR(commerce[productSlug].compareAtPriceCents)
+      : undefined;
 
   const collectionSchema = {
     "@context": "https://schema.org",
@@ -112,6 +117,7 @@ export default async function ConcernPage({
                     <ProductCard
                       product={product}
                       price={priceOf(product.slug)}
+                      compareAtPrice={comparePriceOf(product.slug)}
                       ratio="aspect-[4/5]"
                     />
                   </div>

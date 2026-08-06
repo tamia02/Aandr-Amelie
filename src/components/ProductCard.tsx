@@ -7,10 +7,12 @@ import ShareButton from "./ShareButton";
 export default function ProductCard({
   product,
   price,
+  compareAtPrice,
   ratio = "aspect-[4/5]",
 }: {
   product: Product;
   price?: string;
+  compareAtPrice?: string;
   ratio?: string;
 }) {
   return (
@@ -48,9 +50,16 @@ export default function ProductCard({
           <p className="mt-2 text-xs sm:text-sm text-charcoal/70 line-clamp-2 leading-relaxed">{product.hook}</p>
         </div>
         {price && (
-          <span className="mt-4 block shrink-0 text-sm sm:text-base font-semibold text-charcoal">
-            {price}
-          </span>
+          <div className="mt-4 flex shrink-0 items-center justify-center gap-2">
+            <span className="text-sm sm:text-base font-semibold text-charcoal">
+              {price}
+            </span>
+            {compareAtPrice && (
+              <span className="text-xs sm:text-sm text-charcoal/70 line-through">
+                {compareAtPrice}
+              </span>
+            )}
+          </div>
         )}
       </div>
     </Link>

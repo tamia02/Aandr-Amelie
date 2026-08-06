@@ -20,6 +20,11 @@ export default async function ShopPage() {
   const priceOf = (slug: string) =>
     commerce[slug] ? formatINR(commerce[slug].priceCents) : undefined;
 
+  const comparePriceOf = (slug: string) =>
+    commerce[slug] && commerce[slug].compareAtPriceCents
+      ? formatINR(commerce[slug].compareAtPriceCents)
+      : undefined;
+
   const signature = getProduct(SIGNATURE_SLUG)!;
   const rest = products.filter((p) => p.slug !== SIGNATURE_SLUG);
 
@@ -43,11 +48,11 @@ export default async function ShopPage() {
 
         <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-4 sm:gap-y-10 lg:grid-cols-5 lg:gap-x-6 lg:gap-y-12">
           <Reveal>
-            <ProductCard product={signature} price={priceOf(signature.slug)} ratio="aspect-square" />
+            <ProductCard product={signature} price={priceOf(signature.slug)} compareAtPrice={comparePriceOf(signature.slug)} ratio="aspect-square" />
           </Reveal>
           {rest.map((product, i) => (
             <Reveal key={product.slug} delay={(i + 1) * 50}>
-              <ProductCard product={product} price={priceOf(product.slug)} ratio="aspect-square" />
+              <ProductCard product={product} price={priceOf(product.slug)} compareAtPrice={comparePriceOf(product.slug)} ratio="aspect-square" />
             </Reveal>
           ))}
         </div>

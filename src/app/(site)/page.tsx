@@ -258,6 +258,11 @@ async function ProductGrid() {
   const priceOf = (slug: string) =>
     commerce[slug] ? formatINR(commerce[slug].priceCents) : undefined;
 
+  const comparePriceOf = (slug: string) =>
+    commerce[slug] && commerce[slug].compareAtPriceCents
+      ? formatINR(commerce[slug].compareAtPriceCents)
+      : undefined;
+
   return (
     <section className="bg-cream-deep px-5 py-12 sm:px-10 sm:py-8">
       <div className="mx-auto max-w-[1440px]">
@@ -280,7 +285,7 @@ async function ProductGrid() {
         <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-16 lg:grid-cols-4">
           {featuredProducts.map((product, i) => (
             <Reveal key={product.slug} delay={i * 90}>
-              <ProductCard product={product} price={priceOf(product.slug)} ratio="aspect-[4/5]" />
+              <ProductCard product={product} price={priceOf(product.slug)} compareAtPrice={comparePriceOf(product.slug)} ratio="aspect-[4/5]" />
             </Reveal>
           ))}
         </div>

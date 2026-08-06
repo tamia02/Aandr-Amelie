@@ -15,11 +15,15 @@ export async function getCommerceForSlugs(
 ): Promise<Record<string, Commerce>> {
   const fallback: Record<string, Commerce> = {};
   for (const slug of slugs) {
+    let priceCents = 85000;
+    
     if (slug === "the-trial-pack") {
-      fallback[slug] = { slug, priceCents: 100000, compareAtPriceCents: null, currency: "INR", stock: 50 };
-    } else {
-      fallback[slug] = { slug, priceCents: 210000, compareAtPriceCents: null, currency: "INR", stock: 50 };
+      priceCents = 45000;
+    } else if (slug.includes("mitti") || slug.includes("clay")) {
+      priceCents = 25000;
     }
+
+    fallback[slug] = { slug, priceCents, compareAtPriceCents: 210000, currency: "INR", stock: 50 };
   }
 
   try {
