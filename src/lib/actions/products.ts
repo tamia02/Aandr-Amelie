@@ -15,15 +15,11 @@ export async function getCommerceForSlugs(
 ): Promise<Record<string, Commerce>> {
   const fallback: Record<string, Commerce> = {};
   for (const slug of slugs) {
-    let priceCents = 85000;
-    
     if (slug === "the-trial-pack") {
-      priceCents = 45000;
-    } else if (slug.includes("mitti") || slug.includes("clay")) {
-      priceCents = 25000;
+      fallback[slug] = { slug, priceCents: 90000, compareAtPriceCents: 100000, currency: "INR", stock: 50 };
+    } else {
+      fallback[slug] = { slug, priceCents: 189000, compareAtPriceCents: 210000, currency: "INR", stock: 50 };
     }
-
-    fallback[slug] = { slug, priceCents, compareAtPriceCents: 210000, currency: "INR", stock: 50 };
   }
 
   try {
@@ -32,7 +28,11 @@ export async function getCommerceForSlugs(
     });
     
     if (rows.length > 0) {
-      const dbResult = Object.fromEntries(rows.map((row) => [row.slug, row]));
+      const dbResult = Object.fromEntries(rows.map((row) => {
+        const compareAtPriceCents = row.compareAtPriceCents || row.priceCents;
+        const priceCents = Math.round(compareAtPriceCents * 0.9);
+        return [row.slug, { ...row, priceCents, compareAtPriceCents }];
+      }));
       // Merge db results over fallbacks
       return { ...fallback, ...dbResult };
     }
