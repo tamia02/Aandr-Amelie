@@ -80,9 +80,11 @@ export async function placeOrder(
     });
 
     const subtotalCents = orderItems.reduce((sum, i) => sum + i.totalCents, 0);
+    const discountCents = Math.floor(subtotalCents * 0.10);
+    const discountedSubtotal = subtotalCents - discountCents;
     const shippingCents =
-      subtotalCents >= FREE_SHIPPING_THRESHOLD_CENTS ? 0 : FLAT_SHIPPING_CENTS;
-    const totalCents = subtotalCents + shippingCents;
+      discountedSubtotal >= FREE_SHIPPING_THRESHOLD_CENTS ? 0 : FLAT_SHIPPING_CENTS;
+    const totalCents = discountedSubtotal + shippingCents;
 
     const order = await prisma.$transaction(async (tx) => {
       const customer = await tx.customer.upsert({

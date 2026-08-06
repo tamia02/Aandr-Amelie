@@ -8,11 +8,15 @@ const prisma = new PrismaClient({ adapter });
 // seeded at the same price as the other 100ml elixirs as a placeholder.
 // Confirm the real price before launch.
 const products = [
-  { slug: "royal-rose-elixir", priceCents: 210000, stock: 50 },
-  { slug: "glow-quinch-elixir", priceCents: 210000, stock: 50 },
-  { slug: "acne-shield", priceCents: 210000, stock: 50 },
-  { slug: "vital-grow-scalp", priceCents: 210000, stock: 50 },
-  { slug: "the-trial-pack", priceCents: 100000, stock: 50 },
+  { slug: "royal-rose-elixir", priceCents: 85000, stock: 50 },
+  { slug: "glow-quinch-elixir", priceCents: 85000, stock: 50 },
+  { slug: "acne-shield", priceCents: 85000, stock: 50 },
+  { slug: "vital-grow-scalp", priceCents: 85000, stock: 50 },
+  { slug: "the-trial-pack", priceCents: 55000, stock: 50 },
+  { slug: "super-fine-multani-mitti", priceCents: 25000, stock: 50 },
+  { slug: "imported-pink-clay", priceCents: 25000, stock: 50 },
+  { slug: "neem-and-multani-mitti", priceCents: 25000, stock: 50 },
+  { slug: "rose-and-sandal-multani-mitti", priceCents: 25000, stock: 50 },
 ];
 
 async function main() {

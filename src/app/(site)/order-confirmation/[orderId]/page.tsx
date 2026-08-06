@@ -54,6 +54,12 @@ export default async function OrderConfirmationPage({
               <span>Subtotal</span>
               <span>{formatINR(order.subtotalCents)}</span>
             </div>
+            {(order.subtotalCents + order.shippingCents - order.totalCents) > 0 && (
+              <div className="flex justify-between text-sun-terracotta-dark">
+                <span>10% Discount (Applied)</span>
+                <span>-{formatINR(order.subtotalCents + order.shippingCents - order.totalCents)}</span>
+              </div>
+            )}
             <div className="flex justify-between text-charcoal/70">
               <span>Shipping</span>
               <span>

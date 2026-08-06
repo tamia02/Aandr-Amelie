@@ -76,9 +76,11 @@ export default function CheckoutPage() {
     const price = commerce[item.slug]?.priceCents ?? 0;
     return sum + price * item.qty;
   }, 0);
+  const discountCents = Math.floor(subtotalCents * 0.10);
+  const discountedSubtotal = subtotalCents - discountCents;
   const shippingCents =
-    subtotalCents >= FREE_SHIPPING_THRESHOLD_CENTS ? 0 : FLAT_SHIPPING_CENTS;
-  const totalCents = subtotalCents + shippingCents;
+    discountedSubtotal >= FREE_SHIPPING_THRESHOLD_CENTS ? 0 : FLAT_SHIPPING_CENTS;
+  const totalCents = discountedSubtotal + shippingCents;
 
   const handleField =
     (field: keyof typeof form) =>
@@ -406,6 +408,12 @@ export default function CheckoutPage() {
               <span>Subtotal</span>
               <span>{formatINR(subtotalCents)}</span>
             </div>
+            {discountCents > 0 && (
+              <div className="flex justify-between text-sun-terracotta-dark">
+                <span>10% Discount (Applied)</span>
+                <span>-{formatINR(discountCents)}</span>
+              </div>
+            )}
             <div className="flex justify-between text-charcoal/70">
               <span>Shipping</span>
               <span>{shippingCents === 0 ? "Free" : formatINR(shippingCents)}</span>
