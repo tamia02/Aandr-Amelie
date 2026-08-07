@@ -36,6 +36,7 @@ export default function CheckoutPage() {
   const [submitting, setSubmitting] = useState(false);
   const [previousAddress, setPreviousAddress] = useState<any>(null);
   const [showAddressPrompt, setShowAddressPrompt] = useState(false);
+  const [discountUnlocked, setDiscountUnlocked] = useState(false);
   const paymentMethod = "razorpay";
 
   useEffect(() => {
@@ -52,6 +53,10 @@ export default function CheckoutPage() {
           setShowAddressPrompt(true);
         }
       });
+    }
+
+    if (localStorage.getItem("hasSubmittedNewsletter") === "true") {
+      setDiscountUnlocked(true);
     }
   }, [items]);
 
@@ -76,7 +81,7 @@ export default function CheckoutPage() {
     const price = commerce[item.slug]?.priceCents ?? 0;
     return sum + price * item.qty;
   }, 0);
-  const discountCents = Math.floor(subtotalCents * 0.10);
+  const discountCents = discountUnlocked ? Math.floor(subtotalCents * 0.10) : 0;
   const discountedSubtotal = subtotalCents - discountCents;
   const shippingCents =
     discountedSubtotal >= FREE_SHIPPING_THRESHOLD_CENTS ? 0 : FLAT_SHIPPING_CENTS;
@@ -179,9 +184,9 @@ export default function CheckoutPage() {
 
           {showAddressPrompt && previousAddress && (
             <div className="mt-8 rounded-sm border border-moon-indigo/20 bg-moon-indigo/5 p-6">
-              <h4 className="font-serif text-lg text-moon-indigo">Welcome back!</h4>
+              <h4 className="font-serif text-lg text-moon-indigo">Saved Address</h4>
               <p className="mt-2 text-sm text-charcoal/70">
-                Would you like to use your previous address?
+                You can use this saved address or enter a new one.
               </p>
               <div className="mt-3 text-sm text-charcoal/60">
                 <p>{previousAddress.customerName}</p>
@@ -206,14 +211,14 @@ export default function CheckoutPage() {
                   }}
                   className="rounded-sm bg-moon-indigo px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition-opacity hover:opacity-90"
                 >
-                  Yes, Use Address
+                  Use This Address
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowAddressPrompt(false)}
                   className="rounded-sm border border-charcoal/20 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-charcoal/70 transition-colors hover:border-charcoal hover:text-charcoal"
                 >
-                  No, Enter New
+                  Enter New Address
                 </button>
               </div>
             </div>

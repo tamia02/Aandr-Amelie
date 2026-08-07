@@ -14,6 +14,7 @@ export default function CartPage() {
   const { items, updateQty, removeItem } = useCart();
   const [commerce, setCommerce] = useState<Record<string, Commerce>>({});
   const [loading, setLoading] = useState(true);
+  const [discountUnlocked, setDiscountUnlocked] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -22,6 +23,12 @@ export default function CartPage() {
       setCommerce(result);
       setLoading(false);
     });
+
+    const unlocked = localStorage.getItem("hasSubmittedNewsletter") === "true";
+    if (unlocked) {
+      setDiscountUnlocked(true);
+    }
+
     return () => {
       cancelled = true;
     };
@@ -116,6 +123,22 @@ export default function CartPage() {
               <p className="w-full max-w-xs text-xs text-charcoal/70 sm:w-64">
                 Shipping & taxes calculated at checkout.
               </p>
+
+              {!discountUnlocked && (
+                <div className="mt-4 w-full max-w-xs sm:w-64 rounded-sm border border-moon-indigo/20 bg-moon-indigo/5 p-4 text-center">
+                  <p className="text-xs text-moon-indigo mb-3 font-medium">Unlock your 10% discount!</p>
+                  <button
+                    onClick={() => {
+                      localStorage.setItem("hasSubmittedNewsletter", "true");
+                      setDiscountUnlocked(true);
+                    }}
+                    className="w-full rounded-sm bg-moon-indigo py-2 text-xs font-semibold tracking-widest text-white uppercase transition-opacity hover:opacity-90"
+                  >
+                    Unlock 10% Off
+                  </button>
+                </div>
+              )}
+
               <div className="mt-4 w-full max-w-xs sm:w-64">
                 <Button href="/checkout" className="w-full justify-center">
                   Proceed to Checkout
