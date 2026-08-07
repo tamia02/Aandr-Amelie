@@ -18,6 +18,8 @@ import ShareButton from "./ShareButton";
 import Link from "next/link";
 import { journalArticles } from "@/data/journal";
 import { formatINR } from "@/lib/money";
+import NewsletterPopup from "./NewsletterPopup";
+import { useState, useEffect } from "react";
 
 const SKIN_ICONS = [
   <path key="sun" d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" />,
@@ -36,6 +38,14 @@ export default function ProductPage({
 }) {
   const composition = product.benefitSections[0];
   const restSections = product.benefitSections.slice(1);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [discountUnlocked, setDiscountUnlocked] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("hasSubmittedNewsletter") === "true") {
+      setDiscountUnlocked(true);
+    }
+  }, []);
 
   // Filter journal articles linked to this product
   const relatedArticles = journalArticles.filter(
@@ -187,6 +197,27 @@ export default function ProductPage({
             </div>
           )}
           <AddToCart commerce={commerce} />
+          
+          {!discountUnlocked && (
+            <button
+              onClick={() => setIsPopupOpen(true)}
+              className="mt-4 w-full border border-sun-terracotta text-sun-terracotta-dark py-3 text-xs font-semibold tracking-widest uppercase transition-colors hover:bg-sun-terracotta hover:text-cream"
+            >
+              Get an additional 10% Off
+            </button>
+          )}
+
+          {discountUnlocked && (
+            <div className="mt-4 w-full bg-moon-indigo/10 text-moon-indigo py-3 text-center text-xs font-semibold tracking-widest uppercase border border-moon-indigo/20">
+              10% Discount Unlocked!
+            </div>
+          )}
+
+          <NewsletterPopup 
+            isOpen={isPopupOpen} 
+            onClose={() => setIsPopupOpen(false)} 
+            onDiscountUnlocked={() => setDiscountUnlocked(true)} 
+          />
           
           {/* Marquee USP Bar */}
           <div className="mt-6 w-full overflow-hidden border-y border-outline-variant/30 py-3 bg-cream-deep/50">

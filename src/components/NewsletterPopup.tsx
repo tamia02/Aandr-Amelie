@@ -4,31 +4,15 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { submitNewsletterForm } from "@/lib/actions/newsletter";
 
-export default function NewsletterPopup() {
-  const [isOpen, setIsOpen] = useState(false);
+export default function NewsletterPopup({ isOpen, onClose, onDiscountUnlocked }: { isOpen: boolean, onClose: () => void, onDiscountUnlocked?: () => void }) {
   const [submitted, setSubmitted] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [error, setError] = useState<string | null>(null);
 
-  const pathname = usePathname();
-
-  useEffect(() => {
-    // Only show on individual product pages
-    if (pathname && pathname.startsWith("/shop/") && pathname !== "/shop") {
-      const hasSubmitted = localStorage.getItem("hasSubmittedNewsletter");
-      if (!hasSubmitted) {
-        // slight delay to let the page load visually
-        const timer = setTimeout(() => setIsOpen(true), 2000);
-        return () => clearTimeout(timer);
-      }
-    }
-  }, [pathname]);
-
   const handleClose = () => {
-    setIsOpen(false);
-    localStorage.setItem("hasSubmittedNewsletter", "true");
+    onClose();
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -51,8 +35,12 @@ export default function NewsletterPopup() {
     localStorage.setItem("hasSubmittedNewsletter", "true");
     localStorage.setItem("userEmail", email);
     
+    if (onDiscountUnlocked) {
+      onDiscountUnlocked();
+    }
+    
     setTimeout(() => {
-      setIsOpen(false);
+      onClose();
     }, 2500);
   };
 

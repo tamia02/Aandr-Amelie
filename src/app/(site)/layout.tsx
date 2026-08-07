@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/lib/cart-context";
 import { WishlistProvider } from "@/lib/wishlist-context";
-import NewsletterPopup from "@/components/NewsletterPopup";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function SiteLayout({
@@ -17,7 +16,6 @@ export default function SiteLayout({
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
-          <NewsletterPopup />
           <WhatsAppButton />
         </div>
       </WishlistProvider>
