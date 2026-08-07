@@ -207,9 +207,12 @@ export default function ProductPage({
             </button>
           )}
 
-          {discountUnlocked && (
-            <div className="mt-4 w-full bg-moon-indigo/10 text-moon-indigo py-3 text-center text-xs font-semibold tracking-widest uppercase border border-moon-indigo/20">
-              10% Discount Unlocked!
+          {discountUnlocked && commerce && (
+            <div className="mt-4 w-full bg-moon-indigo/10 text-moon-indigo py-3 px-4 text-center text-xs font-semibold tracking-widest uppercase border border-moon-indigo/20">
+              10% Discount Unlocked! <br className="sm:hidden" />
+              <span className="inline-block mt-1 sm:mt-0 sm:ml-2">
+                {formatINR(commerce.priceCents)} <span className="mx-1">→</span> {formatINR(Math.round(commerce.priceCents * 0.9))}
+              </span>
             </div>
           )}
 
