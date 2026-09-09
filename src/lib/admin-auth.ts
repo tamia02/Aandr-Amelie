@@ -16,9 +16,9 @@ function sign(payload: string): string {
   return createHmac("sha256", getSecret()).update(payload).digest("hex");
 }
 
-export function createSessionToken(): string {
+export function createSessionToken(email: string): string {
   const expiresAt = Date.now() + SESSION_TTL_MS;
-  const payload = `admin.${expiresAt}`;
+  const payload = `${email}.${expiresAt}`;
   return `${payload}.${sign(payload)}`;
 }
 
@@ -38,9 +38,17 @@ export function verifySessionToken(token: string | undefined): boolean {
     return false;
   }
 
-  const [, expiresAtStr] = payload.split(".");
+  const [email, expiresAtStr] = payload.split(".");
   const expiresAt = Number(expiresAtStr);
   return Number.isFinite(expiresAt) && Date.now() < expiresAt;
+}
+
+export function getSessionEmail(token: string | undefined): string | null {
+  if (!verifySessionToken(token)) return null;
+  const lastDot = token!.lastIndexOf(".");
+  const payload = token!.slice(0, lastDot);
+  const [email] = payload.split(".");
+  return email;
 }
 
 /**
@@ -48,19 +56,30 @@ export function verifySessionToken(token: string | undefined): boolean {
  * bypass proxy.ts matchers scoped to page navigation. Every admin mutation
  * must call this itself rather than trusting the proxy gate alone.
  */
-export async function requireAdmin(): Promise<void> {
+export async function requireAdmin(): Promise<string> {
   const session = (await cookies()).get(ADMIN_COOKIE_NAME)?.value;
-  if (!verifySessionToken(session)) {
+  const email = getSessionEmail(session);
+  if (!email) {
     throw new Error("Unauthorized");
   }
+  return email;
 }
 
-export function checkPassword(candidate: string): boolean {
-  const expected = process.env.ADMIN_PASSWORD;
-  if (!expected) return false;
+export async function verifyAdminCredentials(email: string, candidate: string): Promise<boolean> {
+  const { prisma } = await import("./db");
+  const admin = await prisma.adminUser.findUnique({ where: { email } });
+  if (!admin) return false;
 
-  const candidateBuf = Buffer.from(candidate);
-  const expectedBuf = Buffer.from(expected);
-  if (candidateBuf.length !== expectedBuf.length) return false;
-  return timingSafeEqual(candidateBuf, expectedBuf);
+  const [salt, expectedHash] = admin.passwordHash.split(":");
+  if (!salt || !expectedHash) return false;
+
+  const candidateKey = createHmac("sha256", getSecret()).update(candidate).digest("hex");
+  // The seed script used scryptSync for derived key. Wait, in seed script:
+  // const derivedKey = crypto.scryptSync(defaultPassword, salt, 64);
+  // We need to use scryptSync to verify!
+  const crypto = await import("crypto");
+  const derivedKey = crypto.scryptSync(candidate, salt, 64).toString("hex");
+  
+  if (derivedKey.length !== expectedHash.length) return false;
+  return timingSafeEqual(Buffer.from(derivedKey, "hex"), Buffer.from(expectedHash, "hex"));
 }

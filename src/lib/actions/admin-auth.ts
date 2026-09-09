@@ -2,7 +2,7 @@
 
 import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { ADMIN_COOKIE_NAME, checkPassword, createSessionToken } from "@/lib/admin-auth";
+import { ADMIN_COOKIE_NAME, verifyAdminCredentials, createSessionToken } from "@/lib/admin-auth";
 import { checkRateLimit } from "@/lib/rate-limit";
 
 export async function adminLogin(
@@ -15,12 +15,19 @@ export async function adminLogin(
     return { error: "Too many attempts. Please try again later." };
   }
 
+  const email = String(formData.get("email") ?? "").trim();
   const password = String(formData.get("password") ?? "");
-  if (!checkPassword(password)) {
-    return { error: "Incorrect password." };
+  
+  if (!email || !password) {
+    return { error: "Email and password are required." };
   }
 
-  (await cookies()).set(ADMIN_COOKIE_NAME, createSessionToken(), {
+  const isValid = await verifyAdminCredentials(email, password);
+  if (!isValid) {
+    return { error: "Invalid email or password." };
+  }
+
+  (await cookies()).set(ADMIN_COOKIE_NAME, createSessionToken(email), {
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",

@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { href: "/admin/products", label: "Products" },
   { href: "/admin/customers", label: "Customers" },
   { href: "/admin/reviews", label: "Reviews" },
+  { href: "/admin/settings", label: "Settings" },
 ];
 
 export default function AdminDashboardLayout({

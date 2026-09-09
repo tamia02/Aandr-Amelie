@@ -16,12 +16,22 @@ export default function AdminLoginPage() {
         <p className="mt-1 text-sm text-charcoal/60">Aandré Amelie back office</p>
 
         <label className="mt-8 block text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/60">
+          Email
+        </label>
+        <input
+          type="email"
+          name="email"
+          autoFocus
+          required
+          className="mt-2 w-full border border-charcoal/20 bg-transparent px-4 py-3 text-sm text-charcoal outline-none focus:border-moon-indigo"
+        />
+
+        <label className="mt-4 block text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/60">
           Password
         </label>
         <input
           type="password"
           name="password"
-          autoFocus
           required
           className="mt-2 w-full border border-charcoal/20 bg-transparent px-4 py-3 text-sm text-charcoal outline-none focus:border-moon-indigo"
         />

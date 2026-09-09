@@ -6,6 +6,7 @@ import { prisma } from "@/lib/db";
 import Razorpay from "razorpay";
 import { products as catalog } from "@/data/products";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { createOrder as syncOrderToIThink, checkServiceability } from "@/lib/ithinklogistics";
 
 const FREE_SHIPPING_THRESHOLD_CENTS = 49900; // ₹499
 const FLAT_SHIPPING_CENTS = 5000; // ₹50
@@ -143,6 +144,17 @@ export async function placeOrder(
       return created;
     });
 
+    // If COD, sync to iThink Logistics immediately since order is confirmed
+    if (data.paymentMethod === "cod") {
+      const orderWithItems = await prisma.order.findUnique({
+        where: { id: order.id },
+        include: { items: true },
+      });
+      if (orderWithItems) {
+        await syncOrderToIThink(orderWithItems);
+      }
+    }
+
     if (data.paymentMethod === "razorpay") {
       if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
         console.error("placeOrder: RAZORPAY_KEY_ID/RAZORPAY_KEY_SECRET not configured");
@@ -206,9 +218,9 @@ export async function checkPincode(
   if (!/^\d{6}$/.test(pincode.trim())) {
     return { available: false, message: "Enter a valid 6-digit pincode" };
   }
-  // Mock serviceability check — always available for now.
-  // Swap for a real courier API (Shiprocket/Delhivery) when ready.
-  return { available: true, message: "Delivery available. Estimated 3-5 days." };
+  
+  // Real serviceability check using iThink Logistics API
+  return await checkServiceability(pincode.trim());
 }
 
 export async function verifyRazorpayPayment(
@@ -266,6 +278,9 @@ export async function verifyRazorpayPayment(
         });
       }
     });
+
+    // Sync prepaid order to iThink Logistics now that it's confirmed
+    await syncOrderToIThink(order);
 
     // Set short-lived proof for confirmation page
     (await cookies()).set(`order_access_${order.id}`, "1", {

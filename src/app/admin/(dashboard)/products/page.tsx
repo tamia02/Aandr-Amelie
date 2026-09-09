@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/db";
 import { products as catalog } from "@/data/products";
-import { updateProduct } from "@/lib/actions/admin-products";
+import { updateProduct, createProduct } from "@/lib/actions/admin-products";
 import DbUnavailableNotice from "@/components/DbUnavailableNotice";
 
 export const dynamic = "force-dynamic";
@@ -18,7 +18,46 @@ export default async function AdminProductsPage() {
     <div className="mx-auto max-w-4xl">
       <h1 className="font-serif text-2xl text-charcoal">Products</h1>
 
-      <div className="mt-6 overflow-x-auto bg-cream">
+      <div className="mt-8 bg-cream p-6 shadow-sm">
+        <h2 className="text-lg font-serif text-charcoal mb-4">Add New Product to Database</h2>
+        <form action={createProduct} className="flex flex-col sm:flex-row gap-4">
+          <input
+            type="text"
+            name="slug"
+            placeholder="Product Slug (e.g. new-elixir)"
+            required
+            className="flex-1 border border-charcoal/20 bg-transparent px-4 py-2 text-sm outline-none focus:border-moon-indigo"
+          />
+          <input
+            type="number"
+            name="priceCents"
+            placeholder="Price (paise)"
+            min={0}
+            required
+            className="w-32 border border-charcoal/20 bg-transparent px-4 py-2 text-sm outline-none focus:border-moon-indigo"
+          />
+          <input
+            type="number"
+            name="stock"
+            placeholder="Initial Stock"
+            min={0}
+            required
+            className="w-32 border border-charcoal/20 bg-transparent px-4 py-2 text-sm outline-none focus:border-moon-indigo"
+          />
+          <button
+            type="submit"
+            className="bg-moon-indigo px-6 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-cream transition-opacity hover:opacity-90"
+          >
+            Add
+          </button>
+        </form>
+        <p className="mt-4 text-xs text-charcoal/60">
+          Note: This only adds the product to the database for inventory tracking. 
+          To display it on the website, its details must still be added to the code (`src/data/products.ts`).
+        </p>
+      </div>
+
+      <div className="mt-8 overflow-x-auto bg-cream">
         <table className="w-full min-w-[560px] text-sm">
           <thead>
             <tr className="border-b border-charcoal/10 text-left text-xs font-semibold uppercase tracking-[0.1em] text-charcoal/70">

@@ -33,3 +33,29 @@ export async function updateProduct(formData: FormData) {
 
   revalidatePath("/admin/products");
 }
+
+export async function createProduct(formData: FormData) {
+  await requireAdmin();
+
+  const parsed = updateProductSchema.safeParse({
+    slug: formData.get("slug"),
+    priceCents: formData.get("priceCents"),
+    stock: formData.get("stock"),
+  });
+  if (!parsed.success) return;
+
+  try {
+    await prisma.product.create({
+      data: { 
+        slug: parsed.data.slug, 
+        priceCents: parsed.data.priceCents, 
+        stock: parsed.data.stock 
+      },
+    });
+  } catch (error) {
+    console.error("createProduct: database unavailable or product exists", error);
+    return;
+  }
+
+  revalidatePath("/admin/products");
+}
