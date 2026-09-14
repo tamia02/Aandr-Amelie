@@ -17,7 +17,9 @@ export async function getCommerceForSlugs(
   for (const slug of slugs) {
     if (slug === "the-trial-pack") {
       fallback[slug] = { slug, priceCents: 55000, compareAtPriceCents: 100000, currency: "INR", stock: 50 };
-    } else if (slug.includes("multani-mitti") || slug.includes("clay")) {
+    } else if (slug === "pink-multani-mitti") {
+      fallback[slug] = { slug, priceCents: 25000, compareAtPriceCents: 45000, currency: "INR", stock: 0 };
+    } else if (slug.includes("multani-mitti") || slug.includes("clay") || slug.includes("cleanser") || slug.includes("powder")) {
       fallback[slug] = { slug, priceCents: 25000, compareAtPriceCents: 45000, currency: "INR", stock: 50 };
     } else {
       fallback[slug] = { slug, priceCents: 85000, compareAtPriceCents: 210000, currency: "INR", stock: 50 };

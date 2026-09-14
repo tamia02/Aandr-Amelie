@@ -626,74 +626,91 @@ export const products: Product[] = [
       },
     ],
   },
+
   {
-    slug: 'super-fine-multani-mitti',
-    comparison: {
-      marketName: 'Standard Face Clays',
-      ourName: 'Super Fine Multani Mitti',
-      pointers: [
-        { name: 'Ultra-Milled & Fine', market: false, ours: true },
-        { name: 'Zero Cheap Fillers', market: false, ours: true },
-        { name: 'Pure Botanical Additions', market: false, ours: true },
-        { name: 'Artificial Colors', market: true, ours: false }
-      ]
-    },
-    name: 'Super Fine Multani Mitti',
-    category: 'Botanical Clays',
-    tagline: 'Deep Cleanse & Clarify',
-    hook: 'The ultimate clarifying earth mask for a deeply purified and balanced complexion.',
-    placeholder: 'sun',
-    image: '/images/products/super_fine_multani_mitti.png',
-    images: ['/images/products/super_fine_multani_mitti.png'],
-    description: 'Our Super Fine Multani Mitti (Fuller\'s Earth) is an ultra-milled, 100% organic, sun-dried clay that draws out impurities, excess oil, and toxins from deep within the pores. It leaves your skin exceptionally clean, matte, and refreshed without stripping it of essential moisture.',
+    slug: 'amla-reetha-shikakai-cleanser',
+    name: 'Amla Reetha Shikakai Cleanser',
+    category: 'Botanical Powders',
+    tagline: 'Revitalize & Strengthen Hair',
+    hook: 'A pure, traditional herbal blend for naturally healthy hair and scalp.',
+    placeholder: 'moon',
+    image: '/images/products/amla_reetha_shikakai.jpg',
+    images: ['/images/products/amla_reetha_shikakai.jpg'],
+    description: 'A 100% natural, chemical-free cleanser made from the traditional trio of Amla, Reetha, and Shikakai. Gently cleanses the scalp without stripping natural oils, promotes hair growth, and leaves your hair soft, shiny, and strong.',
     bestFor: [
-      { title: 'Oily & Acne-Prone Skin', description: 'Absorbs excess sebum and prevents breakouts' },
-      { title: 'Congested Pores', description: 'Draws out deep-seated impurities and tightens pores' }
+      { title: 'Hair Fall & Thinning', description: 'Strengthens roots and reduces breakage' },
+      { title: 'Dull Hair', description: 'Restores natural shine and vitality' }
     ],
     benefitSections: [
       {
-        heading: 'The Power of Earth',
+        heading: 'Traditional Hair Care',
         items: [
-          { title: 'Deep Cleansing', description: 'Acts as a natural magnet for dirt, oil, and pollution.' },
-          { title: 'Cooling Effect', description: 'Naturally cools the skin, soothing active inflammation.' }
+          { title: 'Natural Cleansing', description: 'Reetha creates a mild lather that cleanses gently.' },
+          { title: 'Nourishment', description: 'Amla is rich in Vitamin C, promoting healthy growth.' }
         ]
       }
     ],
     howToUse: [
-      { label: 'Prepare', text: 'Mix 1-2 tablespoons with water or our Rose Elixir to form a smooth paste.' },
-      { label: 'Apply', text: 'Apply an even layer to your face and neck, avoiding the delicate eye area.' },
-      { label: 'Rinse', text: 'Leave on for 10-15 minutes until semi-dry, then rinse thoroughly with lukewarm water.' }
+      { label: 'Mix', text: 'Mix 2-3 tablespoons with warm water to form a smooth paste.' },
+      { label: 'Apply', text: 'Apply to wet hair and scalp, massaging gently.' },
+      { label: 'Rinse', text: 'Leave for 5-10 minutes, then rinse thoroughly with water.' }
     ],
-    care: 'Store in a cool, dry place. Keep the jar tightly closed to prevent moisture from entering.',
-    seoTitle: 'Super Fine Multani Mitti – Pure Clay Face Mask',
-    seoDescription: 'Clarify and purify your skin with our Super Fine Multani Mitti. The ultimate natural clay mask for oily and acne-prone skin.',
+    care: 'Store in a dry place. Keep away from moisture.',
+    seoTitle: 'Amla Reetha Shikakai Powder Cleanser',
+    seoDescription: 'Traditional natural hair wash. Strengthen and cleanse with Amla, Reetha, and Shikakai.',
     faqs: [
-      { question: 'How often should I use this mask?', answer: 'For oily skin, 2-3 times a week is ideal. For normal or dry skin, once a week is sufficient.' }
+      { question: 'Do I need to use shampoo after this?', answer: 'No, this acts as a natural shampoo and cleanser.' }
     ],
-    concernSlugs: ['acne-breakouts', 'oily-skin'],
-    ingredientsList: ['Multani Mitti'],
-    beforeAfterImage: "/images/before_after_clay_1785597877178.png",
+    concernSlugs: ['hair-scalp'],
+    ingredientsList: ['Amla', 'Reetha', 'Shikakai']
   },
   {
-    slug: 'imported-pink-clay',
-    comparison: {
-      marketName: 'Standard Face Clays',
-      ourName: 'Imported Pink Clay',
-      pointers: [
-        { name: 'Ultra-Milled & Fine', market: false, ours: true },
-        { name: 'Zero Cheap Fillers', market: false, ours: true },
-        { name: 'Pure Botanical Additions', market: false, ours: true },
-        { name: 'Artificial Colors', market: true, ours: false }
-      ]
-    },
-    name: 'Imported Pink Clay',
+    slug: 'botanical-herbal-powder',
+    name: 'Botanical Herbal Cleanser',
+    category: 'Botanical Powders',
+    tagline: 'Gentle Detox & Renew',
+    hook: 'A finely milled blend of natural herbs to detoxify and renew your skin.',
+    placeholder: 'dawn',
+    image: '/images/products/herbal_powder.jpg',
+    images: ['/images/products/herbal_powder.jpg'],
+    description: 'A premium blend of finely milled green herbs for a refreshing and detoxifying cleanse. Perfect for gently removing impurities while delivering essential botanical nutrients to your skin.',
+    bestFor: [
+      { title: 'All Skin Types', description: 'Gentle enough for daily use' },
+      { title: 'Tired Skin', description: 'Revives and refreshes the complexion' }
+    ],
+    benefitSections: [
+      {
+        heading: 'Botanical Refresh',
+        items: [
+          { title: 'Detoxifying', description: 'Draws out everyday pollutants and impurities.' },
+          { title: 'Nutrient-Rich', description: 'Feeds the skin with natural botanical goodness.' }
+        ]
+      }
+    ],
+    howToUse: [
+      { label: 'Mix', text: 'Blend 1 teaspoon with water or floral mist.' },
+      { label: 'Apply', text: 'Gently massage onto damp skin in circular motions.' },
+      { label: 'Rinse', text: 'Rinse with cool water.' }
+    ],
+    care: 'Keep in an airtight jar in a cool, dry place.',
+    seoTitle: 'Botanical Herbal Cleanser Powder',
+    seoDescription: 'Gentle herbal face wash powder for a daily detoxifying cleanse.',
+    faqs: [
+      { question: 'Is this suitable for daily use?', answer: 'Yes, it is very gentle and can be used daily.' }
+    ],
+    concernSlugs: ['dull-skin'],
+    ingredientsList: ['Mixed Botanical Herbs']
+  },
+  {
+    slug: 'pink-multani-mitti',
+    name: 'Pink Multani Mitti',
     category: 'Botanical Clays',
     tagline: 'Gently Detoxify & Radiate',
     hook: 'A delicate, mineral-rich clay that revives dull, tired skin to reveal a natural, rosy glow.',
     placeholder: 'dawn',
     image: '/images/products/imported_pink_clay.png',
     images: ['/images/products/imported_pink_clay.png'],
-    description: 'Imported Pink Clay is a premium, double-filtered earth renowned for its gentle purifying properties, containing zero fillers or preservatives. Perfect for sensitive or mature skin, this mineral-rich clay lightly exfoliates while drawing out impurities, leaving your skin soft, smooth, and visibly brighter.',
+    description: 'Pink Multani Mitti is a premium, double-filtered earth renowned for its gentle purifying properties, containing zero fillers or preservatives. Perfect for sensitive or mature skin, this mineral-rich clay lightly exfoliates while drawing out impurities, leaving your skin soft, smooth, and visibly brighter.',
     bestFor: [
       { title: 'Sensitive & Dry Skin', description: 'Cleanses without over-drying or irritating' },
       { title: 'Dullness', description: 'Restores a natural, healthy radiance' }
@@ -713,28 +730,17 @@ export const products: Product[] = [
       { label: 'Wash', text: 'Rinse off gently with warm water and follow with a moisturizer.' }
     ],
     care: 'Store in a cool, dry place away from direct sunlight.',
-    seoTitle: 'Imported Pink Clay – Gentle Detox Mask',
-    seoDescription: 'Revive your glow with our Imported Pink Clay mask. Perfect for sensitive skin, it gently detoxifies and brightens.',
+    seoTitle: 'Pink Multani Mitti – Gentle Detox Mask',
+    seoDescription: 'Revive your glow with our Pink Multani Mitti mask. Perfect for sensitive skin, it gently detoxifies and brightens.',
     faqs: [
       { question: 'Is Pink Clay safe for sensitive skin?', answer: 'Yes, pink clay is one of the mildest clays available, making it perfect for sensitive and easily irritated skin types.' }
     ],
     concernSlugs: ['dryness-dehydration', 'dull-skin'],
-    ingredientsList: ['Pink Clay'],
-    beforeAfterImage: "/images/before_after_clay_1785597877178.png",
+    ingredientsList: ['Pink Multani Mitti']
   },
   {
-    slug: 'neem-and-multani-mitti',
-    comparison: {
-      marketName: 'Standard Face Clays',
-      ourName: 'Neem & Multani Mitti',
-      pointers: [
-        { name: 'Ultra-Milled & Fine', market: false, ours: true },
-        { name: 'Zero Cheap Fillers', market: false, ours: true },
-        { name: 'Pure Botanical Additions', market: false, ours: true },
-        { name: 'Artificial Colors', market: true, ours: false }
-      ]
-    },
-    name: 'Neem & Multani Mitti',
+    slug: 'neem-multani-mitti',
+    name: 'Multani Mitti with Neem Powder',
     category: 'Botanical Clays',
     tagline: 'Clarify & Banish Blemishes',
     hook: 'A potent, antibacterial blend that targets stubborn acne and deeply purifies the skin.',
@@ -761,35 +767,24 @@ export const products: Product[] = [
       { label: 'Rinse', text: 'Wash off after 10-15 minutes and pat dry.' }
     ],
     care: 'Store in an airtight container in a dry, cool place.',
-    seoTitle: 'Neem & Multani Mitti – Anti-Acne Clay Mask',
+    seoTitle: 'Multani Mitti with Neem Powder – Anti-Acne Mask',
     seoDescription: 'Fight acne and blemishes with our Neem and Multani Mitti clay blend. A potent natural remedy for clear skin.',
     faqs: [
       { question: 'Can I use this as a spot treatment?', answer: 'Absolutely! Dab a thick paste directly onto an active pimple and leave it overnight to reduce inflammation.' }
     ],
     concernSlugs: ['acne-breakouts', 'oily-skin'],
-    ingredientsList: ['Multani Mitti', 'Neem Leaf Powder'],
-    beforeAfterImage: "/images/before_after_acne_1785597840429.png",
+    ingredientsList: ['Multani Mitti', 'Neem Leaf Powder']
   },
   {
-    slug: 'rose-and-sandal-multani-mitti',
-    comparison: {
-      marketName: 'Standard Face Clays',
-      ourName: 'Rose & Sandal Multani Mitti',
-      pointers: [
-        { name: 'Ultra-Milled & Fine', market: false, ours: true },
-        { name: 'Zero Cheap Fillers', market: false, ours: true },
-        { name: 'Pure Botanical Additions', market: false, ours: true },
-        { name: 'Artificial Colors', market: true, ours: false }
-      ]
-    },
-    name: 'Rose & Sandal Multani Mitti',
+    slug: 'rose-multani-mitti',
+    name: 'Multani Mitti with Rose',
     category: 'Botanical Clays',
     tagline: 'Soothe & Brighten',
     hook: 'A luxurious, fragrant blend that cools, soothes, and imparts a bridal glow.',
     placeholder: 'dawn',
     image: '/images/products/rose_sandal_multani_mitti.png',
     images: ['/images/products/rose_sandal_multani_mitti.png'],
-    description: 'Infused with raw, cooling Rose petals and pure complexion-brightening Sandalwood, free of artificial colors or fillers, this Multani Mitti blend is a treat for the senses and the skin. It reduces redness, evens out skin tone, and leaves you with a beautifully radiant and soft complexion.',
+    description: 'Infused with raw, cooling Rose petals and free of artificial colors or fillers, this Multani Mitti blend is a treat for the senses and the skin. It reduces redness, evens out skin tone, and leaves you with a beautifully radiant and soft complexion.',
     bestFor: [
       { title: 'Uneven Skin Tone', description: 'Fades marks and brightens the complexion' },
       { title: 'Sun Damaged Skin', description: 'Cools and soothes sunburns and inflammation' }
@@ -798,74 +793,63 @@ export const products: Product[] = [
       {
         heading: 'Luxurious Botanical Brightening',
         items: [
-          { title: 'Soothes Redness', description: 'Rose powder calms irritated skin instantly.' },
-          { title: 'Bridal Glow', description: 'Sandalwood naturally brightens and evens skin tone.' }
+          { title: 'Cooling Effect', description: 'Rose naturally cools the skin, reducing inflammation.' },
+          { title: 'Radiance', description: 'Helps even out skin tone and improve overall complexion.' }
         ]
       }
     ],
     howToUse: [
-      { label: 'Mix', text: 'Blend with Royal Rose Elixir to enhance the floral benefits.' },
-      { label: 'Apply', text: 'Apply an even layer to the face and neck.' },
-      { label: 'Rinse', text: 'Rinse with cool water after 15 minutes.' }
+      { label: 'Mix', text: 'Combine with water or Royal Rose Elixir to make a fragrant paste.' },
+      { label: 'Apply', text: 'Apply evenly to the face and neck.' },
+      { label: 'Rinse', text: 'Wash off after 10-15 minutes and pat dry.' }
     ],
-    care: 'Keep in a cool, dark place to preserve the delicate floral aromas.',
-    seoTitle: 'Rose & Sandal Multani Mitti – Brightening Clay',
-    seoDescription: 'Soothe and brighten your skin with the luxurious blend of Rose, Sandalwood, and Multani Mitti.',
+    care: 'Store in a cool, dry place. Ensure the lid is tightly closed.',
+    seoTitle: 'Multani Mitti with Rose – Brightening Mask',
+    seoDescription: 'Brighten and soothe your skin with the luxurious blend of Rose and Multani Mitti.',
     faqs: [
-      { question: 'Is this suitable for dry skin?', answer: 'Yes, the rose and sandalwood help balance the clay, making it suitable for normal to dry skin when mixed with milk or yogurt instead of water.' }
+      { question: 'Is this good for sunburn?', answer: 'Yes, the cooling properties of Rose and Multani Mitti make it excellent for soothing sun-damaged skin.' }
     ],
-    concernSlugs: ['dull-skin', 'pigmentation'],
-    ingredientsList: ['Multani Mitti', 'Rose Petal Powder', 'Sandalwood Powder'],
-    beforeAfterImage: "/images/before_after_clay_1785597877178.png",
+    concernSlugs: ['dull-skin', 'sensitive-dry'],
+    ingredientsList: ['Multani Mitti', 'Rose Petal Powder']
   },
   {
-    slug: 'turmeric-and-sandal-multani-mitti',
-    comparison: {
-      marketName: 'Standard Face Clays',
-      ourName: 'Turmeric & Sandal Multani Mitti',
-      pointers: [
-        { name: 'Ultra-Milled & Fine', market: false, ours: true },
-        { name: 'Zero Cheap Fillers', market: false, ours: true },
-        { name: 'Pure Botanical Additions', market: false, ours: true },
-        { name: 'Artificial Colors', market: true, ours: false }
-      ]
-    },
-    name: 'Turmeric & Sandal Multani Mitti',
+    slug: 'sandalwood-multani-mitti',
+    name: 'Multani Mitti with Sandalwood',
     category: 'Botanical Clays',
-    tagline: 'Glow & Heal',
-    hook: 'The traditional Indian remedy for a flawless, golden complexion and healed skin.',
+    tagline: 'Healing Glow',
+    hook: 'A traditional blend to fade dark spots and deliver an unmistakable, healthy glow.',
     placeholder: 'sun',
     image: '/images/products/turmeric_sandal_multani_mitti.png',
     images: ['/images/products/turmeric_sandal_multani_mitti.png'],
-    description: 'This potent, 100% organic blend features raw Turmeric and Sandalwood—Ayurveda\'s most revered healing botanicals, meticulously double-filtered for maximum potency. It reduces hyperpigmentation, fights free radicals, and delivers an unmistakable, healthy glow while the Multani Mitti keeps the skin deeply cleansed.',
+    description: 'This potent, 100% organic blend features Sandalwood—Ayurveda\'s revered healing botanical. It reduces hyperpigmentation, fights free radicals, and delivers an unmistakable, healthy glow while the Multani Mitti keeps the skin deeply cleansed.',
     bestFor: [
       { title: 'Hyperpigmentation', description: 'Fades dark spots and acne scars over time' },
-      { title: 'Dull Skin', description: 'Delivers an instant, healthy golden glow' }
+      { title: 'Dull Skin', description: 'Delivers a natural, golden radiance' }
     ],
     benefitSections: [
       {
         heading: 'Ayurvedic Healing',
         items: [
-          { title: 'Antioxidant Protection', description: 'Turmeric fights environmental damage.' },
-          { title: 'Scar Healing', description: 'Promotes skin regeneration and fades marks.' }
+          { title: 'Spot Reduction', description: 'Sandalwood is renowned for lightening dark spots.' },
+          { title: 'Deep Cleanse', description: 'Multani Mitti draws out impurities to reveal fresh skin.' }
         ]
       }
     ],
     howToUse: [
-      { label: 'Mix', text: 'Mix with water or rose water into a paste.' },
-      { label: 'Apply', text: 'Apply a thin layer (to avoid temporary turmeric staining) and leave for 10-15 minutes.' },
-      { label: 'Rinse', text: 'Wash thoroughly and follow up with a toner.' }
+      { label: 'Mix', text: 'Combine with water or a floral elixir to form a paste.' },
+      { label: 'Apply', text: 'Apply a thin layer to the face.' },
+      { label: 'Rinse', text: 'Rinse with lukewarm water once dry.' }
     ],
-    care: 'Store in an airtight container to preserve the potency of the turmeric.',
-    seoTitle: 'Turmeric & Sandal Multani Mitti – Healing Glow',
-    seoDescription: 'Fade dark spots and achieve a golden glow with our Turmeric, Sandalwood, and Multani Mitti healing clay mask.',
+    care: 'Store in a cool, dry place.',
+    seoTitle: 'Multani Mitti with Sandalwood – Healing Clay Mask',
+    seoDescription: 'Fade dark spots and achieve a glow with our Sandalwood and Multani Mitti healing clay mask.',
     faqs: [
-      { question: 'Will the turmeric stain my skin?', answer: 'We use the perfect ratio to minimize staining. However, leaving it on for too long or using it on very pale skin might leave a temporary yellow tint which washes off with a gentle cleanser.' }
+      { question: 'Will this help with acne scars?', answer: 'Yes, Sandalwood is known to gradually lighten dark spots and acne scars with regular use.' }
     ],
-    concernSlugs: ['pigmentation', 'dull-skin'],
-    ingredientsList: ['Multani Mitti', 'Turmeric Powder', 'Sandalwood Powder'],
-    beforeAfterImage: "/images/before_after_clay_1785597877178.png",
+    concernSlugs: ['dull-skin', 'acne-breakouts'],
+    ingredientsList: ['Multani Mitti', 'Sandalwood Powder']
   }
+
 ];
 
 export function getProduct(slug: string): Product | undefined {

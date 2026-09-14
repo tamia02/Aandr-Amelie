@@ -4,7 +4,8 @@ import Image from 'next/image';
 
 const images = [
   '/images/products/imported_pink_clay.png',
-  '/images/products/super_fine_multani_mitti.png',
+  '/images/products/amla_reetha_shikakai.jpg',
+  '/images/products/herbal_powder.jpg',
   '/images/products/neem_multani_mitti.png',
   '/images/products/rose_sandal_multani_mitti.png',
   '/images/products/turmeric_sandal_multani_mitti.png',
