@@ -629,24 +629,24 @@ export const products: Product[] = [
 
   {
     slug: 'amla-reetha-shikakai-cleanser',
-    name: 'Amla Reetha Shikakai Cleanser',
+    name: 'Amla Reetha Shikakai Hair Cleanser',
     category: 'Botanical Powders',
-    tagline: 'Revitalize & Strengthen Hair',
-    hook: 'A pure, traditional herbal blend for naturally healthy hair and scalp.',
+    tagline: 'Traditional Herbal Hair-Care Ritual',
+    hook: 'A pure, traditional herbal hair cleanser for naturally healthy-looking hair and scalp.',
     placeholder: 'moon',
     image: '/images/products/amla_reetha_shikakai.jpg',
     images: ['/images/products/amla_reetha_shikakai.jpg'],
-    description: 'A 100% natural, chemical-free cleanser made from the traditional trio of Amla, Reetha, and Shikakai. Gently cleanses the scalp without stripping natural oils, promotes hair growth, and leaves your hair soft, shiny, and strong.',
+    description: 'A 100% natural herbal shampoo powder made from the traditional trio of Amla, Reetha, and Shikakai. Gently helps cleanse the scalp without stripping natural oils. This amla reetha shikakai powder for hair leaves your hair feeling soft, nourished, and supports healthy-looking hair.',
     bestFor: [
-      { title: 'Hair Fall & Thinning', description: 'Strengthens roots and reduces breakage' },
-      { title: 'Dull Hair', description: 'Restores natural shine and vitality' }
+      { title: 'Dull & Unmanageable Hair', description: 'Helps improve manageability and leaves hair feeling soft' },
+      { title: 'Routine Cleansing', description: 'Helps condition hair and supports a healthy-looking scalp' }
     ],
     benefitSections: [
       {
         heading: 'Traditional Hair Care',
         items: [
-          { title: 'Natural Cleansing', description: 'Reetha creates a mild lather that cleanses gently.' },
-          { title: 'Nourishment', description: 'Amla is rich in Vitamin C, promoting healthy growth.' }
+          { title: 'Natural Cleansing', description: 'Reetha creates a mild lather that helps cleanse the scalp gently.' },
+          { title: 'Nourishment', description: 'Amla and Shikakai help condition hair and leave it feeling nourished.' }
         ]
       }
     ],
@@ -656,50 +656,50 @@ export const products: Product[] = [
       { label: 'Rinse', text: 'Leave for 5-10 minutes, then rinse thoroughly with water.' }
     ],
     care: 'Store in a dry place. Keep away from moisture.',
-    seoTitle: 'Amla Reetha Shikakai Powder Cleanser',
-    seoDescription: 'Traditional natural hair wash. Strengthen and cleanse with Amla, Reetha, and Shikakai.',
+    seoTitle: 'Amla Reetha Shikakai Powder | Natural Hair Cleanser',
+    seoDescription: 'Experience a traditional Indian hair cleanser. Amla reetha shikakai herbal hair cleanser helps condition hair and cleanse the scalp naturally.',
     faqs: [
-      { question: 'Do I need to use shampoo after this?', answer: 'No, this acts as a natural shampoo and cleanser.' }
+      { question: 'Do I need to use shampoo after this?', answer: 'No, this acts as a natural hair cleanser.' }
     ],
     concernSlugs: ['hair-scalp'],
     ingredientsList: ['Amla', 'Reetha', 'Shikakai']
   },
   {
-    slug: 'botanical-herbal-powder',
-    name: 'Botanical Herbal Cleanser',
+    slug: 'herbal-hair-mask',
+    name: 'Bhringraj, Amla, Brahmi, Methi & Neem Herbal Hair Mask',
     category: 'Botanical Powders',
-    tagline: 'Gentle Detox & Renew',
-    hook: 'A finely milled blend of natural herbs to detoxify and renew your skin.',
+    tagline: 'Nourishing Botanical Blend',
+    hook: 'Give your hair-care ritual a natural herbal touch with this thoughtfully blended treatment.',
     placeholder: 'dawn',
     image: '/images/products/herbal_powder.jpg',
     images: ['/images/products/herbal_powder.jpg'],
-    description: 'A premium blend of finely milled green herbs for a refreshing and detoxifying cleanse. Perfect for gently removing impurities while delivering essential botanical nutrients to your skin.',
+    description: 'This thoughtfully blended herbal powder combines five traditional Indian botanicals—Bhringraj, Amla, Brahmi, Methi and Neem—to create a nourishing hair-care treatment. Made for those who prefer simple, botanical hair-care rituals, this mask leaves hair feeling conditioned, soft and refreshed.',
     bestFor: [
-      { title: 'All Skin Types', description: 'Gentle enough for daily use' },
-      { title: 'Tired Skin', description: 'Revives and refreshes the complexion' }
+      { title: 'All Hair Types', description: 'Suitable for regular hair-care use' },
+      { title: 'Nourishment', description: 'Helps hair feel soft and nourished while supporting a healthy-looking scalp' }
     ],
     benefitSections: [
       {
-        heading: 'Botanical Refresh',
+        heading: 'Key Benefits',
         items: [
-          { title: 'Detoxifying', description: 'Draws out everyday pollutants and impurities.' },
-          { title: 'Nutrient-Rich', description: 'Feeds the skin with natural botanical goodness.' }
+          { title: 'Herbal Conditioning', description: 'A traditional hair-conditioning treatment.' },
+          { title: 'Manageability', description: 'Helps improve manageability.' }
         ]
       }
     ],
     howToUse: [
-      { label: 'Mix', text: 'Blend 1 teaspoon with water or floral mist.' },
-      { label: 'Apply', text: 'Gently massage onto damp skin in circular motions.' },
-      { label: 'Rinse', text: 'Rinse with cool water.' }
+      { label: 'Mix', text: 'Mix the powder with water to form a smooth paste.' },
+      { label: 'Apply', text: 'Apply as a traditional hair mask to your hair and scalp.' },
+      { label: 'Rinse', text: 'Rinse thoroughly with lukewarm water.' }
     ],
     care: 'Keep in an airtight jar in a cool, dry place.',
-    seoTitle: 'Botanical Herbal Cleanser Powder',
-    seoDescription: 'Gentle herbal face wash powder for a daily detoxifying cleanse.',
+    seoTitle: 'Aandre Amelie Bhringraj Amla Brahmi Methi Neem Herbal Hair Mask',
+    seoDescription: 'A natural herbal hair mask featuring Bhringraj, Amla, Brahmi, Methi & Neem for a traditional hair-care ritual that helps condition and soften hair.',
     faqs: [
-      { question: 'Is this suitable for daily use?', answer: 'Yes, it is very gentle and can be used daily.' }
+      { question: 'Is this suitable for regular use?', answer: 'Yes, it is easy to prepare and suitable for regular hair-care use.' }
     ],
-    concernSlugs: ['dull-skin'],
-    ingredientsList: ['Mixed Botanical Herbs']
+    concernSlugs: ['hair-scalp'],
+    ingredientsList: ['Bhringraj', 'Amla', 'Brahmi', 'Methi', 'Neem']
   },
   {
     slug: 'pink-multani-mitti',
