@@ -22,18 +22,31 @@ export async function adminLogin(
     return { error: "Email and password are required." };
   }
 
-  const isValid = await verifyAdminCredentials(email, password);
+  let isValid = false;
+  try {
+    isValid = await verifyAdminCredentials(email, password);
+  } catch (e: any) {
+    console.error("verifyAdminCredentials error:", e);
+    return { error: e.message || "Authentication error" };
+  }
+
   if (!isValid) {
     return { error: "Invalid email or password." };
   }
 
-  (await cookies()).set(ADMIN_COOKIE_NAME, createSessionToken(email), {
-    httpOnly: true,
-    sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
-    maxAge: 12 * 60 * 60,
-    path: "/",
-  });
+  try {
+    const token = createSessionToken(email);
+    (await cookies()).set(ADMIN_COOKIE_NAME, token, {
+      httpOnly: true,
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 12 * 60 * 60,
+      path: "/",
+    });
+  } catch (e: any) {
+    console.error("Session token error:", e);
+    return { error: "Server configuration error: " + e.message };
+  }
 
   redirect("/admin");
 }
