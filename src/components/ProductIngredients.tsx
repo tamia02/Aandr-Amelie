@@ -17,9 +17,17 @@ const INGREDIENT_IMAGES: Record<string, string> = {
   "Tea Tree": "/images/ingredients/tea_tree.png",
   "Multani Mitti": "/images/ingredients/multani_mitti.png",
   "Pink Clay": "/images/ingredients/pink_clay.png",
+  "Pink Multani Mitti": "/images/ingredients/pink_clay.png",
   "Neem Leaf Powder": "/images/ingredients/neem.png",
+  "Neem": "/images/ingredients/neem.png",
   "Rose Petal Powder": "/images/ingredients/rose_petal_powder.png",
   "Sandalwood Powder": "/images/ingredients/sandalwood_powder.png",
+  "Amla": "/images/ingredients/amla.jpg",
+  "Reetha": "/images/ingredients/reetha.jpg",
+  "Shikakai": "/images/ingredients/shikakai.jpg",
+  "Bhringraj": "/images/ingredients/bhringraj.jpg",
+  "Brahmi": "/images/ingredients/brahmi.jpg",
+  "Methi": "/images/ingredients/methi.jpg",
 };
 
 export default function ProductIngredients({ ingredients }: { ingredients: string[] }) {

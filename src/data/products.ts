@@ -635,7 +635,7 @@ export const products: Product[] = [
     hook: 'A pure, traditional herbal hair cleanser for naturally healthy-looking hair and scalp.',
     placeholder: 'moon',
     image: '/images/products/amla_reetha_shikakai.jpg',
-    images: ['/images/products/amla_reetha_shikakai.jpg'],
+    images: ['/images/products/amla_reetha_shikakai.jpg', '/images/products/amla_slide2.jpg'],
     description: 'A 100% natural herbal shampoo powder made from the traditional trio of Amla, Reetha, and Shikakai. Gently helps cleanse the scalp without stripping natural oils. This amla reetha shikakai powder for hair leaves your hair feeling soft, nourished, and supports healthy-looking hair.',
     bestFor: [
       { title: 'Dull & Unmanageable Hair', description: 'Helps improve manageability and leaves hair feeling soft' },
@@ -662,6 +662,7 @@ export const products: Product[] = [
       { question: 'Do I need to use shampoo after this?', answer: 'No, this acts as a natural hair cleanser.' }
     ],
     concernSlugs: ['hair-scalp'],
+    beforeAfterImage: '/images/before_after_amla.jpg',
     ingredientsList: ['Amla', 'Reetha', 'Shikakai']
   },
   {
@@ -672,7 +673,7 @@ export const products: Product[] = [
     hook: 'Give your hair-care ritual a natural herbal touch with this thoughtfully blended treatment.',
     placeholder: 'dawn',
     image: '/images/products/herbal_powder.jpg',
-    images: ['/images/products/herbal_powder.jpg'],
+    images: ['/images/products/herbal_powder.jpg', '/images/products/herbal_slide2.jpg'],
     description: 'This thoughtfully blended herbal powder combines five traditional Indian botanicals—Bhringraj, Amla, Brahmi, Methi and Neem—to create a nourishing hair-care treatment. Made for those who prefer simple, botanical hair-care rituals, this mask leaves hair feeling conditioned, soft and refreshed.',
     bestFor: [
       { title: 'All Hair Types', description: 'Suitable for regular hair-care use' },
@@ -699,6 +700,7 @@ export const products: Product[] = [
       { question: 'Is this suitable for regular use?', answer: 'Yes, it is easy to prepare and suitable for regular hair-care use.' }
     ],
     concernSlugs: ['hair-scalp'],
+    beforeAfterImage: '/images/before_after_herbal.jpg',
     ingredientsList: ['Bhringraj', 'Amla', 'Brahmi', 'Methi', 'Neem']
   },
   {
