@@ -35,7 +35,7 @@ export async function adminLogin(
   }
 
   try {
-    const token = createSessionToken(email);
+    const token = await createSessionToken(email);
     (await cookies()).set(ADMIN_COOKIE_NAME, token, {
       httpOnly: true,
       sameSite: "lax",
